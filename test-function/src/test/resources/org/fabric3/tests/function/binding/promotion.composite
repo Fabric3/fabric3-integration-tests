@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fabric3
+Copyright (C) 2009 Metaform Systems
+
+Fabric3 is licensed under modified terms of the GNU General
+Public License. See the accompanying license file for details.
+
+
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3-binding="urn:fabric3.org:binding"
+           name="PromotionComposite">
+
+    <component name="PromotionTestComponent">
+        <f3-impl:junit class="org.fabric3.tests.function.binding.PromotionTest"/>
+    </component>
+
+    <reference name="PromotedReference" promote="PromotionTestComponent/helloService">
+        <f3-binding:binding.test uri="PromotedHelloService"/>
+    </reference>
+
+    <!-- test using an explicit service -->
+    <service name="HelloService" promote="HelloComponent/HelloService">
+        <f3-binding:binding.test uri="PromotedHelloService"/>
+        <interface.java interface="org.fabric3.tests.function.common.Helloservice2"/>
+    </service>
+
+    <!-- test using the default service -->
+    <service name="HelloServiceNotSepecified" promote="HelloComponent">
+        <f3-binding:binding.test uri="PromotedHelloServiceNotSpecified"/>
+        <interface.java interface="org.fabric3.tests.function.common.Helloservice2"/>
+    </service>
+
+    <component name="HelloComponent">
+        <implementation.java class="org.fabric3.tests.function.common.HelloServiceImpl"/>
+    </component>
+
+</composite>

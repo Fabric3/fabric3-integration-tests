@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fabric3
+Copyright (C) 2009 Metaform Systems
+
+Fabric3 is licensed under modified terms of the GNU General
+Public License. See the accompanying license file for details.
+
+
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           name="FunctionTestHarnessComposite">
+
+    <include name="CommonComposite"/>
+    <include name="SmokeTestComposite"/>
+    <include name="MonitorTestComposite"/>
+    <include name="OuterComposite"/>
+    <include name="ConversationComposite"/>
+    <include name="PropertiesComposite"/>
+    <include name="ReferencesComposite"/>
+    <include name="BindingComposite"/>
+    <include name="WiringComposite"/>
+    <include name="AutoWireComposite"/>
+    <include name="LifecycleComposite"/>
+    <include name="AsyncComposite"/>
+    <include name="CallbackComposite"/>
+    <include name="OrderingComposite"/>
+    <include name="GenericTestComposite"/>
+    <include name="ScopeComposite"/>
+    <include name="HeaderComposite"/>
+
+</composite>

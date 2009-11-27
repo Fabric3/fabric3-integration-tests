@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           xmlns:f3-binding="urn:fabric3.org:binding"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           name="ConversationComposite" autowire="false">
+
+    <component name="BindingConversationTestComponent">
+        <f3-impl:junit class="org.fabric3.tests.binding.harness.conversation.ConversationTest"/>
+        <reference name="conversationalService" target="ConversationalService"/>
+    </component>
+
+    <component name="ConversationalService">
+        <implementation.java class="org.fabric3.tests.binding.harness.conversation.ConversationalServiceImpl"/>
+        <service name="ConversationalService">
+            <binding.http uri="/ConversationalService"/>
+        </service>
+    </component>
+
+
+</composite>

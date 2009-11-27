@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           name="RSTestHarnessComposite">
+
+    <component name="TestClient">
+        <f3-impl:junit class="tests.rs.TestClient"/>
+        <property name="hostURI">http://localhost:8900</property>
+    </component>
+
+    <component name="EntityProvider">
+        <f3-impl:implementation.rs class="tests.rs.EntityProvider" uri="/echo"/>
+    </component>
+
+    <component name="RESTResource">
+        <f3-impl:implementation.rs class="tests.rs.EchoResource" uri="/echo"/>
+        <property name="message">Hello</property>
+        <reference name="service" target="Java"/>
+    </component>
+
+    <component name="Java">
+        <implementation.java class="tests.rs.EchoJava"/>
+    </component>
+</composite>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fabric3
+Copyright (C) 2009 Metaform Systems
+
+Fabric3 is licensed under modified terms of the GNU General
+Public License. See the accompanying license file for details.
+
+
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3-binding="urn:fabric3.org:binding"
+           name="WiringComposite">
+
+    <component name="WiringTest">
+        <f3-impl:junit class="org.fabric3.tests.function.wiring.WiringTest"/>
+        <reference name="testService" target="TestComponent"/>
+    </component>
+
+    <component name="SingeReferenceTest">
+        <f3-impl:junit class="org.fabric3.tests.function.wiring.SingleReferenceTest"/>
+    </component>
+
+    <reference name="promotedDefaultReference" promote="SingeReferenceTest">
+        <f3-binding:binding.test uri="WiringCompositeHelloService"/>
+    </reference>
+
+    <component name="TestComponent">
+        <implementation.java class="org.fabric3.tests.function.wiring.TestComponent"/>
+        <reference name="targetConstructor" target="HelloService"/>
+        <reference name="service" target="HelloService"/>
+        <reference name="promotedReference"/>
+    </component>
+
+    <component name="HelloService">
+        <implementation.java class="org.fabric3.tests.function.common.HelloServiceImpl"/>
+    </component>
+
+    <reference name="promotedReference" promote="TestComponent/promotedReference TestComponent/nonConfiguredPromotedReference">
+        <f3-binding:binding.test uri="WiringCompositeHelloService"/>
+    </reference>
+
+    <wire source="TestComponent/wireElementReference" target="HelloService"/>
+
+    <!-- verifies a wire contained in another composite-->
+    <component name="WireBagTest">
+        <f3-impl:junit class="org.fabric3.tests.function.wiring.WireBagTest"/>
+    </component>
+    <include name="WiringBagComposite"/>
+
+</composite>

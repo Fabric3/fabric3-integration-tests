@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fabric3
+Copyright (C) 2009 Metaform Systems
+
+Fabric3 is licensed under modified terms of the GNU General
+Public License. See the accompanying license file for details.
+
+
+
+-->
+<!-- An assembly used for stateless callback functional testing -->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           name="StatelessCallbackComposite" autowire="false">
+
+    <component name="CallbackTestComponent">
+        <f3-impl:junit class="org.fabric3.tests.function.callback.stateless.StatelessCallbackTest"/>
+        <reference name="client1" target="CallbackClient1/ClientService"/>
+        <reference name="client2" target="CallbackClient2/ClientService"/>
+    </component>
+
+    <component name="CallbackClient1">
+        <implementation.java class="org.fabric3.tests.function.callback.stateless.CallbackClient"/>
+        <reference name="forwardService" target="ForwardService/ForwardService"/>
+        <!-- FABRICTHREE-209 -->
+        <!--<reference name="serviceReference" target="ForwardService"/>-->
+    </component>
+
+    <component name="CallbackClient2">
+        <implementation.java class="org.fabric3.tests.function.callback.stateless.CallbackClient"/>
+        <property name="fail">true</property>
+        <reference name="forwardService" target="ForwardService/ForwardService"/>
+    </component>
+
+    <component name="ForwardService">
+        <implementation.java class="org.fabric3.tests.function.callback.stateless.ForwardServiceImpl"/>
+        <reference name="endService" target="EndService"/>
+    </component>
+
+    <component name="EndService">
+        <implementation.java class="org.fabric3.tests.function.callback.stateless.EndServiceImpl"/>
+    </component>
+
+</composite>

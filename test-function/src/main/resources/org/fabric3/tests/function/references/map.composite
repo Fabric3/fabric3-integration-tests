@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           name="MapComposite">
+
+    <component f3-core:key="one" name="map.one">
+        <implementation.java class="org.fabric3.tests.function.common.IdentityServiceImpl"/>
+        <property name="id">map.one</property>
+    </component>
+
+    <component f3-core:key="two" name="map.two">
+        <implementation.java class="org.fabric3.tests.function.common.IdentityServiceImpl"/>
+        <property name="id">map.two</property>
+    </component>
+
+    <component f3-core:key="three" name="map.three">
+        <implementation.java class="org.fabric3.tests.function.common.IdentityServiceImpl"/>
+        <property name="id">map.three</property>
+    </component>
+
+    <component xmlns:test="file://./foo" f3-core:key="test:test" name="test.test">
+        <implementation.java class="org.fabric3.tests.function.common.IdentityServiceImpl"/>
+        <property name="id">test.test</property>
+    </component>
+
+</composite>

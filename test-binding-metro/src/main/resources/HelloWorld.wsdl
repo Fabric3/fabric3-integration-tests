@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="HelloWorld"
+             targetNamespace="urn:helloworld"
+             xmlns:tns="urn:helloworld"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+    <types>
+        <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:helloworld">
+            <complexType name="HelloFault">
+                <sequence>
+                    <element name="code" type="xsd:string"/>
+                    <element name="detail" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="request" type="xsd:string"/>
+            <element name="helloFault" type="tns:HelloFault"/>
+            <element name="response" type="xsd:string"/>
+        </xsd:schema>
+    </types>
+
+    <message name="sayHelloRequest">
+        <part name="name" element="tns:request"/>
+    </message>
+
+    <message name="sayHelloResponse">
+        <part name="result" element="tns:response"/>
+    </message>
+
+    <message name="helloFault">
+        <part name="helloFault" element="tns:helloFault"/>
+    </message>
+
+    <portType name="HelloWorldPortType">
+        <operation name="sayHello">
+            <input message="tns:sayHelloRequest"/>
+            <output message="tns:sayHelloResponse"/>
+            <fault name="helloFault" message="tns:helloFault"/>
+        </operation>
+    </portType>
+
+    <binding name="HelloWorldBinding" type="tns:HelloWorldPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="sayHello">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="helloFault">
+                <soap:fault name="helloFault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+
+    <service name="HelloWorldService">
+        <port name="HelloWorldPort" binding="tns:HelloWorldBinding">
+            <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+        </port>
+    </service>
+
+</definitions>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           name="QuartzTestHarnessComposite"
+           autowire="true">
+
+    <component name="TimerTestComponent">
+        <f3-impl:junit class="org.fabric3.tests.timer.TimedComponentTest"/>
+        <reference name="latchService" target="LatchService"/>
+    </component>
+
+    <component name="LatchService">
+        <implementation.java class="org.fabric3.tests.timer.LatchServiceImpl"/>
+        <property name="count">2</property>
+    </component>
+
+    <component name="TimerComponent">
+        <f3-impl:implementation.timer class="org.fabric3.tests.timer.TimedComponent" requires="sca:managedTransaction" repeatInterval="10"/>
+        <reference name="latchService" target="LatchService"/>
+    </component>
+
+
+</composite>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fabric3
+Copyright (C) 2009 Metaform Systems
+
+Fabric3 is licensed under modified terms of the GNU General
+Public License. See the accompanying license file for details.
+
+
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           name="InnerComposite2" targetNamespace="">
+
+    <service name="two" promote="two#IdentityService"/>
+    <service name="SourceService" promote="source"/>
+
+    <component name="two">
+        <implementation.java class="org.fabric3.tests.function.common.IdentityServiceImpl"/>
+        <property name="id">two</property>
+    </component>
+
+    <component name="source">
+        <implementation.java class="org.fabric3.tests.function.common.SourceImpl"/>
+    </component>
+
+    <component name="InnerThree">
+        <implementation.composite name="InnerComposite3" scdlLocation="inner3.composite"/>
+    </component>
+
+
+    <reference name="promoted" promote="source/target"/>
+
+</composite>

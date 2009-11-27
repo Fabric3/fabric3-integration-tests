@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3-policy="urn:fabric3.org:policy"
+           xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
+           xmlns:helloworld="urn:helloworld"
+           xmlns:hellojava="http://wsdl.metro.binding.tests.fabric3.org/"
+           name="WsdlTest">
+
+    <component name="WsdlTest">
+        <f3-impl:junit class="org.fabric3.tests.binding.metro.WsdlTest"/>
+        <reference name="portType">
+            <!-- test policy attachement-->
+            <binding.ws uri="https://localhost:8901/HelloWorldService" requires="sca:clientAuthentication.message">
+                <configuration>
+                    <username>foo</username>
+                    <password>bar</password>
+                </configuration>
+            </binding.ws>
+        </reference>
+    </component>
+
+    <component name="HelloWorldService">
+        <f3-impl:implementation.wsdl stub="org.fabric3.tests.binding.metro.wsdl.HelloStub">
+            <service contract="helloworld:HelloWorldPortType"/>
+            <reference name="helloJavaService" contract="hellojava:HelloJavaService"/>
+        </f3-impl:implementation.wsdl>
+        <service name="HelloWorldPortType">
+            <!-- test policy attachement-->
+            <binding.ws uri="/HelloWorldService" requires="sca:clientAuthentication.message"/>
+        </service>
+        <reference name="helloJavaService">
+            <binding.ws uri="http://localhost:8900/HelloJavaService"/>
+        </reference>
+    </component>
+
+    <component name="HelloJavaService">
+        <implementation.java class="org.fabric3.tests.binding.metro.wsdl.HelloJavaServiceImpl"/>
+        <service name="HelloJavaService">
+            <binding.ws uri="/HelloJavaService"/>
+        </service>
+    </component>
+</composite>

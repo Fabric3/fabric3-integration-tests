@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fabric3
+Copyright (C) 2009 Metaform Systems
+
+Fabric3 is licensed under modified terms of the GNU General
+Public License. See the accompanying license file for details.
+
+
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           name="ReferencesComposite">
+
+    <component name="MultiplicityTest">
+        <f3-impl:junit class="org.fabric3.tests.function.references.MultiplicityTest"/>
+        <reference name="listCdi1" target="map.one map.two map.three"/>
+        <reference name="listCdi2" target="map.one map.two map.three"/>
+        <reference name="listSetter" target="map.one map.two map.three"/>
+        <reference name="listField" target="map.one map.two map.three"/>
+    </component>
+
+    <component name="MapTest">
+        <f3-impl:junit class="org.fabric3.tests.function.references.MapTest"/>
+        <reference name="constructor" target="map.one map.two map.three"/>
+        <reference name="setter" target="map.one map.two map.three"/>
+        <reference name="field" target="map.one map.two map.three"/>
+    </component>
+
+    <component name="QNameMapTest">
+        <f3-impl:junit class="org.fabric3.tests.function.references.QNameMapTest"/>
+        <reference name="field" target="test.test"/>
+    </component>
+
+    <include name="MapComposite" scdlResource="org/fabric3/tests/function/references/map.composite"/>
+</composite>

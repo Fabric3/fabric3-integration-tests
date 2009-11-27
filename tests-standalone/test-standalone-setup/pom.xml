@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+    $Rev$ $Date$
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.codehaus.fabric3.tests</groupId>
+        <artifactId>tests-standalone-parent-pom</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+    <groupId>org.codehaus.fabric3.tests</groupId>
+    <artifactId>test-standalone-setup</artifactId>
+    <packaging>jar</packaging>
+    <version>0.1-SNAPSHOT</version>
+    <name>Fabric3 Standalone Runtime Integration Tests Setup</name>
+    <description>Fabric3 Standalone Runtime Integration Tests Setup</description>
+      <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.fabric3</groupId>
+                <artifactId>fabric3-assembly-plugin</artifactId>
+                <version>${fabric3.version}</version>
+                <executions>
+                    <execution>
+                        <id>fabric3-assembly</id>
+                        <goals>
+                            <goal>fabric3-assembly</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <runtimeVersion>${fabric3.version}</runtimeVersion>
+                    <profiles>
+                        <!-- JPA support -->
+                        <profile>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>profile-jpa</artifactId>
+                            <version>${fabric3.version}</version>
+                        </profile>
+                        <!-- Web Services support -->
+                        <profile>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>profile-ws</artifactId>
+                            <version>${fabric3.version}</version>
+                        </profile>
+                        <!-- Web App support -->
+                        <profile>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>profile-web</artifactId>
+                            <version>${fabric3.version}</version>
+                        </profile>
+                        <!-- JMS support -->
+                        <profile>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>profile-jms</artifactId>
+                            <version>${fabric3.version}</version>
+                        </profile>
+                    </profiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

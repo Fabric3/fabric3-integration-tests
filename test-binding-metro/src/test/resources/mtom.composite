@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3-policy="urn:fabric3.org:policy"
+           xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
+           name="MtomTest">
+
+    <component name="MtomTest">
+        <f3-impl:junit class="org.fabric3.tests.binding.metro.MtomTest"/>
+        <reference name="uploadPortType">
+            <binding.ws uri="http://localhost:8900/upload" requires="f3-policy:messageOptimization"/>
+        </reference>
+    </component>
+
+    <component name="UploadService">
+        <implementation.java class="org.fabric3.tests.binding.metro.upload.UploadPortTypeImpl"/>
+        <service name="UploadPortType">
+            <binding.ws uri="/upload" requires="f3-policy:messageOptimization"/>
+        </service>
+    </component>
+
+</composite>

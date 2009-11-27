@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="AddNumbers" targetNamespace="urn:addnumbers"
+	xmlns:tns="urn:addnumbers" xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+	<types>
+		<xs:schema xmlns:tns="urn:addnumbers"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="urn:addnumbers">
+
+			<xs:complexType name="addNumbersType">
+				<xs:sequence>
+					<xs:element name="arg" type="xs:int" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+
+		</xs:schema>
+	</types>
+
+	<message name="addRequest">
+		<part name="arg1" type="tns:addNumbersType" />
+		<part name="arg2" type="tns:addNumbersType" />
+	</message>
+	<message name="addResponse">
+		<part name="result" type="xsd:int" />
+	</message>
+
+	<portType name="AddNumbersPortType">
+		<operation name="addNumbers">
+			<input message="tns:addRequest" />
+			<output message="tns:addResponse" />
+		</operation>
+	</portType>
+
+	<binding xmlns:ns1="urn:addnumbers"
+		name="AddNumbersBinding" type="ns1:AddNumbersPortType">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="addNumbers">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+
+	<service name="AddNumbersService">
+		<port name="AddNumbersPort" binding="tns:AddNumbersBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+
+</definitions>

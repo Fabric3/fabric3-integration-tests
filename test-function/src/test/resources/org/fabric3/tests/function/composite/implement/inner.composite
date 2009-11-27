@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fabric3
+Copyright (C) 2009 Metaform Systems
+
+Fabric3 is licensed under modified terms of the GNU General
+Public License. See the accompanying license file for details.
+
+
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           name="ImplementInnerComposite">
+
+    <service name="inner" promote="one"/>
+
+    <component name="one">
+        <implementation.composite name="InnerInnerComposite"/>
+    </component>
+
+</composite>

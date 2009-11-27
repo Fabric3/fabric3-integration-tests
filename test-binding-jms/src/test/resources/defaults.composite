@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           xmlns:f3-binding="urn:fabric3.org:binding"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           name="JMSDefaultsComposite" autowire="false">
+    <!-- test configuration defaults, i.e. minimal JMS configuration -->
+
+    <component name="DefaultTest">
+        <f3-impl:junit class="org.fabric3.tests.binding.harness.callback.AsyncCallbackTest"/>
+        <reference name="client" target="DefaultClient/AsyncClientService"/>
+    </component>
+
+    <component name="DefaultClient">
+        <implementation.java class="org.fabric3.tests.binding.harness.callback.AsyncClientServiceImpl"/>
+        <reference name="service">
+            <binding.jms>
+                <destination name="defaultClientQueue"/>
+                <response>
+                    <destination name="defaultClientResponseQueue"/>
+                </response>
+            </binding.jms>
+            <callback>
+                <binding.jms>
+                    <destination name="defaultClientCallbackQueue"/>
+                </binding.jms>
+            </callback>
+        </reference>
+    </component>
+
+    <component name="DefaultForwardService">
+        <implementation.java class="org.fabric3.tests.binding.harness.callback.AsyncForwardServiceImpl"/>
+        <service name="AsyncForwardService">
+            <binding.jms>
+                <destination name="defaultClientQueue"/>
+                <response>
+                    <destination name="defaultClientResponseQueue"/>
+                </response>
+            </binding.jms>
+            <callback>
+                <binding.jms>
+                    <destination name="defaultClientCallbackQueue"/>
+                </binding.jms>
+            </callback>
+        </service>
+    </component>
+
+
+</composite>

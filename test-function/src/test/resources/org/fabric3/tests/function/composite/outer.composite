@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fabric3
+Copyright (C) 2009 Metaform Systems
+
+Fabric3 is licensed under modified terms of the GNU General
+Public License. See the accompanying license file for details.
+
+
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3-binding="urn:fabric3.org:binding"
+           name="OuterComposite">
+
+    <component name="Inner">
+        <implementation.composite name="InnerComposite" scdlLocation="inner.composite"/>
+        <property name="ids">
+            <one xmlns="">innerOne</one>
+        </property>
+    </component>
+
+    <component name="Inner2">
+        <implementation.composite name="InnerComposite2" scdlLocation="inner2.composite"/>
+        <service name="SourceService">
+            <f3-binding:binding.test uri="SourceService"/>
+        </service>
+        <reference name="promoted" target="target"/>
+    </component>
+
+    <component name="InnerCompositeTest">
+        <f3-impl:junit class="org.fabric3.tests.function.composite.InnerCompositeTest"/>
+        <reference name="inner" target="Inner"/>
+        <reference name="innerSpecified" target="Inner2/two"/>
+        <reference name="boundSource">
+            <f3-binding:binding.test uri="SourceService"/>
+        </reference>
+    </component>
+
+    <component name="target">
+        <implementation.java class="org.fabric3.tests.function.common.TargetImpl"/>
+    </component>
+
+    <component name="InnerIncluder">
+        <implementation.composite name="InnerIncluderComposite" scdlLocation="include/innerIncluder.composite"/>
+    </component>
+
+    <component name="Autowire">
+        <implementation.composite name="AutowireTestComposite" scdlLocation="autowire.composite"/>
+    </component>
+
+</composite>

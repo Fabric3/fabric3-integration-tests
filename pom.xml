@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ See the NOTICE file distributed with this work for information
+ regarding copyright ownership.  This file is licensed
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.codehaus.fabric3</groupId>
+        <artifactId>fabric</artifactId>
+        <version>8</version>
+    </parent>
+    <groupId>org.codehaus.fabric3.tests</groupId>
+    <artifactId>ci</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Fabric3 Continuous Integration Tests</name>
+    <description>POM to run the integration tests depending on available resources.</description>
+
+    <build>
+        <defaultGoal>verify</defaultGoal>
+    </build>
+
+    <properties>
+        <sca.api.version>0.5</sca.api.version>
+        <fabric3.version>1.4-SNAPSHOT</fabric3.version>
+        <jaxb.api.version>2.2-promoted-b50</jaxb.api.version>
+        <web.services.version>2.0-b24</web.services.version>
+    </properties>
+    
+    <profiles>
+        <!-- Default profile containing modules that should always be run -->
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <modules>
+                <module>test-binding-harness</module>
+                <module>test-function</module>
+                <module>test-user-resource</module>
+                <module>test-resource</module>
+                <module>test-policy</module>
+                <module>test-jpa-hibernate</module>
+                <module>test-jpa-core</module>
+                <module>test-jpa-implementation</module>
+                <module>test-rs</module>
+                <module>test-timer-quartz</module>
+                <module>test-timer-implementation</module>
+                <module>test-mock</module>
+                <module>test-binding-ftp</module>
+                <module>test-runtime-jetty</module>
+                <module>test-runtime-tomcat</module>
+                <module>test-binding-jms</module>
+                <module>test-binding-net</module> 
+                <module>test-implementation-wsdl</module>
+                <module>test-wsdl</module> 
+            </modules>
+        </profile>
+        <profile>
+            <!-- profile without Metro and JMS -->
+            <id>bamboo</id>
+            <modules>
+                <module>test-binding-harness</module>
+                <module>test-function</module>
+                <module>test-user-resource</module>
+                <module>test-resource</module>
+                <module>test-policy</module>
+                <module>test-jpa-hibernate</module>
+                <module>test-jpa-core</module>
+                <module>test-jpa-implementation</module>
+                <module>test-rs</module>
+                <module>test-timer-quartz</module>
+                <module>test-timer-implementation</module>
+                <module>test-mock</module>
+                <module>test-binding-ftp</module>
+                <module>test-runtime-jetty</module>
+                <module>test-runtime-tomcat</module>
+                <module>test-binding-net</module> 
+                <module>test-implementation-wsdl</module>
+                <module>test-wsdl</module> 
+                <module>tests-standalone</module>
+            </modules>
+        </profile>
+    </profiles>
+</project>

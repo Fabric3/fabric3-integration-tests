@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           xmlns:f3-binding="urn:fabric3.org:binding"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           name="JMSScopeComposite" autowire="false">
+
+    <component name="BindingScopeTestComponent">
+        <f3-impl:junit class="org.fabric3.tests.binding.harness.scope.ScopeTest"/>
+        <reference name="compositeService" target="CompositeService">
+            <binding.jms>
+                <destination name="compositeServiceQueue"/>
+                <response>
+                    <destination name="compositeServiceResponseQueue"/>
+                </response>
+            </binding.jms>
+        </reference>
+    </component>
+
+    <component name="CompositeService">
+        <implementation.java class="org.fabric3.tests.binding.harness.scope.CompositeServiceImpl"/>
+        <service name="CompositeService">
+            <binding.jms>
+                <destination name="compositeServiceQueue"/>
+                <response>
+                    <destination name="compositeServiceResponseQueue"/>
+                </response>
+            </binding.jms>
+        </service>
+    </component>
+
+
+</composite>

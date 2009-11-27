@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3-policy="urn:fabric3.org:policy"
+           name="RestTest">
+
+    <component name="RestTest">
+        <f3-impl:junit class="org.fabric3.tests.binding.metro.RestTest"/>
+        <reference name="searchService">
+            <binding.ws uri="http://localhost:8900/searchBooks" requires="f3-policy:protocolBinding.rest"/>
+        </reference>
+    </component>
+
+    <component name="BookStoreService">
+        <implementation.java class="org.fabric3.tests.binding.metro.bookstore.DefaultSearchService"/>
+        <service name="SearchService">
+            <binding.ws uri="/searchBooks" requires="f3-policy:protocolBinding.rest"/>
+        </service>
+    </component>
+
+</composite>

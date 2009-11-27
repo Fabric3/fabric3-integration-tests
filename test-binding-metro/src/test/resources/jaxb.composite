@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
+           name="JaxbTest">
+
+    <component name="JaxbTest">
+        <f3-impl:junit class="org.fabric3.tests.binding.metro.JaxbTest"/>
+        <reference name="weatherPortType">
+            <binding.ws wsdlElement="urn:weather#wsdl.port(WeatherService/WeatherPort)"/>
+        </reference>
+    </component>
+
+    <component name="WeatherService">
+        <implementation.java class="org.fabric3.tests.binding.metro.weather.WeatherPortTypeImpl"/>
+        <service name="WeatherPortType">
+            <binding.ws wsdlElement="urn:weather#wsdl.port(WeatherService/WeatherPort)"/>
+        </service>
+    </component>
+
+</composite>

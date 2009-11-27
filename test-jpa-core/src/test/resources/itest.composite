@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           name="JpaTestComposite">
+
+    <component name="org.fabric3.jpa.provider.FirstPersistenceUnitTest" requires="sca:managedTransaction">
+        <f3-impl:junit class="org.fabric3.jpa.provider.FirstPersistenceUnitTest"/>
+    </component>
+
+    <component name="org.fabric3.jpa.provider.SecondPersistenceUnitTest">
+        <f3-impl:junit class="org.fabric3.jpa.provider.SecondPersistenceUnitTest"/>
+    </component>
+
+    <component name="org.fabric3.jpa.provider.ThirdPersistenceUnitTest">
+        <f3-impl:junit class="org.fabric3.jpa.provider.ThirdPersistenceUnitTest"/>
+    </component>
+
+</composite>

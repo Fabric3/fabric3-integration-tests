@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="HelloWorld" targetNamespace="urn:helloworld"
+	xmlns:tns="urn:helloworld" xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+	<types>
+		<xs:schema xmlns:tns="urn:helloworld"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="urn:helloworld">
+
+            <xs:simpleType name="DerivedString">
+               <xs:restriction base="xsd:string">
+                  <xs:enumeration value="Yin"/>
+                  <xs:enumeration value="Yang"/>
+               </xs:restriction>
+            </xs:simpleType>
+
+		</xs:schema>
+	</types>
+
+	<message name="sayHello">
+		<part name="name" type="tns:DerivedString" />
+	</message>
+	<message name="sayHelloResponse">
+		<part name="result" type="xsd:string" />
+	</message>
+
+	<portType name="HelloWorldPortType">
+		<operation name="sayHello">
+			<input message="tns:sayHello" />
+			<output message="tns:sayHelloResponse" />
+		</operation>
+	</portType>
+
+	<binding xmlns:ns1="urn:helloworld"
+		name="HelloWorldBinding" type="ns1:HelloWorldPortType">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="sayHello">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+
+	<service name="HelloWorldService">
+		<port name="HelloBPELPort" binding="tns:HelloWorldBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+
+</definitions>

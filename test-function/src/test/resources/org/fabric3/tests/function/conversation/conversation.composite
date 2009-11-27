@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fabric3
+Copyright (C) 2009 Metaform Systems
+
+Fabric3 is licensed under modified terms of the GNU General
+Public License. See the accompanying license file for details.
+
+
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3-policy="urn:fabric3.org:policy"
+           name="ConversationComposite">
+
+    <component name="ConversationTest">
+        <f3-impl:junit class="org.fabric3.tests.function.conversation.ConversationTest"/>
+        <reference name="service" target="ConversationalServiceImpl"/>
+        <reference name="subService" target="ConversationalServiceImpl"/>
+        <reference name="compositeService" target="CompositeServiceImpl"/>
+        <reference name="compositeSubService" target="CompositeServiceImpl"/>
+        <!--<reference name="maxAgeService" target="MaxAgeConversationalService"/>-->
+    </component>
+
+    <component name="ConversationPropagationTest">
+        <f3-impl:junit class="org.fabric3.tests.function.conversation.ConversationPropagationTest"/>
+        <reference name="service" target="ClientToIntermediary"/>
+        <reference name="compositeService" target="ConversationPropagationComponent"/>
+    </component>
+
+    <component name="ConversationalServiceImpl">
+        <implementation.java class="org.fabric3.tests.function.conversation.ConversationalServiceImpl"/>
+    </component>
+
+    <!--<component name="MaxAgeConversationalService">-->
+    <!--<implementation.java class="org.fabric3.tests.function.conversation.MaxAgeConversationalServiceImpl"/>-->
+    <!--</component>-->
+
+    <component name="CompositeServiceImpl">
+        <implementation.java class="org.fabric3.tests.function.conversation.CompositeServiceImpl"/>
+    </component>
+
+    <component name="ClientToIntermediary">
+        <implementation.java class="org.fabric3.tests.function.conversation.ClientToIntermediaryImpl"/>
+        <reference name="service1" target="IntermediaryService1"/>
+        <reference name="service2" target="IntermediaryService2"/>
+    </component>
+
+    <component name="IntermediaryService1">
+        <implementation.java class="org.fabric3.tests.function.conversation.IntermediaryServiceImpl"/>
+        <reference name="conversationalService" target="ConversationalServiceImpl"/>
+    </component>
+
+    <component name="IntermediaryService2" requires="f3-policy:propagatesConversation">
+        <implementation.java class="org.fabric3.tests.function.conversation.IntermediaryServiceImpl"/>
+        <reference name="conversationalService" target="ConversationalServiceImpl"/>
+    </component>
+
+    <component name="ConversationPropagationComponent">
+        <implementation.composite name="ConversationPropagationComposite"/>
+    </component>
+
+</composite>

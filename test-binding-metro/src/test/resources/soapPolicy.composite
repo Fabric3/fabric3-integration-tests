@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
+           xmlns:f3-policy="urn:fabric3.org:policy"
+           name="SOAPPolicyTest">
+
+    <component name="SOAPTest">
+        <f3-impl:junit class="org.fabric3.tests.binding.metro.SoapTest"/>
+        <reference name="soap11Service">
+            <binding.ws uri="http://localhost:8900/soap11Service" requires="SOAP.1_1"/>
+        </reference>
+        <reference name="soap12Service">
+            <binding.ws uri="http://localhost:8900/soap12Service" requires="f3-policy:protocolBinding.xsoap12"/>
+        </reference>
+    </component>
+
+    <component name="SOAP11Service">
+        <implementation.java class="org.fabric3.tests.binding.metro.soap.Soap11ServiceImpl"/>
+        <service name="Soap11Service">
+            <binding.ws uri="/soap11Service" requires="SOAP.1_1"/>
+        </service>
+    </component>
+
+    <component name="SOAP12Service">
+        <implementation.java class="org.fabric3.tests.binding.metro.soap.Soap12ServiceImpl"/>
+        <service name="Soap12Service">
+            <binding.ws uri="/soap12Service" requires="f3-policy:protocolBinding.xsoap12"/>
+        </service>
+    </component>
+
+</composite>

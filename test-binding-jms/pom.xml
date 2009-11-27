@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+         <groupId>org.codehaus.fabric3.tests</groupId>
+         <artifactId>ci</artifactId>
+         <version>0.1-SNAPSHOT</version>
+     </parent>
+    <groupId>org.codehaus.fabric3.tests</groupId>
+    <artifactId>test-binding-jms</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <name>Fabric3 JMS Binding Test</name>
+    <packaging>jar</packaging>
+    <description>Fabric3 JMS Binding Test.</description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api-osgi</artifactId>
+            <version>${jaxb.api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.fabric3.spec</groupId>
+            <artifactId>sca-api-r1.0</artifactId>
+            <version>${sca.api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.fabric3.tests</groupId>
+            <artifactId>test-binding-harness</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <defaultGoal>verify</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.fabric3</groupId>
+                <artifactId>fabric3-itest-plugin</artifactId>
+                <version>${fabric3.version}</version>
+                <configuration>
+                    <runtimeVersion>${fabric3.version}</runtimeVersion>
+                    <profiles>
+                        <profile>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>profile-jms</artifactId>
+                            <version>${fabric3.version}</version>
+                        </profile>
+                    </profiles>
+                    <systemConfig>
+                        <![CDATA[
+                               <config>
+                                  <thread.pool size="100"/>
+                                  <jms>
+                                      <connection.factories>
+                                        <connection.factory name="xaDefault" broker.url="vm://broker" type="xa"/>
+                                        <connection.factory name="default" broker.url="vm://broker" type="local"/>
+                                      </connection.factories>
+                                  </jms>
+                               </config>
+                               ]]>
+                    </systemConfig>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>activemq-data</directory>
+                            <includes>
+                                <include>**/**</include>
+                            </includes>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
