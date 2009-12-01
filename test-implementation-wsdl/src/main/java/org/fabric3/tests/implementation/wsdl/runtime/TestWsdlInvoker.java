@@ -61,10 +61,11 @@ public class TestWsdlInvoker implements Interceptor {
         } else {
             if (body.getClass().isArray()) {
                 Object[] bodyArray = (Object[]) body;
-                if (bodyArray.length != 1) {
-                    throw new AssertionError("Illegal parameter length: " + bodyArray.length);
+                if (bodyArray.length == 1) {
+                    returnValue = component.invoke(bodyArray[0]);
+                } else {
+                    returnValue = component.invoke(bodyArray);
                 }
-                returnValue = component.invoke(bodyArray[0]);
             } else if (body instanceof Node) {
                 returnValue = component.invoke(body);
             } else {
