@@ -16,6 +16,7 @@
            xmlns:seit="urn:helloworld:seit"
            xmlns:sct="urn:helloworld:sct"
            xmlns:sest="urn:helloworld:sest"
+           xmlns:sdt="urn:helloworld:sdt"
            xmlns:f3-binding="urn:fabric3.org:binding"
            targetNamespace="org.codehaus.fabric3"
            name="Java2WsdlTestComposite">
@@ -51,6 +52,11 @@
         <reference name="portType" target="HelloWorldSingleElementSimpleTypeStub"/>
     </component>
 
+    <component name="SingleDerivedTypeTestClient">
+        <f3-impl:junit class="org.fabric3.tests.wsdl.matching.singlederivedtype.SingleDerivedTypeTestClient"/>
+        <reference name="portType" target="HelloWorldSingleDerivedTypeStub"/>
+    </component>
+
     <component name="AddNumbersMultiComplextTypeStub">
         <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.multicomplextype.AddNumbersMultiComplextTypeStub">
             <service contract="mct:AddNumbersPortType"/>
@@ -84,6 +90,12 @@
     <component name="HelloWorldSingleElementSimpleTypeStub">
         <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singleelementsimpletype.HelloWorldSingleElementSimpleTypeStub">
             <service contract="sest:HelloWorldPortType"/>
+        </f3-impl:implementation.wsdl>
+    </component>
+
+    <component name="HelloWorldSingleDerivedTypeStub">
+        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singlederivedtype.HelloWorldSingleDerivedTypeStub">
+            <service contract="sdt:HelloWorldPortType"/>
         </f3-impl:implementation.wsdl>
     </component>
 
