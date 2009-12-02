@@ -72,7 +72,6 @@
             </modules>
         </profile>
         <profile>
-            <!-- profile without Metro and JMS -->
             <id>bamboo</id>
             <modules>
                 <module>test-binding-harness</module>
@@ -93,7 +92,9 @@
                 <module>test-binding-net</module> 
                 <module>test-implementation-wsdl</module>
                 <module>test-wsdl</module> 
-                <module>tests-standalone</module>
+                <module>test-binding-jms</module> 
+               <!-- <module>test-binding-metro</module> -->
+               <!-- <module>tests-standalone</module> -->
             </modules>
         </profile>
     </profiles>
