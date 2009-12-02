@@ -21,7 +21,7 @@
            xmlns:sst="urn:helloworld:sst"
            xmlns:f3-binding="urn:fabric3.org:binding"
            targetNamespace="org.codehaus.fabric3"
-           name="Java2WsdlTestComposite">
+           name="MatchingWsdlTestComposite">
 
     <component name="MultiComplexTypeTestClient">
         <f3-impl:junit class="org.fabric3.tests.wsdl.matching.multicomplextype.MultiComplexTypeTestClient"/>

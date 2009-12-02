@@ -13,6 +13,6 @@
            name="WsdlTestComposite">
 
     <include name="ns:BasicTestComposite"/>
-    <include name="ns:Java2WsdlTestComposite"/>
+    <include name="ns:MatchingWsdlTestComposite"/>
 
 </composite>
