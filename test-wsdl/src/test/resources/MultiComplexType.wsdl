@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<definitions name="AddNumbers" targetNamespace="urn:addnumbers"
-	xmlns:tns="urn:addnumbers" xmlns="http://schemas.xmlsoap.org/wsdl/"
+<definitions name="AddNumbers" targetNamespace="urn:addnumbers:mct"
+	xmlns:tns="urn:addnumbers:mct" xmlns="http://schemas.xmlsoap.org/wsdl/"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
 
 	<types>
-		<xs:schema xmlns:tns="urn:addnumbers"
+		<xs:schema xmlns:tns="urn:addnumbers:mct"
 			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
-			targetNamespace="urn:addnumbers">
+			targetNamespace="urn:addnumbers:mct">
 
 			<xs:complexType name="addNumbersType">
 				<xs:sequence>
@@ -34,7 +34,7 @@
 		</operation>
 	</portType>
 
-	<binding xmlns:ns1="urn:addnumbers"
+	<binding xmlns:ns1="urn:addnumbers:mct"
 		name="AddNumbersBinding" type="ns1:AddNumbersPortType">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
 			style="rpc" />

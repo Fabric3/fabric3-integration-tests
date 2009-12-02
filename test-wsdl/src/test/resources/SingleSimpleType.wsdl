@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<definitions name="HelloWorld" targetNamespace="urn:helloworld"
-	xmlns:tns="urn:helloworld" xmlns="http://schemas.xmlsoap.org/wsdl/"
+<definitions name="HelloWorld" targetNamespace="urn:helloworld:sst"
+	xmlns:tns="urn:helloworld:sst" xmlns="http://schemas.xmlsoap.org/wsdl/"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
 
@@ -19,7 +19,7 @@
 		</operation>
 	</portType>
 
-	<binding xmlns:ns1="urn:helloworld"
+	<binding xmlns:ns1="urn:helloworld:sst"
 		name="HelloWorldBinding" type="ns1:HelloWorldPortType">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
 			style="rpc" />

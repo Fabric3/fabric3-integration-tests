@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<definitions name="HelloWorld" targetNamespace="urn:helloworld"
-	xmlns:tns="urn:helloworld" xmlns="http://schemas.xmlsoap.org/wsdl/"
+<definitions name="HelloWorld" targetNamespace="urn:helloworld:sct"
+	xmlns:tns="urn:helloworld:sct" xmlns="http://schemas.xmlsoap.org/wsdl/"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
 
 	<types>
-		<xs:schema xmlns:tns="urn:helloworld"
+		<xs:schema xmlns:tns="urn:helloworld:sct"
 			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
-			targetNamespace="urn:helloworld">
+			targetNamespace="urn:helloworld:sct">
 
 			<xs:complexType name="sayHelloRequest">
 				<xs:sequence>
@@ -39,7 +39,7 @@
 		</operation>
 	</portType>
 
-	<binding xmlns:ns1="urn:helloworld"
+	<binding xmlns:ns1="urn:helloworld:sct"
 		name="HelloWorldBinding" type="ns1:HelloWorldPortType">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
 			style="rpc" />
