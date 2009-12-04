@@ -42,12 +42,9 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 import java.util.Set;
-import javax.management.InstanceNotFoundException;
-import javax.management.MBeanException;
+import javax.management.JMException;
 import javax.management.MBeanServerConnection;
-import javax.management.MalformedObjectNameException;
 import javax.management.ObjectName;
-import javax.management.ReflectionException;
 import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
@@ -108,8 +105,7 @@ public class DeployUndeploy extends TestCase {
     }
 
 
-    private String invokeTestService()
-            throws IOException, ReflectionException, InstanceNotFoundException, MBeanException, MalformedObjectNameException {
+    private String invokeTestService() throws IOException, JMException {
         JMXServiceURL url = new JMXServiceURL(DOMAIN_ADDRESS);
         JMXConnector jmxc = JMXConnectorFactory.connect(url, null);
         MBeanServerConnection conn = jmxc.getMBeanServerConnection();
