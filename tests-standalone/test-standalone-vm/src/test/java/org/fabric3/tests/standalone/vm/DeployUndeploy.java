@@ -38,9 +38,19 @@
 package org.fabric3.tests.standalone.vm;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 import java.util.Set;
+import javax.management.InstanceNotFoundException;
+import javax.management.MBeanException;
+import javax.management.MBeanServerConnection;
+import javax.management.MalformedObjectNameException;
+import javax.management.ObjectName;
+import javax.management.ReflectionException;
+import javax.management.remote.JMXConnector;
+import javax.management.remote.JMXConnectorFactory;
+import javax.management.remote.JMXServiceURL;
 
 import junit.framework.TestCase;
 import org.junit.Assert;
@@ -60,6 +70,8 @@ public class DeployUndeploy extends TestCase {
             + "test-standalone-app" + File.separator
             + "target" + File.separator
             + "test-standalone-app-0.1-SNAPSHOT.jar");
+
+    private static String DOMAIN_ADDRESS = "service:jmx:rmi:///jndi/rmi://localhost:1099/server";
 
 
     public void testDeployUndeploy() throws Exception {
@@ -87,6 +99,7 @@ public class DeployUndeploy extends TestCase {
             domain.store(url, uri);
             domain.install(uri);
             domain.deploy(uri);
+            assertEquals("test", invokeTestService());
             domain.undeploy(uri);
             domain.uninstall(uri);
             domain.remove(uri);
@@ -94,6 +107,15 @@ public class DeployUndeploy extends TestCase {
         domain.disconnect();
     }
 
+
+    private String invokeTestService()
+            throws IOException, ReflectionException, InstanceNotFoundException, MBeanException, MalformedObjectNameException {
+        JMXServiceURL url = new JMXServiceURL(DOMAIN_ADDRESS);
+        JMXConnector jmxc = JMXConnectorFactory.connect(url, null);
+        MBeanServerConnection conn = jmxc.getMBeanServerConnection();
+        ObjectName oName = new ObjectName("fabric3:SubDomain=domain, type=component, name=TestService");
+        return (String) conn.invoke(oName, "invoke", new Object[]{}, new String[]{});
+    }
 
 
 }

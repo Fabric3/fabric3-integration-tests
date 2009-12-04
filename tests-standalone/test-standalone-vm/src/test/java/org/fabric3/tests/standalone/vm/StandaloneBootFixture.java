@@ -51,7 +51,7 @@ import org.junit.Assert;
  * @version $Rev$ $Date$
  */
 public class StandaloneBootFixture extends TestSetup {
-
+    private static final String IDEA_DEBUG ="-Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y -Xmx512M -XX:MaxPermSize=512M";
     private static final File RUNTIME_DIR = new File(".." + File.separator
             + "test-standalone-setup" + File.separator
             + "target" + File.separator
@@ -64,6 +64,7 @@ public class StandaloneBootFixture extends TestSetup {
     protected void setUp() throws Exception {
         Runtime.getRuntime().exec("java -jar shutdown.jar", new String[0], RUNTIME_DIR);
         Process process = Runtime.getRuntime().exec("java -jar server.jar", new String[0], RUNTIME_DIR);
+//        Process process = Runtime.getRuntime().exec("java "+IDEA_DEBUG +" -jar server.jar", new String[0], RUNTIME_DIR);
         InputStream stream = process.getErrorStream();
         ByteArrayOutputStream os = new ByteArrayOutputStream();
         while (stream.available() == 0) {
