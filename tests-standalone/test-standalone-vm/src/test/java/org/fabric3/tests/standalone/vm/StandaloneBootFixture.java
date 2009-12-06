@@ -43,7 +43,6 @@ import java.io.InputStream;
 
 import junit.extensions.TestSetup;
 import junit.framework.Test;
-import org.junit.Assert;
 
 /**
  * A test fixture that boots the F3 server once for a suite of tests.
@@ -51,7 +50,7 @@ import org.junit.Assert;
  * @version $Rev$ $Date$
  */
 public class StandaloneBootFixture extends TestSetup {
-    private static final String IDEA_DEBUG ="-Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y -Xmx512M -XX:MaxPermSize=512M";
+    private static final String IDEA_DEBUG = "-Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y -Xmx512M -XX:MaxPermSize=512M";
     private static final File RUNTIME_DIR = new File(".." + File.separator
             + "test-standalone-setup" + File.separator
             + "target" + File.separator
@@ -70,12 +69,21 @@ public class StandaloneBootFixture extends TestSetup {
         while (stream.available() == 0) {
             Thread.sleep(100);
         }
-        byte[] b = new byte[stream.available()];
-        stream.read(b);
-        os.write(b);
-        String output = new String(os.toByteArray());
-        System.out.println(output);
-        Assert.assertFalse(output.indexOf("SEVERE") >= 0);
+        int i;
+        while ((i = stream.read()) != -1) {
+            os.write(i);
+            String output = new String(os.toByteArray());
+            if (output.indexOf("SEVERE") >= 0 && stream.available() == 0) {
+                output = new String(os.toByteArray());
+                System.out.println(output);
+                throw new AssertionError("Boot exception reported");
+            }
+            if (output.indexOf("Fabric3 ready [") != -1) {
+                System.out.println("Runtime booted");
+                break;
+
+            }
+        }
     }
 
     protected void tearDown() throws Exception {

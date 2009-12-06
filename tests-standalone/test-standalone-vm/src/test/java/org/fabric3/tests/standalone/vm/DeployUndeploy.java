@@ -68,7 +68,7 @@ public class DeployUndeploy extends TestCase {
             + "target" + File.separator
             + "test-standalone-app-0.1-SNAPSHOT.jar");
 
-    private static String DOMAIN_ADDRESS = "service:jmx:rmi:///jndi/rmi://localhost:1099/server";
+    private static String DOMAIN_ADDRESS = "service:jmx:rmi:///jndi/rmi://localhost:1199/server";
 
 
     public void testDeployUndeploy() throws Exception {
@@ -77,7 +77,9 @@ public class DeployUndeploy extends TestCase {
         for (int i = 0; i < 50; i++) {   // wait 5 seconds
             Thread.sleep(100);
             try {
-                domain.connect();
+                if (!domain.isConnected()) {
+                    domain.connect();
+                }
                 Set<ContributionInfo> infos = domain.stat();
                 Assert.assertFalse(infos.isEmpty());
                 exception = null;
@@ -90,7 +92,7 @@ public class DeployUndeploy extends TestCase {
             throw exception;
         }
         URL url = APP_DIR.toURI().toURL();
-        URI uri = URI.create("test-standalone-app-0.1-SNAPSHOT.jar");
+        URI uri = URI.create("test-standalone-app.jar");
         // deploy and undeploy twice
         for (int i = 0; i < 2; i++) {   // wait 5 seconds
             domain.store(url, uri);
