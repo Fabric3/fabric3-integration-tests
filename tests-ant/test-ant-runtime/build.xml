@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<project name="AntTest" default="main" basedir=".">
+
+    <taskdef name="fabric3" classname="org.fabric3.runtime.ant.task.Fabric3Task">
+        <classpath>
+            <!-- image created by the test-ant-setup module -->
+            <fileset dir="../test-ant-setup/target/image/lib">
+                <include name="*.jar"/>
+            </fileset>
+        </classpath>
+    </taskdef>
+
+    <path id="compile.classpath">
+        <path path="${test-classpath}"/>
+    </path>
+
+     <target name="clean">
+        <delete dir="target/build/classes"/>
+    </target>
+    <target name="compile">
+        <mkdir dir="target/build/classes"/>
+        <javac srcdir="src/main/java" destdir="target/build/classes" optimize="true">
+            <classpath refid="compile.classpath"/>
+        </javac>
+    </target>
+
+    <target name="compile-test" depends="compile">
+        <mkdir dir="target/build/test-classes"/>
+        <javac srcdir="src/test/java" destdir="target/build/test-classes" optimize="true">
+            <classpath refid="compile.classpath"/>
+            <classpath path="target/build/classes"/>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="target/build/classes/META-INF"/>
+        <copy todir="target/build/classes/META-INF">
+            <fileset dir="src/main/resources/META-INF"/>
+        </copy>
+        <jar jarfile="target/build/ant.test.jar">
+            <fileset dir="target/build/classes"/>
+        </jar>
+    </target>
+
+    <target name="jar-test" depends="compile-test">
+        <mkdir dir="target/build/test-classes/META-INF"/>
+        <copy todir="target/build/test-classes/META-INF">
+            <fileset dir="src/main/resources/META-INF" includes="*.composite"/>
+            <fileset dir="src/test/resources/META-INF"/>
+        </copy>
+        <jar jarfile="target/build/ant.junit.test.jar">
+            <fileset dir="target/build/classes"/>
+            <fileset dir="target/build/test-classes"/>
+        </jar>
+    </target>
+
+    <target name="main" depends="jar-test">
+
+        <fabric3>
+            <contributionSet dir="target/build">
+                <include name="**/*.jar"/>
+            </contributionSet>
+        </fabric3>
+    </target>
+
+</project>

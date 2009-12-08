@@ -1,0 +1,13 @@
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           targetNamespace="urn:fabric3.org:ant:test"
+           name="AntTestJUnitComposite"
+           autowire="true">
+
+    <component name="JUnitTest">
+        <f3-impl:junit class="org.fabric3.anttest.JUnitTest"/>
+    </component>
+
+
+</composite>
