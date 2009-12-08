@@ -94,6 +94,7 @@
                 <module>test-wsdl</module> 
                 <module>test-binding-jms</module> 
                <!-- <module>test-binding-metro</module> -->
+                <module>tests-ant</module>
                 <module>tests-standalone</module>
             </modules>
         </profile>
