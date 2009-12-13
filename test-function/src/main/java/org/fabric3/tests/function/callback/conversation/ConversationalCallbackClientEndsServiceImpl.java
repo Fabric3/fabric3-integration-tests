@@ -44,7 +44,7 @@ import org.oasisopen.sca.annotation.Service;
 /**
  * @version $Rev$ $Date$
  */
-@Service(interfaces = {ConversationalCallbackClientEndsService.class, CallbackEndsService.class})
+@Service(names = {ConversationalCallbackClientEndsService.class, CallbackEndsService.class})
 @Scope("CONVERSATION")
 public class ConversationalCallbackClientEndsServiceImpl implements ConversationalCallbackClientEndsService, CallbackEndsService {
 

@@ -46,7 +46,7 @@ import org.fabric3.tests.function.callback.common.CallbackData;
 /**
  * @version $Rev$ $Date$
  */
-@Service(interfaces = {ConversationalClientService.class, CallbackService.class})
+@Service(names = {ConversationalClientService.class, CallbackService.class})
 @Scope("CONVERSATION")
 public class ConversationalClientServiceImpl implements ConversationalClientService, CallbackService {
     private int count;

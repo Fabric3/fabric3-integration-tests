@@ -48,7 +48,7 @@ import org.fabric3.tests.function.callback.common.CallbackData;
 /**
  * @version $Rev$ $Date$
  */
-@Service(interfaces = {ForwardService.class, ClientService.class, CallbackService.class})
+@Service(names = {ForwardService.class, ClientService.class, CallbackService.class})
 public class CallbackClient implements ForwardService, CallbackService, ClientService {
     @Property(required = false)
     protected boolean fail;

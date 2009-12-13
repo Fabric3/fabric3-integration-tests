@@ -46,7 +46,7 @@ import org.fabric3.tests.function.callback.common.CallbackData;
 /**
  * @version $Rev$ $Date$
  */
-@Service(interfaces = {ClientService.class, CallbackService.class})
+@Service(names = {ClientService.class, CallbackService.class})
 public class ClientServiceImpl implements ClientService, CallbackService {
 
     @Reference

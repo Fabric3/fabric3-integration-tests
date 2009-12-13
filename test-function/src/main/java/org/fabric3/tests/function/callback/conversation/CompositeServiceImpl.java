@@ -46,7 +46,7 @@ import org.oasisopen.sca.annotation.Service;
  * @version $Rev$ $Date$
  */
 @Scope("COMPOSITE")
-@Service(interfaces = {CompositeService.class, CallbackService.class})
+@Service(names = {CompositeService.class, CallbackService.class})
 public class CompositeServiceImpl implements CompositeService, CallbackService {
     @Callback
     protected CallbackService callbackService;

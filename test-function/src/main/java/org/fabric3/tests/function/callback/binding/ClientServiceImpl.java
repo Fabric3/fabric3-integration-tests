@@ -37,7 +37,6 @@
 */
 package org.fabric3.tests.function.callback.binding;
 
-import org.oasisopen.sca.annotation.OneWay;
 import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Service;
 
@@ -46,7 +45,7 @@ import org.fabric3.tests.function.callback.common.CallbackData;
 /**
  * @version $Rev$ $Date$
  */
-@Service(interfaces = {ClientService.class, CallbackService.class})
+@Service(names = {ClientService.class, CallbackService.class})
 public class ClientServiceImpl implements ClientService, CallbackService {
 
     @Reference
