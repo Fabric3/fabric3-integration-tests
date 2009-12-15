@@ -21,8 +21,8 @@ Public License. See the accompanying license file for details.
             <f3-binding:binding.test uri="HelloService"/>
         </reference>
         <reference name="listOfReferences">
-            <f3-binding:binding.test uri="HelloService"/>
-            <f3-binding:binding.test uri="HelloService"/>
+            <f3-binding:binding.test name="one" uri="HelloService"/>
+            <f3-binding:binding.test name="two" uri="HelloService"/>
         </reference>
     </component>
 
