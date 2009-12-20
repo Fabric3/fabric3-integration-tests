@@ -20,28 +20,29 @@ Public License. See the accompanying license file for details.
         <reference name="testService" target="TestComponent"/>
     </component>
 
-    <component name="SingeReferenceTest">
-        <f3-impl:junit class="org.fabric3.tests.function.wiring.SingleReferenceTest"/>
-    </component>
-
-    <reference name="promotedDefaultReference" promote="SingeReferenceTest">
-        <f3-binding:binding.test uri="WiringCompositeHelloService"/>
-    </reference>
+    <!-- JFM replace this test -->
+    <!--<component name="SingeReferenceTest">-->
+        <!--<f3-impl:junit class="org.fabric3.tests.function.wiring.SingleReferenceTest"/>-->
+    <!--</component>-->
+    <!---->
+    <!--<reference name="promotedDefaultReference" promote="SingeReferenceTest">-->
+        <!--<f3-binding:binding.test uri="WiringCompositeHelloService"/>-->
+    <!--</reference>-->
 
     <component name="TestComponent">
         <implementation.java class="org.fabric3.tests.function.wiring.TestComponent"/>
         <reference name="targetConstructor" target="HelloService"/>
         <reference name="service" target="HelloService"/>
-        <reference name="promotedReference"/>
+        <!--<reference name="promotedReference"/>-->
     </component>
 
     <component name="HelloService">
         <implementation.java class="org.fabric3.tests.function.common.HelloServiceImpl"/>
     </component>
 
-    <reference name="promotedReference" promote="TestComponent/promotedReference TestComponent/nonConfiguredPromotedReference">
-        <f3-binding:binding.test uri="WiringCompositeHelloService"/>
-    </reference>
+    <!--<reference name="promotedReference" promote="TestComponent/promotedReference TestComponent/nonConfiguredPromotedReference">-->
+        <!--<f3-binding:binding.test uri="WiringCompositeHelloService"/>-->
+    <!--</reference>-->
 
     <wire source="TestComponent/wireElementReference" target="HelloService"/>
 

@@ -17,26 +17,26 @@ Public License. See the accompanying license file for details.
 
     <component name="PromotionTestComponent">
         <f3-impl:junit class="org.fabric3.tests.function.binding.PromotionTest"/>
+        <reference name="helloService">
+            <f3-binding:binding.test uri="PromotedHelloService"/>
+        </reference>
     </component>
 
-    <reference name="PromotedReference" promote="PromotionTestComponent/helloService">
-        <f3-binding:binding.test uri="PromotedHelloService"/>
-    </reference>
 
     <!-- test using an explicit service -->
-    <service name="HelloService" promote="HelloComponent/HelloService">
-        <f3-binding:binding.test uri="PromotedHelloService"/>
-        <interface.java interface="org.fabric3.tests.function.common.Helloservice2"/>
-    </service>
 
     <!-- test using the default service -->
-    <service name="HelloServiceNotSepecified" promote="HelloComponent">
-        <f3-binding:binding.test uri="PromotedHelloServiceNotSpecified"/>
-        <interface.java interface="org.fabric3.tests.function.common.Helloservice2"/>
-    </service>
+    <!--<service name="HelloServiceNotSepecified" promote="HelloComponent">-->
+        <!--<f3-binding:binding.test uri="PromotedHelloServiceNotSpecified"/>-->
+        <!--<interface.java interface="org.fabric3.tests.function.common.Helloservice2"/>-->
+    <!--</service>-->
 
     <component name="HelloComponent">
         <implementation.java class="org.fabric3.tests.function.common.HelloServiceImpl"/>
+        <service name="HelloService">
+            <f3-binding:binding.test uri="PromotedHelloService"/>
+            <interface.java interface="org.fabric3.tests.function.common.Helloservice2"/>
+        </service>
     </component>
 
 </composite>

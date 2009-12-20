@@ -46,9 +46,9 @@ public interface TestService {
 
     HelloService getService();
 
-    HelloService getPromotedReference();
+//    HelloService getPromotedReference();
 
-    HelloService getNonConfiguredPromotedReference();
+//    HelloService getNonConfiguredPromotedReference();
 
     HelloService getConstructorService();
 

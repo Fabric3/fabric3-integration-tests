@@ -76,9 +76,9 @@ public class WiringTest extends TestCase {
      *      <reference name="promotedReference" promote="TestComponent/promotedReference">...
      * <pre>
      */
-    public void testPromotedReferences() {
-        assertNotNull(service.getPromotedReference());
-    }
+//    public void testPromotedReferences() {
+//        assertNotNull(service.getPromotedReference());
+//    }
 
     /**
      * Tests a reference configured solely via promotion:
@@ -91,9 +91,9 @@ public class WiringTest extends TestCase {
      *      <reference name="promotedReference" promote="TestComponent/promotedReference">...
      * <pre>
      */
-    public void testNonConfiguredPromotedReferences() {
-        assertNotNull(service.getNonConfiguredPromotedReference());
-    }
+//    public void testNonConfiguredPromotedReferences() {
+//        assertNotNull(service.getNonConfiguredPromotedReference());
+//    }
 
     /**
      * Verifies a reference of multiplicity 0..n does not need to be configured

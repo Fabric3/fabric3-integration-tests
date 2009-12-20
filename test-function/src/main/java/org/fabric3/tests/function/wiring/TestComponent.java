@@ -47,8 +47,8 @@ import org.fabric3.tests.function.common.HelloService;
 public class TestComponent implements TestService {
     private HelloService constructorService;
     private HelloService service;
-    private HelloService promotedReference;
-    private HelloService nonConfiguredPromotedReference;
+//    private HelloService promotedReference;
+//    private HelloService nonConfiguredPromotedReference;
     private HelloService optionalNonSetReference;
     private HelloService wireElementReference;
 
@@ -61,15 +61,15 @@ public class TestComponent implements TestService {
         this.service = service;
     }
 
-    @Reference
-    public void setPromotedReference(HelloService promotedReference) {
-        this.promotedReference = promotedReference;
-    }
+//    @Reference
+//    public void setPromotedReference(HelloService promotedReference) {
+//        this.promotedReference = promotedReference;
+//    }
 
-    @Reference
-    public void setNonConfiguredPromotedReference(HelloService target) {
-        this.nonConfiguredPromotedReference = target;
-    }
+//    @Reference
+//    public void setNonConfiguredPromotedReference(HelloService target) {
+//        this.nonConfiguredPromotedReference = target;
+//    }
 
     @Reference(required = false)
     public void setOptionalNonSetReference(HelloService optionalNonSetReference) {
@@ -85,13 +85,13 @@ public class TestComponent implements TestService {
         return service;
     }
 
-    public HelloService getPromotedReference() {
-        return promotedReference;
-    }
+//    public HelloService getPromotedReference() {
+//        return promotedReference;
+//    }
 
-    public HelloService getNonConfiguredPromotedReference() {
-        return nonConfiguredPromotedReference;
-    }
+//    public HelloService getNonConfiguredPromotedReference() {
+//        return nonConfiguredPromotedReference;
+//    }
 
     public HelloService getConstructorService() {
         return constructorService;
