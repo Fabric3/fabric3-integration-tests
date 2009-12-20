@@ -64,24 +64,24 @@ public class TestWsdlImplementationGenerator implements ComponentGenerator<Logic
         return new PhysicalWsdlComponentDefinition(stub);
     }
 
-    public PhysicalSourceDefinition generateWireSource(LogicalReference reference, EffectivePolicy policy) throws GenerationException {
+    public PhysicalSourceDefinition generateSource(LogicalReference reference, EffectivePolicy policy) throws GenerationException {
         String name = reference.getDefinition().getName();
         URI componentUri = reference.getParent().getUri();
         return new PhysicalWsdlSourceDefinition(name, componentUri);
     }
 
-    public PhysicalTargetDefinition generateWireTarget(LogicalService service, EffectivePolicy policy) throws GenerationException {
+    public PhysicalTargetDefinition generateTarget(LogicalService service, EffectivePolicy policy) throws GenerationException {
         PhysicalWsdlTargetDefinition definition = new PhysicalWsdlTargetDefinition();
         URI uri = service.getUri();
         definition.setUri(uri);
         return definition;
     }
 
-    public PhysicalSourceDefinition generateCallbackWireSource(LogicalService service, EffectivePolicy policy) throws GenerationException {
+    public PhysicalSourceDefinition generateCallbackSource(LogicalService service, EffectivePolicy policy) throws GenerationException {
         throw new UnsupportedOperationException();
     }
 
-    public PhysicalSourceDefinition generateResourceWireSource(LogicalResource<?> resource) throws GenerationException {
+    public PhysicalSourceDefinition generateResourceSource(LogicalResource resource) throws GenerationException {
         throw new UnsupportedOperationException();
     }
 }
