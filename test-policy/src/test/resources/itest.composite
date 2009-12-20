@@ -19,7 +19,7 @@
         <f3-impl:junit class="org.fabric3.policy.attachment.AttachToImplementationTest"/>
         <reference name="attachService" target="AttachToImplementationService"/>
         <reference name="noAttachService" target="NoAttachToImplementationService"/>
-        <reference name="attachBindingService" target="AttachToBindingImplementationService">
+        <reference name="attachBindingService">
             <f3-binding:binding.test uri="AttachToBindingImplementationService"/>
         </reference>
     </component>

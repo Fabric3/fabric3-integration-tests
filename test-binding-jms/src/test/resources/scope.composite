@@ -14,7 +14,7 @@
 
     <component name="BindingScopeTestComponent">
         <f3-impl:junit class="org.fabric3.tests.binding.harness.scope.ScopeTest"/>
-        <reference name="compositeService" target="CompositeService">
+        <reference name="compositeService">
             <binding.jms>
                 <destination name="compositeServiceQueue"/>
                 <response>

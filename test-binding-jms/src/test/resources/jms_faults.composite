@@ -16,7 +16,7 @@
 
     <component name="EchoTest">
         <f3-impl:junit class="org.fabric3.tests.binding.harness.EchoTest"/>
-        <reference name="service" target="EchoService">
+        <reference name="service">
             <binding.jms>
                 <destination name="EchoServiceQueue"/>
                 <response>
