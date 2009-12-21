@@ -20,33 +20,31 @@ Public License. See the accompanying license file for details.
         <reference name="testService" target="TestComponent"/>
     </component>
 
-    <!-- JFM replace this test -->
-    <!--<component name="SingeReferenceTest">-->
-        <!--<f3-impl:junit class="org.fabric3.tests.function.wiring.SingleReferenceTest"/>-->
-    <!--</component>-->
-    <!---->
-    <!--<reference name="promotedDefaultReference" promote="SingeReferenceTest">-->
-        <!--<f3-binding:binding.test uri="WiringCompositeHelloService"/>-->
-    <!--</reference>-->
+    <component name="BindingSelectionTest">
+        <f3-impl:junit class="org.fabric3.tests.function.wiring.BindingSelectionTest"/>
+        <reference name="testService" target="HelloService/HelloService/binding2">
+            <f3-binding:binding.test/>
+        </reference>
+    </component>
 
     <component name="TestComponent">
         <implementation.java class="org.fabric3.tests.function.wiring.TestComponent"/>
         <reference name="targetConstructor" target="HelloService"/>
         <reference name="service" target="HelloService"/>
-        <!--<reference name="promotedReference"/>-->
     </component>
 
     <component name="HelloService">
         <implementation.java class="org.fabric3.tests.function.common.HelloServiceImpl"/>
+        <service name="HelloService">
+            <f3-binding:binding.test name="binding1" uri="HelloService"/>
+            <f3-binding:binding.test name="binding2" uri="HelloService2"/>
+        </service>
     </component>
 
-    <!--<reference name="promotedReference" promote="TestComponent/promotedReference TestComponent/nonConfiguredPromotedReference">-->
-        <!--<f3-binding:binding.test uri="WiringCompositeHelloService"/>-->
-    <!--</reference>-->
 
     <wire source="TestComponent/wireElementReference" target="HelloService"/>
 
-    <!-- verifies a wire contained in another composite-->
+     <!--verifies a wire contained in another composite-->
     <component name="WireBagTest">
         <f3-impl:junit class="org.fabric3.tests.function.wiring.WireBagTest"/>
     </component>

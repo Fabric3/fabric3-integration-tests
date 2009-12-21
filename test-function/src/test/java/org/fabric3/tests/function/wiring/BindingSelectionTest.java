@@ -45,7 +45,7 @@ import org.fabric3.tests.function.common.HelloService;
 /**
  * @version $Rev$ $Date$
  */
-public class SingleReferenceTest extends TestCase {
+public class BindingSelectionTest extends TestCase {
 
     private HelloService service;
 
@@ -54,11 +54,7 @@ public class SingleReferenceTest extends TestCase {
         this.service = service;
     }
 
-    /**
-     * Tests reference promotion case where promotion URI only includes the component name and not the reference. SCA allows defaulting if the
-     * component has only one reference.
-     */
-    public void testPromotedDefaultReference() throws Exception {
+    public void testBindingSelected() throws Exception {
         assertNotNull(service);
     }
 
