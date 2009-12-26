@@ -31,6 +31,7 @@ Public License. See the accompanying license file for details.
         <implementation.java class="org.fabric3.tests.function.wiring.TestComponent"/>
         <reference name="targetConstructor" target="HelloService"/>
         <reference name="service" target="HelloService"/>
+        <reference name="services" target="HelloService"/>
     </component>
 
     <component name="HelloService">

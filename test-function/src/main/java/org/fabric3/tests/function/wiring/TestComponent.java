@@ -47,6 +47,7 @@ import org.fabric3.tests.function.common.HelloService;
 public class TestComponent implements TestService {
     private HelloService constructorService;
     private HelloService service;
+    private HelloService[] services;
 //    private HelloService promotedReference;
 //    private HelloService nonConfiguredPromotedReference;
     private HelloService optionalNonSetReference;
@@ -61,7 +62,12 @@ public class TestComponent implements TestService {
         this.service = service;
     }
 
-//    @Reference
+    @Reference
+    public void setServices(HelloService[] services) {
+        this.services = services;
+    }
+
+    //    @Reference
 //    public void setPromotedReference(HelloService promotedReference) {
 //        this.promotedReference = promotedReference;
 //    }
@@ -99,6 +105,10 @@ public class TestComponent implements TestService {
 
     public HelloService getOptionalNonSetReference() {
         return optionalNonSetReference;
+    }
+
+    public HelloService[] getArrayServices() {
+        return services;
     }
 
     public HelloService getWireElementReference() {

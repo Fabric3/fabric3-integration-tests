@@ -52,6 +52,8 @@ public interface TestService {
 
     HelloService getConstructorService();
 
+    HelloService[] getArrayServices();
+
     HelloService getOptionalNonSetReference();
 
 }

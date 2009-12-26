@@ -101,4 +101,12 @@ public class WiringTest extends TestCase {
     public void testOptionalNonSetReference() {
         assertNull(service.getOptionalNonSetReference());
     }
+
+    /**
+     * Verifies an array multiplicity reference
+     */
+    public void testArrayMultiplicity() {
+        assertEquals(1, service.getArrayServices().length);
+    }
+
 }
