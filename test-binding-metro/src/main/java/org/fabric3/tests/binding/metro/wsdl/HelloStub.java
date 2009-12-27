@@ -61,11 +61,11 @@ import org.fabric3.tests.binding.metro.helloworld.HelloFaultException;
  * @version $Rev: 7770 $ $Date: 2009-10-09 12:14:53 +0200 (Fri, 09 Oct 2009) $
  */
 public class HelloStub {
-//    private static String XML_BARE =
-//            "<?xml version=\"1.0\" encoding=\"UTF-8\"?><request xmlns=\"http://wsdl.metro.binding.tests.fabric3.org/\">callout</request>";
-
     private static String XML =
-            "<ns2:hello xmlns:ns2=\"http://wsdl.metro.binding.tests.fabric3.org/\"><arg0>callout</arg0></ns2:hello>";
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?><request xmlns=\"http://wsdl.metro.binding.tests.fabric3.org/\">callout</request>";
+
+//    private static String XML =
+//            "<ns2:hello xmlns:ns2=\"http://wsdl.metro.binding.tests.fabric3.org/\"><arg0>callout</arg0></ns2:hello>";
 
     private Wire wire;
     private TransformerFactory transformerFactory;

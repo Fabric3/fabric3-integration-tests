@@ -37,9 +37,7 @@
             <!-- test policy attachement-->
             <binding.ws uri="/HelloWorldService" requires="sca:clientAuthentication.message"/>
         </service>
-        <reference name="helloJavaService">
-            <binding.ws uri="http://localhost:8900/HelloJavaService"/>
-        </reference>
+        <reference name="helloJavaService" target="HelloJavaService"/>
     </component>
 
     <component name="HelloJavaService">

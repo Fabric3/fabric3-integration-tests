@@ -29,7 +29,6 @@ Public License. See the accompanying license file for details.
         <implementation.composite name="InnerComposite3" scdlLocation="inner3.composite"/>
     </component>
 
-
     <reference name="promoted" promote="source/target"/>
 
 </composite>

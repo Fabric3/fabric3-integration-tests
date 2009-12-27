@@ -15,9 +15,7 @@
 
     <component name="OneWayTest">
         <f3-impl:junit class="org.fabric3.tests.binding.metro.OneWayTest"/>
-        <reference name="service">
-            <binding.ws uri="http://localhost:8900/oneWayService"/>
-        </reference>
+        <reference name="service" target="OneWayService"/>
     </component>
 
     <component name="OneWayService">

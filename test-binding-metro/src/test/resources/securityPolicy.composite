@@ -16,9 +16,9 @@
     <component name="AuthenticationTest">
         <f3-impl:junit class="org.fabric3.tests.binding.metro.SecurityTest"/>
         <reference name="service">
-            <!--<binding.ws uri="https://localhost:8901/authenticationService" requires="f3-policy:clientAuthentication.X509">-->
-            <!--<binding.ws uri="https://localhost:8901/authenticationService" requires="sca:confidentiality.transport">-->
-            <binding.ws uri="https://localhost:8901/authenticationService" requires="sca:clientAuthentication.message">
+            <!--<binding.ws requires="f3-policy:clientAuthentication.X509">-->
+            <!--<binding.ws requires="sca:confidentiality.transport">-->
+            <binding.ws requires="sca:clientAuthentication.message" uri="https://localhost:8901/authenticationService">
                 <configuration>
                     <!--<alias>fabric3key</alias>-->
                     <username>foo</username>

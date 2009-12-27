@@ -22,9 +22,7 @@ Public License. See the accompanying license file for details.
 
     <component name="BindingSelectionTest">
         <f3-impl:junit class="org.fabric3.tests.function.wiring.BindingSelectionTest"/>
-        <reference name="testService" target="HelloService/HelloService/binding2">
-            <f3-binding:binding.test/>
-        </reference>
+        <reference name="testService" target="HelloService/HelloService/binding2"/>
     </component>
 
     <component name="TestComponent">
