@@ -12,6 +12,7 @@ Public License. See the accompanying license file for details.
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
            xmlns:f3-core="urn:fabric3.org:core"
            xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:test="urn:test"
            name="PropertiesComposite">
 
     <component name="PublicFieldPropertyTypesTest">
@@ -41,25 +42,22 @@ Public License. See the accompanying license file for details.
         <property name="urlValue">file://./root</property>
         <property name="dateValue">2007-10-31T01:00:00Z</property>
         <property name="calendarValue">2007-10-31T01:00:00Z</property>
-        <!--
-                <property name="intArray">
-                    <int>1</int>
-                    <int>2</int>
-                    <int>3</int>
-                </property>
-        -->
         <property name="mapValue">
-            <one>1</one>
-            <two>2</two>
+            <value>
+                <one>1</one>
+                <two>2</two>
+            </value>
         </property>
         <property name="propertiesValue"><![CDATA[
-prop1=value1
-prop2=value2
-        ]]></property>
+    prop1=value1
+    prop2=value2
+    ]]></property>
         <property name="listValue">value1 value2</property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
-            <foo:one>java.lang.String</foo:one>
-            <foo:two>java.util.Date</foo:two>
+            <value>
+                <foo:one>java.lang.String</foo:one>
+                <foo:two>java.util.Date</foo:two>
+            </value>
         </property>
         <property name="foo">
             <foo xmlns="">
@@ -96,17 +94,21 @@ prop2=value2
         <property name="dateValue">2007-10-31T01:00:00Z</property>
         <property name="calendarValue">2007-10-31T01:00:00Z</property>
         <property name="mapValue">
-            <one>1</one>
-            <two>2</two>
+            <value>
+                <one>1</one>
+                <two>2</two>
+            </value>
         </property>
         <property name="propertiesValue"><![CDATA[
-prop1=value1
-prop2=value2
-        ]]></property>
+    prop1=value1
+    prop2=value2
+    ]]></property>
         <property name="listValue">value1 value2</property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
-            <foo:one>java.lang.String</foo:one>
-            <foo:two>java.util.Date</foo:two>
+            <value>
+                <foo:one>java.lang.String</foo:one>
+                <foo:two>java.util.Date</foo:two>
+            </value>
         </property>
         <property name="foo">
             <foo xmlns="">
@@ -143,17 +145,21 @@ prop2=value2
         <property name="dateValue">2007-10-31T01:00:00Z</property>
         <property name="calendarValue">2007-10-31T01:00:00Z</property>
         <property name="mapValue">
-            <one>1</one>
-            <two>2</two>
+            <value>
+                <one>1</one>
+                <two>2</two>
+            </value>
         </property>
         <property name="propertiesValue"><![CDATA[
-prop1=value1
-prop2=value2
-        ]]></property>
+    prop1=value1
+    prop2=value2
+    ]]></property>
         <property name="listValue">value1 value2</property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
-            <foo:one>java.lang.String</foo:one>
-            <foo:two>java.util.Date</foo:two>
+            <value>
+                <foo:one>java.lang.String</foo:one>
+                <foo:two>java.util.Date</foo:two>
+            </value>
         </property>
         <property name="foo">
             <foo xmlns="">
@@ -190,17 +196,21 @@ prop2=value2
         <property name="dateValue">2007-10-31T01:00:00Z</property>
         <property name="calendarValue">2007-10-31T01:00:00Z</property>
         <property name="mapValue">
-            <one>1</one>
-            <two>2</two>
+            <value>
+                <one>1</one>
+                <two>2</two>
+            </value>
         </property>
         <property name="propertiesValue"><![CDATA[
-prop1=value1
-prop2=value2
-        ]]></property>
+    prop1=value1
+    prop2=value2
+    ]]></property>
         <property name="listValue">value1 value2</property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
-            <foo:one>java.lang.String</foo:one>
-            <foo:two>java.util.Date</foo:two>
+            <value>
+                <foo:one>java.lang.String</foo:one>
+                <foo:two>java.util.Date</foo:two>
+            </value>
         </property>
         <property name="foo">
             <foo xmlns="">
@@ -237,8 +247,10 @@ prop2=value2
         <property name="dateValue">2007-10-31T01:00:00Z</property>
         <property name="calendarValue">2007-10-31T01:00:00Z</property>
         <property name="mapValue">
-            <one>1</one>
-            <two>2</two>
+            <value>
+                <one>1</one>
+                <two>2</two>
+            </value>
         </property>
         <property name="propertiesValue"><![CDATA[
 prop1=value1
@@ -246,13 +258,17 @@ prop2=value2
         ]]></property>
         <property name="listValue">value1 value2</property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
-            <foo:one>java.lang.String</foo:one>
-            <foo:two>java.util.Date</foo:two>
+            <value>
+                <foo:one>java.lang.String</foo:one>
+                <foo:two>java.util.Date</foo:two>
+            </value>
         </property>
         <property name="foo">
-            <foo xmlns="">
-                <bar>Bar</bar>
-            </foo>
+            <value>
+                <foo xmlns="">
+                    <bar>Bar</bar>
+                </foo>
+            </value>
         </property>
     </component>
 
@@ -267,17 +283,27 @@ prop2=value2
         <reference name="javaComponent" target="PropertyFromFileImpl"/>
     </component>
 
-    <property name="simple">Hello World</property>
 
-    <property name="complex">
-        <a xmlns="">Hello World</a>
-        <a xmlns="urn:foo">Hello Foo</a>
+    <property name="globalComplexElement" element="test:globalElement1">
+        <test:globalElement1>
+            <test:firstData>complex1</test:firstData>
+            <test:secondData>complex2</test:secondData>
+        </test:globalElement1>
     </property>
+
+    <property name="complexType">
+        <value>
+             <test:firstData>complex1</test:firstData>
+             <test:secondData>complex2</test:secondData>
+         </value>
+    </property>
+
+    <property name="simple">simple</property>
 
     <component name="PropertyXPathTest">
         <f3-impl:junit class="org.fabric3.tests.function.properties.PropertyXPathTest"/>
         <property name="simple" source="$simple"/>
-        <property name="complex" source="$complex/a"/>
-        <!--<property name="complexWithNamespace" xmlns:foo="urn:foo" source="$complex/foo:a"/>-->
+        <property name="complexElement" source="$globalComplexElement/test:firstData/text()"/>
+        <property name="complexType" source="$complexType/test:firstData/text()"/>
     </component>
 </composite>

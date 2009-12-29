@@ -45,24 +45,24 @@ import org.oasisopen.sca.annotation.Property;
  */
 public class PropertyXPathTest extends TestCase {
     @Property
-    public String simple;
+    protected String simple;
+
     @Property
-    public String complex;
-//    @Property
-//    public String complexWithNamespace;
+    protected String complexElement;
+
+    @Property
+    protected String complexType;
 
     public void testSimpleXPath() {
-        assertEquals("Hello World", simple);
+        assertEquals("simple", simple);
     }
 
-    public void testComplexXPathString() {
-        assertEquals("Hello World", complex);
+    public void testComplexElementXPath() {
+        assertEquals("complex1", complexElement);
     }
 
-/*
-    // testcase for FABRICTHREE-79
-    public void testComplexXPathWithNamespace() {
-        assertEquals("Hello Foo", complexWithNamespace);
+    public void testComplexTypeXPath() {
+        assertEquals("complex1", complexType);
     }
-*/
+
 }

@@ -19,7 +19,7 @@ Public License. See the accompanying license file for details.
 
     <component name="one">
         <implementation.java class="org.fabric3.tests.function.common.IdentityServiceImpl"/>
-        <property name="id" source="$ids/one"/>
+        <property name="id" source="$ids"/>
     </component>
 
 </composite>
