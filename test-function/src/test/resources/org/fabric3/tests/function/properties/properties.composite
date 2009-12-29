@@ -48,10 +48,12 @@ Public License. See the accompanying license file for details.
                 <two>2</two>
             </value>
         </property>
-        <property name="propertiesValue"><![CDATA[
-    prop1=value1
-    prop2=value2
-    ]]></property>
+        <property name="propertiesValue">
+            <value>
+                <prop1>value1</prop1>
+                <prop2>value2</prop2>
+            </value>
+        </property>
         <property name="listValue">value1 value2</property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
             <value>
@@ -99,10 +101,12 @@ Public License. See the accompanying license file for details.
                 <two>2</two>
             </value>
         </property>
-        <property name="propertiesValue"><![CDATA[
-    prop1=value1
-    prop2=value2
-    ]]></property>
+        <property name="propertiesValue">
+            <value>
+                <prop1>value1</prop1>
+                <prop2>value2</prop2>
+            </value>
+        </property>
         <property name="listValue">value1 value2</property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
             <value>
@@ -150,10 +154,12 @@ Public License. See the accompanying license file for details.
                 <two>2</two>
             </value>
         </property>
-        <property name="propertiesValue"><![CDATA[
-    prop1=value1
-    prop2=value2
-    ]]></property>
+        <property name="propertiesValue">
+            <value>
+                <prop1>value1</prop1>
+                <prop2>value2</prop2>
+            </value>
+        </property>
         <property name="listValue">value1 value2</property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
             <value>
@@ -201,10 +207,12 @@ Public License. See the accompanying license file for details.
                 <two>2</two>
             </value>
         </property>
-        <property name="propertiesValue"><![CDATA[
-    prop1=value1
-    prop2=value2
-    ]]></property>
+        <property name="propertiesValue">
+            <value>
+                <prop1>value1</prop1>
+                <prop2>value2</prop2>
+            </value>
+        </property>
         <property name="listValue">value1 value2</property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
             <value>
@@ -252,10 +260,12 @@ Public License. See the accompanying license file for details.
                 <two>2</two>
             </value>
         </property>
-        <property name="propertiesValue"><![CDATA[
-prop1=value1
-prop2=value2
-        ]]></property>
+        <property name="propertiesValue">
+            <value>
+                <prop1>value1</prop1>
+                <prop2>value2</prop2>
+            </value>
+        </property>
         <property name="listValue">value1 value2</property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
             <value>
@@ -293,9 +303,9 @@ prop2=value2
 
     <property name="complexType">
         <value>
-             <test:firstData>complex1</test:firstData>
-             <test:secondData>complex2</test:secondData>
-         </value>
+            <test:firstData>complex1</test:firstData>
+            <test:secondData>complex2</test:secondData>
+        </value>
     </property>
 
     <property name="simple">simple</property>
