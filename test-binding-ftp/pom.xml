@@ -55,15 +55,16 @@
                         <![CDATA[
                         <config>
                             <ftp.server>
-	                            <commandPort>2000</commandPort>
-	                            <minPassivePort>6000</minPassivePort>
-	                            <maxPassivePort>7000</maxPassivePort>
-	                            <users>
-	                                <meeraj>password</meeraj>
-	                            </users>
-                            </ftp.server>
-                        </config>
-                        ]]>
+                                <commandPort>2000</commandPort>
+                                <minPassivePort>6000</minPassivePort>
+                                <maxPassivePort>7000</maxPassivePort>
+                                <users>
+                                    <value>
+                                        <entry><key>user</key><value>password</value></entry>
+                                     </value>
+                                </users>
+                             </ftp.server>
+                        </config>]]>
                     </systemConfig>
                 </configuration>
                 <executions>

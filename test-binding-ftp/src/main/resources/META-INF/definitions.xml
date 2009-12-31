@@ -6,7 +6,7 @@
 
     <!-- Authentication policy -->
     <policySet name="authenticationPolicy" provides="sca:authentication.message sca:clientAuthentication" appliesTo="binding.ftp">
-        <f3-policy:security user="meeraj" password="password" f3-policy:phase="provided"/>
+        <f3-policy:security user="user" password="password" f3-policy:phase="provided"/>
     </policySet>
 
 </definitions>

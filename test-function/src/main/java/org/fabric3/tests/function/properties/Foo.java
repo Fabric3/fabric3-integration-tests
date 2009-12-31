@@ -43,8 +43,29 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "foo")
 public class Foo {
 
+    public Foo() {
+    }
+
+    public Foo(String bar) {
+        this.bar = bar;
+    }
+
     @XmlElement(name = "bar")
     public String bar;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Foo foo = (Foo) o;
+
+        return !(bar != null ? !bar.equals(foo.bar) : foo.bar != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return bar != null ? bar.hashCode() : 0;
+    }
 }

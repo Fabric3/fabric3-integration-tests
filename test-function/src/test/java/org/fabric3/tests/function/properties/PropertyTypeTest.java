@@ -40,6 +40,8 @@ package org.fabric3.tests.function.properties;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -47,8 +49,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.TimeZone;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
 import javax.xml.namespace.QName;
 
 import junit.framework.TestCase;
@@ -159,8 +159,8 @@ public class PropertyTypeTest extends TestCase {
 
     public void testMap() {
         Map<String, String> map = service.getMapValue();
-        assertEquals("1", map.get("one"));
-        assertEquals("2", map.get("two"));
+        assertEquals("one", map.get("one"));
+        assertEquals("two", map.get("two"));
     }
 
     public void testProperties() {
@@ -177,7 +177,7 @@ public class PropertyTypeTest extends TestCase {
 
     public void testMapOfQNameToClass() {
         Map<QName, Class<?>> map = service.getMapOfQNameToClassValue();
-        assertEquals(map.get(new QName("urn:foo", "one")), String.class);
-        assertEquals(map.get(new QName("urn:foo", "two")), Date.class);
+        assertEquals(String.class, map.get(new QName("urn:foo", "one")));
+        assertEquals(Date.class, map.get(new QName("urn:foo", "two")));
     }
 }

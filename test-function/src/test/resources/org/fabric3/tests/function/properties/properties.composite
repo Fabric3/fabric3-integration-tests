@@ -44,8 +44,14 @@ Public License. See the accompanying license file for details.
         <property name="calendarValue">2007-10-31T01:00:00Z</property>
         <property name="mapValue">
             <value>
-                <one>1</one>
-                <two>2</two>
+                <entry>
+                    <key>one</key>
+                    <value>one</value>
+                </entry>
+                <entry>
+                    <key>two</key>
+                    <value>two</value>
+                </entry>
             </value>
         </property>
         <property name="propertiesValue">
@@ -54,11 +60,20 @@ Public License. See the accompanying license file for details.
                 <prop2>value2</prop2>
             </value>
         </property>
-        <property name="listValue">value1 value2</property>
+        <property name="listValue">
+            <value>value1</value>
+            <value>value2</value>
+        </property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
             <value>
-                <foo:one>java.lang.String</foo:one>
-                <foo:two>java.util.Date</foo:two>
+                <entry>
+                    <key>foo:one</key>
+                    <value>java.lang.String</value>
+                </entry>
+                <entry>
+                    <key>foo:two</key>
+                    <value>java.util.Date</value>
+                </entry>
             </value>
         </property>
         <property name="foo">
@@ -97,8 +112,14 @@ Public License. See the accompanying license file for details.
         <property name="calendarValue">2007-10-31T01:00:00Z</property>
         <property name="mapValue">
             <value>
-                <one>1</one>
-                <two>2</two>
+                <entry>
+                    <key>one</key>
+                    <value>one</value>
+                </entry>
+                <entry>
+                    <key>two</key>
+                    <value>two</value>
+                </entry>
             </value>
         </property>
         <property name="propertiesValue">
@@ -107,11 +128,20 @@ Public License. See the accompanying license file for details.
                 <prop2>value2</prop2>
             </value>
         </property>
-        <property name="listValue">value1 value2</property>
+        <property name="listValue">
+            <value>value1</value>
+            <value>value2</value>
+        </property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
             <value>
-                <foo:one>java.lang.String</foo:one>
-                <foo:two>java.util.Date</foo:two>
+                <entry>
+                    <key>foo:one</key>
+                    <value>java.lang.String</value>
+                </entry>
+                <entry>
+                    <key>foo:two</key>
+                    <value>java.util.Date</value>
+                </entry>
             </value>
         </property>
         <property name="foo">
@@ -150,8 +180,14 @@ Public License. See the accompanying license file for details.
         <property name="calendarValue">2007-10-31T01:00:00Z</property>
         <property name="mapValue">
             <value>
-                <one>1</one>
-                <two>2</two>
+                <entry>
+                    <key>one</key>
+                    <value>one</value>
+                </entry>
+                <entry>
+                    <key>two</key>
+                    <value>two</value>
+                </entry>
             </value>
         </property>
         <property name="propertiesValue">
@@ -160,11 +196,20 @@ Public License. See the accompanying license file for details.
                 <prop2>value2</prop2>
             </value>
         </property>
-        <property name="listValue">value1 value2</property>
+        <property name="listValue">
+            <value>value1</value>
+            <value>value2</value>
+        </property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
             <value>
-                <foo:one>java.lang.String</foo:one>
-                <foo:two>java.util.Date</foo:two>
+                <entry>
+                    <key>foo:one</key>
+                    <value>java.lang.String</value>
+                </entry>
+                <entry>
+                    <key>foo:two</key>
+                    <value>java.util.Date</value>
+                </entry>
             </value>
         </property>
         <property name="foo">
@@ -203,8 +248,14 @@ Public License. See the accompanying license file for details.
         <property name="calendarValue">2007-10-31T01:00:00Z</property>
         <property name="mapValue">
             <value>
-                <one>1</one>
-                <two>2</two>
+                <entry>
+                    <key>one</key>
+                    <value>one</value>
+                </entry>
+                <entry>
+                    <key>two</key>
+                    <value>two</value>
+                </entry>
             </value>
         </property>
         <property name="propertiesValue">
@@ -213,11 +264,20 @@ Public License. See the accompanying license file for details.
                 <prop2>value2</prop2>
             </value>
         </property>
-        <property name="listValue">value1 value2</property>
+        <property name="listValue">
+            <value>value1</value>
+            <value>value2</value>
+        </property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
             <value>
-                <foo:one>java.lang.String</foo:one>
-                <foo:two>java.util.Date</foo:two>
+                <entry>
+                    <key>foo:one</key>
+                    <value>java.lang.String</value>
+                </entry>
+                <entry>
+                    <key>foo:two</key>
+                    <value>java.util.Date</value>
+                </entry>
             </value>
         </property>
         <property name="foo">
@@ -256,8 +316,14 @@ Public License. See the accompanying license file for details.
         <property name="calendarValue">2007-10-31T01:00:00Z</property>
         <property name="mapValue">
             <value>
-                <one>1</one>
-                <two>2</two>
+                <entry>
+                    <key>one</key>
+                    <value>one</value>
+                </entry>
+                <entry>
+                    <key>two</key>
+                    <value>two</value>
+                </entry>
             </value>
         </property>
         <property name="propertiesValue">
@@ -266,11 +332,20 @@ Public License. See the accompanying license file for details.
                 <prop2>value2</prop2>
             </value>
         </property>
-        <property name="listValue">value1 value2</property>
+        <property name="listValue">
+            <value>value1</value>
+            <value>value2</value>
+        </property>
         <property name="mapOfQNameToClassValue" xmlns:foo="urn:foo">
             <value>
-                <foo:one>java.lang.String</foo:one>
-                <foo:two>java.util.Date</foo:two>
+                <entry>
+                    <key>foo:one</key>
+                    <value>java.lang.String</value>
+                </entry>
+                <entry>
+                    <key>foo:two</key>
+                    <value>java.util.Date</value>
+                </entry>
             </value>
         </property>
         <property name="foo">
@@ -316,4 +391,98 @@ Public License. See the accompanying license file for details.
         <property name="complexElement" source="$globalComplexElement/test:firstData/text()"/>
         <property name="complexType" source="$complexType/test:firstData/text()"/>
     </component>
+
+    <component name="MultiValuePropertyTest">
+        <f3-impl:junit class="org.fabric3.tests.function.properties.MultiValuePropertyTest"/>
+        <property name="arrayType">
+            <value>
+                complex1
+            </value>
+            <value>
+                complex2
+            </value>
+        </property>
+        <property name="setType">
+            <value>
+                complex1
+            </value>
+            <value>
+                complex2
+            </value>
+        </property>
+        <property name="listType">
+            <value>1</value>
+            <value>2</value>
+        </property>
+        <property name="intArrayType">
+            <value>1</value>
+            <value>2</value>
+        </property>
+        <property name="complexArrayType">
+            <value>
+                <foo xmlns="">
+                    <bar>Bar</bar>
+                </foo>
+            </value>
+            <value>
+                <foo xmlns="">
+                    <bar>Baz</bar>
+                </foo>
+            </value>
+        </property>
+        <property name="complexListType">
+            <value>
+                <foo xmlns="">
+                    <bar>Bar</bar>
+                </foo>
+            </value>
+            <value>
+                <foo xmlns="">
+                    <bar>Baz</bar>
+                </foo>
+            </value>
+        </property>
+        <property name="complexSetType">
+            <value>
+                <foo xmlns="">
+                    <bar>Bar</bar>
+                </foo>
+            </value>
+            <value>
+                <foo xmlns="">
+                    <bar>Baz</bar>
+                </foo>
+            </value>
+        </property>
+        <property name="complexMapType">
+            <value>
+                <entry>
+                    <key>
+                        <foo xmlns="">
+                            <bar>Bar</bar>
+                        </foo>
+                    </key>
+                    <value>
+                        <foo xmlns="">
+                            <bar>Bar</bar>
+                        </foo>
+                    </value>
+                </entry>
+                <entry>
+                    <key>
+                        <foo xmlns="">
+                            <bar>Baz</bar>
+                        </foo>
+                    </key>
+                    <value>
+                        <foo xmlns="">
+                            <bar>Baz</bar>
+                        </foo>
+                    </value>
+                </entry>
+            </value>
+        </property>
+
+    </component>
+
 </composite>
