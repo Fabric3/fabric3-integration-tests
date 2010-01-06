@@ -37,9 +37,12 @@
 */
 package org.fabric3.tests.function.common;
 
+import org.oasisopen.sca.annotation.Remotable;
+
 /**
  * @version $Rev$ $Date$
  */
+@Remotable
 public interface HelloService {
 
     String send(String msg);
