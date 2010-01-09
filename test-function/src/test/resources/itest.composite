@@ -30,5 +30,6 @@ Public License. See the accompanying license file for details.
     <include name="GenericTestComposite"/>
     <include name="ScopeComposite"/>
     <include name="HeaderComposite"/>
+    <include name="ByValueComposite"/>
 
 </composite>

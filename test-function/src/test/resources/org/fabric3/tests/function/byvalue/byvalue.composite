@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fabric3
+Copyright (C) 2009 Metaform Systems
+
+Fabric3 is licensed under modified terms of the GNU General
+Public License. See the accompanying license file for details.
+
+
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+           xmlns:f3-core="urn:fabric3.org:core"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           name="ByValueComposite">
+
+    <component name="ByValueTest">
+        <f3-impl:junit class="org.fabric3.tests.function.byvalue.ByValueTest"/>
+        <reference name="client1" target="ByValueClient1"/>
+        <reference name="client2" target="ByValueClient2"/>
+    </component>
+
+    <component name="ByValueClient1">
+        <implementation.java class="org.fabric3.tests.function.byvalue.ByValueClientImpl"/>
+        <reference name="byValueService" target="ByValueService"/>
+        <reference name="byReferenceService" target="ByReferenceService"/>
+    </component>
+
+    <component name="ByValueClient2">
+        <implementation.java class="org.fabric3.tests.function.byvalue.ByValueClientImpl2"/>
+        <reference name="byReferenceService" target="ByReferenceService2"/>
+    </component>
+
+    <component name="ByReferenceService">
+        <implementation.java class="org.fabric3.tests.function.byvalue.RemoteByReferenceServiceImpl"/>
+    </component>
+
+    <component name="ByValueService">
+        <implementation.java class="org.fabric3.tests.function.byvalue.RemoteByValueServiceImpl"/>
+    </component>
+
+    <component name="ByReferenceService2">
+        <implementation.java class="org.fabric3.tests.function.byvalue.RemoteByReferenceServiceImpl2"/>
+    </component>
+
+</composite>

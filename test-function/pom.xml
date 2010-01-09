@@ -60,6 +60,7 @@
                             <web.server>
                                 <http port="8900"/>
                             </web.server>
+                            <sca enableByValue="true"/>
                         </config>
                         ]]>
                     </systemConfig>
