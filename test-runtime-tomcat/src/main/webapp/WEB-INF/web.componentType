@@ -6,7 +6,7 @@
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 
 -->
-<componentType xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903">
+<componentType xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912">
     <reference name="hello">
         <interface.java interface="org.fabric3.runtime.webapp.smoketest.HelloService"/>
     </reference>

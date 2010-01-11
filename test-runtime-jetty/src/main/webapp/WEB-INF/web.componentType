@@ -7,7 +7,7 @@
 
 
 -->
-<componentType xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903">
+<componentType xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912">
     <reference name="context">
         <interface.java interface="org.fabric3.runtime.webapp.smoketest.TestService"/>
     </reference>

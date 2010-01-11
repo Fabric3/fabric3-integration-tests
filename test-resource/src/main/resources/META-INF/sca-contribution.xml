@@ -7,6 +7,6 @@
 
     $Rev$ $Date$
 -->
-<contribution xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903" xmlns:ns="org.codehaus.fabric3">
+<contribution xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:ns="org.codehaus.fabric3">
     <import.java package="org.fabric3.resource.itest"/>
 </contribution>

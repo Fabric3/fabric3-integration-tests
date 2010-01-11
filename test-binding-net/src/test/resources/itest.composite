@@ -6,7 +6,7 @@
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 
 -->
-<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903" name="HessianTestComposite">
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912" name="HessianTestComposite">
 
     <include name="SyncAsyncComposite"/>
     <include name="CallbackComposite"/>

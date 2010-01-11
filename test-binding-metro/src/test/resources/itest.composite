@@ -6,7 +6,7 @@
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 
 -->
-<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903" name="MetroTestComposite">
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912" name="MetroTestComposite">
 
     <include name="JaxbTest"/>
     <include name="InteractionTest" />

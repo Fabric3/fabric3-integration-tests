@@ -9,7 +9,7 @@ Public License. See the accompanying license file for details.
 
     $Rev: 7149 $ $Date: 2009-06-14 17:31:14 -0700 (Sun, 14 Jun 2009) $
 -->
-<contribution xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903" xmlns:f3-core="urn:fabric3.org:core">
+<contribution xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:f3-core="urn:fabric3.org:core">
     <import.java package="javax.xml.bind" version="2.2"/>
     <import.java package="javax.xml.bind.annotation" version="2.2"/>
     <import.java package="org.fabric3.spi.*" version="1.4"/>

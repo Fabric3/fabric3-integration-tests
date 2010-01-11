@@ -5,7 +5,7 @@
 
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 -->
-<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200903"
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:f3-core="urn:fabric3.org:core"
            name="MapComposite">
 
