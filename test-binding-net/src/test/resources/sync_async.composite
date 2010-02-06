@@ -10,7 +10,9 @@
            xmlns:f3-core="urn:fabric3.org:core"
            xmlns:f3-binding="urn:fabric3.org:binding"
            xmlns:f3-impl="urn:fabric3.org:implementation"
-           name="SyncAsyncComposite" autowire="false">
+           targetNamespace="org.codehaus.fabric3"
+           name="SyncAsyncComposite"
+           autowire="false">
 
     <component name="JsonEchoOneWayTest">
         <f3-impl:junit class="org.fabric3.tests.binding.harness.EchoOneWayTest"/>

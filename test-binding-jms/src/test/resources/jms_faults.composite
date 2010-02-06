@@ -11,7 +11,9 @@
            xmlns:f3-core="urn:fabric3.org:core"
            xmlns:f3-binding="urn:fabric3.org:binding"
            xmlns:f3-impl="urn:fabric3.org:implementation"
-           name="JMSFaultsComposite" autowire="false">
+           targetNamespace="org.codehaus.fabric3"
+           name="JMSFaultsComposite"
+           autowire="false">
 
 
     <component name="EchoTest">

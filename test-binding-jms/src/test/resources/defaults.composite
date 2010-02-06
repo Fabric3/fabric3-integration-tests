@@ -10,7 +10,9 @@
            xmlns:f3-core="urn:fabric3.org:core"
            xmlns:f3-binding="urn:fabric3.org:binding"
            xmlns:f3-impl="urn:fabric3.org:implementation"
-           name="JMSDefaultsComposite" autowire="false">
+           targetNamespace="org.codehaus.fabric3"
+           name="JMSDefaultsComposite"
+           autowire="false">
     <!-- test configuration defaults, i.e. minimal JMS configuration -->
 
     <component name="DefaultTest">

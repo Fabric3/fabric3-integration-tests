@@ -14,6 +14,7 @@ Public License. See the accompanying license file for details.
            xmlns:f3-core="urn:fabric3.org:core"
            xmlns:f3-policy="urn:fabric3.org:policy"
            name="ConversationPropagationComposite"
+           targetNamespace="org.codehaus.fabric3"
            requires="f3-policy:propagatesConversation">
 
     <service name="ClientService" promote="ClientToConversationalIntermediary"/>

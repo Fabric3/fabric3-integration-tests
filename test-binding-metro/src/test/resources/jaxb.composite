@@ -9,6 +9,7 @@
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:f3-impl="urn:fabric3.org:implementation"
            xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
+           targetNamespace="org.codehaus.fabric3"
            name="JaxbTest">
 
     <component name="JaxbTest">

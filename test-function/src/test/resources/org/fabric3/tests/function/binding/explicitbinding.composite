@@ -13,6 +13,7 @@ Public License. See the accompanying license file for details.
            xmlns:f3-core="urn:fabric3.org:core"
            xmlns:f3-impl="urn:fabric3.org:implementation"
            xmlns:f3-binding="urn:fabric3.org:binding"
+           targetNamespace="org.codehaus.fabric3"
            name="ExplicitBindingComposite">
 
     <component name="ExplicitBindingTestComponent">

@@ -13,7 +13,8 @@
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:f3-impl="urn:fabric3.org:implementation"
            xmlns:f3-binding="urn:org.fabric3:binding"
-           name="DataTransferTestComposite">
+           targetNamespace="org.codehaus.fabric3"
+           name="TestComposite">
 
     <component name="DataTransferTest">
         <f3-impl:junit class="org.fabric3.tests.binding.ftp.DataTransferServiceITest"/>

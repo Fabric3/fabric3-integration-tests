@@ -9,7 +9,8 @@
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:f3-impl="urn:fabric3.org:implementation"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           name="QuartzTestHarnessComposite"
+           targetNamespace="org.codehaus.fabric3"
+           name="TestComposite"
            autowire="true">
 
     <component name="TimerTestComponent">

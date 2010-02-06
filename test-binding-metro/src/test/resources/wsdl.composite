@@ -13,6 +13,7 @@
            xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
            xmlns:helloworld="urn:helloworld"
            xmlns:hellojava="http://wsdl.metro.binding.tests.fabric3.org/"
+           targetNamespace="org.codehaus.fabric3"
            name="WsdlTest">
 
     <component name="WsdlTest">

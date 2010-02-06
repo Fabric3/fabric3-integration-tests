@@ -9,7 +9,9 @@ Public License. See the accompanying license file for details.
 
 
 -->
-<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912" name="BindingComposite">
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           targetNamespace="org.codehaus.fabric3"
+           name="BindingComposite">
 
     <include name="ExplicitBindingComposite"/>
     <include name="PromotionComposite"/>

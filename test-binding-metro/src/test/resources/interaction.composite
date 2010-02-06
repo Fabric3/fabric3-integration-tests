@@ -11,6 +11,7 @@
            xmlns:f3-impl="urn:fabric3.org:implementation"
            xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
            xmlns:f3-policy="urn:fabric3.org:policy"
+           targetNamespace="org.codehaus.fabric3"
            name="InteractionTest">
 
     <component name="OneWayTest">

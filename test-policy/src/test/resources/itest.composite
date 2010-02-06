@@ -12,7 +12,7 @@
            xmlns:f3-impl="urn:fabric3.org:implementation"
            xmlns:f3-binding="urn:fabric3.org:binding"
            targetNamespace="org.codehaus.fabric3"
-           name="PolicyTestComposite">
+           name="TestComposite">
 
     <!-- Attachment tests -->
     <component name="AttachToImplementationTest">

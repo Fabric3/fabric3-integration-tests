@@ -10,7 +10,7 @@
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:ns="org.codehaus.fabric3"
            targetNamespace="org.codehaus.fabric3"
-           name="WsdlTestComposite">
+           name="TestComposite">
 
     <include name="ns:BasicTestComposite"/>
     <include name="ns:MatchingWsdlTestComposite"/>

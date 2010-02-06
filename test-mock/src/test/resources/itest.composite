@@ -8,7 +8,8 @@
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:f3-core="urn:fabric3.org:core"
            xmlns:f3-impl="urn:fabric3.org:implementation"
-           name="MockTestComposite"
+           targetNamespace="org.codehaus.fabric3"
+           name="TestComposite"
            autowire="true">
 
     <component name="TestComponent">

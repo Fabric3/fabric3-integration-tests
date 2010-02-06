@@ -11,7 +11,8 @@ Public License. See the accompanying license file for details.
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:f3-core="urn:fabric3.org:core"
-           name="InnerComposite" targetNamespace="">
+           targetNamespace="org.codehaus.fabric3"
+           name="InnerComposite">
 
     <property name="ids"/>
 

@@ -10,7 +10,9 @@
            xmlns:f3-core="urn:fabric3.org:core"
            xmlns:f3-binding="urn:fabric3.org:binding"
            xmlns:f3-impl="urn:fabric3.org:implementation"
-           name="JMSTypesComposite" autowire="false">
+           targetNamespace="org.codehaus.fabric3"
+           name="JMSTypesComposite"
+           autowire="false">
 
     <component name="ObjectWeatherTest">
         <f3-impl:junit class="org.fabric3.binding.jms.test.object.ObjectWeatherTest"/>
