@@ -19,7 +19,7 @@ Public License. See the accompanying license file for details.
     </component>
 
     <component name="InnerFour">
-        <implementation.composite name="InnerComposite4" scdlLocation="inner4.composite"/>
+        <implementation.composite name="InnerComposite4"/>
     </component>
 
 </composite>

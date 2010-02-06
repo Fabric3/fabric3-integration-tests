@@ -20,7 +20,7 @@ Public License. See the accompanying license file for details.
 
 
     <component name="Autowire" autowire="true">
-        <implementation.composite name="AutowiredComposite" scdlLocation="autowired.composite"/>
+        <implementation.composite name="AutowiredComposite"/>
         <reference name="promoted" target="target"/>
     </component>
 

@@ -16,14 +16,14 @@ Public License. See the accompanying license file for details.
            name="OuterComposite">
 
     <component name="Inner">
-        <implementation.composite name="InnerComposite" scdlLocation="inner.composite"/>
+        <implementation.composite name="InnerComposite"/>
         <property name="ids">
             <one xmlns="">innerOne</one>
         </property>
     </component>
 
     <component name="Inner2">
-        <implementation.composite name="InnerComposite2" scdlLocation="inner2.composite"/>
+        <implementation.composite name="InnerComposite2"/>
         <service name="SourceService">
             <f3-binding:binding.test uri="SourceService"/>
         </service>
@@ -44,11 +44,11 @@ Public License. See the accompanying license file for details.
     </component>
 
     <component name="InnerIncluder">
-        <implementation.composite name="InnerIncluderComposite" scdlLocation="include/innerIncluder.composite"/>
+        <implementation.composite name="InnerIncluderComposite"/>
     </component>
 
     <component name="Autowire">
-        <implementation.composite name="AutowireTestComposite" scdlLocation="autowire.composite"/>
+        <implementation.composite name="AutowireTestComposite"/>
     </component>
 
 </composite>
