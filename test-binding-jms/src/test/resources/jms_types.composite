@@ -18,9 +18,9 @@
         <f3-impl:junit class="org.fabric3.binding.jms.test.object.ObjectWeatherTest"/>
         <reference name="weatherService">
             <binding.jms>
-                <destination name="objectServiceQueue"/>
+                <destination jndiName="objectServiceQueue"/>
                 <response>
-                    <destination name="clientQueue"/>
+                    <destination jndiName="clientQueue"/>
                 </response>
             </binding.jms>
         </reference>
@@ -30,9 +30,9 @@
         <implementation.java class="org.fabric3.binding.jms.test.object.WeatherServiceImpl"/>
         <service name="WeatherService">
             <binding.jms>
-                <destination name="objectServiceQueue"/>
+                <destination jndiName="objectServiceQueue"/>
                 <response>
-                    <destination name="clientQueue"/>
+                    <destination jndiName="clientQueue"/>
                 </response>
             </binding.jms>
         </service>
@@ -43,9 +43,9 @@
         <f3-impl:junit class="org.fabric3.binding.jms.test.primitives.PrimitiveTest"/>
         <reference name="service">
             <binding.jms>
-                <destination name="primitiveServiceQueue"/>
+                <destination jndiName="primitiveServiceQueue"/>
                 <response>
-                    <destination name="primitiveResponseQueue"/>
+                    <destination jndiName="primitiveResponseQueue"/>
                 </response>
             </binding.jms>
         </reference>
@@ -55,9 +55,9 @@
         <implementation.java class="org.fabric3.binding.jms.test.primitives.PrimitiveServiceImpl"/>
         <service name="PrimitiveService">
             <binding.jms>
-                <destination name="primitiveServiceQueue"/>
+                <destination jndiName="primitiveServiceQueue"/>
                 <response>
-                    <destination name="primitiveResponseQueue"/>
+                    <destination jndiName="primitiveResponseQueue"/>
                 </response>
             </binding.jms>
         </service>
@@ -67,9 +67,9 @@
         <f3-impl:junit class="org.fabric3.tests.binding.harness.EchoOneWayTest"/>
         <reference name="service">
             <binding.jms>
-                <destination name="oneWayEchoServiceQueue"/>
+                <destination jndiName="oneWayEchoServiceQueue"/>
                 <response>
-                    <destination name="oneWayEchoServiceResponseQueue"/>
+                    <destination jndiName="oneWayEchoServiceResponseQueue"/>
                 </response>
             </binding.jms>
         </reference>
@@ -79,9 +79,9 @@
         <implementation.java class="org.fabric3.tests.binding.harness.OneWayEchoServiceImpl"/>
         <service name="OneWayEchoService">
             <binding.jms>
-                <destination name="oneWayEchoServiceQueue"/>
+                <destination jndiName="oneWayEchoServiceQueue"/>
                 <response>
-                    <destination name="oneWayEchoServiceResponseQueue"/>
+                    <destination jndiName="oneWayEchoServiceResponseQueue"/>
                 </response>
             </binding.jms>
         </service>
@@ -92,9 +92,9 @@
         <f3-impl:junit class="org.fabric3.tests.binding.harness.EchoMultiParamTest"/>
         <reference name="service">
             <binding.jms>
-                <destination name="EchoMutliParamServiceQueue"/>
+                <destination jndiName="EchoMutliParamServiceQueue"/>
                 <response>
-                    <destination name="EchoMutliParamServiceResponseQueue"/>
+                    <destination jndiName="EchoMutliParamServiceResponseQueue"/>
                 </response>
             </binding.jms>
         </reference>
@@ -105,9 +105,9 @@
         <implementation.java class="org.fabric3.tests.binding.harness.EchoServiceImpl"/>
         <service name="EchoService">
             <binding.jms>
-                <destination name="EchoMutliParamServiceQueue"/>
+                <destination jndiName="EchoMutliParamServiceQueue"/>
                 <response>
-                    <destination name="EchoMutliParamServiceResponseQueue"/>
+                    <destination jndiName="EchoMutliParamServiceResponseQueue"/>
                 </response>
             </binding.jms>
         </service>

@@ -18,9 +18,9 @@
         <f3-impl:junit class="org.fabric3.tests.binding.harness.scope.ScopeTest"/>
         <reference name="compositeService">
             <binding.jms>
-                <destination name="compositeServiceQueue"/>
+                <destination jndiName="compositeServiceQueue"/>
                 <response>
-                    <destination name="compositeServiceResponseQueue"/>
+                    <destination jndiName="compositeServiceResponseQueue"/>
                 </response>
             </binding.jms>
         </reference>
@@ -30,9 +30,9 @@
         <implementation.java class="org.fabric3.tests.binding.harness.scope.CompositeServiceImpl"/>
         <service name="CompositeService">
             <binding.jms>
-                <destination name="compositeServiceQueue"/>
+                <destination jndiName="compositeServiceQueue"/>
                 <response>
-                    <destination name="compositeServiceResponseQueue"/>
+                    <destination jndiName="compositeServiceResponseQueue"/>
                 </response>
             </binding.jms>
         </service>

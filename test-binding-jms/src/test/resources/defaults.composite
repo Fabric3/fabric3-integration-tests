@@ -24,14 +24,14 @@
         <implementation.java class="org.fabric3.tests.binding.harness.callback.AsyncClientServiceImpl"/>
         <reference name="service">
             <binding.jms>
-                <destination name="defaultClientQueue"/>
+                <destination jndiName="defaultClientQueue"/>
                 <response>
-                    <destination name="defaultClientResponseQueue"/>
+                    <destination jndiName="defaultClientResponseQueue"/>
                 </response>
             </binding.jms>
             <callback>
                 <binding.jms>
-                    <destination name="defaultClientCallbackQueue"/>
+                    <destination jndiName="defaultClientCallbackQueue"/>
                 </binding.jms>
             </callback>
         </reference>
@@ -41,14 +41,14 @@
         <implementation.java class="org.fabric3.tests.binding.harness.callback.AsyncForwardServiceImpl"/>
         <service name="AsyncForwardService">
             <binding.jms>
-                <destination name="defaultClientQueue"/>
+                <destination jndiName="defaultClientQueue"/>
                 <response>
-                    <destination name="defaultClientResponseQueue"/>
+                    <destination jndiName="defaultClientResponseQueue"/>
                 </response>
             </binding.jms>
             <callback>
                 <binding.jms>
-                    <destination name="defaultClientCallbackQueue"/>
+                    <destination jndiName="defaultClientCallbackQueue"/>
                 </binding.jms>
             </callback>
         </service>

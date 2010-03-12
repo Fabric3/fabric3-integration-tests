@@ -19,9 +19,9 @@
         <f3-impl:junit class="org.fabric3.binding.jms.test.jaxb.JAXBWeatherTest"/>
         <reference name="weatherService">
             <binding.jms correlationScheme="messageID">
-                <destination name="jaxbServiceQueue"/>
+                <destination jndiName="jaxbServiceQueue"/>
                 <response>
-                    <destination name="clientQueue"/>
+                    <destination jndiName="clientQueue"/>
                 </response>
             </binding.jms>
         </reference>
@@ -31,9 +31,9 @@
         <implementation.java class="org.fabric3.binding.jms.test.jaxb.WeatherServiceImpl"/>
         <service name="WeatherService">
             <binding.jms correlationScheme="messageID">
-                <destination name="jaxbServiceQueue"/>
+                <destination jndiName="jaxbServiceQueue"/>
                 <response>
-                    <destination name="clientQueue"/>
+                    <destination jndiName="clientQueue"/>
                 </response>
             </binding.jms>
         </service>

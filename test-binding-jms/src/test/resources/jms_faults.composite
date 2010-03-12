@@ -20,9 +20,9 @@
         <f3-impl:junit class="org.fabric3.tests.binding.harness.EchoTest"/>
         <reference name="service">
             <binding.jms>
-                <destination name="EchoServiceQueue"/>
+                <destination jndiName="EchoServiceQueue"/>
                 <response>
-                    <destination name="EchoServiceResponseQueue"/>
+                    <destination jndiName="EchoServiceResponseQueue"/>
                 </response>
             </binding.jms>
         </reference>
@@ -33,9 +33,9 @@
         <implementation.java class="org.fabric3.tests.binding.harness.EchoServiceImpl"/>
         <service name="EchoService">
             <binding.jms>
-                <destination name="EchoServiceQueue"/>
+                <destination jndiName="EchoServiceQueue"/>
                 <response>
-                    <destination name="EchoServiceResponseQueue"/>
+                    <destination jndiName="EchoServiceResponseQueue"/>
                 </response>
             </binding.jms>
         </service>

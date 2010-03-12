@@ -23,11 +23,11 @@
         <implementation.java class="org.fabric3.tests.binding.harness.callback.AsyncClientServiceImpl"/>
         <reference name="service">
             <binding.jms requires="transactedOneWay">
-                <destination name="asyncClientServiceQueue"/>
+                <destination jndiName="asyncClientServiceQueue"/>
             </binding.jms>
             <callback>
                 <binding.jms requires="transactedOneWay">
-                    <destination name="asyncClientServiceCallbackQueue"/>
+                    <destination jndiName="asyncClientServiceCallbackQueue"/>
                 </binding.jms>
             </callback>
         </reference>
@@ -37,11 +37,11 @@
         <implementation.java class="org.fabric3.tests.binding.harness.callback.AsyncForwardServiceImpl"/>
         <service name="AsyncForwardService">
             <binding.jms requires="transactedOneWay">
-                <destination name="asyncClientServiceQueue"/>
+                <destination jndiName="asyncClientServiceQueue"/>
             </binding.jms>
             <callback>
                 <binding.jms requires="transactedOneWay">
-                    <destination name="asyncClientServiceCallbackQueue"/>
+                    <destination jndiName="asyncClientServiceCallbackQueue"/>
                 </binding.jms>
             </callback>
         </service>
