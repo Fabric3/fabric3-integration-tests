@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<plan xmlns="urn:fabric3.org:core" xmlns:f3-tests="org.codehaus.fabric3.tests" name="plan">
+    <mappings>
+        <mapping deployable="f3-tests:ApplicationComposite" zone="default.zone"/>
+    </mappings>
+</plan>

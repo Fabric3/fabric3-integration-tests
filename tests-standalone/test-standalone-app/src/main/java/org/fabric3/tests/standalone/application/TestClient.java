@@ -37,12 +37,23 @@
 */
 package org.fabric3.tests.standalone.application;
 
-import org.osoa.sca.annotations.Reference;
+import org.oasisopen.sca.annotation.EagerInit;
+import org.oasisopen.sca.annotation.Init;
+import org.oasisopen.sca.annotation.Reference;
+import org.oasisopen.sca.annotation.Scope;
 
 /**
  * @version $Rev$ $Date$
  */
+@Scope("COMPOSITE")
+@EagerInit
 public class TestClient implements TestClientService {
+
+    @Init
+    public void init() {
+        System.out.println("Invoking....");
+        System.out.println("Received:" + testService.invoke("test"));
+    }
 
     @Reference
     protected TestService testService;

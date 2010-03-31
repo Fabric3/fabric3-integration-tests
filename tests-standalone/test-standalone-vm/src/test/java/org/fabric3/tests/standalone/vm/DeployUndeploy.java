@@ -99,7 +99,7 @@ public class DeployUndeploy extends TestCase {
             domain.install(uri);
             domain.deploy(uri);
             assertEquals("test", invokeTestService());
-            domain.undeploy(uri);
+            domain.undeploy(uri, false);
             domain.uninstall(uri);
             domain.remove(uri);
         }

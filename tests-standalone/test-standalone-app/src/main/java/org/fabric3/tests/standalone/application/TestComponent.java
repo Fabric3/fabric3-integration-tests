@@ -37,13 +37,23 @@
 */
 package org.fabric3.tests.standalone.application;
 
+import org.oasisopen.sca.annotation.EagerInit;
+import org.oasisopen.sca.annotation.Init;
 import org.oasisopen.sca.annotation.Scope;
 
 /**
  * @version $Rev$ $Date$
  */
 @Scope("COMPOSITE")
+@EagerInit
 public class TestComponent implements TestService, TestServiceMBean {
+
+    @Init
+    public void init() {
+        System.out.println("-------------");
+//        throw new RuntimeException("Something happend");
+    }
+
     public String invoke(String msg) {
         return msg;
     }

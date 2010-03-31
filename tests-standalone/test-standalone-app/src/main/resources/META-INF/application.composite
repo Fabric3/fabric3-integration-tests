@@ -13,9 +13,31 @@
     <component name="TestClientService">
         <implementation.java class="org.fabric3.tests.standalone.application.TestClient"/>
         <reference name="testService" target="TestService"/>
+        <!--<reference name="testService">-->
+            <!--<binding.jms>-->
+            <!--<destination jndiName="TestQueue1"/>-->
+            <!--<connectionFactory jndiName="TestConnectionFactory1"/>-->
+            <!--<response>-->
+            <!--<destination jndiName="TestResponseQueue1"/>-->
+            <!--<connectionFactory jndiName="TestConnectionFactory1"/>-->
+            <!--</response>-->
+            <!--</binding.jms>-->
+            <!--<binding.ws uri="http://localhost:7003/TestService"/>-->
+        <!--</reference>-->
     </component>
 
     <component name="TestService">
         <implementation.java class="org.fabric3.tests.standalone.application.TestComponent"/>
+        <!--<service name="TestService">-->
+        <!--<binding.jms>-->
+        <!--<connectionFactory jndiName="TestConnectionFactory1"/>-->
+        <!--<destination jndiName="TestQueue1"/>-->
+        <!--<response>-->
+        <!--<connectionFactory jndiName="TestConnectionFactory1"/>-->
+        <!--<destination jndiName="TestResponseQueue1"/>-->
+        <!--</response>-->
+        <!--</binding.jms>-->
+        <!--<binding.ws/>-->
+        <!--</service>-->
     </component>
 </composite>
