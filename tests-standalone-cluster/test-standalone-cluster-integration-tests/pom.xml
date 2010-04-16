@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+    $Rev$ $Date$
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+       <groupId>org.codehaus.fabric3.tests</groupId>
+       <artifactId>tests-standalone-cluster-parent-pom</artifactId>
+       <version>0.1-SNAPSHOT</version>
+    </parent>
+    <groupId>org.codehaus.fabric3.tests</groupId>
+    <artifactId>test-standalone-cluster-integration-tests</artifactId>
+    <packaging>jar</packaging>
+    <version>0.1-SNAPSHOT</version>
+    <name>Fabric3 Standalone Runtime Cluster Integration Tests</name>
+    <description>Fabric3 Standalone Runtime Cluster Integration Tests</description>
+    <dependencies>
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-api</artifactId>
+            <version>${fabric3.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-admin-api</artifactId>
+            <version>${fabric3.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-admin-impl</artifactId>
+            <version>${fabric3.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.5</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
