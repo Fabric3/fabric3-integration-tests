@@ -34,14 +34,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- JavaEE APIs needed by Fabric3 Runtime but not supplied by Tomcat -->
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>1.1</version>
-            <scope>runtime</scope>
-        </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

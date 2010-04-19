@@ -24,15 +24,6 @@
     <orderEntry type="module" module-name="sca-spec" />
     <orderEntry type="module" module-name="fabric3-api" />
     <orderEntry type="module" module-name="fabric3-timer-spi" />
-    <orderEntry type="module-library">
-      <library name="geronimo-spec:geronimo-spec-jta:1.0.1B-rc4">
-        <CLASSES>
-          <root url="jar://$M2_REPO$/geronimo-spec/geronimo-spec-jta/1.0.1B-rc4/geronimo-spec-jta-1.0.1B-rc4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
   </component>
 </module>
 

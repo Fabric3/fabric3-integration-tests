@@ -20,13 +20,6 @@
     <description>Fabric3 Webapp Runtime Smoketest.</description>
 
     <dependencies>
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>1.1</version>
-            <scope>runtime</scope>
-        </dependency>
-
 
         <!-- use the released version of the API -->
         <dependency>
