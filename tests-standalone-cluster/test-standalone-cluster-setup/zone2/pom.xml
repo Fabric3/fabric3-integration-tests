@@ -92,10 +92,6 @@
                             <source>config/systemConfig.xml</source>
                             <destination>config/participant</destination>
                         </copy>
-                        <copy>
-                            <source>config/runtime.properties</source>
-                            <destination>config/participant</destination>
-                        </copy>
                      </configurationFiles> 
                 </configuration>
             </plugin>

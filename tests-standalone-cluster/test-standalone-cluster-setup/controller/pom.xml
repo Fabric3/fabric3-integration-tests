@@ -88,10 +88,6 @@
                             <source>config/systemConfig.xml</source>
                             <destination>config/controller</destination>
                         </copy>
-                        <copy>
-                            <source>config/runtime.properties</source>
-                            <destination>config/controller</destination>
-                        </copy>
                      </configurationFiles> 
                   </configuration>
             </plugin>
