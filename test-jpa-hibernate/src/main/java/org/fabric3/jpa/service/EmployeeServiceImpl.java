@@ -89,6 +89,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         exEmployeeEM.remove(exEmployee);
     }
 
+    @SuppressWarnings({"unchecked"})
     public List<Employee> searchWithCriteria(String name) {
         Session session = (Session) employeeEM.getDelegate();
         Criteria criteria = session.createCriteria(Employee.class);
