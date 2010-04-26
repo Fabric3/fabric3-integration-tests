@@ -89,10 +89,6 @@
                             <destination>config</destination>
                         </copy>
                         <copy>
-                            <source>../../../datasource/h2-1.0.71.jar</source>
-                            <destination>repository/datasource</destination>
-                        </copy>
-                        <copy>
                             <source>config/systemConfig.xml</source>
                             <destination>config/participant</destination>
                         </copy>

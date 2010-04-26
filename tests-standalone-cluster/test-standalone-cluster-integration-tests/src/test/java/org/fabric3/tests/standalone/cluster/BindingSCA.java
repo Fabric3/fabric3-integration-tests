@@ -57,7 +57,7 @@ import org.fabric3.tests.standalone.cluster.bindingsca.client.TestClientServiceS
  * @version $Rev$ $Date$
  */
 public class BindingSCA extends TestCase {
-    private static final int WAIT = 5000;
+    private static final int WAIT = 10000;
 
     private static final File APP_API_DIR = new File(".." + File.separator
             + ".." + File.separator
