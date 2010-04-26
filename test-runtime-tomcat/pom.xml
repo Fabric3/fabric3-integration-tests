@@ -97,13 +97,6 @@
                             <artifactId>fabric3-jpa-hibernate</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
-                        <!-- JPA Core Components -->
-                        <dependency>
-                            <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>fabric3-jpa-spi</artifactId>
-                            <version>${fabric3.version}</version>
-                        </dependency>
-
 
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>

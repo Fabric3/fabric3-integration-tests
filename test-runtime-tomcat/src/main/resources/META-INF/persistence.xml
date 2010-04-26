@@ -18,8 +18,6 @@ Public License. See the accompanying license file for details.
         <class>org.fabric3.runtime.webapp.smoketest.model.Employee</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
-            <property name="hibernate.transaction.manager_lookup_class"
-                      value="org.fabric3.jpa.hibernate.F3HibernateTransactionManagerLookup"/>
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
             <!-- property name="hibernate.cglib.use_reflection_optimizer" value="false"/-->
         </properties>

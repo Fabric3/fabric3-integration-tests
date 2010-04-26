@@ -56,8 +56,6 @@
                 <module>test-resource</module>
                 <module>test-policy</module>
                 <module>test-jpa-hibernate</module>
-                <module>test-jpa-core</module>
-                <module>test-jpa-implementation</module>
                 <module>test-rs</module>
                 <module>test-timer-quartz</module>
                 <module>test-timer-implementation</module>

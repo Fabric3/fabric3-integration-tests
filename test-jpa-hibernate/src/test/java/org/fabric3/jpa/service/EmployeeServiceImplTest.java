@@ -61,40 +61,52 @@ public class EmployeeServiceImplTest extends TestCase {
     @Reference
     protected ConversationEmployeeService conversationEmployeeService;
 
+    @Reference
+    EmployeeService employeeMultiThreadedSessionService;
+
+    @Reference
+    EmployeeService employeeSessionService;
+
     public void testCreateEmployee() {
         employeeService.createEmployee(123L, "Barney Rubble");
         Employee employee = employeeService.findEmployee(123L);
-
         assertNotNull(employee);
         assertEquals("Barney Rubble", employee.getName());
-
     }
 
     public void testCreateEMFEmployee() throws Exception {
         employeeEMFService.createEmployee(123L, "Barney Rubble");
         Employee employee = employeeEMFService.findEmployee(123L);
-
         assertNotNull(employee);
         assertEquals("Barney Rubble", employee.getName());
+    }
 
+    public void testCreateSessionEmployee() {
+        employeeSessionService.createEmployee(123L, "Barney Rubble");
+        Employee employee = employeeSessionService.findEmployee(123L);
+        assertNotNull(employee);
+        assertEquals("Barney Rubble", employee.getName());
+    }
+
+    public void testCreateMultiThreadedSessionEmployee() {
+        employeeMultiThreadedSessionService.createEmployee(123L, "Barney Rubble");
+        Employee employee = employeeMultiThreadedService.findEmployee(123L);
+        assertNotNull(employee);
+        assertEquals("Barney Rubble", employee.getName());
     }
 
     public void testCreateMultiThreadedEmployee() {
         employeeMultiThreadedService.createEmployee(123L, "Barney Rubble");
         Employee employee = employeeMultiThreadedService.findEmployee(123L);
-
         assertNotNull(employee);
         assertEquals("Barney Rubble", employee.getName());
-
     }
 
     public void testSearchWithName() {
         employeeMultiThreadedService.createEmployee(123L, "Barney");
         List<Employee> employees = employeeService.searchWithCriteria("Barney");
-
         assertNotNull(employees);
         assertEquals(1, employees.size());
-
     }
 
     public void testTwoPersistenceContexts() {
