@@ -15,4 +15,9 @@
     <component name="ResourceTest">
         <f3-impl:junit class="org.fabric3.resource.itest.ResourceTest"/>
     </component>
+
+    <component name="DataSourceTest">
+        <f3-impl:junit class="org.fabric3.resource.itest.DataSourceTest"/>
+    </component>
+
 </composite>
