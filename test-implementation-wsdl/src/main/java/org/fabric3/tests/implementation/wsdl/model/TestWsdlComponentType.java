@@ -37,12 +37,12 @@
 */
 package org.fabric3.tests.implementation.wsdl.model;
 
-import org.fabric3.model.type.component.AbstractComponentType;
+import org.fabric3.model.type.component.ComponentType;
 
 /**
  * @version $Rev$ $Date$
  */
-public class TestWsdlComponentType extends AbstractComponentType {
+public class TestWsdlComponentType extends ComponentType {
     private static final long serialVersionUID = -2504613183045200259L;
 
 
