@@ -113,7 +113,7 @@ public class BindingSCA extends TestCase {
      *
      * @throws Exception no expected exception should be thrown
      */
-    public void txestUndeployWhileLocked() throws Exception {
+    public void testUndeployWhileLocked() throws Exception {
         try {
             domain.uninstall(APP2_URI);
             fail("Contribution locked exception expected");
