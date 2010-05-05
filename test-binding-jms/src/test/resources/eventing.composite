@@ -23,7 +23,7 @@
         <implementation.java class="org.fabric3.tests.binding.harness.eventing.TestProducerImpl"/>
         <producer name="channel" target="TestChannel">
             <binding.jms>
-                <destination jndiName="TestChannelQueue"/>
+                <destination type="topic" jndiName="TestChannelQueue"/>
             </binding.jms>
         </producer>
     </component>
@@ -35,7 +35,7 @@
 
     <channel name="TestChannel">
         <binding.jms>
-            <destination jndiName="TestChannelQueue"/>
+            <destination type="topic" jndiName="TestChannelQueue"/>
         </binding.jms>
     </channel>
 
