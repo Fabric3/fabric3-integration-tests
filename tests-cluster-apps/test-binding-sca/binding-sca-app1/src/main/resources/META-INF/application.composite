@@ -15,6 +15,7 @@
         <service name="TestClientService">
             <binding.ws/>
         </service>
+        <producer name="producer" target="TestChannel"/>
         <reference name="testService" target="TestService"/>
     </component>
 

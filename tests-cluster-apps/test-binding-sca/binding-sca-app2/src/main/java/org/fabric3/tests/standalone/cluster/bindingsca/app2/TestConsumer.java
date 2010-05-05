@@ -35,60 +35,25 @@
 * GNU General Public License along with Fabric3.
 * If not, see <http://www.gnu.org/licenses/>.
 */
-package org.fabric3.tests.standalone.cluster.bindingsca.app1;
+package org.fabric3.tests.standalone.cluster.bindingsca.app2;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CountDownLatch;
-
-import org.oasisopen.sca.annotation.Reference;
-import org.oasisopen.sca.annotation.Scope;
-import org.oasisopen.sca.annotation.Service;
-
+import org.fabric3.api.annotation.Consumer;
 import org.fabric3.api.annotation.Monitor;
-import org.fabric3.api.annotation.Producer;
 import org.fabric3.tests.standalone.cluster.bindingsca.api.TestEvent;
-import org.fabric3.tests.standalone.cluster.bindingsca.api.TestService;
-import org.fabric3.tests.standalone.cluster.bindingsca.api.TestServiceCallback;
-
 
 /**
  * @version $Rev$ $Date$
  */
-@Service(names = {TestClientService.class, TestServiceCallback.class})
-@Scope("COMPOSITE")
-public class TestClient implements TestClientService, TestServiceCallback {
-    private TestService testService;
+public class TestConsumer {
     private TestMonitor monitor;
-    private TestEventStream stream;
 
-    private Map<String, CountDownLatch> latches = new ConcurrentHashMap<String, CountDownLatch>();
-
-    public TestClient(@Reference(name = "testService") TestService testService, @Producer("producer") TestEventStream stream, @Monitor TestMonitor monitor) {
-        this.testService = testService;
-        this.stream = stream;
+    public TestConsumer(@Monitor TestMonitor monitor) {
         this.monitor = monitor;
     }
 
-    public String invoke(String message) {
-        TestEvent event = new TestEvent("test");
-        stream.fireEvent(event);
-        monitor.message("Received invoke: " + message);
-        CountDownLatch latch = new CountDownLatch(1);
-        latches.put(message, latch);
-        testService.invoke(message);
-        try {
-            latch.await();
-        } catch (InterruptedException e) {
-            throw new AssertionError(e);
-        }
-        return message;
-    }
-
-    public void onResponse(String message) {
-        monitor.message("Received callback: " + message);
-        CountDownLatch latch = latches.get(message);
-        latch.countDown();
+    @Consumer
+    public void onEvent(TestEvent event) {
+        monitor.message("Event received: " + event.getMessage());
     }
 
 

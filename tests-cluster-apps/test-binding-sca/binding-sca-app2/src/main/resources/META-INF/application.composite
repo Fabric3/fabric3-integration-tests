@@ -14,4 +14,11 @@
         <implementation.java class="org.fabric3.tests.standalone.cluster.bindingsca.app2.TestComponent"/>
     </component>
 
+    <channel name="TestChannel"/>
+
+    <component name="TestConsumer">
+        <implementation.java class="org.fabric3.tests.standalone.cluster.bindingsca.app2.TestConsumer"/>
+        <consumer name="onEvent" source="TestChannel"/>
+    </component>
+
 </composite>
