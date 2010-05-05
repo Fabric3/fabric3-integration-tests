@@ -20,9 +20,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.codehaus.fabric3.spec</groupId>
-            <artifactId>sca-api</artifactId>
-            <version>${sca.api.version}</version>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-api</artifactId>
+            <version>${fabric3.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

@@ -52,6 +52,7 @@
             <modules>
                 <module>test-binding-harness</module>
                 <module>test-function</module>
+                <module>test-eventing</module> 
                 <module>test-user-resource</module>
                 <module>test-resource</module>
                 <module>test-policy</module>

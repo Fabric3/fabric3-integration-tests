@@ -19,6 +19,7 @@
     <include name="JMSScopeComposite"/>
     <include name="JMSJAXBComposite"/>
     <include name="JMSFaultsComposite"/>
+    <include name="JMSEventingComposite"/>
 
 
 </composite>
