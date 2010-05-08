@@ -18,7 +18,7 @@ public class TestConsumerImpl implements TestConsumer {
     }
 
     public void waitOnEvents() throws InterruptedException {
-      latch.await();
+        latch.await();
     }
 
     @Consumer("event")
@@ -26,7 +26,7 @@ public class TestConsumerImpl implements TestConsumer {
         if (event instanceof TestEvent) {
             latch.countDown();
             return;
-        } else if ((event instanceof String)) {
+        } else if (event instanceof String) {
             latch.countDown();
             return;
         }

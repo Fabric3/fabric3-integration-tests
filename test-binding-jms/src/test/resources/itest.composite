@@ -21,5 +21,4 @@
     <include name="JMSFaultsComposite"/>
     <include name="JMSEventingComposite"/>
 
-
 </composite>

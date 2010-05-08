@@ -16,6 +16,7 @@
     <component name="TestClient">
         <f3-impl:junit class="org.fabric3.tests.eventing.TestClient"/>
         <reference name="producer" target="TestProducer"/>
+        <reference name="unTypedProducer" target="TestUnTypedProducer"/>
         <reference name="consumer" target="TestConsumer"/>
     </component>
 
@@ -24,11 +25,23 @@
         <producer name="channel" target="TestChannel"/>
     </component>
 
+    <component name="TestUnTypedProducer">
+        <implementation.java class="org.fabric3.tests.binding.harness.eventing.TestUnTypedProducerImpl"/>
+        <producer name="channel" target="TestUnTypedChannel"/>
+    </component>
+
     <component name="TestConsumer">
         <implementation.java class="org.fabric3.tests.binding.harness.eventing.TestConsumerImpl"/>
         <consumer name="event" source="TestChannel"/>
     </component>
 
+    <component name="TestTypedConsumer">
+        <implementation.java class="org.fabric3.tests.binding.harness.eventing.TestTypedConsumer"/>
+        <consumer name="event" source="TestUnTypedChannel"/>
+    </component>
+
     <channel name="TestChannel"/>
+
+    <channel name="TestUnTypedChannel"/>
 
 </composite>
