@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:ns="org.codehaus.fabric3"
+           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           name="TestInvocationComposite">
+
+    <component name="InvocationTest">
+        <f3-impl:junit class="org.fabric3.tests.spring.InvocationTest"/>
+        <reference name="service" target="SpringComponent"/>
+        <reference name="nonTypedService" target="SpringMultiServiceComponent/TestNonTypedService"/>
+    </component>
+
+    <component name="SpringComponent">
+        <implementation.spring location="META-INF/application1.context.xml"/>
+        <reference name="SCAService" target="SCAService"/>
+    </component>
+
+    <component name="SpringMultiServiceComponent">
+        <implementation.spring location="META-INF/application2.context.xml"/>
+        <reference name="SCAService" target="SCAService"/>
+    </component>
+
+    <component name="SCAService">
+        <implementation.java class="org.fabric3.tests.spring.SCAServiceImpl"/>
+    </component>
+
+</composite>
