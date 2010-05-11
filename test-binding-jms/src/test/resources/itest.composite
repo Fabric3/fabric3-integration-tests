@@ -15,6 +15,7 @@
 
     <include name="JMSCallbackComposite"/>
     <include name="JMSDefaultsComposite"/>
+    <include name="JMSMixedComposite"/>
     <include name="JMSTypesComposite"/>
     <include name="JMSScopeComposite"/>
     <include name="JMSJAXBComposite"/>
