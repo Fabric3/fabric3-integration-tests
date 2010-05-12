@@ -41,6 +41,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URI;
 
+import javax.xml.namespace.QName;
+
 import org.fabric3.host.Fabric3RuntimeException;
 import org.fabric3.spi.builder.WiringException;
 import org.fabric3.spi.component.Component;
@@ -70,6 +72,10 @@ public class TestWsdlComponent implements Component {
             // no method defined
         }
 
+    }
+
+    public QName getDeployable() {
+        return null;
     }
 
     public URI getUri() {
