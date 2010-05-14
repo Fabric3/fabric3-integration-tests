@@ -67,16 +67,6 @@
                     <extensions>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>fabric3-spring-library</artifactId>
-                            <version>${fabric3.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>fabric3-spring</artifactId>
-                            <version>${fabric3.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>fabric3-jetty</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
@@ -90,6 +80,11 @@
                         <profile>
                             <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>profile-ws</artifactId>
+                            <version>${fabric3.version}</version>
+                        </profile>
+                        <profile>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>profile-spring</artifactId>
                             <version>${fabric3.version}</version>
                         </profile>
                         <profile>
