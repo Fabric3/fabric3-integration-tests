@@ -100,6 +100,12 @@
 
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-hibernate-library</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>fabric3-tx</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
