@@ -40,6 +40,7 @@ package org.fabric3.tests.implementation.wsdl.runtime;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URI;
+import java.util.logging.Level;
 
 import javax.xml.namespace.QName;
 
@@ -57,6 +58,7 @@ public class TestWsdlComponent implements Component {
     private Object instance;
     private Method invokeMethod;
     private Method setWireMethod;
+    private Level level = Level.INFO;
 
     public TestWsdlComponent(URI uri, Object instance) {
         this.uri = uri;
@@ -100,6 +102,18 @@ public class TestWsdlComponent implements Component {
 
     public void stop() throws Fabric3RuntimeException {
 
+    }
+
+    public String getName() {
+        return uri.toString();
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
     }
 
     public void setWire(String name, Wire wire) throws WiringException {
