@@ -119,7 +119,7 @@ public class ClusterBootFixture extends TestSetup {
                 } else {
                     process = Runtime.getRuntime().exec("java -jar server.jar " + mode, new String[0], dir);
                 }
-                InputStream stream = process.getErrorStream();
+                InputStream stream = process.getInputStream();
                 ByteArrayOutputStream os = new ByteArrayOutputStream();
                 while (stream.available() == 0) {
                     Thread.sleep(100);

@@ -64,7 +64,7 @@ public class StandaloneBootFixture extends TestSetup {
         Runtime.getRuntime().exec("java -jar shutdown.jar", new String[0], RUNTIME_DIR);
         Process process = Runtime.getRuntime().exec("java -jar server.jar", new String[0], RUNTIME_DIR);
 //        Process process = Runtime.getRuntime().exec("java "+IDEA_DEBUG +" -jar server.jar", new String[0], RUNTIME_DIR);
-        InputStream stream = process.getErrorStream();
+        InputStream stream = process.getInputStream();
         ByteArrayOutputStream os = new ByteArrayOutputStream();
         while (stream.available() == 0) {
             Thread.sleep(100);
