@@ -1,0 +1,8 @@
+<configuration>
+    <logger name="org.apache">
+        <level value="ERROR"/>
+    </logger>
+   <root>
+        <level value="ERROR"/>
+    </root>
+</configuration>
