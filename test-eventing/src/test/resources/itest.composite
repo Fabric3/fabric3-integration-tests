@@ -9,6 +9,7 @@
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:ns="org.codehaus.fabric3"
+           xmlns:f3-core="urn:fabric3.org:core"
            targetNamespace="org.codehaus.fabric3"
            xmlns:f3-impl="urn:fabric3.org:implementation"
            name="TestComposite">
@@ -40,8 +41,15 @@
         <consumer name="event" source="TestUnTypedChannel"/>
     </component>
 
+    <component name="TestChannelMonitor">
+        <implementation.monitor/>
+        <consumer name="monitor" source="MonitorChannel"/>
+    </component>
+
     <channel name="TestChannel"/>
 
     <channel name="TestUnTypedChannel"/>
+
+    <channel name="MonitorChannel" requires="f3-core:synchronous"/>
 
 </composite>
