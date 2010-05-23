@@ -37,33 +37,13 @@
 */
 package org.fabric3.tests.standalone.application;
 
-import org.oasisopen.sca.annotation.EagerInit;
-import org.oasisopen.sca.annotation.Init;
-import org.oasisopen.sca.annotation.Scope;
-
-import org.fabric3.api.annotation.Monitor;
+import org.fabric3.api.annotation.logging.Info;
 
 /**
  * @version $Rev$ $Date$
  */
-@Scope("COMPOSITE")
-@EagerInit
-public class TestComponent implements TestService, TestServiceMBean {
-    @Monitor
-    protected TestMonitor monitor;
+public interface TestMonitor {
 
-    @Init
-    public void init() {
-        System.out.println("-------------");
-    }
-
-    public String invoke(String msg) {
-        monitor.info(msg);
-        return msg;
-    }
-
-    public String invoke() {
-        monitor.info("invoked()");
-        return "test";
-    }
+    @Info
+    void info(String message);
 }
