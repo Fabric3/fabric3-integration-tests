@@ -40,7 +40,7 @@ package org.fabric3.tests.function.monitor;
 import junit.framework.TestCase;
 
 import org.fabric3.api.annotation.Monitor;
-import org.fabric3.api.annotation.logging.Info;
+import org.fabric3.api.annotation.monitor.Info;
 
 /**
  * @version $Rev$ $Date$
