@@ -45,7 +45,7 @@ import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Scope;
 import org.oasisopen.sca.annotation.Service;
 
-import org.fabric3.api.annotation.Monitor;
+import org.fabric3.api.annotation.monitor.Monitor;
 import org.fabric3.api.annotation.Producer;
 import org.fabric3.tests.standalone.cluster.bindingsca.api.TestEvent;
 import org.fabric3.tests.standalone.cluster.bindingsca.api.TestService;

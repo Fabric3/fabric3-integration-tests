@@ -3,7 +3,7 @@ package org.fabric3.tests.eventing;
 import junit.framework.TestCase;
 import org.oasisopen.sca.annotation.Reference;
 
-import org.fabric3.api.annotation.Monitor;
+import org.fabric3.api.annotation.monitor.Monitor;
 import org.fabric3.tests.binding.harness.eventing.TestConsumer;
 import org.fabric3.tests.binding.harness.eventing.TestProducer;
 import org.fabric3.tests.binding.harness.eventing.TestUnTypedProducer;

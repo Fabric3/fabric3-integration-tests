@@ -39,7 +39,7 @@ package org.fabric3.tests.function.monitor;
 
 import junit.framework.TestCase;
 
-import org.fabric3.api.annotation.Monitor;
+import org.fabric3.api.annotation.monitor.Monitor;
 import org.fabric3.api.annotation.monitor.Info;
 
 /**

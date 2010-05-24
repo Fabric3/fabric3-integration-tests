@@ -41,7 +41,7 @@ import org.oasisopen.sca.annotation.EagerInit;
 import org.oasisopen.sca.annotation.Init;
 import org.oasisopen.sca.annotation.Scope;
 
-import org.fabric3.api.annotation.Monitor;
+import org.fabric3.api.annotation.monitor.Monitor;
 
 /**
  * @version $Rev$ $Date$

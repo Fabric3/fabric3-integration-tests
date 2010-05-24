@@ -39,7 +39,7 @@ package org.fabric3.tests.standalone.cluster.bindingsca.app2;
 
 import org.oasisopen.sca.annotation.Callback;
 
-import org.fabric3.api.annotation.Monitor;
+import org.fabric3.api.annotation.monitor.Monitor;
 import org.fabric3.tests.standalone.cluster.bindingsca.api.TestService;
 import org.fabric3.tests.standalone.cluster.bindingsca.api.TestServiceCallback;
 
