@@ -90,7 +90,7 @@
                         </copy>
                         <copy>
                             <source>config/systemConfig.xml</source>
-                            <destination>config/participant</destination>
+                            <destination>runtimes/participant/config</destination>
                         </copy>
                      </configurationFiles> 
                 </configuration>
