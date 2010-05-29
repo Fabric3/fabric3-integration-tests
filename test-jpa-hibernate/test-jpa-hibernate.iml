@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module relativePaths="true" type="JAVA_MODULE" version="4">
+<module relativePaths="true" MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -13,19 +13,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
-      <library name="junit:junit:3.8.2">
-        <CLASSES>
-          <root url="jar://$M2_REPO$/junit/junit/3.8.2/junit-3.8.2.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$M2_REPO$/junit/junit/3.8.2/junit-3.8.2-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$M2_REPO$/junit/junit/3.8.2/junit-3.8.2-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
       <library name="javax.persistence:persistence-api:1.0">
         <CLASSES>
           <root url="jar://$M2_REPO$/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar!/" />
@@ -38,7 +25,6 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="sca-spec" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -48,6 +34,16 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="Maven: org.codehaus.fabric3.spec:sca-api:1.1" level="project" />
+    <orderEntry type="module" module-name="fabric3-api" exported="" />
+    <orderEntry type="library" exported="" name="Maven: junit:junit:3.8.2" level="project" />
+    <orderEntry type="library" exported="" name="Maven: javax.persistence:com.springsource.javax.persistence:1.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.hibernate:hibernate-core:3.3.0.SP1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.slf4j:slf4j-api:1.4.2" level="project" />
+    <orderEntry type="library" exported="" name="Maven: antlr:antlr:2.7.6" level="project" />
+    <orderEntry type="library" exported="" name="Maven: commons-collections:commons-collections:3.1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: dom4j:dom4j:1.6.1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: xml-apis:xml-apis:1.0.b2" level="project" />
   </component>
 </module>
 

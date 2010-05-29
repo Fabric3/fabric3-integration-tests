@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module relativePaths="true" type="JAVA_MODULE" version="4">
+<module relativePaths="true" MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -25,21 +25,12 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library name="junit:junit:3.8.2">
-        <CLASSES>
-          <root url="jar://$M2_REPO$/junit/junit/3.8.2/junit-3.8.2.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$M2_REPO$/junit/junit/3.8.2/junit-3.8.2-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$M2_REPO$/junit/junit/3.8.2/junit-3.8.2-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module" module-name="sca-spec" />
     <orderEntry type="module" module-name="test-binding-harness" />
+    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api-osgi:2.2-promoted-b50" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.codehaus.fabric3.spec:sca-api:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.fabric3.tests:test-binding-harness:0.1-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="fabric3-api" />
+    <orderEntry type="library" name="Maven: junit:junit:3.8.2" level="project" />
   </component>
 </module>
 
