@@ -1,11 +1,8 @@
 <config>
-    <runtime jmxPort="1199"/>
+    <runtime mode="controller" jmxPort="1199"/>
     <web.server>
         <http port="8180"/>
     </web.server>
-    <federation>
-        <runtimeName>Controller</runtimeName>
-    </federation>
     <datasources>
        <datasource name="LoanApplicationDS" 
                 driver="org.h2.Driver"

@@ -1,5 +1,5 @@
 <config>
-    <runtime jmxPort="1201"/>
+    <runtime mode="participant" jmxPort="1201"/>
     <web.server>
         <http port="8182"/>
     </web.server>
@@ -30,6 +30,5 @@
            </value>
         </transport>
         <zoneName>zone2</zoneName>
-        <runtimeName>runtime2</runtimeName>
     </federation>
 </config>
