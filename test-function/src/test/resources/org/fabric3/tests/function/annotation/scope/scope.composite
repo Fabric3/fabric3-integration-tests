@@ -25,6 +25,7 @@ Public License. See the accompanying license file for details.
         <reference name="compositeServiceTwo" target="SimpleCompositeService"/>
         <reference name="annotatedCompositeServiceOne" target="AnnotatedCompositeService"/>
         <reference name="annotatedCompositeServiceTwo" target="AnnotatedCompositeService"/>
+        <reference name="domainService" target=".DomainScopedService"/>
     </component>
 
     <component name="AnnotatedConversationalService">
@@ -49,6 +50,10 @@ Public License. See the accompanying license file for details.
 
     <component name="AnnotatedCompositeService">
         <implementation.java class="org.fabric3.tests.function.annotation.scope.AnnotatedCompositeService"/>
+    </component>
+
+    <component name=".DomainScopedService">
+        <implementation.java class="org.fabric3.tests.function.annotation.scope.DomainScopedServiceImpl"/>
     </component>
 
 </composite>
