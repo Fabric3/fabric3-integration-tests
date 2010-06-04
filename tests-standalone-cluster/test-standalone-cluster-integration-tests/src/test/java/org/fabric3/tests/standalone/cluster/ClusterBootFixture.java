@@ -47,12 +47,18 @@ import junit.extensions.TestSetup;
 import junit.framework.Test;
 
 /**
- * A test fixture that boots the F3 server once for a suite of tests.
+ * A test fixture that boots a multi-zoned (clustered) domain topology:
+ * <pre>
+ *          - Zone1 contains one instance
+ *          - Zone2 contains two instances
+ * </pre>
+ * <p/>
+ * This topology allows for a battery of integration tests to be run via multiple contribution deployments.
  *
  * @version $Rev$ $Date$
  */
 public class ClusterBootFixture extends TestSetup {
-    private static final String IDEA_DEBUG = "-Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y -Xmx512M -XX:MaxPermSize=512M";
+    private static final String DEBUG = "-Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y -Xmx512M -XX:MaxPermSize=512M";
 
     private static final File CONTROLLER_DIR = new File(".." + File.separator
             + "test-standalone-cluster-setup" + File.separator
@@ -77,47 +83,65 @@ public class ClusterBootFixture extends TestSetup {
     }
 
     protected void setUp() throws Exception {
-        CountDownLatch latch = new CountDownLatch(3);
-        RuntimeBooter controller = new RuntimeBooter(CONTROLLER_DIR, latch, "controller", "controller", false);
-        RuntimeBooter zone1 = new RuntimeBooter(ZONE1_DIR, latch, "participant", "zone1", false);
-        RuntimeBooter zone2 = new RuntimeBooter(ZONE2_DIR, latch, "participant", "zone2", false);
+        CountDownLatch latch = new CountDownLatch(4);
+        RuntimeBooter controller = new RuntimeBooter(CONTROLLER_DIR, latch, "controller", "controller", false, false);
+        RuntimeBooter zone1_participant1 = new RuntimeBooter(ZONE1_DIR, latch, "participant1", "zone1", true, false);
+        RuntimeBooter zone2_participant1 = new RuntimeBooter(ZONE2_DIR, latch, "participant1", "zone2", true, false);
+        RuntimeBooter zone2_participant2 = new RuntimeBooter(ZONE2_DIR, latch, "participant2", "zone2", true, false);
         new Thread(controller).start();
-        new Thread(zone1).start();
-        new Thread(zone2).start();
+        new Thread(zone1_participant1).start();
+        new Thread(zone2_participant1).start();
+        Thread.sleep(1000);
+        new Thread(zone2_participant2).start();
         latch.await();
     }
 
     protected void tearDown() throws Exception {
-        CountDownLatch latch = new CountDownLatch(3);
-        new Thread(new RuntimeShutdown(CONTROLLER_DIR, latch, "controller", "1199")).start();
-        new Thread(new RuntimeShutdown(ZONE1_DIR, latch, "participant", "1200")).start();
-        new Thread(new RuntimeShutdown(ZONE2_DIR, latch, "participant", "1201")).start();
+        CountDownLatch latch = new CountDownLatch(4);
+        new Thread(new RuntimeShutdown(CONTROLLER_DIR, latch, "controller", "controller", "1199")).start();
+        new Thread(new RuntimeShutdown(ZONE1_DIR, latch, "participant1", "zone1", "1200")).start();
+        new Thread(new RuntimeShutdown(ZONE2_DIR, latch, "participant1", "zone2", "1300")).start();
+        new Thread(new RuntimeShutdown(ZONE2_DIR, latch, "participant2", "zone2", "1301")).start();
         latch.await();
     }
 
     private class RuntimeBooter implements Runnable {
         private File dir;
         private CountDownLatch latch;
-        private String mode;
-        private String name;
+        private String runtimeName;
+        private String zone;
         private boolean debug;
+        private boolean cloneParticipant;
 
-        private RuntimeBooter(File dir, CountDownLatch latch, String mode, String name, boolean debug) {
+        private RuntimeBooter(File dir, CountDownLatch latch, String runtimeName, String zone, boolean cloneParticipant, boolean debug) {
             this.dir = dir;
             this.latch = latch;
-            this.mode = mode;
-            this.name = name;
+            this.runtimeName = runtimeName;
+            this.zone = zone;
+            this.cloneParticipant = cloneParticipant;
             this.debug = debug;
         }
 
         public void run() {
             try {
-                System.out.println("Booting " + mode + " debug: " + debug);
+                System.out.println("Booting " + zone + ":" + runtimeName + " debug: " + debug);
                 Process process;
                 if (debug) {
-                    process = Runtime.getRuntime().exec("java " + IDEA_DEBUG + " -jar server.jar " + mode, new String[0], dir);
+                    if (cloneParticipant) {
+                        process =
+                                Runtime.getRuntime().exec("java " + DEBUG + " -jar server.jar clone:participant " + runtimeName,
+                                                          new String[0],
+                                                          dir);
+                    } else {
+                        process =
+                                Runtime.getRuntime().exec("java " + DEBUG + " -jar server.jar " + runtimeName, new String[0], dir);
+                    }
                 } else {
-                    process = Runtime.getRuntime().exec("java -jar server.jar " + mode, new String[0], dir);
+                    if (cloneParticipant) {
+                        process = Runtime.getRuntime().exec("java -jar server.jar clone:participant " + runtimeName, new String[0], dir);
+                    } else {
+                        process = Runtime.getRuntime().exec("java -jar server.jar " + runtimeName, new String[0], dir);
+                    }
                 }
                 InputStream stream = process.getInputStream();
                 ByteArrayOutputStream os = new ByteArrayOutputStream();
@@ -130,7 +154,7 @@ public class ClusterBootFixture extends TestSetup {
                     String output = new String(os.toByteArray());
                     if (i == "\n".getBytes()[0]) {
                         synchronized (System.out) {
-                            System.out.print("[Runtime:" + name + "]" + output);
+                            System.out.print("[Runtime:" + zone + ":" + runtimeName + "]" + output);
                         }
                         os = new ByteArrayOutputStream();
                     }
@@ -151,7 +175,7 @@ public class ClusterBootFixture extends TestSetup {
                     if (i == "\n".getBytes()[0]) {
                         synchronized (System.out) {
                             String output = new String(os.toByteArray());
-                            System.out.print("[Runtime:" + name + "]" + output);
+                            System.out.print("[Runtime:" + zone + ":" + runtimeName + "]" + output);
                         }
                         os = new ByteArrayOutputStream();
                     }
@@ -169,21 +193,24 @@ public class ClusterBootFixture extends TestSetup {
     private class RuntimeShutdown implements Runnable {
         private File dir;
         private CountDownLatch latch;
-        private String mode;
+        private String runtimeName;
         private String jmxPort;
+        private String zone;
 
-        private RuntimeShutdown(File dir, CountDownLatch latch, String mode, String jmxPort) {
+        private RuntimeShutdown(File dir, CountDownLatch latch, String runtimeName, String zone, String jmxPort) {
             this.dir = dir;
             this.latch = latch;
-            this.mode = mode;
+            this.zone = zone;
+            this.runtimeName = runtimeName;
             this.jmxPort = jmxPort;
         }
 
         public void run() {
             try {
+                System.out.println("Shutting down " + zone + ":" + runtimeName);
                 Process shutdown = Runtime.getRuntime().exec("java -jar shutdown.jar -p " + jmxPort, new String[0], dir);
                 shutdown.waitFor();
-                System.out.println("Shutdown " + mode);
+                System.out.println("Shutdown " + zone + ":" + runtimeName);
                 latch.countDown();
             } catch (IOException e) {
                 e.printStackTrace();

@@ -86,7 +86,7 @@
                     <configurationFiles>
                         <copy>
                             <source>../../../config/security.xml</source>
-                            <destination>config</destination>
+                            <destination>runtimes/participant/config</destination>
                         </copy>
                         <copy>
                             <source>config/systemConfig.xml</source>

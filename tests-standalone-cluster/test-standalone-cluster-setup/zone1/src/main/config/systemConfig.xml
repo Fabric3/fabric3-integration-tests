@@ -1,7 +1,7 @@
 <config>
-    <runtime mode="participant" jmxPort="1200"/>
+    <runtime mode="participant" jmxPort="1200-1299"/>
     <web.server>
-        <http port="8181"/>
+        <http port="8181-8200"/>
     </web.server>
     <datasources>
        <datasource name="LoanApplicationDS" 

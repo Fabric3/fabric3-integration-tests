@@ -40,14 +40,14 @@ package org.fabric3.tests.standalone.cluster;
 import junit.framework.TestSuite;
 
 /**
- * Initiates integration tests for the standalone runtime booted in single-VM mode.
+ * Configures integration tests to be run against a multi-zoned topology.
  *
  * @version $Rev$ $Date$
  */
 public class ClusterTestCase {
 
     public static junit.framework.Test suite() {
-        TestSuite suite = new TestSuite(BindingSCA.class);
+        TestSuite suite = new TestSuite(BindingSCA.class, DomainScope.class);
         return new ClusterBootFixture(suite);
     }
 
