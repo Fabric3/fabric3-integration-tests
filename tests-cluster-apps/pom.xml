@@ -33,5 +33,6 @@
     <description>Fabric3 Cluster Test Apps Parent</description>
     <modules>
         <module>test-binding-sca</module>
+        <module>domain-scope</module>
     </modules>
 </project>
