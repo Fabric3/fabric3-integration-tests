@@ -26,7 +26,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="test-binding-harness" />
-    <orderEntry type="module" module-name="fabric3-api" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.xml.bind:jaxb-api-osgi:2.2-promoted-b50" level="project" />
     <orderEntry type="library" exported="" name="Maven: org.codehaus.fabric3.spec:sca-api:1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.fabric3.tests:test-binding-harness:0.1-SNAPSHOT" level="project" />

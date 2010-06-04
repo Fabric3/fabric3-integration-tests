@@ -24,8 +24,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="fabric3-api" exported="" />
-    <orderEntry type="module" module-name="fabric3-timer-spi" exported="" />
-    <orderEntry type="module" module-name="fabric3-api" exported="" />
     <orderEntry type="library" exported="" name="Maven: org.codehaus.fabric3.spec:sca-api:1.1" level="project" />
     <orderEntry type="module" module-name="fabric3-timer-spi" exported="" />
     <orderEntry type="library" exported="" name="Maven: javax.transaction:com.springsource.javax.transaction:1.1.0" level="project" />
