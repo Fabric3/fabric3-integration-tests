@@ -43,7 +43,6 @@ import java.net.URI;
 import javax.xml.namespace.QName;
 
 import org.fabric3.api.annotation.monitor.MonitorLevel;
-import org.fabric3.host.Fabric3RuntimeException;
 import org.fabric3.spi.builder.WiringException;
 import org.fabric3.spi.component.Component;
 import org.fabric3.spi.wire.Wire;
@@ -91,15 +90,11 @@ public class TestWsdlComponent implements Component {
         this.classLoaderId = classLoaderId;
     }
 
-    public int getLifecycleState() {
-        return 0;
-    }
-
-    public void start() throws Fabric3RuntimeException {
+    public void start() {
 
     }
 
-    public void stop() throws Fabric3RuntimeException {
+    public void stop() {
 
     }
 
