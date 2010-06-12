@@ -42,7 +42,7 @@ package org.fabric3.tests.timer;
  */
 public interface LatchService {
 
-    void await() throws InterruptedException;
+    boolean await() throws InterruptedException;
 
     void countDown();
 

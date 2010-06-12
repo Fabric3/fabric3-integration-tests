@@ -37,26 +37,33 @@
 */
 package org.fabric3.tests.timer;
 
-import junit.framework.TestCase;
+import javax.transaction.Status;
+import javax.transaction.SystemException;
+import javax.transaction.TransactionManager;
+
+import org.oasisopen.sca.ServiceRuntimeException;
 import org.oasisopen.sca.annotation.Reference;
+
+import org.fabric3.api.annotation.Resource;
 
 /**
  * @version $Rev$ $Date$
  */
-public class TimedComponentTest extends TestCase {
-
+public class TransactionalTimedComponent implements Runnable {
     @Reference
     protected LatchService latchService;
 
-    @Reference
-    protected LatchService trxLatchService;
+    @Resource
+    protected TransactionManager tm;
 
-    public void testFire() throws Exception {
-        assertTrue(latchService.await());
+    public void run() {
+        try {
+            if (Status.STATUS_ACTIVE != tm.getStatus()) {
+                throw new ServiceRuntimeException("Transaction must be active");
+            }
+        } catch (SystemException e) {
+            throw new ServiceRuntimeException("Transaction must be active");
+        }
+        latchService.countDown();
     }
-
-    public void testTrxFire() throws Exception {
-        assertTrue(trxLatchService.await());
-    }
-
 }

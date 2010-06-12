@@ -38,6 +38,7 @@
 package org.fabric3.tests.timer;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import org.oasisopen.sca.annotation.Property;
 import org.oasisopen.sca.annotation.Scope;
@@ -53,8 +54,8 @@ public class LatchServiceImpl implements LatchService {
         this.latch = new CountDownLatch(count);
     }
 
-    public void await() throws InterruptedException {
-        latch.await();
+    public boolean await() throws InterruptedException {
+        return latch.await(10000, TimeUnit.MILLISECONDS);
     }
 
     public void countDown() {

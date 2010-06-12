@@ -16,6 +16,7 @@
     <component name="TimerTestComponent">
         <f3-impl:junit class="org.fabric3.tests.timer.TimedComponentTest"/>
         <reference name="latchService" target="LatchService"/>
+        <reference name="trxLatchService" target="TrxLatchService"/>
     </component>
 
     <component name="LatchService">
@@ -23,9 +24,19 @@
         <property name="count">2</property>
     </component>
 
+    <component name="TrxLatchService">
+        <implementation.java class="org.fabric3.tests.timer.LatchServiceImpl"/>
+        <property name="count">2</property>
+    </component>
+
     <component name="TimerComponent">
-        <f3-impl:implementation.timer class="org.fabric3.tests.timer.TimedComponent" requires="sca:managedTransaction" repeatInterval="10"/>
+        <f3-impl:implementation.timer class="org.fabric3.tests.timer.TimedComponent" repeatInterval="100"/>
         <reference name="latchService" target="LatchService"/>
+    </component>
+
+    <component name="TrxTimerComponent">
+        <f3-impl:implementation.timer class="org.fabric3.tests.timer.TransactionalTimedComponent" requires="sca:managedTransaction" repeatInterval="100"/>
+        <reference name="latchService" target="TrxLatchService"/>
     </component>
 
 
