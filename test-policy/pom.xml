@@ -90,6 +90,12 @@
                         </dependency>
 
                         <dependency>
+                             <groupId>org.codehaus.fabric3</groupId>
+                             <artifactId>fabric3-datasource</artifactId>
+                             <version>${fabric3.version}</version>
+                         </dependency>
+                        
+                        <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>fabric3-atomikos</artifactId>
                             <version>${fabric3.version}</version>
