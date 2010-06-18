@@ -8,6 +8,7 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3-other="urn:fabric3.org:other"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            targetNamespace="org.codehaus.fabric3"
            name="TestComposite"
@@ -35,9 +36,10 @@
     </component>
 
     <component name="TrxTimerComponent">
-        <f3-impl:implementation.timer class="org.fabric3.tests.timer.TransactionalTimedComponent" requires="sca:managedTransaction" repeatInterval="100"/>
+        <f3-impl:implementation.timer poolName="TestPool" class="org.fabric3.tests.timer.TransactionalTimedComponent" requires="sca:managedTransaction" repeatInterval="100"/>
         <reference name="latchService" target="TrxLatchService"/>
     </component>
 
+    <f3-other:timer.pool name="TestPool" size="5"/>
 
 </composite>
