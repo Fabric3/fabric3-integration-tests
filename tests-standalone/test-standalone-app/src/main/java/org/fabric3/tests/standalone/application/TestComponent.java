@@ -41,6 +41,8 @@ import org.oasisopen.sca.annotation.EagerInit;
 import org.oasisopen.sca.annotation.Init;
 import org.oasisopen.sca.annotation.Scope;
 
+import org.fabric3.api.annotation.management.Management;
+import org.fabric3.api.annotation.management.ManagementOperation;
 import org.fabric3.api.annotation.monitor.Monitor;
 
 /**
@@ -48,7 +50,8 @@ import org.fabric3.api.annotation.monitor.Monitor;
  */
 @Scope("COMPOSITE")
 @EagerInit
-public class TestComponent implements TestService, TestServiceMBean {
+@Management(name = "TestService", group = "TestGroup", description = "A test bean")
+public class TestComponent implements TestService {
     @Monitor
     protected TestMonitor monitor;
 
@@ -62,6 +65,7 @@ public class TestComponent implements TestService, TestServiceMBean {
         return msg;
     }
 
+    @ManagementOperation(description = "A test operation")
     public String invoke() {
         monitor.info("invoked()");
         return "test";

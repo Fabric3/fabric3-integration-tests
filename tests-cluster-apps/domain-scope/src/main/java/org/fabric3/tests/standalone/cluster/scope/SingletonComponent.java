@@ -4,6 +4,8 @@ import org.oasisopen.sca.annotation.EagerInit;
 import org.oasisopen.sca.annotation.Init;
 import org.oasisopen.sca.annotation.Scope;
 
+import org.fabric3.api.annotation.management.Management;
+import org.fabric3.api.annotation.management.ManagementOperation;
 import org.fabric3.api.annotation.monitor.Monitor;
 
 /**
@@ -11,7 +13,8 @@ import org.fabric3.api.annotation.monitor.Monitor;
  */
 @Scope("DOMAIN")
 @EagerInit
-public class SingletonComponent implements SingletonService, TestSingletonMBean {
+@Management
+public class SingletonComponent implements SingletonService {
     private TestMonitor monitor;
 
     public SingletonComponent(@Monitor TestMonitor monitor) {
@@ -23,6 +26,7 @@ public class SingletonComponent implements SingletonService, TestSingletonMBean 
         monitor.message("Singleton initialized");
     }
 
+    @ManagementOperation
     public String invoke(String message) {
         return message;
     }

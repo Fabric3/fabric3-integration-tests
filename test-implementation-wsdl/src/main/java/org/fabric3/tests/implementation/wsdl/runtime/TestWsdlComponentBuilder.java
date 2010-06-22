@@ -71,4 +71,8 @@ public class TestWsdlComponentBuilder implements ComponentBuilder<PhysicalWsdlCo
             throw new InvalidStubException(e);
         }
     }
+
+    public void dispose(PhysicalWsdlComponentDefinition definition, TestWsdlComponent component) throws BuilderException {
+        // no-op
+    }
 }

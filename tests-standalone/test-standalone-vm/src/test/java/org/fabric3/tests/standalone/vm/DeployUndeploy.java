@@ -57,7 +57,7 @@ import org.fabric3.admin.impl.DomainControllerImpl;
 import org.fabric3.management.contribution.ContributionInfo;
 
 /**
- * Runs basic smoketests for the standalone runtime booted in single-VM mode.
+ * Runs basic smoke tests for the standalone runtime booted in single-VM mode.
  *
  * @version $Rev$ $Date$
  */
@@ -102,7 +102,7 @@ public class DeployUndeploy extends TestCase {
             domain.undeploy(uri, false);
             domain.uninstall(uri);
             domain.remove(uri);
-        }
+        }                                                              
         domain.disconnect();
     }
 
@@ -111,7 +111,7 @@ public class DeployUndeploy extends TestCase {
         JMXServiceURL url = new JMXServiceURL(DOMAIN_ADDRESS);
         JMXConnector jmxc = JMXConnectorFactory.connect(url, null);
         MBeanServerConnection conn = jmxc.getMBeanServerConnection();
-        ObjectName oName = new ObjectName("fabric3:SubDomain=domain, type=component, name=TestService");
+        ObjectName oName = new ObjectName("fabric3:SubDomain=domain, type=component, group=TestGroup, name=TestService");
         return (String) conn.invoke(oName, "invoke", new Object[]{}, new String[]{});
     }
 
