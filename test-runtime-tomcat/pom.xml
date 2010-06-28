@@ -20,7 +20,14 @@
     <description>Fabric3 Webapp Tomcat Smoketest.</description>
 
     <dependencies>
-        <!-- use the released version of the API -->
+
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>1.0.0.Final</version>
+            <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.codehaus.fabric3.webapp</groupId>
             <artifactId>fabric3-webapp-api</artifactId>
@@ -40,19 +47,14 @@
         </dependency>
 
         <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>persistence-api</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>com.springsource.javax.transaction</artifactId>
             <version>1.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate</artifactId>
-            <version>3.2.4.ga</version>
+            <artifactId>hibernate-core</artifactId>
+            <version>3.5.1-Final</version>
             <exclusions>
                 <exclusion>
                     <groupId>javax.transaction</groupId>
@@ -63,6 +65,7 @@
                     <artifactId>jacc</artifactId>
                 </exclusion>
             </exclusions>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
@@ -111,10 +114,10 @@
                         </dependency>
 
                         <dependency>
-                             <groupId>org.codehaus.fabric3</groupId>
-                             <artifactId>fabric3-datasource</artifactId>
-                             <version>${fabric3.version}</version>
-                         </dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-datasource</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
 
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
@@ -151,9 +154,9 @@
                             <version>1.0.0</version>
                         </dependency>
                         <dependency>
-                            <groupId>javax.persistence</groupId>
-                            <artifactId>com.springsource.javax.persistence</artifactId>
-                            <version>1.0.0</version>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-jpa-api</artifactId>
+                            <version>${fabric3.version}</version>
                         </dependency>
                     </extensions>
                 </configuration>
@@ -224,4 +227,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
