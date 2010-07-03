@@ -11,4 +11,6 @@ public interface MixedTypeService {
 
     List<ReturnType> getTypes(String message);
 
+    String getPrimitive(int val);
+
 }

@@ -17,4 +17,8 @@ public class MixedTypeServiceImpl implements MixedTypeService {
         types.add(new ReturnType());
         return types;
     }
+
+    public String getPrimitive(int val) {
+        return String.valueOf(val);
+    }
 }

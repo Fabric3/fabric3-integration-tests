@@ -51,6 +51,7 @@ public class MixedTypeTest extends TestCase {
     public void testInvoke() {
         assertNotNull(service.getType("foo"));
         assertNotNull(service.getTypes("foo"));
+        assertEquals("1",service.getPrimitive(1));
     }
 
 }
