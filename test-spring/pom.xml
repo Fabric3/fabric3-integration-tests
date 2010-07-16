@@ -61,9 +61,28 @@
                                   <connection.factory name="default" broker.url="vm://broker" type="local"/>
                                </connection.factories>
                             </jms>
+                            <datasources>
+                                <datasource name="SecurityDS" driver="org.h2.Driver" url="jdbc:h2:mem:SECURITY;INIT=RUNSCRIPT FROM '${project.build.directory}/classes/create.sql';DB_CLOSE_DELAY=-1" type="non_xa"/>
+                            </datasources>
+                            <security>
+                                <spring.security>
+                                    <authentication-manager>
+                                        <authentication-provider>
+                                            <jdbc-user-service data-source-ref="SecurityDS"/>
+                                        </authentication-provider>
+                                    </authentication-manager>
+                                </spring.security>
+                            </security>
                         </config>
                         ]]>
                     </systemConfig>
+                    <shared>
+                        <dependency>
+                            <groupId>com.h2database</groupId>
+                            <artifactId>h2</artifactId>
+                            <version> 1.2.139</version>
+                        </dependency>
+                    </shared>
                     <extensions>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
@@ -72,7 +91,7 @@
                         </dependency>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>fabric3-security-impl</artifactId>
+                            <artifactId>fabric3-security</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
                     </extensions>
