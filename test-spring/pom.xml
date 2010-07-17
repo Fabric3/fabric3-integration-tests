@@ -32,6 +32,13 @@
         </dependency>
 
         <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-spring-library</artifactId>
+            <version>${fabric3.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
@@ -64,6 +71,7 @@
                             <datasources>
                                 <datasource name="SecurityDS" driver="org.h2.Driver" url="jdbc:h2:mem:SECURITY;INIT=RUNSCRIPT FROM '${project.build.directory}/classes/create.sql';DB_CLOSE_DELAY=-1" type="non_xa"/>
                             </datasources>
+                            <spring validating="true"/>
                             <security>
                                 <spring.security>
                                     <authentication-manager>
@@ -80,7 +88,7 @@
                         <dependency>
                             <groupId>com.h2database</groupId>
                             <artifactId>h2</artifactId>
-                            <version> 1.2.139</version>
+                            <version>1.2.139</version>
                         </dependency>
                     </shared>
                     <extensions>

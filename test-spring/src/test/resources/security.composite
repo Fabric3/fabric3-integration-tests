@@ -23,9 +23,21 @@
         <reference name="service" target="SCASecureService"/>
     </component>
 
+    <component name="SpringSecurityTest">
+        <f3-impl:junit class="org.fabric3.tests.spring.SecurityTest">
+            <configuration>
+                <username>scott</username>
+                <password>wombat</password>
+            </configuration>
+        </f3-impl:junit>
+        <reference name="service" target="SpringSecureService"/>
+    </component>
+
     <component name="SCASecureService">
         <implementation.java class="org.fabric3.tests.spring.SCASecureServiceImpl"/>
     </component>
 
-
+    <component name="SpringSecureService">
+        <implementation.spring location="META-INF/security.context.xml"/>
+    </component>
 </composite>

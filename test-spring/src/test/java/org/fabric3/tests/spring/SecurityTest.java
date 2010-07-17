@@ -1,7 +1,7 @@
 package org.fabric3.tests.spring;
 
 import junit.framework.TestCase;
-import org.oasisopen.sca.ServiceUnavailableException;
+import org.oasisopen.sca.ServiceRuntimeException;
 import org.osoa.sca.annotations.Reference;
 
 /**
@@ -17,7 +17,7 @@ public class SecurityTest extends TestCase {
         try {
             service.notAllowed();
             fail("Authorization not enforced");
-        } catch (ServiceUnavailableException e) {
+        } catch (ServiceRuntimeException e) {
             // expected
         }
     }

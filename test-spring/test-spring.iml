@@ -28,6 +28,7 @@
     <orderEntry type="module" module-name="sca-spec" />
     <orderEntry type="module" module-name="fabric3-api" />
     <orderEntry type="module" module-name="test-binding-harness" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:3.0.3.RELEASE" level="project" />
   </component>
 </module>
 
