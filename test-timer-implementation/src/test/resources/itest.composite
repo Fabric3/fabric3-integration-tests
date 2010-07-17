@@ -32,6 +32,7 @@
 
     <component name="TimerComponent">
         <f3-impl:implementation.timer class="org.fabric3.tests.timer.TimedComponent" repeatInterval="100"/>
+        <property name="property">value</property>
         <reference name="latchService" target="LatchService"/>
     </component>
 
