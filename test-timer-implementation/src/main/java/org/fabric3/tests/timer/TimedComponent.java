@@ -40,24 +40,27 @@ package org.fabric3.tests.timer;
 import org.oasisopen.sca.annotation.Property;
 import org.oasisopen.sca.annotation.Reference;
 
+import org.fabric3.api.annotation.Producer;
+import org.fabric3.tests.binding.harness.eventing.ProducerChannel;
+
 /**
  * @version $Rev$ $Date$
  */
 public class TimedComponent implements Runnable {
-    private String property;
-
-    @Property
-    public void setProperty(String property) {
-        this.property = property;
-    }
-
     @Reference
     protected LatchService latchService;
+
+    @Property
+    protected String property;
+
+    @Producer
+    protected ProducerChannel channel;
 
     public void run() {
         if (!"value".equals(property)) {
             throw new AssertionError("Property not set");
         }
+        channel.sendEvent("test");
         latchService.countDown();
     }
 }

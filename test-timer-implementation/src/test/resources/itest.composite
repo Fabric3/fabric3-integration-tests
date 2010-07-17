@@ -34,6 +34,7 @@
         <f3-impl:implementation.timer class="org.fabric3.tests.timer.TimedComponent" repeatInterval="100"/>
         <property name="property">value</property>
         <reference name="latchService" target="LatchService"/>
+        <producer name="channel" target="TestChannel"/>
     </component>
 
     <component name="TrxTimerComponent">
@@ -43,4 +44,6 @@
 
     <f3-other:timer.pool name="TestPool" size="5"/>
 
+    <channel name="TestChannel"/>
+    
 </composite>
