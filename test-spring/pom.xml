@@ -75,9 +75,13 @@
                             <security>
                                 <spring.security>
                                     <authentication-manager>
-                                        <authentication-provider>
+                                       <authentication-provider>
                                             <jdbc-user-service data-source-ref="SecurityDS"/>
-                                        </authentication-provider>
+                                       </authentication-provider>
+                                    <!--
+                                       <ldap-server url="ldap://localhost:1389/dc=example,dc=com" manager-dn="cn=Directory Manager" manager-password="password"/>
+                                       <ldap-authentication-provider user-search-base="ou=people" user-search-filter="uid={0}" group-search-filter="member={0}" group-search-base="ou=groups"/>
+                                    -->
                                     </authentication-manager>
                                 </spring.security>
                             </security>
