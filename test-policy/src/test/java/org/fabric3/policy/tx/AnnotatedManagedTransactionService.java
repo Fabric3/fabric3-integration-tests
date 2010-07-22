@@ -40,10 +40,10 @@ package org.fabric3.policy.tx;
 import javax.transaction.Status;
 import javax.transaction.TransactionManager;
 
+import org.oasisopen.sca.annotation.ManagedTransaction;
 import org.oasisopen.sca.annotation.Reference;
 
 import org.fabric3.api.annotation.Resource;
-import org.fabric3.api.annotation.transaction.ManagedTransaction;
 import org.fabric3.api.annotation.transaction.PropagatesTransaction;
 import org.fabric3.api.annotation.transaction.SuspendsTransaction;
 
