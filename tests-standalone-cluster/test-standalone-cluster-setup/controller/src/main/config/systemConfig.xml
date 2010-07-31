@@ -4,11 +4,9 @@
         <http port="8180"/>
     </web.server>
     <datasources>
-       <datasource name="LoanApplicationDS" 
-                driver="org.h2.Driver"
-                url="jdbc:h2:mem:loadapplication;DB_CLOSE_DELAY=-1" 
-                type="non_xa">
-       </datasource>       
+        <datasource name="LoanApplicationDS" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
+           <URL>jdbc:h2:mem:loadapplication;DB_CLOSE_DELAY=-1</URL>
+       </datasource>
     </datasources>
     <jms>
        <connection.factories>

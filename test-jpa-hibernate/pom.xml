@@ -85,8 +85,8 @@
                     <systemConfig>
                         <![CDATA[<config>
                             <datasources>
-                                <datasource name="EmployeeDS" driver="org.h2.Driver" url="jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1" type="non_xa">
-                                    <url>jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1</url>
+                                <datasource name="EmployeeDS" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
+                                    <URL>jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1</URL>
                                 </datasource>
                             </datasources>
                         </config>]]>
@@ -95,7 +95,7 @@
                         <dependency>
                             <groupId>com.h2database</groupId>
                             <artifactId>h2</artifactId>
-                            <version>1.0.71</version>
+                            <version>1.2.140</version>
                         </dependency>
                     </shared>
                     <profiles>

@@ -17,12 +17,12 @@
     </component>
 
     <f3-other:datasources>
-        <datasource name="ds1" driver="org.h2.Driver" type="non_xa">
-            <url>jdbc:h2:mem:ds1;DB_CLOSE_DELAY=-1</url>
+         <datasource name="ds1" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
+            <URL>jdbc:h2:mem:ds1;DB_CLOSE_DELAY=-1</URL>
         </datasource>
-        <datasource name="ds2" driver="org.h2.Driver" type="non_xa">
-            <url>jdbc:h2:mem:ds2;DB_CLOSE_DELAY=-1</url>
-        </datasource>
+        <datasource name="ds2" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
+           <URL>jdbc:h2:mem:ds2;DB_CLOSE_DELAY=-1</URL>
+       </datasource>
     </f3-other:datasources>
 
 </composite>
