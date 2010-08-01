@@ -13,20 +13,16 @@
 
     <component name="TestClient">
         <f3-impl:junit class="tests.rs.TestClient"/>
-        <property name="hostURI">http://localhost:8900</property>
+        <property name="baseMessageUri">http://localhost:8900/messages</property>
+        <property name="baseStatelessUri">http://localhost:8900/stateless</property>
     </component>
 
-    <component name="EntityProvider">
-        <f3-impl:implementation.rs class="tests.rs.EntityProvider" uri="/echo"/>
+    <component name="MessageService">
+        <f3-impl:implementation.rs class="org.fabric3.tests.rs.MessageService" uri="/messages"/>
     </component>
 
-    <component name="RESTResource">
-        <f3-impl:implementation.rs class="tests.rs.EchoResource" uri="/echo"/>
-        <property name="message">Hello</property>
-        <reference name="service" target="Java"/>
+    <component name="StatelessService">
+        <f3-impl:implementation.rs class="org.fabric3.tests.rs.StatelessService" uri="/stateless"/>
     </component>
 
-    <component name="Java">
-        <implementation.java class="tests.rs.EchoJava"/>
-    </component>
 </composite>

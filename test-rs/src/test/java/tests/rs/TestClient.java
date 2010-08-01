@@ -20,11 +20,12 @@ import javax.ws.rs.core.UriBuilder;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.UniformInterfaceException;
 import com.sun.jersey.api.client.WebResource;
-import com.sun.jersey.api.client.config.ClientConfig;
-import com.sun.jersey.api.client.config.DefaultClientConfig;
 import junit.framework.TestCase;
 import org.osoa.sca.annotations.Property;
+
+import org.fabric3.tests.rs.Message;
 
 /**
  * @version $Rev$ $Date$
@@ -32,30 +33,47 @@ import org.osoa.sca.annotations.Property;
 public class TestClient extends TestCase {
 
     @Property
-    protected String hostURI;
+    protected String baseMessageUri;
+    @Property
+    protected String baseStatelessUri;
 
     public TestClient() {
     }
 
-    public void testEcho() {
-        UriBuilder uri = UriBuilder.fromUri(hostURI).path("echo");
-        WebResource resource = Client.create().resource(uri.path("Hello").build());
-        assertEquals("Hello World", resource.post(String.class, "World"));
+    public void testJAXBCreate() {
+        Client client = Client.create();
+        UriBuilder uri = UriBuilder.fromUri(baseMessageUri);
+        WebResource resource = client.resource(uri.path("message").build());
+        Message message = new Message();
+        message.setId(1L);
+        message.setText("this is a test");
+        resource.put(message);
+        resource = client.resource(uri.path("1").build());
+        Message response = resource.get(Message.class);
+        assertEquals("this is a test", response.getText());
     }
 
-    public void testEntity() {
-        UriBuilder uri = UriBuilder.fromUri(hostURI).path("echo");
-        Entity entity = new Entity();
-        entity.setValue("World");
-        ClientConfig cc = new DefaultClientConfig();
-        cc.getClasses().add(EntityProvider.class);
-        Client c = Client.create(cc);
-        WebResource resource = c.resource(uri.path("Hello").build());
-        ClientResponse response = resource.accept("application/entity").type("application/entity").post(ClientResponse.class, entity);
-        assertNotNull(response);
-        entity = response.getEntity(Entity.class);
-        assertNotNull(entity);
-        assertEquals("Hello World", entity.getValue());
+    public void testNotExist() {
+        Client client = Client.create();
+        UriBuilder uri = UriBuilder.fromUri(baseMessageUri);
+        WebResource resource = client.resource(uri.path("2").build());
+        try {
+            resource.get(Message.class);
+            fail();
+        } catch (UniformInterfaceException e) {
+            assertEquals(ClientResponse.Status.NOT_FOUND, e.getResponse().getClientResponseStatus());
+        }
+    }
+
+    public void testStateless() {
+        Client client = Client.create();
+        UriBuilder uri = UriBuilder.fromUri(baseStatelessUri);
+        WebResource resource = client.resource(uri.build());
+        String response = resource.get(String.class);
+        assertEquals("0", response);
+        response = resource.get(String.class);
+        assertEquals("0", response);
+
     }
 
 }
