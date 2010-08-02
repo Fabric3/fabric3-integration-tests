@@ -28,6 +28,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.oasisopen.sca.annotation.Scope;
@@ -37,7 +38,7 @@ import org.oasisopen.sca.annotation.Scope;
  * @version $Rev: 8746 $ $Date: 2010-03-27 22:35:03 +0100 (Sat, 27 Mar 2010) $
  */
 @Path("/")
-@Produces("application/xml")
+@Produces(MediaType.APPLICATION_XML)
 public class StatelessService {
     private int counter;
 

@@ -16,13 +16,18 @@
  */
 package tests.rs;
 
+import java.net.URI;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriBuilder;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.UniformInterfaceException;
 import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.client.config.ClientConfig;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
 import junit.framework.TestCase;
+import org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider;
 import org.osoa.sca.annotations.Property;
 
 import org.fabric3.tests.rs.Message;
@@ -34,6 +39,10 @@ public class TestClient extends TestCase {
 
     @Property
     protected String baseMessageUri;
+
+    @Property
+    protected String baseJsonMessageUri;
+
     @Property
     protected String baseStatelessUri;
 
@@ -41,17 +50,39 @@ public class TestClient extends TestCase {
     }
 
     public void testJAXBCreate() {
-        Client client = Client.create();
-        UriBuilder uri = UriBuilder.fromUri(baseMessageUri);
-        WebResource resource = client.resource(uri.path("message").build());
         Message message = new Message();
         message.setId(1L);
         message.setText("this is a test");
+        
+        Client client = Client.create();
+        UriBuilder uri = UriBuilder.fromUri(baseMessageUri);
+        WebResource resource = client.resource(uri.path("message").build());
+
         resource.put(message);
+
         resource = client.resource(uri.path("1").build());
         Message response = resource.get(Message.class);
         assertEquals("this is a test", response.getText());
     }
+
+    public void testJSONCreate() {
+        Message message = new Message();
+        message.setId(1L);
+        message.setText("this is a test");
+
+        ClientConfig cc = new DefaultClientConfig();
+        cc.getClasses().add(JacksonJaxbJsonProvider.class);
+        Client client = Client.create(cc);
+        UriBuilder uri = UriBuilder.fromUri(baseJsonMessageUri);
+        WebResource resource = client.resource(uri.path("message").build());
+
+        resource.type(MediaType.APPLICATION_JSON).put(message);
+        resource = client.resource(uri.path("1").build());
+
+        Message response = resource.type(MediaType.APPLICATION_JSON).get(Message.class);
+        assertEquals("this is a test", response.getText());
+    }
+
 
     public void testNotExist() {
         Client client = Client.create();
@@ -64,6 +95,7 @@ public class TestClient extends TestCase {
             assertEquals(ClientResponse.Status.NOT_FOUND, e.getResponse().getClientResponseStatus());
         }
     }
+
 
     public void testStateless() {
         Client client = Client.create();

@@ -14,11 +14,16 @@
     <component name="TestClient">
         <f3-impl:junit class="tests.rs.TestClient"/>
         <property name="baseMessageUri">http://localhost:8900/messages</property>
+        <property name="baseJsonMessageUri">http://localhost:8900/jsonmessages</property>
         <property name="baseStatelessUri">http://localhost:8900/stateless</property>
     </component>
 
     <component name="MessageService">
         <f3-impl:implementation.rs class="org.fabric3.tests.rs.MessageService" uri="/messages"/>
+    </component>
+
+    <component name="JsonMessageService">
+        <f3-impl:implementation.rs class="org.fabric3.tests.rs.JsonMessageService" uri="/jsonmessages"/>
     </component>
 
     <component name="StatelessService">

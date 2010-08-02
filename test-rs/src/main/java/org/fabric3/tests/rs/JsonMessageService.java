@@ -39,10 +39,10 @@ import org.oasisopen.sca.annotation.Scope;
  * @version $Rev$ $Date$
  */
 @Path("/")
-@Consumes({MediaType.APPLICATION_XML})
-@Produces({MediaType.APPLICATION_XML})
+@Consumes({MediaType.APPLICATION_JSON})
+@Produces({MediaType.APPLICATION_JSON})
 @Scope("COMPOSITE")
-public class MessageService {
+public class JsonMessageService {
     private Map<Long, Message> messages = new ConcurrentHashMap<Long, Message>();
 
     @PUT
