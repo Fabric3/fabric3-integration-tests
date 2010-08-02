@@ -8,6 +8,7 @@
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:f3-core="urn:fabric3.org:core"
            xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3-binding="urn:org.fabric3:binding"
            targetNamespace="org.codehaus.fabric3"
            name="TestComposite">
 
@@ -16,18 +17,35 @@
         <property name="baseMessageUri">http://localhost:8900/messages</property>
         <property name="baseJsonMessageUri">http://localhost:8900/jsonmessages</property>
         <property name="baseStatelessUri">http://localhost:8900/stateless</property>
+        <property name="baseInterfaceUri">http://localhost:8900/interface</property>
     </component>
 
     <component name="MessageService">
-        <f3-impl:implementation.rs class="org.fabric3.tests.rs.MessageService" uri="/messages"/>
+        <implementation.java class="org.fabric3.tests.rs.MessageService"/>
+        <service name="MessageService">
+            <f3-binding:binding.rs uri="/messages"/>
+        </service>
     </component>
 
     <component name="JsonMessageService">
-        <f3-impl:implementation.rs class="org.fabric3.tests.rs.JsonMessageService" uri="/jsonmessages"/>
+        <implementation.java class="org.fabric3.tests.rs.JsonMessageService"/>
+        <service name="JsonMessageService">
+            <f3-binding:binding.rs uri="/jsonmessages"/>
+        </service>
     </component>
 
     <component name="StatelessService">
-        <f3-impl:implementation.rs class="org.fabric3.tests.rs.StatelessService" uri="/stateless"/>
+        <implementation.java class="org.fabric3.tests.rs.StatelessService"/>
+        <service name="StatelessService">
+            <f3-binding:binding.rs uri="/stateless"/>
+        </service>
+    </component>
+
+    <component name="InterfaceService">
+        <implementation.java class="org.fabric3.tests.rs.InterfaceServiceImpl"/>
+        <service name="InterfaceService">
+            <f3-binding:binding.rs uri="/interface"/>
+        </service>
     </component>
 
 </composite>

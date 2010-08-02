@@ -46,6 +46,9 @@ public class TestClient extends TestCase {
     @Property
     protected String baseStatelessUri;
 
+    @Property
+    protected URI baseInterfaceUri;
+
     public TestClient() {
     }
 
@@ -53,7 +56,7 @@ public class TestClient extends TestCase {
         Message message = new Message();
         message.setId(1L);
         message.setText("this is a test");
-        
+
         Client client = Client.create();
         UriBuilder uri = UriBuilder.fromUri(baseMessageUri);
         WebResource resource = client.resource(uri.path("message").build());
@@ -105,7 +108,14 @@ public class TestClient extends TestCase {
         assertEquals("0", response);
         response = resource.get(String.class);
         assertEquals("0", response);
+    }
 
+    public void testInterface() {
+        Client client = Client.create();
+        UriBuilder uri = UriBuilder.fromUri(baseInterfaceUri);
+        WebResource resource = client.resource(uri.build());
+        String response = resource.get(String.class);
+        assertEquals("test", response);
     }
 
 }
