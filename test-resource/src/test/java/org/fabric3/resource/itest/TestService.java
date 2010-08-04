@@ -37,28 +37,12 @@
 */
 package org.fabric3.resource.itest;
 
-import junit.framework.TestCase;
-import org.oasisopen.sca.annotation.Reference;
-
 import org.fabric3.api.annotation.Resource;
 
 /**
- * @version $Rev$ $Date$
+ * @version $Rev: 7870 $ $Date: 2009-11-21 00:11:04 +0100 (Sat, 21 Nov 2009) $
  */
-public class ResourceTest extends TestCase {
+public interface TestService {
 
-    @Reference
-    protected TestService service;
-
-    @Resource
-    protected TestResource resource;
-
-    public void testResource() {
-        assertEquals("Hello", resource.echo("Hello"));
-    }
-
-    public void testCtorResource() {
-        assertNotNull(service.testResource());
-    }
-
+    TestResource testResource();
 }

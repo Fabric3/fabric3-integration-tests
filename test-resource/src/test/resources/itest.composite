@@ -14,10 +14,15 @@
 
     <component name="ResourceTest">
         <f3-impl:junit class="org.fabric3.resource.itest.ResourceTest"/>
+        <reference name="service" target="CtorResourceComponent"/>
     </component>
 
     <component name="DataSourceTest">
         <f3-impl:junit class="org.fabric3.resource.itest.DataSourceTest"/>
+    </component>
+
+    <component name="CtorResourceComponent">
+        <implementation.java class="org.fabric3.resource.itest.CtorResourceComponent"/>
     </component>
 
 </composite>

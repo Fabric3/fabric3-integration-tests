@@ -37,28 +37,19 @@
 */
 package org.fabric3.resource.itest;
 
-import junit.framework.TestCase;
-import org.oasisopen.sca.annotation.Reference;
-
 import org.fabric3.api.annotation.Resource;
 
 /**
  * @version $Rev$ $Date$
  */
-public class ResourceTest extends TestCase {
+public class CtorResourceComponent implements TestService {
+    private TestResource resource;
 
-    @Reference
-    protected TestService service;
-
-    @Resource
-    protected TestResource resource;
-
-    public void testResource() {
-        assertEquals("Hello", resource.echo("Hello"));
+    public CtorResourceComponent(@Resource TestResource resource) {
+        this.resource = resource;
     }
 
-    public void testCtorResource() {
-        assertNotNull(service.testResource());
+    public TestResource testResource() {
+        return resource;
     }
-
 }
