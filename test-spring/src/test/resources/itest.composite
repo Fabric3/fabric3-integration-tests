@@ -17,5 +17,6 @@
     <include name="TestWebServicesComposite"/>
     <include name="TestJMSComposite"/>
     <include name="TestSecurityComposite"/>
+    <include name="TestEventingComposite"/>
 
 </composite>

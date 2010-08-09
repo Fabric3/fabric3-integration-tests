@@ -32,6 +32,13 @@
         </dependency>
 
         <dependency>
+            <groupId>org.codehaus.fabric3.tests</groupId>
+            <artifactId>test-binding-harness</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.codehaus.fabric3</groupId>
             <artifactId>fabric3-spring-library</artifactId>
             <version>${fabric3.version}</version>

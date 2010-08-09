@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:ns="org.codehaus.fabric3"
+           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3-impl="urn:fabric3.org:implementation"
+           name="TestEventingComposite">
+
+
+    <channel name="TestChannel"/>
+
+    <component name="EventingTest">
+        <f3-impl:junit class="org.fabric3.tests.spring.EventingTest"/>
+        <reference name="producer" target="SpringEventingService/TestProducer"/>
+        <reference name="consumer" target="SpringEventingService/TestConsumer"/>
+    </component>
+
+    <component name="SpringEventingService">
+        <implementation.spring location="META-INF/eventing.context.xml"/>
+        <consumer name="consumer" source="TestChannel"/>
+        <producer name="producer" target="TestChannel"/>
+    </component>
+</composite>
