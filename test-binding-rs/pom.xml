@@ -13,11 +13,11 @@
         <version>0.1-SNAPSHOT</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
-    <artifactId>test-rs</artifactId>
+    <artifactId>test-binding-rs</artifactId>
     <packaging>jar</packaging>
     <version>0.1-SNAPSHOT</version>
-    <name>Fabric3 Tests for JSR-311 REST Container</name>
-    <description>Fabric3 Tests for JSR-311 REST Container.</description>
+    <name>Fabric3 JAX-RS Extension Tests</name>
+    <description>Fabric3 JAX-RS Extension Tests.</description>
     <repositories>
         <repository>
             <id>maven2-repository.dev.java.net</id>
@@ -61,7 +61,6 @@
     <build>
         <defaultGoal>verify</defaultGoal>
         <plugins>
-            <!-- test current version of RS against the last released kernel -->
             <plugin>
                 <groupId>org.codehaus.fabric3</groupId>
                 <artifactId>fabric3-itest-plugin</artifactId>
@@ -82,7 +81,6 @@
                             <version>${fabric3.version}</version>
                         </dependency>
                     </extensions>
-                    <!-- Set the Jetty Listen Port for Integration Tests -->
                     <systemConfig>
                         <![CDATA[
                             <config>
