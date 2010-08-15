@@ -40,6 +40,7 @@
         <jaxb.api.version>2.2-promoted-b50</jaxb.api.version>
         <web.services.version>2.0-b24</web.services.version>
         <servlet.version>2.5</servlet.version>
+        <jax.rs.version>1.1.1</jax.rs.version>
     </properties>
     
     <profiles>
@@ -60,7 +61,7 @@
                 <module>test-policy</module>
                 <module>test-jpa-hibernate</module>
                 <module>test-spring</module>
-                <module>test-rs</module>
+                <module>test-binding-rs</module>
                 <module>test-timer-implementation</module>
                 <module>test-mock</module>
                 <module>test-binding-ftp</module>
@@ -83,7 +84,7 @@
                 <module>test-datasource</module>
                 <module>test-policy</module>
                 <module>test-jpa-hibernate</module>
-                <module>test-rs</module>
+                <module>test-binding-rs</module>
                 <module>test-timer-quartz</module>
                 <module>test-timer-implementation</module>
                 <module>test-mock</module>
