@@ -39,7 +39,9 @@
         <fabric3.version>1.7-SNAPSHOT</fabric3.version>
         <jaxb.api.version>2.2-promoted-b50</jaxb.api.version>
         <web.services.version>2.0-b24</web.services.version>
-        <servlet.version>2.5</servlet.version>
+        <servlet.groupId>org.mortbay.jetty</servlet.groupId>
+        <servlet.artifactId>servlet-api</servlet.artifactId>
+        <servlet.version>3.0.20100224</servlet.version>
         <jax.rs.version>1.1.1</jax.rs.version>
     </properties>
     
@@ -65,8 +67,6 @@
                 <module>test-timer-implementation</module>
                 <module>test-mock</module>
                 <module>test-binding-ftp</module>
-                <module>test-runtime-jetty</module>
-                <module>test-runtime-tomcat</module>
                 <module>test-binding-jms</module>
                 <module>test-binding-net</module> 
                 <module>test-implementation-wsdl</module>
@@ -89,8 +89,6 @@
                 <module>test-timer-implementation</module>
                 <module>test-mock</module>
                 <module>test-binding-ftp</module>
-                <module>test-runtime-jetty</module>
-                <module>test-runtime-tomcat</module>
                 <module>test-binding-net</module> 
                 <module>test-implementation-wsdl</module>
                 <module>test-wsdl</module> 
