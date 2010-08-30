@@ -57,9 +57,6 @@ public class UserComponentImpl implements UserComponent {
         this.mockService2 = mockService2;
     }
 
-    /**
-     * @see org.fabric3.tests.mock.UserComponent#userMethod()
-     */
     public void userMethod() {
         mockService1.doMock1("test");
         mockService2.doMock2(1);
