@@ -20,6 +20,11 @@
         <property name="baseInterfaceUri">http://localhost:8900/interface</property>
     </component>
 
+    <component name="SecureTestClient">
+        <f3-impl:junit class="tests.rs.SecureTestClient"/>
+        <property name="baseUri">http://localhost:8900/secureAuthorization</property>
+    </component>
+
     <component name="MessageService">
         <implementation.java class="org.fabric3.tests.rs.MessageService"/>
         <service name="MessageService">
@@ -45,6 +50,13 @@
         <implementation.java class="org.fabric3.tests.rs.InterfaceServiceImpl"/>
         <service name="InterfaceService">
             <f3-binding:binding.rs uri="/interface"/>
+        </service>
+    </component>
+
+    <component name="SecureService">
+        <implementation.java class="org.fabric3.tests.rs.security.SecureService"/>
+        <service name="SecureService">
+            <f3-binding:binding.rs uri="/secureAuthorization"/>
         </service>
     </component>
 

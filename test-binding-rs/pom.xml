@@ -28,9 +28,9 @@
     </repositories>
     <dependencies>
         <dependency>
-            <groupId>org.codehaus.fabric3.spec</groupId>
-            <artifactId>sca-api</artifactId>
-            <version>${sca.api.version}</version>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-api</artifactId>
+            <version>${fabric3.version}</version>
         </dependency>
         <dependency>
             <groupId>com.sun.jersey</groupId>
@@ -77,17 +77,44 @@
                     <extensions>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-security</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-security-impl</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>fabric3-jetty</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
                     </extensions>
                     <systemConfig>
                         <![CDATA[
-                            <config>
-                                <web.server>
-                                    <http port="8900"/>
-                                </web.server>
-                            </config>
+                        <config>
+                           <web.server>
+                              <http port="8900"/>
+                            </web.server>
+                            <users>
+                                <user>
+                                    <username>foo</username>
+                                    <password>bar</password>
+                                    <roles>
+                                       <role>role1</role>
+                                       <role>role2</role>
+                                     </roles>
+                                </user>
+                                <user>
+                                    <username>baz</username>
+                                    <password>fred</password>
+                                    <roles>
+                                       <role>role1</role>
+                                     </roles>
+                                </user>
+                            </users>
+                        </config>
                         ]]>
                     </systemConfig>
                 </configuration>
