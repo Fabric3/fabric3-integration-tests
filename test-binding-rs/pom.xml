@@ -94,6 +94,7 @@
                     <systemConfig>
                         <![CDATA[
                         <config>
+                           <security allow.http.authentication="true"/>
                            <web.server>
                               <http port="8900"/>
                             </web.server>

@@ -23,6 +23,7 @@
     <component name="SecureTestClient">
         <f3-impl:junit class="tests.rs.SecureTestClient"/>
         <property name="baseUri">http://localhost:8900/secureAuthorization</property>
+        <property name="authentication">http://localhost:8900/fabric/security/token</property>
     </component>
 
     <component name="MessageService">
