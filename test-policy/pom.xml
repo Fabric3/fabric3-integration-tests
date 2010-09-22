@@ -80,6 +80,11 @@
                     <extensions>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-jetty</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>fabric3-binding-test</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
