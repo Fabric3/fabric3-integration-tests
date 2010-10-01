@@ -39,6 +39,7 @@ package org.fabric3.tests.function.monitor;
 
 import junit.framework.TestCase;
 
+import org.fabric3.api.MonitorChannel;
 import org.fabric3.api.annotation.monitor.Monitor;
 import org.fabric3.api.annotation.monitor.Info;
 
@@ -50,13 +51,22 @@ public class MonitorTest extends TestCase {
     @Monitor
     protected MyMonitor monitor;
 
+    @Monitor
+    protected MonitorChannel monitorChannel;
+
     public void testMonitor() {
         assertNotNull(monitor);
         monitor.wasCalled();
     }
 
+    @SuppressWarnings({"ThrowableInstanceNeverThrown"})
+    public void testMonitorChannel() {
+        assertNotNull(monitorChannel);
+        monitorChannel.info("This is a test");
+    }
+
     public static interface MyMonitor {
-        @Info
+        @Info ("Was called")
         void wasCalled();
     }
 }
