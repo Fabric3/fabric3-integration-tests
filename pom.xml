@@ -67,11 +67,14 @@
                 <module>test-binding-rs</module>
                 <module>test-timer-implementation</module>
                 <module>test-mock</module>
+                <module>test-binding-metro</module> 
                 <module>test-binding-ftp</module>
                 <module>test-binding-jms</module>
                 <module>test-binding-net</module> 
                 <module>test-implementation-wsdl</module>
                 <module>test-wsdl</module> 
+                <module>test-cache-infinispan</module> 
+
             </modules>
         </profile>
         <profile>
@@ -89,13 +92,15 @@
                 <module>test-timer-quartz</module>
                 <module>test-timer-implementation</module>
                 <module>test-mock</module>
+                <module>test-binding-metro</module> 
                 <module>test-binding-ftp</module>
                 <module>test-binding-net</module> 
                 <module>test-implementation-wsdl</module>
                 <module>test-wsdl</module> 
                 <module>test-binding-jms</module> 
                 <module>test-spring</module>
-               <!-- <module>test-binding-metro</module> -->
+                <module>test-binding-metro</module>
+                <module>test-cache-infinispan</module> 
                 <!-- <module>tests-ant</module> -->
                 <module>tests-standalone</module>
             </modules>
