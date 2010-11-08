@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+         <groupId>org.codehaus.fabric3.tests</groupId>
+         <artifactId>ci</artifactId>
+         <version>0.1-SNAPSHOT</version>
+     </parent>
+    <groupId>org.codehaus.fabric3.tests</groupId>
+    <artifactId>test-capabilities-extension</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <name>Fabric3 Test Capabilities Extension</name>
+    <description>Fabric3 Test Capabilities Extension.</description>
+    <packaging>jar</packaging>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>jsr311-api</artifactId>
+            <version>${jax.rs.version}</version>
+        </dependency>
+    </dependencies>
+</project>

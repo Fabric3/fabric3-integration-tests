@@ -15,13 +15,13 @@
     <orderEntry type="module-library" exported="">
       <library name="javax.xml.bind:jaxb-api:2.1">
         <CLASSES>
-          <root url="jar://$M2_REPO$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$M2_REPO$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1-javadoc.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$M2_REPO$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -29,7 +29,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.xml.bind:jaxb-api-osgi:2.2-promoted-b50" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.fabric3.spec:sca-api:1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.fabric3.tests:test-binding-harness:0.1-SNAPSHOT" level="project" />
-    <orderEntry type="module" module-name="fabric3-api" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.2" level="project" />
   </component>
 </module>

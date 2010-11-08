@@ -15,20 +15,20 @@
     <orderEntry type="module-library" exported="">
       <library name="javax.persistence:persistence-api:1.0">
         <CLASSES>
-          <root url="jar://$M2_REPO$/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$M2_REPO$/javax/persistence/persistence-api/1.0/persistence-api-1.0-javadoc.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/javax/persistence/persistence-api/1.0/persistence-api-1.0-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$M2_REPO$/javax/persistence/persistence-api/1.0/persistence-api-1.0-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/javax/persistence/persistence-api/1.0/persistence-api-1.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$M2_REPO$/org/hibernate/hibernate-core/3.3.0.SP1/hibernate-core-3.3.0.SP1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.3.0.SP1/hibernate-core-3.3.0.SP1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
