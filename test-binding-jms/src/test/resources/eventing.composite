@@ -21,11 +21,7 @@
 
     <component name="TestProducer">
         <implementation.java class="org.fabric3.tests.binding.harness.eventing.TestProducerImpl"/>
-        <producer name="channel" target="TestChannel">
-            <binding.jms>
-                <destination jndiName="TestChannelQueue"/>
-            </binding.jms>
-        </producer>
+        <producer name="channel" target="TestChannel"/>
     </component>
 
     <component name="TestConsumer">
