@@ -12,14 +12,16 @@ import org.fabric3.tests.binding.harness.eventing.TestProducer;
 public class TestClient extends TestCase {
 
     @Reference
-    protected TestProducer producer;
+    protected TestProducer durableProducer;
 
     @Reference
-    protected TestConsumer consumer;
+    protected TestConsumer durableConsumer;
 
-    public void testProduce() throws Exception {
-        consumer.setWaitCount(2);
-        producer.produce("message");
-        consumer.waitOnEvents();
+    public void testDurableProduce() throws Exception {
+        durableConsumer.setWaitCount(2);
+        durableProducer.produce("message");
+        durableProducer.produce("message");
+        durableConsumer.waitOnEvents();
     }
+
 }

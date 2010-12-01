@@ -15,25 +15,24 @@
 
     <component name="TestEventClient">
         <f3-impl:junit class="org.fabric3.binding.jms.test.eventing.TestClient"/>
-        <reference name="producer" target="TestProducer"/>
-        <reference name="consumer" target="TestConsumer"/>
+        <reference name="durableProducer" target="TestDurableProducer"/>
+        <reference name="durableConsumer" target="TestDurableConsumer"/>
     </component>
 
-    <component name="TestProducer">
+    <component name="TestDurableProducer">
         <implementation.java class="org.fabric3.tests.binding.harness.eventing.TestProducerImpl"/>
-        <producer name="channel" target="TestChannel"/>
+        <producer name="channel" target="TestDurableChannel"/>
     </component>
 
-    <component name="TestConsumer">
+    <component name="TestDurableConsumer">
         <implementation.java class="org.fabric3.tests.binding.harness.eventing.TestConsumerImpl"/>
-        <consumer name="event" source="TestChannel"/>
+        <consumer name="event" source="TestDurableChannel"/>
     </component>
 
-    <channel name="TestChannel">
+    <channel name="TestDurableChannel" requires="f3-core:durable">
         <binding.jms>
-            <destination jndiName="TestChannelQueue"/>
+            <destination jndiName="TestDurableChannelTopic" type="topic"/>
         </binding.jms>
     </channel>
-
 
 </composite>

@@ -72,8 +72,8 @@
                                   <thread.pool size="100"/>
                                   <jms>
                                       <connection.factories>
-                                        <connection.factory name="xaDefault" broker.url="vm://broker" type="xa"/>
-                                        <connection.factory name="default" broker.url="vm://broker" type="local"/>
+                                        <connection.factory name="xaDefault" type="xa"/>
+                                        <connection.factory name="default" type="local"/>
                                       </connection.factories>
                                   </jms>
                                </config>
