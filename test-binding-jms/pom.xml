@@ -70,12 +70,6 @@
                         <![CDATA[
                                <config>
                                   <thread.pool size="100"/>
-                                  <jms>
-                                      <connection.factories>
-                                        <connection.factory name="xaDefault" type="xa"/>
-                                        <connection.factory name="default" type="local"/>
-                                      </connection.factories>
-                                  </jms>
                                </config>
                                ]]>
                     </systemConfig>
