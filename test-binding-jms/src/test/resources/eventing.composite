@@ -17,6 +17,8 @@
         <f3-impl:junit class="org.fabric3.binding.jms.test.eventing.TestClient"/>
         <reference name="durableProducer" target="TestDurableProducer"/>
         <reference name="durableConsumer" target="TestDurableConsumer"/>
+        <reference name="loopbackProducer" target="TestProducerConsumer/TestProducer"/>
+        <reference name="loopbackConsumer" target="TestProducerConsumer/TestConsumer"/>
     </component>
 
     <component name="TestDurableProducer">
@@ -29,9 +31,21 @@
         <consumer name="event" source="TestDurableChannel"/>
     </component>
 
+    <component name="TestProducerConsumer">
+        <implementation.java class="org.fabric3.tests.binding.harness.eventing.TestProducerConsumerImpl"/>
+        <producer name="channel" target="TestLoopbackChannel"/>
+        <consumer name="channel" source="TestLoopbackChannel"/>
+    </component>
+
     <channel name="TestDurableChannel" requires="f3-core:durable">
         <binding.jms>
             <destination jndiName="TestDurableChannelTopic" type="topic"/>
+        </binding.jms>
+    </channel>
+
+    <channel name="TestLoopbackChannel" requires="f3-core:durable">
+        <binding.jms>
+            <destination jndiName="TestLoopbackChannelTopic" type="topic"/>
         </binding.jms>
     </channel>
 
