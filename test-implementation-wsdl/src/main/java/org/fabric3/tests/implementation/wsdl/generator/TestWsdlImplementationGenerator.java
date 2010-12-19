@@ -40,6 +40,7 @@ package org.fabric3.tests.implementation.wsdl.generator;
 import java.net.URI;
 
 import org.fabric3.spi.generator.ComponentGenerator;
+import org.fabric3.spi.generator.EffectivePolicy;
 import org.fabric3.spi.generator.GenerationException;
 import org.fabric3.spi.model.instance.LogicalComponent;
 import org.fabric3.spi.model.instance.LogicalReference;
@@ -52,7 +53,6 @@ import org.fabric3.spi.model.physical.PhysicalSourceDefinition;
 import org.fabric3.spi.model.physical.PhysicalTargetDefinition;
 import org.fabric3.spi.model.physical.PhysicalConnectionSourceDefinition;
 import org.fabric3.spi.model.physical.PhysicalConnectionTargetDefinition;
-import org.fabric3.spi.generator.policy.EffectivePolicy;
 import org.fabric3.tests.implementation.wsdl.model.TestWsdlImplementation;
 import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlComponentDefinition;
 import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlSourceDefinition;
