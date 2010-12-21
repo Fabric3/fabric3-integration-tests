@@ -16,6 +16,7 @@ Public License. See the accompanying license file for details.
 
     <include name="CommonComposite"/>
     <include name="SmokeTestComposite"/>
+    <include name="AnnotationComposite"/>
     <include name="MonitorTestComposite"/>
     <include name="OuterComposite"/>
     <include name="ConversationComposite"/>
