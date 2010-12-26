@@ -8,16 +8,15 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3="urn:fabric3.org"
            xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
-           xmlns:f3-policy="urn:fabric3.org:policy"
-           targetNamespace="org.codehaus.fabric3"
+           targetNamespace="urn:fabric3.org"
            name="SecurityPolicyTest">
 
     <component name="AuthenticationTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.metro.SecurityTest"/>
+        <f3:junit class="org.fabric3.tests.binding.metro.SecurityTest"/>
         <reference name="service">
-            <!--<binding.ws requires="f3-policy:clientAuthentication.X509">-->
+            <!--<binding.ws requires="f3:clientAuthentication.X509">-->
             <!--<binding.ws requires="sca:confidentiality.transport">-->
             <binding.ws requires="sca:clientAuthentication.message" uri="https://localhost:8901/authenticationService">
                 <configuration>
@@ -33,7 +32,7 @@
         <implementation.java class="org.fabric3.tests.binding.metro.security.SecureServiceImpl"/>
         <service name="SecureService">
             <!--<binding.ws uri="/authenticationService" requires="sca:confidentiality.transport"/>-->
-            <!--<binding.ws uri="/authenticationService" requires="f3-policy:clientAuthentication.X509"/>-->
+            <!--<binding.ws uri="/authenticationService" requires="f3:clientAuthentication.X509"/>-->
             <binding.ws uri="/authenticationService" requires="sca:clientAuthentication.message"/>
         </service>
     </component>

@@ -10,16 +10,14 @@ Public License. See the accompanying license file for details.
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-binding="urn:fabric3.org:binding"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="PromotionComposite">
 
     <component name="PromotionTestComponent">
-        <f3-impl:junit class="org.fabric3.tests.function.binding.PromotionTest"/>
+        <f3:junit class="org.fabric3.tests.function.binding.PromotionTest"/>
         <reference name="helloService">
-            <f3-binding:binding.test uri="PromotedHelloService"/>
+            <f3:binding.test uri="PromotedHelloService"/>
         </reference>
     </component>
 
@@ -28,14 +26,14 @@ Public License. See the accompanying license file for details.
 
     <!-- test using the default service -->
     <!--<service name="HelloServiceNotSepecified" promote="HelloComponent">-->
-        <!--<f3-binding:binding.test uri="PromotedHelloServiceNotSpecified"/>-->
+        <!--<f3:binding.test uri="PromotedHelloServiceNotSpecified"/>-->
         <!--<interface.java interface="org.fabric3.tests.function.common.Helloservice2"/>-->
     <!--</service>-->
 
     <component name="HelloComponent">
         <implementation.java class="org.fabric3.tests.function.common.HelloServiceImpl"/>
         <service name="HelloService">
-            <f3-binding:binding.test uri="PromotedHelloService"/>
+            <f3:binding.test uri="PromotedHelloService"/>
             <interface.java interface="org.fabric3.tests.function.common.Helloservice2"/>
         </service>
     </component>

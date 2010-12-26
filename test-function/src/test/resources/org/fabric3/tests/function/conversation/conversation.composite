@@ -11,14 +11,12 @@ Public License. See the accompanying license file for details.
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-policy="urn:fabric3.org:policy"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="ConversationComposite">
 
     <component name="ConversationTest">
-        <f3-impl:junit class="org.fabric3.tests.function.conversation.ConversationTest"/>
+        <f3:junit class="org.fabric3.tests.function.conversation.ConversationTest"/>
         <reference name="service" target="ConversationalServiceImpl"/>
         <reference name="subService" target="ConversationalServiceImpl"/>
         <reference name="compositeService" target="CompositeServiceImpl"/>
@@ -27,7 +25,7 @@ Public License. See the accompanying license file for details.
     </component>
 
     <component name="ConversationPropagationTest">
-        <f3-impl:junit class="org.fabric3.tests.function.conversation.ConversationPropagationTest"/>
+        <f3:junit class="org.fabric3.tests.function.conversation.ConversationPropagationTest"/>
         <reference name="service" target="ClientToIntermediary"/>
         <reference name="compositeService" target="ConversationPropagationComponent"/>
     </component>
@@ -55,7 +53,7 @@ Public License. See the accompanying license file for details.
         <reference name="conversationalService" target="ConversationalServiceImpl"/>
     </component>
 
-    <component name="IntermediaryService2" requires="f3-policy:propagatesConversation">
+    <component name="IntermediaryService2" requires="f3:propagatesConversation">
         <implementation.java class="org.fabric3.tests.function.conversation.IntermediaryServiceImpl"/>
         <reference name="conversationalService" target="ConversationalServiceImpl"/>
     </component>

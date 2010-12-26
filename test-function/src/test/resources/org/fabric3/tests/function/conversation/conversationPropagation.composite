@@ -11,11 +11,10 @@ Public License. See the accompanying license file for details.
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-policy="urn:fabric3.org:policy"
+           xmlns:f3="urn:fabric3.org"
            name="ConversationPropagationComposite"
-           targetNamespace="org.codehaus.fabric3"
-           requires="f3-policy:propagatesConversation">
+           targetNamespace="urn:fabric3.org"
+           requires="f3:propagatesConversation">
 
     <service name="ClientService" promote="ClientToConversationalIntermediary"/>
 

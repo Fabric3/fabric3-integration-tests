@@ -15,6 +15,8 @@
     <orderEntry type="module" module-name="sca-spec" />
     <orderEntry type="module" module-name="fabric3-spi" />
     <orderEntry type="module" module-name="fabric3-interface-wsdl" />
+    <orderEntry type="module" module-name="fabric3-host-api" />
+    <orderEntry type="module" module-name="fabric3-model" />
   </component>
 </module>
 

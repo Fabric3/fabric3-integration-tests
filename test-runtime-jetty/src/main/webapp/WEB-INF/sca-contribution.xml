@@ -6,8 +6,6 @@
  Fabric3 integration tests are licensed under the Apache 2.0 license.
  -->
 <contribution xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-              xmlns:f3-maven="urn:fabric3.org:maven"
-              xmlns:f3-core="urn:fabric3.org:core"
-              xmlns:sample="urn:fabric3.org:sample">
-    <deployable composite="sample:WebappSmoketestComposite"/>
+              xmlns:f3="urn:fabric3.org">
+    <deployable composite="f3:WebappSmoketestComposite"/>
 </contribution>

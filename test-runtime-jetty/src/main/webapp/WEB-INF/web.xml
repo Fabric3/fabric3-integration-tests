@@ -30,7 +30,7 @@
 
     <context-param>
         <param-name>fabric3.compositeNamespace</param-name>
-        <param-value>urn:fabric3.org:sample</param-value>
+        <param-value>urn:fabric3.org</param-value>
     </context-param>
 
     <context-param>

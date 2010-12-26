@@ -10,18 +10,17 @@ Public License. See the accompanying license file for details.
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="LifecycleComposite">
 
     <component name="ContextTest">
-        <f3-impl:junit class="org.fabric3.tests.function.lifecycle.ContextTest"/>
+        <f3:junit class="org.fabric3.tests.function.lifecycle.ContextTest"/>
         <property name="uri">fabric3://domain/ContextTest</property>
     </component>
 
     <component name="EagerInitTest">
-        <f3-impl:junit class="org.fabric3.tests.function.lifecycle.EagerInitTest"/>
+        <f3:junit class="org.fabric3.tests.function.lifecycle.EagerInitTest"/>
         <reference name="callout" target="CalloutComponent"/>
     </component>
 

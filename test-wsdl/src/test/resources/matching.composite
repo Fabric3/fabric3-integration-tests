@@ -8,8 +8,7 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3="urn:fabric3.org"
            xmlns:mct="urn:addnumbers:mct"
            xmlns:mect="urn:helloworld:mect"
            xmlns:sect="urn:helloworld:sect"
@@ -19,108 +18,107 @@
            xmlns:sdt="urn:helloworld:sdt"
            xmlns:mst="urn:addnumbers:mst"
            xmlns:sst="urn:helloworld:sst"
-           xmlns:f3-binding="urn:fabric3.org:binding"
-           targetNamespace="org.codehaus.fabric3"
+           targetNamespace="urn:fabric3.org"
            name="MatchingWsdlTestComposite">
 
     <component name="MultiComplexTypeTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.matching.multicomplextype.MultiComplexTypeTestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.matching.multicomplextype.MultiComplexTypeTestClient"/>
         <reference name="portType" target="AddNumbersMultiComplextTypeStub"/>
         <reference name="mappedPortType" target="AddNumbersMultiComplextTypeStub"/>
     </component>
 
     <component name="MultiElementComplexTypeTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.matching.multielementcomplextype.MultiElementComplexTypeTestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.matching.multielementcomplextype.MultiElementComplexTypeTestClient"/>
         <reference name="portType" target="HelloWorldMultiElementComplexTypeStub"/>
     </component>
 
     <component name="SingleElementComplexTypeTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.matching.singleelementcomplextype.SingleElementComplexTypeTestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.matching.singleelementcomplextype.SingleElementComplexTypeTestClient"/>
         <reference name="portType" target="HelloWorldsingleElementComplexTypeStub"/>
     </component>
 
     <component name="SingleElementInlineTypeTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.matching.singleelementinlinetype.SingleElementInlineTypeTestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.matching.singleelementinlinetype.SingleElementInlineTypeTestClient"/>
         <reference name="portType" target="HelloWorldSingleElementInlineTypeStub"/>
     </component>
 
     <component name="SingleComplexTypeTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.matching.singlecomplextype.SingleComplexTypeTestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.matching.singlecomplextype.SingleComplexTypeTestClient"/>
         <reference name="portType" target="HelloWorldSingleComplexTypeStub"/>
     </component>
 
     <component name="SingleElementSimpleTypeTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.matching.singleelementsimpletype.SingleElementSimpleTypeTestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.matching.singleelementsimpletype.SingleElementSimpleTypeTestClient"/>
         <reference name="portType" target="HelloWorldSingleElementSimpleTypeStub"/>
     </component>
 
     <component name="SingleDerivedTypeTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.matching.singlederivedtype.SingleDerivedTypeTestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.matching.singlederivedtype.SingleDerivedTypeTestClient"/>
         <reference name="portType" target="HelloWorldSingleDerivedTypeStub"/>
     </component>
 
     <component name="MultiSimpleTypeTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.matching.multisimpletype.MultiSimpleTypeTestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.matching.multisimpletype.MultiSimpleTypeTestClient"/>
         <reference name="portType" target="AddNumbersMultiSimpleTypeStub"/>
     </component>
 
     <component name="SingleSimpleTypeTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.matching.singlesimpletype.SingleSimpleTypeTestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.matching.singlesimpletype.SingleSimpleTypeTestClient"/>
         <reference name="portType" target="HelloWorldSingleSimpleTypeStub"/>
     </component>
 
     <component name="AddNumbersMultiComplextTypeStub">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.multicomplextype.AddNumbersMultiComplextTypeStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.multicomplextype.AddNumbersMultiComplextTypeStub">
             <service contract="mct:AddNumbersPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
     </component>
 
     <component name="HelloWorldMultiElementComplexTypeStub">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.multielementcomplextype.HelloWorldMultiElementComplexTypeStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.multielementcomplextype.HelloWorldMultiElementComplexTypeStub">
             <service contract="mect:HelloWorldPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
     </component>
 
     <component name="HelloWorldsingleElementComplexTypeStub">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singleelementcomplextype.HelloWorldsingleElementComplexTypeStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singleelementcomplextype.HelloWorldsingleElementComplexTypeStub">
             <service contract="sect:HelloWorldPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
     </component>
 
     <component name="HelloWorldSingleElementInlineTypeStub">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singleelementinlinetype.HelloWorldSingleElementInlineTypeStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singleelementinlinetype.HelloWorldSingleElementInlineTypeStub">
             <service contract="seit:HelloWorldPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
     </component>
 
     <component name="HelloWorldSingleComplexTypeStub">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singlecomplextype.HelloWorldSingleComplexTypeStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singlecomplextype.HelloWorldSingleComplexTypeStub">
             <service contract="sct:HelloWorldPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
     </component>
 
     <component name="HelloWorldSingleElementSimpleTypeStub">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singleelementsimpletype.HelloWorldSingleElementSimpleTypeStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singleelementsimpletype.HelloWorldSingleElementSimpleTypeStub">
             <service contract="sest:HelloWorldPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
     </component>
 
     <component name="HelloWorldSingleDerivedTypeStub">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singlederivedtype.HelloWorldSingleDerivedTypeStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singlederivedtype.HelloWorldSingleDerivedTypeStub">
             <service contract="sdt:HelloWorldPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
     </component>
 
     <component name="AddNumbersMultiSimpleTypeStub">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.multisimpletype.AddNumbersMultiSimpleTypeStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.multisimpletype.AddNumbersMultiSimpleTypeStub">
             <service contract="mst:AddNumbersPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
     </component>
 
     <component name="HelloWorldSingleSimpleTypeStub">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singlesimpletype.HelloWorldSingleSimpleTypeStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.matching.singlesimpletype.HelloWorldSingleSimpleTypeStub">
             <service contract="sst:HelloWorldPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
     </component>
 
 </composite>

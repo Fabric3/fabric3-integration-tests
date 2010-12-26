@@ -7,22 +7,21 @@
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-policy="urn:fabric3.org:policy"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="RestTest">
 
     <component name="RestTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.metro.RestTest"/>
+        <f3:junit class="org.fabric3.tests.binding.metro.RestTest"/>
         <reference name="searchService">
-            <binding.ws uri="http://localhost:8900/searchBooks" requires="f3-policy:protocolBinding.rest"/>
+            <binding.ws uri="http://localhost:8900/searchBooks" requires="f3:protocolBinding.rest"/>
         </reference>
     </component>
 
     <component name="BookStoreService">
         <implementation.java class="org.fabric3.tests.binding.metro.bookstore.DefaultSearchService"/>
         <service name="SearchService">
-            <binding.ws uri="/searchBooks" requires="f3-policy:protocolBinding.rest"/>
+            <binding.ws uri="/searchBooks" requires="f3:protocolBinding.rest"/>
         </service>
     </component>
 

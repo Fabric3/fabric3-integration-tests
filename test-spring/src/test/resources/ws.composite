@@ -8,13 +8,12 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:ns="org.codehaus.fabric3"
-           targetNamespace="org.codehaus.fabric3"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
+           targetNamespace="urn:fabric3.org"
+           xmlns:f3="urn:fabric3.org"
            name="TestWebServicesComposite">
 
     <component name="WSTest">
-        <f3-impl:junit class="org.fabric3.tests.spring.BindingTest"/>
+        <f3:junit class="org.fabric3.tests.spring.BindingTest"/>
         <reference name="service">
             <binding.ws uri="http://localhost:8900/TestService"/>
         </reference>

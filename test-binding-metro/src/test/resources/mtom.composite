@@ -7,23 +7,22 @@
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-policy="urn:fabric3.org:policy"
+           xmlns:f3="urn:fabric3.org"
            xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
-           targetNamespace="org.codehaus.fabric3"
+           targetNamespace="urn:fabric3.org"
            name="MtomTest">
 
     <component name="MtomTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.metro.MtomTest"/>
+        <f3:junit class="org.fabric3.tests.binding.metro.MtomTest"/>
         <reference name="uploadPortType">
-            <binding.ws uri="http://localhost:8900/upload" requires="f3-policy:messageOptimization"/>
+            <binding.ws uri="http://localhost:8900/upload" requires="f3:messageOptimization"/>
         </reference>
     </component>
 
     <component name="UploadService">
         <implementation.java class="org.fabric3.tests.binding.metro.upload.UploadPortTypeImpl"/>
         <service name="UploadPortType">
-            <binding.ws uri="/upload" requires="f3-policy:messageOptimization"/>
+            <binding.ws uri="/upload" requires="f3:messageOptimization"/>
         </service>
     </component>
 

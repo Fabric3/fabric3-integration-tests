@@ -10,14 +10,13 @@ Public License. See the accompanying license file for details.
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3="urn:fabric3.org"
            xmlns:test="urn:test"
-           targetNamespace="org.codehaus.fabric3"
+           targetNamespace="urn:fabric3.org"
            name="PropertiesComposite">
 
     <component name="PublicFieldPropertyTypesTest">
-        <f3-impl:junit class="org.fabric3.tests.function.properties.PropertyTypeTest"/>
+        <f3:junit class="org.fabric3.tests.function.properties.PropertyTypeTest"/>
         <reference name="service" target="PublicFieldPropertyTypesImpl"/>
     </component>
 
@@ -85,7 +84,7 @@ Public License. See the accompanying license file for details.
     </component>
 
     <component name="ProtectedFieldPropertyTypesTest">
-        <f3-impl:junit class="org.fabric3.tests.function.properties.PropertyTypeTest"/>
+        <f3:junit class="org.fabric3.tests.function.properties.PropertyTypeTest"/>
         <reference name="service" target="ProtectedFieldPropertyTypesImpl"/>
     </component>
 
@@ -153,7 +152,7 @@ Public License. See the accompanying license file for details.
     </component>
 
     <component name="PublicSetterPropertyTypesTest">
-        <f3-impl:junit class="org.fabric3.tests.function.properties.PropertyTypeTest"/>
+        <f3:junit class="org.fabric3.tests.function.properties.PropertyTypeTest"/>
         <reference name="service" target="PublicSetterPropertyTypesImpl"/>
     </component>
 
@@ -221,7 +220,7 @@ Public License. See the accompanying license file for details.
     </component>
 
     <component name="ProtectedSetterPropertyTypesTest">
-        <f3-impl:junit class="org.fabric3.tests.function.properties.PropertyTypeTest"/>
+        <f3:junit class="org.fabric3.tests.function.properties.PropertyTypeTest"/>
         <reference name="service" target="ProtectedSetterPropertyTypesImpl"/>
     </component>
 
@@ -289,7 +288,7 @@ Public License. See the accompanying license file for details.
     </component>
 
     <component name="PublicConstructorPropertyTypesTest">
-        <f3-impl:junit class="org.fabric3.tests.function.properties.PropertyTypeTest"/>
+        <f3:junit class="org.fabric3.tests.function.properties.PropertyTypeTest"/>
         <reference name="service" target="PublicConstructorPropertyTypesImpl"/>
     </component>
 
@@ -364,7 +363,7 @@ Public License. See the accompanying license file for details.
     </component>
 
     <component name="PropertyFileTest">
-        <f3-impl:junit class="org.fabric3.tests.function.properties.PropertyFileTest"/>
+        <f3:junit class="org.fabric3.tests.function.properties.PropertyFileTest"/>
         <property name="string" file="string.xml"/>
         <reference name="javaComponent" target="PropertyFromFileImpl"/>
     </component>
@@ -387,14 +386,14 @@ Public License. See the accompanying license file for details.
     <property name="simple">simple</property>
 
     <component name="PropertyXPathTest">
-        <f3-impl:junit class="org.fabric3.tests.function.properties.PropertyXPathTest"/>
+        <f3:junit class="org.fabric3.tests.function.properties.PropertyXPathTest"/>
         <property name="simple" source="$simple"/>
         <property name="complexElement" source="$globalComplexElement/test:firstData/text()"/>
         <property name="complexType" source="$complexType/test:firstData/text()"/>
     </component>
 
     <component name="MultiValuePropertyTest">
-        <f3-impl:junit class="org.fabric3.tests.function.properties.MultiValuePropertyTest"/>
+        <f3:junit class="org.fabric3.tests.function.properties.MultiValuePropertyTest"/>
         <property name="arrayType">
             <value>
                 complex1

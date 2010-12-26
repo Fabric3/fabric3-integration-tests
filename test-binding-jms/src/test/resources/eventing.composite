@@ -7,14 +7,12 @@
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-binding="urn:fabric3.org:binding"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="JMSEventingComposite">
 
     <component name="TestEventClient">
-        <f3-impl:junit class="org.fabric3.binding.jms.test.eventing.TestClient"/>
+        <f3:junit class="org.fabric3.binding.jms.test.eventing.TestClient"/>
         <reference name="durableProducer" target="TestDurableProducer"/>
         <reference name="durableConsumer" target="TestDurableConsumer"/>
         <reference name="loopbackProducer" target="TestProducerConsumer/TestProducer"/>
@@ -37,13 +35,13 @@
         <consumer name="channel" source="TestLoopbackChannel"/>
     </component>
 
-    <channel name="TestDurableChannel" requires="f3-core:durable">
+    <channel name="TestDurableChannel" requires="f3:durable">
         <binding.jms>
             <destination jndiName="TestDurableChannelTopic" type="topic"/>
         </binding.jms>
     </channel>
 
-    <channel name="TestLoopbackChannel" requires="f3-core:durable">
+    <channel name="TestLoopbackChannel" requires="f3:durable">
         <binding.jms>
             <destination jndiName="TestLoopbackChannelTopic" type="topic"/>
         </binding.jms>

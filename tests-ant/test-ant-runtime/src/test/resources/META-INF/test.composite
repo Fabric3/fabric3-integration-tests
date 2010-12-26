@@ -1,12 +1,11 @@
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           targetNamespace="urn:fabric3.org:ant:test"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="AntTestJUnitComposite"
            autowire="true">
 
     <component name="JUnitTest">
-        <f3-impl:junit class="org.fabric3.anttest.JUnitTest"/>
+        <f3:junit class="org.fabric3.anttest.JUnitTest"/>
     </component>
 
 

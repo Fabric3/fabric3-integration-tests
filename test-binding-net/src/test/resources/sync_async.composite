@@ -7,15 +7,13 @@
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-binding="urn:fabric3.org:binding"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="SyncAsyncComposite"
            autowire="false">
 
     <component name="JsonEchoOneWayTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.harness.EchoOneWayTest"/>
+        <f3:junit class="org.fabric3.tests.binding.harness.EchoOneWayTest"/>
         <reference name="service">
             <binding.http uri="http://127.0.0.1:8282/JsonOneWayEchoService">
                 <wireFormat.json/>
@@ -36,7 +34,7 @@
 
     <!--Hessian tests-->
     <component name="HessianEchoTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.harness.EchoTest"/>
+        <f3:junit class="org.fabric3.tests.binding.harness.EchoTest"/>
         <reference name="service">
             <binding.http uri="http://127.0.0.1:8282/HessianEchoService">
                 <wireFormat.hessian/>
@@ -46,7 +44,7 @@
 
 
     <component name="HessianEchoOneWayTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.harness.EchoOneWayTest"/>
+        <f3:junit class="org.fabric3.tests.binding.harness.EchoOneWayTest"/>
         <reference name="service">
             <binding.http uri="http://127.0.0.1:8282/HessianOneWayEchoService">
                 <wireFormat.hessian/>
@@ -76,7 +74,7 @@
     <!--TCP/Hessian tests -->
 
     <!--<component name="TcpHessianEchoOneWayTest">-->
-    <!--<f3-impl:junit class="org.fabric3.tests.binding.harness.EchoOneWayTest"/>-->
+    <!--<f3:junit class="org.fabric3.tests.binding.harness.EchoOneWayTest"/>-->
     <!--<reference name="service">-->
     <!--<binding.tcp uri="tcp://127.0.0.1:8484/TcpHessianOneWayEchoService">-->
     <!--<wireFormat.hessian/>-->
@@ -98,7 +96,7 @@
     <!--TCP/JDK tests -->
 
     <component name="TcpJdkEchoOneWayTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.harness.EchoOneWayTest"/>
+        <f3:junit class="org.fabric3.tests.binding.harness.EchoOneWayTest"/>
         <reference name="service">
             <binding.tcp uri="tcp://127.0.0.1:8484/TcpJdkOneWayEchoService"/>
         </reference>

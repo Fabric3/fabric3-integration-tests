@@ -10,14 +10,13 @@ Public License. See the accompanying license file for details.
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3="urn:fabric3.org"
            name="CompositeCallbackComposite"
-           targetNamespace="org.codehaus.fabric3"
+           targetNamespace="urn:fabric3.org"
            autowire="false">
 
     <component name="CompositeCallbackTestComponent">
-        <f3-impl:junit class="org.fabric3.tests.function.callback.composite.CompositeCallbackTest"/>
+        <f3:junit class="org.fabric3.tests.function.callback.composite.CompositeCallbackTest"/>
         <reference name="client" target="CompositeCallbackClient/ClientService"/>
     </component>
 

@@ -6,14 +6,12 @@
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-binding="urn:org.fabric3:binding"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="TestComposite">
 
     <component name="TestClient">
-        <f3-impl:junit class="tests.rs.TestClient"/>
+        <f3:junit class="tests.rs.TestClient"/>
         <property name="baseMessageUri">http://localhost:8900/messages</property>
         <property name="baseJsonMessageUri">http://localhost:8900/jsonmessages</property>
         <property name="baseStatelessUri">http://localhost:8900/stateless</property>
@@ -21,7 +19,7 @@
     </component>
 
     <component name="SecureTestClient">
-        <f3-impl:junit class="tests.rs.SecureTestClient"/>
+        <f3:junit class="tests.rs.SecureTestClient"/>
         <property name="baseUri">http://localhost:8900/secureAuthorization</property>
         <property name="authentication">http://localhost:8900/fabric/security/token</property>
     </component>
@@ -29,35 +27,35 @@
     <component name="MessageService">
         <implementation.java class="org.fabric3.tests.rs.MessageService"/>
         <service name="MessageService">
-            <f3-binding:binding.rs uri="/messages"/>
+            <f3:binding.rs uri="/messages"/>
         </service>
     </component>
 
     <component name="JsonMessageService">
         <implementation.java class="org.fabric3.tests.rs.JsonMessageService"/>
         <service name="JsonMessageService">
-            <f3-binding:binding.rs uri="/jsonmessages"/>
+            <f3:binding.rs uri="/jsonmessages"/>
         </service>
     </component>
 
     <component name="StatelessService">
         <implementation.java class="org.fabric3.tests.rs.StatelessService"/>
         <service name="StatelessService">
-            <f3-binding:binding.rs uri="/stateless"/>
+            <f3:binding.rs uri="/stateless"/>
         </service>
     </component>
 
     <component name="InterfaceService">
         <implementation.java class="org.fabric3.tests.rs.InterfaceServiceImpl"/>
         <service name="InterfaceService">
-            <f3-binding:binding.rs uri="/interface"/>
+            <f3:binding.rs uri="/interface"/>
         </service>
     </component>
 
     <component name="SecureService">
         <implementation.java class="org.fabric3.tests.rs.security.SecureService"/>
         <service name="SecureService">
-            <f3-binding:binding.rs uri="/secureAuthorization"/>
+            <f3:binding.rs uri="/secureAuthorization"/>
         </service>
     </component>
 

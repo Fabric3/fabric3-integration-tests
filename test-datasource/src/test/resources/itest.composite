@@ -7,22 +7,21 @@
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-other="urn:fabric3.org:other"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="TestComposite">
 
     <component name="TestDataSource">
-        <f3-impl:junit class="org.fabric3.tests.datasource.TestDataSource"/>
+        <f3:junit class="org.fabric3.tests.datasource.TestDataSource"/>
     </component>
 
-    <f3-other:datasources>
+    <f3:datasources>
          <datasource name="ds1" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
             <URL>jdbc:h2:mem:ds1;DB_CLOSE_DELAY=-1</URL>
         </datasource>
         <datasource name="ds2" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
            <URL>jdbc:h2:mem:ds2;DB_CLOSE_DELAY=-1</URL>
        </datasource>
-    </f3-other:datasources>
+    </f3:datasources>
 
 </composite>

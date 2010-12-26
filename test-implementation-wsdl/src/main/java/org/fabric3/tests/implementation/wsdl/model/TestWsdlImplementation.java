@@ -47,7 +47,7 @@ import org.fabric3.model.type.component.Implementation;
  */
 public class TestWsdlImplementation extends Implementation<TestWsdlComponentType> {
     private static final long serialVersionUID = -4675722283728361261L;
-    private static final QName QNAME = new QName(Namespaces.IMPLEMENTATION, "implementation.wsdl");
+    private static final QName QNAME = new QName(Namespaces.F3, "implementation.wsdl");
 
     private String stub;
 

@@ -10,17 +10,16 @@ Public License. See the accompanying license file for details.
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="AutoWireComposite">
 
     <component name="AutowireTrueTest" autowire="true">
-        <f3-impl:junit class="org.fabric3.tests.function.autowire.AutowireTest"/>
+        <f3:junit class="org.fabric3.tests.function.autowire.AutowireTest"/>
     </component>
 
     <component name="AutowireFalseTest" autowire="false">
-        <f3-impl:junit class="org.fabric3.tests.function.autowire.NoAutowireTest"/>
+        <f3:junit class="org.fabric3.tests.function.autowire.NoAutowireTest"/>
     </component>
 
     <component name="AutowireTarget">

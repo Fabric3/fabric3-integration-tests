@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
-<definitions xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:f3-policy="urn:fabric3.org:policy">
+<definitions xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+             xmlns:f3="urn:fabric3.org">
 
     <policySet name="testImplementationPolicy"
                attachTo="//component[@name='AttachToImplementationService'] | //service/binding.test">
-        <f3-policy:interceptor class="org.fabric3.policy.attachment.AttachToImplementationInterceptor"/>
+        <f3:interceptor class="org.fabric3.policy.attachment.AttachToImplementationInterceptor"/>
     </policySet>
 
 </definitions>

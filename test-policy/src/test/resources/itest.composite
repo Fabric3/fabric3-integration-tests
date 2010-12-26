@@ -8,19 +8,17 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-binding="urn:fabric3.org:binding"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="TestComposite">
 
     <!-- Attachment tests -->
     <component name="AttachToImplementationTest">
-        <f3-impl:junit class="org.fabric3.policy.attachment.AttachToImplementationTest"/>
+        <f3:junit class="org.fabric3.policy.attachment.AttachToImplementationTest"/>
         <reference name="attachService" target="AttachToImplementationService"/>
         <reference name="noAttachService" target="NoAttachToImplementationService"/>
         <reference name="attachBindingService">
-            <f3-binding:binding.test uri="AttachToBindingImplementationService"/>
+            <f3:binding.test uri="AttachToBindingImplementationService"/>
         </reference>
     </component>
 
@@ -35,13 +33,13 @@
     <component name="AttachToBindingImplementationService">
         <implementation.java class="org.fabric3.policy.attachment.AttachToImplementationServiceImpl"/>
         <service name="AttachService">
-            <f3-binding:binding.test uri="AttachToBindingImplementationService"/>
+            <f3:binding.test uri="AttachToBindingImplementationService"/>
         </service>
     </component>
 
     <!-- Trx tests -->
     <component name="TransactionalServiceTest">
-        <f3-impl:junit class="org.fabric3.policy.tx.TransactionalServiceTest"/>
+        <f3:junit class="org.fabric3.policy.tx.TransactionalServiceTest"/>
         <reference name="transactionalService" target="TransactionalService1"/>
         <reference name="managedTransactionService" target="AnnotatedManagedTransactionService"/>
     </component>
@@ -72,23 +70,23 @@
 
     <!--Security tests -->
     <component name="SecureServiceTest">
-        <f3-impl:junit class="org.fabric3.policy.security.SecureServiceTest">
+        <f3:junit class="org.fabric3.policy.security.SecureServiceTest">
             <configuration>
                 <username>foo</username>
                 <password>bar</password>
             </configuration>
-        </f3-impl:junit>
+        </f3:junit>
         <reference name="secureRoleService" target="SecureRolesService"/>
     </component>
 
     <!-- test authorization  -->
     <component name="NotAuthorizedSecureServiceTest">
-        <f3-impl:junit class="org.fabric3.policy.security.NotAuthorizedSecureServiceTest">
+        <f3:junit class="org.fabric3.policy.security.NotAuthorizedSecureServiceTest">
             <configuration>
                 <username>baz</username>
                 <password>fred</password>
             </configuration>
-        </f3-impl:junit>
+        </f3:junit>
         <reference name="secureRoleService" target="SecureRolesService"/>
     </component>
 

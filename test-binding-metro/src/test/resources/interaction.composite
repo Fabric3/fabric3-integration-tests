@@ -8,14 +8,13 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3="urn:fabric3.org"
            xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
-           xmlns:f3-policy="urn:fabric3.org:policy"
-           targetNamespace="org.codehaus.fabric3"
+           targetNamespace="urn:fabric3.org"
            name="InteractionTest">
 
     <component name="OneWayTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.metro.OneWayTest"/>
+        <f3:junit class="org.fabric3.tests.binding.metro.OneWayTest"/>
         <reference name="service" target="OneWayService"/>
     </component>
 

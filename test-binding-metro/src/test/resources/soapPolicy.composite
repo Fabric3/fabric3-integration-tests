@@ -8,19 +8,18 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3="urn:fabric3.org"
            xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
-           xmlns:f3-policy="urn:fabric3.org:policy"
-           targetNamespace="org.codehaus.fabric3"
+           targetNamespace="urn:fabric3.org"
            name="SOAPPolicyTest">
 
     <component name="SOAPTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.metro.SoapTest"/>
+        <f3:junit class="org.fabric3.tests.binding.metro.SoapTest"/>
         <reference name="soap11Service">
             <binding.ws uri="http://localhost:8900/soap11Service" requires="SOAP.1_1"/>
         </reference>
         <reference name="soap12Service">
-            <binding.ws uri="http://localhost:8900/soap12Service" requires="f3-policy:protocolBinding.xsoap12"/>
+            <binding.ws uri="http://localhost:8900/soap12Service" requires="f3:protocolBinding.xsoap12"/>
         </reference>
     </component>
 
@@ -34,7 +33,7 @@
     <component name="SOAP12Service">
         <implementation.java class="org.fabric3.tests.binding.metro.soap.Soap12ServiceImpl"/>
         <service name="Soap12Service">
-            <binding.ws uri="/soap12Service" requires="f3-policy:protocolBinding.xsoap12"/>
+            <binding.ws uri="/soap12Service" requires="f3:protocolBinding.xsoap12"/>
         </service>
     </component>
 

@@ -10,10 +10,8 @@ Public License. See the accompanying license file for details.
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-binding="urn:fabric3.org:binding"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="OuterComposite">
 
     <component name="Inner">
@@ -26,17 +24,17 @@ Public License. See the accompanying license file for details.
     <component name="Inner2">
         <implementation.composite name="InnerComposite2"/>
         <service name="SourceService">
-            <f3-binding:binding.test uri="SourceService"/>
+            <f3:binding.test uri="SourceService"/>
         </service>
         <reference name="promoted" target="target"/>
     </component>
 
     <component name="InnerCompositeTest">
-        <f3-impl:junit class="org.fabric3.tests.function.composite.InnerCompositeTest"/>
+        <f3:junit class="org.fabric3.tests.function.composite.InnerCompositeTest"/>
         <reference name="inner" target="Inner"/>
         <reference name="innerSpecified" target="Inner2/two"/>
         <reference name="boundSource">
-            <f3-binding:binding.test uri="SourceService"/>
+            <f3:binding.test uri="SourceService"/>
         </reference>
     </component>
 

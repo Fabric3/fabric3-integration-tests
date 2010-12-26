@@ -8,8 +8,7 @@
     $Rev: 8552 $ $Date: 2010-01-11 13:41:28 +0100 (Mon, 11 Jan 2010) $
 -->
 <contribution xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-              xmlns:f3-core="urn:fabric3.org:core"
-              xmlns:ns="org.codehaus.fabric3">
-    <f3-core:requires.capability name="rest" loaded="true"/>
-    <deployable composite="ns:TestCapabilitiesExtensionComposite"/>
+              xmlns:f3="urn:fabric3.org">
+    <f3:requires.capability name="rest" loaded="true"/>
+    <deployable composite="f3:TestCapabilitiesExtensionComposite"/>
 </contribution>

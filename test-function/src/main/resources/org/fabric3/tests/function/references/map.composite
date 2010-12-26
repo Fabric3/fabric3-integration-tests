@@ -6,26 +6,26 @@
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="MapComposite">
 
-    <component f3-core:key="one" name="map.one">
+    <component f3:key="one" name="map.one">
         <implementation.java class="org.fabric3.tests.function.common.IdentityServiceImpl"/>
         <property name="id">map.one</property>
     </component>
 
-    <component f3-core:key="two" name="map.two">
+    <component f3:key="two" name="map.two">
         <implementation.java class="org.fabric3.tests.function.common.IdentityServiceImpl"/>
         <property name="id">map.two</property>
     </component>
 
-    <component f3-core:key="three" name="map.three">
+    <component f3:key="three" name="map.three">
         <implementation.java class="org.fabric3.tests.function.common.IdentityServiceImpl"/>
         <property name="id">map.three</property>
     </component>
 
-    <component xmlns:test="file://./foo" f3-core:key="test:test" name="test.test">
+    <component xmlns:test="file://./foo" f3:key="test:test" name="test.test">
         <implementation.java class="org.fabric3.tests.function.common.IdentityServiceImpl"/>
         <property name="id">test.test</property>
     </component>

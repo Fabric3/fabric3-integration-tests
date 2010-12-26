@@ -6,15 +6,13 @@
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-binding="urn:fabric3.org:binding"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="CallbackComposite"
            autowire="false">
 
     <component name="AsyncCallbackTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.harness.callback.AsyncCallbackTest"/>
+        <f3:junit class="org.fabric3.tests.binding.harness.callback.AsyncCallbackTest"/>
         <reference name="client" target="AsyncClientService/AsyncClientService"/>
     </component>
 

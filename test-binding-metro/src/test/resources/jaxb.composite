@@ -7,13 +7,13 @@
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
+           xmlns:f3="urn:fabric3.org"
            xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
-           targetNamespace="org.codehaus.fabric3"
+           targetNamespace="urn:fabric3.org"
            name="JaxbTest">
 
     <component name="JaxbTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.metro.JaxbTest"/>
+        <f3:junit class="org.fabric3.tests.binding.metro.JaxbTest"/>
         <reference name="weatherPortType">
             <binding.ws wsdlElement="urn:weather#wsdl.port(WeatherService/WeatherPort)"/>
         </reference>

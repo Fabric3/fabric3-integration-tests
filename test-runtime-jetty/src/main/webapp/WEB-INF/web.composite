@@ -8,7 +8,7 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            name="WebappSmoketestComposite"
-           targetNamespace="urn:fabric3.org:sample"
+           targetNamespace="urn:fabric3.org"
            autowire="false">
 
     <component name="smoketest">

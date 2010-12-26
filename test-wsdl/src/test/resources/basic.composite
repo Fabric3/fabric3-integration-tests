@@ -8,24 +8,22 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-binding="urn:fabric3.org:binding"
+           xmlns:f3="urn:fabric3.org"
            xmlns:weather="urn:weather"
            xmlns:pojo-weather="http://pojo.wsdl.tests.fabric3.org/"
-           targetNamespace="org.codehaus.fabric3"
+           targetNamespace="urn:fabric3.org"
            name="BasicTestComposite">
 
     <component name="FromWSDLTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.generatedFromWsdl.TestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.generatedFromWsdl.TestClient"/>
         <reference name="service" target="FromWsdlWeatherService"/>
     </component>
 
     <component name="FromWsdlWeatherService">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.generatedFromWsdl.WeatherStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.generatedFromWsdl.WeatherStub">
             <service contract="weather:WeatherPortType"/>
             <reference name="weatherService" contract="weather:WeatherPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
         <reference name="weatherService" target="WeatherService"/>
     </component>
 
@@ -35,25 +33,25 @@
 
 
     <component name="XmlRootElementTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.xmlrootelement.TestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.xmlrootelement.TestClient"/>
         <reference name="service" target="XmlRootElementWeatherService"/>
     </component>
 
     <component name="XmlRootElementWeatherService">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.xmlrootelement.WeatherStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.xmlrootelement.WeatherStub">
             <service contract="weather:WeatherPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
     </component>
 
     <component name="PojoTestClient">
-        <f3-impl:junit class="org.fabric3.tests.wsdl.pojo.TestClient"/>
+        <f3:junit class="org.fabric3.tests.wsdl.pojo.TestClient"/>
         <reference name="service" target="PojoWeatherService"/>
     </component>
 
     <component name="PojoWeatherService">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.wsdl.pojo.WeatherStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.wsdl.pojo.WeatherStub">
             <service contract="pojo-weather:WeatherPortType"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
     </component>
 
 </composite>

@@ -16,28 +16,28 @@
  under the License.
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-core="urn:fabric3.org:core"
-           name="WsdlImplementationExtension" targetNamespace="urn:fabric3:org.fabric3.test">
+           xmlns:f3="urn:fabric3.org"
+           name="WsdlImplementationExtension"
+           targetNamespace="urn:fabric3.org">
 
-    <component name="TestWsdlImplementationLoader" f3-core:key="f3-impl:implementation.wsdl">
-        <f3-impl:implementation.system class="org.fabric3.tests.implementation.wsdl.loader.TestWsdlImplementationLoader"/>
+    <component name="TestWsdlImplementationLoader" f3:key="f3:implementation.wsdl">
+        <f3:implementation.system class="org.fabric3.tests.implementation.wsdl.loader.TestWsdlImplementationLoader"/>
     </component>
 
-    <component name="TestWsdlImplementationGenerator" f3-core:key="org.fabric3.tests.implementation.wsdl.model.TestWsdlImplementation">
-        <f3-impl:implementation.system class="org.fabric3.tests.implementation.wsdl.generator.TestWsdlImplementationGenerator"/>
+    <component name="TestWsdlImplementationGenerator" f3:key="org.fabric3.tests.implementation.wsdl.model.TestWsdlImplementation">
+        <f3:implementation.system class="org.fabric3.tests.implementation.wsdl.generator.TestWsdlImplementationGenerator"/>
     </component>
 
-    <component name="TestWsdlComponentBuilder" f3-core:key="org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlComponentDefinition">
-        <f3-impl:implementation.system class="org.fabric3.tests.implementation.wsdl.runtime.TestWsdlComponentBuilder"/>
+    <component name="TestWsdlComponentBuilder" f3:key="org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlComponentDefinition">
+        <f3:implementation.system class="org.fabric3.tests.implementation.wsdl.runtime.TestWsdlComponentBuilder"/>
     </component>
 
-    <component name="TestWsdlTargetWireAttacher" f3-core:key="org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlTargetDefinition">
-        <f3-impl:implementation.system class="org.fabric3.tests.implementation.wsdl.runtime.TestWsdlTargetWireAttacher"/>
+    <component name="TestWsdlTargetWireAttacher" f3:key="org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlTargetDefinition">
+        <f3:implementation.system class="org.fabric3.tests.implementation.wsdl.runtime.TestWsdlTargetWireAttacher"/>
     </component>
 
-    <component name="TestWsdlSourceWireAttacher" f3-core:key="org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlSourceDefinition">
-        <f3-impl:implementation.system class="org.fabric3.tests.implementation.wsdl.runtime.TestWsdlSourceWireAttacher"/>
+    <component name="TestWsdlSourceWireAttacher" f3:key="org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlSourceDefinition">
+        <f3:implementation.system class="org.fabric3.tests.implementation.wsdl.runtime.TestWsdlSourceWireAttacher"/>
     </component>
 
 </composite>

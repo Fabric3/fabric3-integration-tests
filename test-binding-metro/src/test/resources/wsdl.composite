@@ -8,16 +8,15 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-policy="urn:fabric3.org:policy"
+           xmlns:f3="urn:fabric3.org"
            xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
            xmlns:helloworld="urn:helloworld"
            xmlns:hellojava="http://wsdl.metro.binding.tests.fabric3.org/"
-           targetNamespace="org.codehaus.fabric3"
+           targetNamespace="urn:fabric3.org"
            name="WsdlTest">
 
     <component name="WsdlTest">
-        <f3-impl:junit class="org.fabric3.tests.binding.metro.WsdlTest"/>
+        <f3:junit class="org.fabric3.tests.binding.metro.WsdlTest"/>
         <reference name="portType">
             <!-- test policy attachement-->
             <binding.ws uri="https://localhost:8901/HelloWorldService" requires="sca:clientAuthentication.message">
@@ -30,10 +29,10 @@
     </component>
 
     <component name="HelloWorldService">
-        <f3-impl:implementation.wsdl stub="org.fabric3.tests.binding.metro.wsdl.HelloStub">
+        <f3:implementation.wsdl stub="org.fabric3.tests.binding.metro.wsdl.HelloStub">
             <service contract="helloworld:HelloWorldPortType"/>
             <reference name="helloJavaService" contract="hellojava:HelloJavaService"/>
-        </f3-impl:implementation.wsdl>
+        </f3:implementation.wsdl>
         <service name="HelloWorldPortType">
             <!-- test policy attachement-->
             <binding.ws uri="/HelloWorldService" requires="sca:clientAuthentication.message"/>

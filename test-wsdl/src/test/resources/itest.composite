@@ -8,11 +8,11 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:ns="org.codehaus.fabric3"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="TestComposite">
 
-    <include name="ns:BasicTestComposite"/>
-    <include name="ns:MatchingWsdlTestComposite"/>
+    <include name="f3:BasicTestComposite"/>
+    <include name="f3:MatchingWsdlTestComposite"/>
 
 </composite>

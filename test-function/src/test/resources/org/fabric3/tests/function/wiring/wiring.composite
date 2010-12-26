@@ -10,24 +10,22 @@ Public License. See the accompanying license file for details.
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:f3-core="urn:fabric3.org:core"
-           xmlns:f3-impl="urn:fabric3.org:implementation"
-           xmlns:f3-binding="urn:fabric3.org:binding"
-           targetNamespace="org.codehaus.fabric3"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
            name="WiringComposite">
 
     <component name="WiringTest">
-        <f3-impl:junit class="org.fabric3.tests.function.wiring.WiringTest"/>
+        <f3:junit class="org.fabric3.tests.function.wiring.WiringTest"/>
         <reference name="testService" target="TestComponent"/>
     </component>
 
     <component name="BindingSelectionTest">
-        <f3-impl:junit class="org.fabric3.tests.function.wiring.BindingSelectionTest"/>
+        <f3:junit class="org.fabric3.tests.function.wiring.BindingSelectionTest"/>
         <reference name="testService" target="HelloService/HelloService/binding2"/>
     </component>
 
     <component name="SCABindingReferenceTest">
-        <f3-impl:junit class="org.fabric3.tests.function.wiring.BindingSCATest"/>
+        <f3:junit class="org.fabric3.tests.function.wiring.BindingSCATest"/>
         <reference name="testService">
             <binding.sca uri="HelloService2"/>
         </reference>
@@ -47,8 +45,8 @@ Public License. See the accompanying license file for details.
     <component name="HelloService">
         <implementation.java class="org.fabric3.tests.function.common.HelloServiceImpl"/>
         <service name="HelloService">
-            <f3-binding:binding.test name="binding1" uri="HelloService"/>
-            <f3-binding:binding.test name="binding2" uri="HelloService2"/>
+            <f3:binding.test name="binding1" uri="HelloService"/>
+            <f3:binding.test name="binding2" uri="HelloService2"/>
         </service>
     </component>
 
@@ -61,7 +59,7 @@ Public License. See the accompanying license file for details.
 
     <!--verifies a wire contained in another composite-->
     <component name="WireBagTest">
-        <f3-impl:junit class="org.fabric3.tests.function.wiring.WireBagTest"/>
+        <f3:junit class="org.fabric3.tests.function.wiring.WireBagTest"/>
     </component>
     <include name="WiringBagComposite"/>
 
