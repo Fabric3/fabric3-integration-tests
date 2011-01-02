@@ -2,8 +2,8 @@ package org.fabric3.tests.function.byvalue;
 
 import java.util.List;
 
-import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.AllowsPassByReference;
+import org.oasisopen.sca.annotation.Reference;
 
 /**
  * @version $Rev$ $Date$
