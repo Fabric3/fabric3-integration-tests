@@ -5,8 +5,8 @@ import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
 
-import org.fabric3.tests.wsdl.generatedFromWsdl.WeatherRequest;
 import org.fabric3.tests.wsdl.generatedFromWsdl.WeatherFault;
+import org.fabric3.tests.wsdl.generatedFromWsdl.WeatherRequest;
 import org.fabric3.tests.wsdl.generatedFromWsdl.WeatherResponse;
 
 

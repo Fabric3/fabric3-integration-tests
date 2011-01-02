@@ -40,9 +40,6 @@ package org.fabric3.tests.wsdl.matching.multielementcomplextype;
 import junit.framework.TestCase;
 import org.oasisopen.sca.annotation.Reference;
 
-import org.fabric3.tests.wsdl.matching.multielementcomplextype.HelloWorldPortType;
-import org.fabric3.tests.wsdl.matching.multielementcomplextype.SayHelloRequestType;
-
 /**
  * @version $Rev$ $Date$
  */

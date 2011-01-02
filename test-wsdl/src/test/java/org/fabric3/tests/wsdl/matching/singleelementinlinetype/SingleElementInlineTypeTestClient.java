@@ -40,9 +40,6 @@ package org.fabric3.tests.wsdl.matching.singleelementinlinetype;
 import junit.framework.TestCase;
 import org.oasisopen.sca.annotation.Reference;
 
-import org.fabric3.tests.wsdl.matching.singleelementinlinetype.HelloWorldPortType;
-import org.fabric3.tests.wsdl.matching.singleelementinlinetype.SayHelloRequest;
-
 
 /**
  * @version $Rev$ $Date$
