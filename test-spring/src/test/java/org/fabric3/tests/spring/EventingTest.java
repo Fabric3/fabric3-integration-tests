@@ -4,7 +4,6 @@ import junit.framework.TestCase;
 import org.oasisopen.sca.annotation.Reference;
 
 import org.fabric3.tests.binding.harness.eventing.TestConsumer;
-import org.fabric3.tests.binding.harness.eventing.TestEvent;
 import org.fabric3.tests.binding.harness.eventing.TestProducer;
 
 /**
