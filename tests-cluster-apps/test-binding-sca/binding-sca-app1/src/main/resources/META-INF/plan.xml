@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<plan xmlns="urn:fabric3.org:core" xmlns:f3-tests="org.codehaus.fabric3.tests" name="plan">
+<plan xmlns="urn:fabric3.org" xmlns:f3-tests="org.codehaus.fabric3.tests" name="plan1">
     <mappings>
         <mapping deployable="f3-tests:Application1Composite" zone="zone1"/>
     </mappings>

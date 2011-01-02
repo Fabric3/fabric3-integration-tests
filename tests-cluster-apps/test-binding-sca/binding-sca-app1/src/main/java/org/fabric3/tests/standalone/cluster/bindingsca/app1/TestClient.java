@@ -41,12 +41,15 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 
+import org.oasisopen.sca.annotation.EagerInit;
 import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Scope;
 import org.oasisopen.sca.annotation.Service;
 
-import org.fabric3.api.annotation.monitor.Monitor;
 import org.fabric3.api.annotation.Producer;
+import org.fabric3.api.annotation.management.Management;
+import org.fabric3.api.annotation.management.ManagementOperation;
+import org.fabric3.api.annotation.monitor.Monitor;
 import org.fabric3.tests.standalone.cluster.bindingsca.api.TestEvent;
 import org.fabric3.tests.standalone.cluster.bindingsca.api.TestService;
 import org.fabric3.tests.standalone.cluster.bindingsca.api.TestServiceCallback;
@@ -57,6 +60,8 @@ import org.fabric3.tests.standalone.cluster.bindingsca.api.TestServiceCallback;
  */
 @Service(names = {TestClientService.class, TestServiceCallback.class})
 @Scope("COMPOSITE")
+@EagerInit
+@Management
 public class TestClient implements TestClientService, TestServiceCallback {
     private TestService testService;
     private TestMonitor monitor;
@@ -64,23 +69,29 @@ public class TestClient implements TestClientService, TestServiceCallback {
 
     private Map<String, CountDownLatch> latches = new ConcurrentHashMap<String, CountDownLatch>();
 
-    public TestClient(@Reference(name = "testService") TestService testService, @Producer("producer") TestEventStream stream, @Monitor TestMonitor monitor) {
+    public TestClient(@Reference(name = "testService") TestService testService,
+                      @Producer("producer") TestEventStream stream,
+                      @Monitor TestMonitor monitor) {
         this.testService = testService;
         this.stream = stream;
         this.monitor = monitor;
     }
 
+    @ManagementOperation
+    public void invoke() {
+        while (true) {
+            invoke("test");
+        }
+    }
+
+    private int counter;
+
     public String invoke(String message) {
-        TestEvent event = new TestEvent("test");
-        stream.fireEvent(event);
-        monitor.message("Received invoke: " + message);
-        CountDownLatch latch = new CountDownLatch(1);
-        latches.put(message, latch);
-        testService.invoke(message);
-        try {
-            latch.await();
-        } catch (InterruptedException e) {
-            throw new AssertionError(e);
+
+        for (int i = 0; i <= 100; i++) {
+            TestEvent event = new TestEvent(String.valueOf(++counter));
+            System.out.println("----->" + counter);
+            stream.fireEvent(event);
         }
         return message;
     }

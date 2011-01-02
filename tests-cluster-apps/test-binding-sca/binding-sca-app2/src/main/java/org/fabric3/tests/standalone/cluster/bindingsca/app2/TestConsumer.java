@@ -37,6 +37,11 @@
 */
 package org.fabric3.tests.standalone.cluster.bindingsca.app2;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.oasisopen.sca.annotation.Scope;
+
 import org.fabric3.api.annotation.Consumer;
 import org.fabric3.api.annotation.monitor.Monitor;
 import org.fabric3.tests.standalone.cluster.bindingsca.api.TestEvent;
@@ -44,6 +49,7 @@ import org.fabric3.tests.standalone.cluster.bindingsca.api.TestEvent;
 /**
  * @version $Rev$ $Date$
  */
+@Scope("COMPOSITE")
 public class TestConsumer {
     private TestMonitor monitor;
 
@@ -51,9 +57,18 @@ public class TestConsumer {
         this.monitor = monitor;
     }
 
+    private int count;
+    Map<String, String> seen = new ConcurrentHashMap<String, String>();
+
     @Consumer
     public void onEvent(TestEvent event) {
-        monitor.message("Event received: " + event.getMessage());
+        ++count;
+        if (seen.containsKey(event.getMessage())) {
+            monitor.message("***** DUP: Event received: " + event.getMessage() + ":" + count);
+        } else {
+            monitor.message("Event received: " + event.getMessage() + ":" + count);
+            seen.put(event.getMessage(), "");
+        }
     }
 
 

@@ -9,5 +9,5 @@
 -->
 <contribution xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:f3-tests="org.codehaus.fabric3.tests">
     <import.java package="org.fabric3.tests.standalone.cluster.bindingsca.api"/>
-    <deployable composite="f3-tests:Application2Composite"/>
+    <deployable composite="f3:Application2Composite"/>
 </contribution>

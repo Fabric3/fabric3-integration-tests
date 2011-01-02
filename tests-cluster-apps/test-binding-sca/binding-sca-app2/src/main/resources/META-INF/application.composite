@@ -8,13 +8,18 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            targetNamespace="org.codehaus.fabric3.tests"
+           xmlns:f3="urn:fabric3.org"
            name="Application2Composite">
 
     <component name="TestService">
         <implementation.java class="org.fabric3.tests.standalone.cluster.bindingsca.app2.TestComponent"/>
     </component>
 
-    <channel name="TestChannel"/>
+    <channel name="TestChannel" requires="f3:durable f3:nonPersistent">
+        <binding.jms cache="connection"  max.messages="5">
+            <destination jndiName="asyncClientServiceQueue"/>
+        </binding.jms>
+    </channel>
 
     <component name="TestConsumer">
         <implementation.java class="org.fabric3.tests.standalone.cluster.bindingsca.app2.TestConsumer"/>
