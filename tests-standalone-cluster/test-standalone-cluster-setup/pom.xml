@@ -23,7 +23,7 @@
        <version>0.1-SNAPSHOT</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
-    <artifactId>test-standalone-cluster-setup-parent-pom</artifactId>
+    <artifactId>tests-standalone-cluster-setup-parent-pom</artifactId>
     <packaging>pom</packaging>
     <name>Fabric3 Standalone Cluster Tests Setup Parent POM</name>
     <description>Fabric3 Standalone Cluster Tests Setup Parent POM.</description>
