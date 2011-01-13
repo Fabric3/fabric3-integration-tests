@@ -8,31 +8,15 @@
             <URL>jdbc:h2:mem:loadapplication;DB_CLOSE_DELAY=-1</URL>
         </datasource>
     </datasources>
-    <!-- 
-   <driver>com.mysql.jdbc.Driver</driver>
-   <url>jdbc:mysql://localhost/bigbank</url>
-   <user>bigbank</user>
-   <password>bigbank</password> -->
     <jms>
-        <connection.factories>
-            <connection.factory name="xaDefault" type="xa"/>
-            <connection.factory name="default" type="local"/>
-        </connection.factories>
+      <!--  <activemq broker.disabled="true"/>
+        <connection.factory.templates>
+            <connection.factory name="xaDefault" type="xa" broker.url="tcp://localhost:61616"/>
+            <connection.factory name="default" type="local" broker.url="tcp://localhost:61616"/>
+        </connection.factory.templates> -->
         <binding.sca factory="default" xa.factory="xaDefault"/>
     </jms>
     <federation>
-        <transport>
-            <value>
-                <entry>
-                    <key>binding.net.http</key>
-                    <value>localhost:8181</value>
-                </entry>
-                <entry>
-                    <key>binding.net.tcp</key>
-                    <value>localhost:8383</value>
-                </entry>
-            </value>
-        </transport>
         <zoneName>zone2</zoneName>
     </federation>
 </config>
