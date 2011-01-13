@@ -1,9 +1,0 @@
-<config>
-
-    <testDsConfig>
-        <url>jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1</url>
-        <driver>org.h2.Driver</driver>
-        <keys>EmployeeDS</keys>
-    </testDsConfig>
-
-</config>

@@ -1,9 +1,0 @@
-<config>
-
-    <datasources>
-        <datasource name="EmployeeDS" driver="org.h2.Driver" url="jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1" type="non_xa">
-            <url>jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1</url>
-        </datasource>
-    </datasources>
-
-</config>
