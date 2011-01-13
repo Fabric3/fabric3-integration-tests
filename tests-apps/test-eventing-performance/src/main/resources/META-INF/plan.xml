@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<plan xmlns="urn:fabric3.org" xmlns:f3-tests="org.codehaus.fabric3.tests" name="plan1">
+    <mappings>
+        <mapping deployable="f3-tests:EventingPerformanceZone1Composite" zone="zone1"/>
+        <mapping deployable="f3-tests:EventingPerformanceZone2Composite" zone="zone2"/>
+    </mappings>
+</plan>

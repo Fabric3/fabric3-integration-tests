@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           targetNamespace="org.codehaus.fabric3.tests"
+           name="EventingPerformanceZone2Composite"
+           autowire="true">
+
+    <component name="TestConsumer">
+        <implementation.java class="org.fabric3.tests.eventing.performance.TestConsumer"/>
+        <consumer name="onReceive" source="TestChannel"/>
+    </component>
+
+
+</composite>
