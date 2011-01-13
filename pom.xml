@@ -71,7 +71,6 @@
                 <module>test-binding-metro</module> 
                 <module>test-binding-ftp</module>
                 <module>test-binding-jms</module>
-                <module>test-binding-net</module> 
                 <module>test-wsdl</module> 
                 <module>test-cache-infinispan</module> 
 		<module>test-capabilities-extension</module>
@@ -96,15 +95,14 @@
                 <module>test-mock</module>
                 <module>test-binding-metro</module> 
                 <module>test-binding-ftp</module>
-                <module>test-binding-net</module> 
                 <module>test-implementation-wsdl</module>
                 <module>test-wsdl</module> 
                 <module>test-binding-jms</module> 
                 <module>test-spring</module>
                 <module>test-binding-metro</module>
                 <module>test-cache-infinispan</module> 
-		    <module>test-capabilities-extension</module>
-		    <module>test-capabilities</module>
+  		        <module>test-capabilities-extension</module>
+                <module>test-capabilities</module>
                 <!-- <module>tests-ant</module> -->
                 <module>tests-standalone</module>
             </modules>
