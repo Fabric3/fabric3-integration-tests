@@ -14,14 +14,14 @@
     <component name="RestTest">
         <f3:junit class="org.fabric3.tests.binding.metro.RestTest"/>
         <reference name="searchService">
-            <binding.ws uri="http://localhost:8900/searchBooks" requires="f3:protocolBinding.rest"/>
+            <binding.ws uri="http://localhost:8900/searchBooks" requires="f3:metroRest"/>
         </reference>
     </component>
 
     <component name="BookStoreService">
         <implementation.java class="org.fabric3.tests.binding.metro.bookstore.DefaultSearchService"/>
         <service name="SearchService">
-            <binding.ws uri="/searchBooks" requires="f3:protocolBinding.rest"/>
+            <binding.ws uri="/searchBooks" requires="f3:metroRest"/>
         </service>
     </component>
 
