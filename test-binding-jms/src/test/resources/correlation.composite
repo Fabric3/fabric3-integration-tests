@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
+           name="CorrelationComposite">
+    <!-- verifies message correlation -->
+
+    <component name="TestCorrelationClient">
+        <f3:junit class="org.fabric3.binding.jms.test.correlation.TestCorrelationClient"/>
+        <reference name="correlationIdService">
+            <binding.jms correlationScheme="correlationID">
+                <destination jndiName="correlationIdQueue"/>
+                <response>
+                    <destination jndiName="correlationIdResponseQueue"/>
+                </response>
+            </binding.jms>
+        </reference>
+        <reference name="messageIdService">
+            <binding.jms correlationScheme="messageID">
+                <destination jndiName="messageIdQueue"/>
+                <response>
+                    <destination jndiName="messageIdResponseQueue"/>
+                </response>
+            </binding.jms>
+        </reference>
+        <reference name="noCorrelationService">
+            <binding.jms correlationScheme="none">
+                <destination jndiName="noCorrelationIdQueue"/>
+                <response>
+                    <destination jndiName="noCorrelationIdResponseQueue"/>
+                </response>
+            </binding.jms>
+        </reference>
+    </component>
+
+    <component name="CorrelationIdService">
+        <implementation.java class="org.fabric3.binding.jms.test.primitives.PrimitiveServiceImpl"/>
+        <service name="PrimitiveService">
+            <binding.jms correlationScheme="correlationID">
+                <destination jndiName="correlationIdQueue"/>
+                <response>
+                    <destination jndiName="correlationIdResponseQueue"/>
+                </response>
+            </binding.jms>
+        </service>
+    </component>
+
+    <component name="MessageIdService">
+        <implementation.java class="org.fabric3.binding.jms.test.primitives.PrimitiveServiceImpl"/>
+        <service name="PrimitiveService">
+            <binding.jms correlationScheme="messageID">
+                <destination jndiName="messageIdQueue"/>
+                <response>
+                    <destination jndiName="messageIdResponseQueue"/>
+                </response>
+            </binding.jms>
+        </service>
+    </component>
+
+    <component name="NoCorrelationService">
+        <implementation.java class="org.fabric3.binding.jms.test.primitives.PrimitiveServiceImpl"/>
+        <service name="PrimitiveService">
+            <binding.jms correlationScheme="none">
+                <destination jndiName="noCorrelationIdQueue"/>
+                <response>
+                    <destination jndiName="noCorrelationIdResponseQueue"/>
+                </response>
+            </binding.jms>
+        </service>
+    </component>
+
+
+</composite>

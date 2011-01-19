@@ -20,5 +20,5 @@
     <include name="JMSJAXBComposite"/>
     <include name="JMSFaultsComposite"/>
     <include name="JMSEventingComposite"/>
-
+    <include name="CorrelationComposite"/>
 </composite>
