@@ -73,7 +73,7 @@
                 <module>test-binding-jms</module>
                 <module>test-wsdl</module> 
                 <module>test-cache-infinispan</module> 
-                <module>test-management</module>
+                <module>test-management-rest</module>
                 <module>test-capabilities-extension</module>
                 <module>test-capabilities</module>
                 <module>test-multiple-modules</module>
@@ -104,7 +104,7 @@
                 <module>test-cache-infinispan</module> 
   		        <module>test-capabilities-extension</module>
                 <module>test-capabilities</module>
-                <module>test-management</module>
+                <module>test-management-rest</module>
                 <module>test-multiple-modules</module>
                 <!-- <module>tests-ant</module> -->
                 <module>tests-standalone</module>
