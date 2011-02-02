@@ -39,7 +39,7 @@
                     <extensions>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>fabric3-management</artifactId>
+                            <artifactId>fabric3-management-rest</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
                         <dependency>
