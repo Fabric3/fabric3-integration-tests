@@ -13,4 +13,8 @@
         <f3:junit class="org.fabric3.TestCache"/>
     </component>
 
+    <component name="CacheComposite">
+        <implementation.composite name="Cache" scdlResource="cacheConfiguration.composite"/>
+    </component>
+
 </composite>
