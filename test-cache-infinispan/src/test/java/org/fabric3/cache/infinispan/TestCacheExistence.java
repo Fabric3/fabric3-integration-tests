@@ -1,12 +1,12 @@
-package org.fabric3;
+package org.fabric3.cache.infinispan;
 
 import junit.framework.TestCase;
 import org.fabric3.api.annotation.Resource;
 import org.fabric3.api.annotation.scope.Scopes;
 import org.oasisopen.sca.annotation.EagerInit;
-import org.oasisopen.sca.annotation.Init;
 import org.oasisopen.sca.annotation.Scope;
 
+import java.io.Serializable;
 import java.util.concurrent.ConcurrentMap;
 
 /**
@@ -14,17 +14,16 @@ import java.util.concurrent.ConcurrentMap;
  */
 @EagerInit
 @Scope(Scopes.COMPOSITE)
-public class TestCache extends TestCase {
+public class TestCacheExistence extends TestCase {
 
     @Resource(name = "dataIndexCache")
-    protected ConcurrentMap cache;
+    protected ConcurrentMap<Integer, String> cache;
+
+    @Resource(name = "dataIndexCache2")
+    protected ConcurrentMap<Serializable, Serializable> cache2;
 
     public void testCacheConfiguration() throws Exception {
         assertNotNull(cache);
-    }
-
-    @Init
-    public void init() {
-        System.out.println("init");
+        assertNotNull(cache2);
     }
 }

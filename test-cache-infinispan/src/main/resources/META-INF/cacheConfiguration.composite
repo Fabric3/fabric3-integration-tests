@@ -10,6 +10,14 @@
            targetNamespace="urn:fabric3.org"
            name="CacheConfigurationComposite">
 
+    <component name="CachePublisher">
+        <implementation.java class="org.fabric3.cache.infinispan.CachePublisher"/>
+    </component>
+
+    <component name="CacheAssertion">
+        <implementation.java class="org.fabric3.cache.infinispan.CacheAssertion"/>
+    </component>
+
     <f3:caches>
         <f3:cache name="dataIndexCache">
             <infinispan/>
