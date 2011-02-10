@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentMap;
 @Scope(Scopes.COMPOSITE)
 public class TestCache extends TestCase {
 
-    @Resource(name = "cache")
+    @Resource(name = "dataIndexCache")
     protected ConcurrentMap cache;
 
     public void testCacheConfiguration() throws Exception {

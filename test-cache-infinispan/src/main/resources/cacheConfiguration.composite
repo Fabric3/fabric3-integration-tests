@@ -10,16 +10,10 @@
            targetNamespace="urn:fabric3.org"
            name="CacheConfigurationComposite">
 
-    <component name="CacheConfig">
-        <implementation.java class="org.fabric3.tests.infinispan.CacheConfigurationImpl"/>
-    </component>
+    <f3:caches>
+        <f3:cache name="dataIndexCache">
+            <infinispan/>
+        </f3:cache>
+    </f3:caches>
 
-	<f3:caches>
-		<f3:cache>
-			<namedCache name="dataIndexCache">
-				<loaders passivation="false" preload="true" shared="true" />
-			</namedCache>
-		</f3:cache>
-	</f3:caches>
-    
 </composite>

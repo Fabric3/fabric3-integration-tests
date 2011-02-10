@@ -13,27 +13,4 @@
         <f3:junit class="org.fabric3.TestCache"/>
     </component>
 
-    <f3:caches>
-        <!--
-          <global>
-              <transport clusterName="pseCache">
-                  <properties>
-                      <property name="configurationFile" value="infinispanJGroups.xml" />
-                  </properties>
-              </transport>
-          </global>
-      -->
-        <f3:cache name="cache">
-            <namedCache name="cache">
-                <deadlockDetection enabled="true" spinDuration="100"/>
-                <locking useLockStriping="false" lockAcquisitionTimeout="10000"/>
-                <clustering mode="replication">
-                    <sync replTimeout="15000"/>
-                    <stateRetrieval fetchInMemoryState="true"
-                                    alwaysProvideInMemoryState="true" timeout="120000"/>
-                </clustering>
-            </namedCache>
-        </f3:cache>
-    </f3:caches>
-
 </composite>
