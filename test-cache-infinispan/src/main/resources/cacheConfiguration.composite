@@ -14,6 +14,9 @@
         <f3:cache name="dataIndexCache">
             <infinispan/>
         </f3:cache>
+        <f3:cache name="dataIndexCache2">
+            <infinispan/>
+        </f3:cache>
     </f3:caches>
 
 </composite>
