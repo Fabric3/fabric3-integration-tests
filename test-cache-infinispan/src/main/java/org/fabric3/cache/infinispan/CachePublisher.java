@@ -7,14 +7,12 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * @version $Rev$ $Date$
  */
-public class CachePublisher implements PublisherService {
+public class CachePublisher implements PublisherService<Integer, String> {
 
     @Resource(name = "dataIndexCache")
     ConcurrentMap<Integer, String> cache;
 
-    public void generateToCache(int itemsCount) {
-        for (int i = 0; i < itemsCount; i++) {
-            cache.put(i, String.valueOf(i));
-        }
+    public void insertIntoCache(ConcurrentMap<Integer, String> itemsToInsert) {
+        cache.putAll(itemsToInsert);
     }
 }
