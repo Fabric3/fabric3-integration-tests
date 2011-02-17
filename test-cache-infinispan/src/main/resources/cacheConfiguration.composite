@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
+           name="CacheComposite">
+
+    <component name="PublisherServiceImpl">
+        <implementation.java class="org.fabric3.cache.infinispan.PublisherServiceImpl"/>
+
+        <service name="PublisherService">
+            <interface.java interface="org.fabric3.cache.infinispan.PublisherService"/>
+        </service>
+    </component>
+
+    <component name="AssertionServiceImpl">
+        <implementation.java class="org.fabric3.cache.infinispan.AssertionServiceImpl"/>
+
+        <service name="AssertionService">
+            <interface.java interface="org.fabric3.cache.infinispan.AssertionService"/>
+        </service>
+    </component>
+
+    <f3:caches>
+        <f3:cache name="dataIndexCache">
+            <infinispan/>
+        </f3:cache>
+        <f3:cache name="dataIndexCache2">
+            <infinispan/>
+        </f3:cache>
+    </f3:caches>
+
+</composite>

@@ -20,11 +20,11 @@ import java.util.concurrent.ConcurrentMap;
 @Scope(Scopes.COMPOSITE)
 public class TestInsertingIntoCache extends TestCase {
 
-    @Reference
-    protected AssertionService<Integer, String> assertionService;
+    @Reference(required = true)
+    protected AssertionService<Integer, String> assertionReference;
 
-    @Reference
-    protected PublisherService<Integer, String> publisherService;
+    @Reference(required = true)
+    protected PublisherService<Integer, String> publisherReference;
 
     @Monitor
     protected MonitorChannel monitor;
@@ -33,7 +33,7 @@ public class TestInsertingIntoCache extends TestCase {
     ConcurrentMap<Integer, String> cache;
 
     public void testCacheConfiguration() throws Exception {
-        assertTrue(assertionService.assertCount(0));
+        assertTrue(assertionReference.assertCount(0));
 
         int countToInsert = 10000;
 
@@ -44,14 +44,14 @@ public class TestInsertingIntoCache extends TestCase {
 
         long startDate = System.currentTimeMillis();
 
-        publisherService.insertIntoCache(temp);
-        assertTrue(assertionService.assertCount(countToInsert));
-        assertTrue(assertionService.assertItems(temp));
+        publisherReference.insertIntoCache(temp);
+        assertTrue(assertionReference.assertCount(countToInsert));
+        assertTrue(assertionReference.assertItems(temp));
 
         long endDate = System.currentTimeMillis();
         monitor.info(MessageFormat.format("Inserting of {0} items took: {1} ms", countToInsert, endDate - startDate));
 
         cache.clear();
-        assertionService.assertCount(0);
+        assertionReference.assertCount(0);
     }
 }
