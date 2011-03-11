@@ -1,8 +1,6 @@
 <config>
-    <runtime mode="participant" jmxPort="1200-1299"/>
-    <web.server>
-        <http port="8181-8200"/>
-    </web.server>
+    <runtime mode="participant" jmx.port="1200-1299" port.range="8181-8200"/>
+    <federation logging="severe"/>
     <datasources>
         <datasource name="LoanApplicationDS" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
             <URL>jdbc:h2:mem:loadapplication;DB_CLOSE_DELAY=-1</URL>
