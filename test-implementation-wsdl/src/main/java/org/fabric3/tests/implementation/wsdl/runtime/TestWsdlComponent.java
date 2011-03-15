@@ -98,6 +98,14 @@ public class TestWsdlComponent implements Component {
 
     }
 
+    public void startUpdate() {
+
+    }
+
+    public void endUpdate() {
+
+    }
+
     public String getName() {
         return uri.toString();
     }
