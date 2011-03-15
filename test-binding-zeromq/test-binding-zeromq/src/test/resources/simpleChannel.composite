@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+    xmlns:f3="urn:fabric3.org" targetNamespace="urn:fabric3.org" name="simpleChannel">
+    <component name="TestClient">
+        <f3:junit class="org.fabric3.binding.zeromq.test.eventing.TestClient" />
+        <reference name="testProducer"
+            target="TestLoopbackProducerConsumer/TestProducer" />
+        <reference name="testConsumer"
+            target="TestLoopbackProducerConsumer/TestConsumer" />
+    </component>
+    <component name="TestLoopbackProducerConsumer">
+        <implementation.java
+            class="org.fabric3.tests.binding.harness.eventing.TestProducerConsumerImpl" />
+        <producer name="channel" target="TestChannel" />
+        <consumer name="channel" source="TestChannel" />
+    </component>
+    <channel name="TestChannel">
+<!--     requires="f3:durable">-->
+<!--    <binding.jms> <destination jndiName="TestLoopbackChannelTopic" type="topic"/></binding.jms>-->
+        <f3:binding.zeromq>
+            <host name="localhost"/>
+            <port number="10100"/>
+        </f3:binding.zeromq>
+    </channel>
+</composite>
