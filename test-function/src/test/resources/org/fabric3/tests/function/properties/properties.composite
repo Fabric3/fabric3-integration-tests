@@ -385,11 +385,25 @@ Public License. See the accompanying license file for details.
 
     <property name="simple">simple</property>
 
+    <property name="nestedMap">
+        <value>
+            <entry>
+                <key>key1</key>
+                <value>val1</value>
+            </entry>
+            <entry>
+                <key>key2</key>
+                <value>val2</value>
+            </entry>
+        </value>
+    </property>
+
     <component name="PropertyXPathTest">
         <f3:junit class="org.fabric3.tests.function.properties.PropertyXPathTest"/>
         <property name="simple" source="$simple"/>
         <property name="complexElement" source="$globalComplexElement/test:firstData/text()"/>
         <property name="complexType" source="$complexType/test:firstData/text()"/>
+        <property name="nestedMap" source="$nestedMap"/>
     </component>
 
     <component name="MultiValuePropertyTest">
