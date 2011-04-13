@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+targetNamespace="urn:weather" xmlns:tns="urn:weather"
+elementFormDefault="qualified">
+    <complexType name="WeatherRequest">
+        <sequence>
+            <element name="city" type="xsd:string" />
+            <element name="date" type="xsd:date" />
+        </sequence>
+    </complexType>
+    <complexType name="WeatherResponse">
+        <sequence>
+            <element name="forecast" type="xsd:string" />
+            <element name="temperature" type="xsd:double" />
+        </sequence>
+    </complexType>
+    <complexType name="WeatherFault">
+        <sequence>
+            <element name="code" type="xsd:string" />
+            <element name="detail" type="xsd:string" />
+        </sequence>
+    </complexType>
+</schema>
+ 
