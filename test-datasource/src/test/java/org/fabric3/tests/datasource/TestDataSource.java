@@ -11,10 +11,10 @@ import org.fabric3.api.annotation.Resource;
  */
 public class TestDataSource extends TestCase {
 
-    @Resource(mappedName = "ds1")
+    @Resource(name = "ds1")
     protected DataSource datasource;
 
-    @Resource(mappedName = "ds2")
+    @Resource(name = "ds2")
     protected DataSource datasource2;
 
     public void testDataSourceConfiguration() throws Exception {

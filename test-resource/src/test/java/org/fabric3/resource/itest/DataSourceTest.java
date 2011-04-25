@@ -48,7 +48,7 @@ import org.fabric3.api.annotation.Resource;
  */
 public class DataSourceTest extends TestCase {
 
-    @Resource (mappedName = "EmployeeDS")
+    @Resource (name = "EmployeeDS")
     protected DataSource dataSource;
 
     public void testDataSource() {

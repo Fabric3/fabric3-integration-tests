@@ -52,7 +52,7 @@ import org.fabric3.api.annotation.transaction.SuspendsTransaction;
  */
 @ManagedTransaction
 public class AnnotatedManagedTransactionService implements TransactionalService {
-    @Resource(mappedName = "TransactionManager")
+    @Resource(name = "TransactionManager")
     protected TransactionManager tm;
 
     @Reference
