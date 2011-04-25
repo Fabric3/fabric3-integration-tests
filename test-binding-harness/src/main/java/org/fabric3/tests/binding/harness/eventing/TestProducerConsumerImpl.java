@@ -41,7 +41,6 @@ public class TestProducerConsumerImpl implements TestConsumer, TestProducer {
         throw new IllegalArgumentException("Unknown event type: " + event);
     }
 
-    @Override
     public void produce(String message) {
         channel.sendEvent("test");
     }
