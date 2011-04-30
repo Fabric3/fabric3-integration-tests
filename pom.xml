@@ -77,6 +77,8 @@
                 <module>test-capabilities-extension</module>
                 <module>test-capabilities</module>
                 <module>test-multiple-modules</module>
+                <module>tests-apps</module>
+                <module>tests-import-resolution</module>
             </modules>
         </profile>
         <profile>
@@ -91,7 +93,6 @@
                 <module>test-policy</module>
                 <module>test-jpa-hibernate</module>
                 <module>test-binding-rs</module>
-                <module>test-timer-quartz</module>
                 <module>test-timer-implementation</module>
                 <module>test-mock</module>
                 <module>test-binding-metro</module> 
