@@ -32,5 +32,7 @@
     <description>Fabric3 Single-VM Test Apps Parent</description>
     <modules>
         <module>test-eventing-performance</module>
+        <module>test-jms-provider</module>
+        <module>test-jpa</module>
     </modules>
 </project>
