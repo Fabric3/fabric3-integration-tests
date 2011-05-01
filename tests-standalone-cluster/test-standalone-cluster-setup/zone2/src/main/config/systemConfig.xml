@@ -1,5 +1,5 @@
 <config>
-    <runtime mode="participant" jmx.port="1300-1400" port.range="8281-8380"/>
+    <runtime mode="participant" port.range="8281-8380"/>
     <federation logging="severe"/>
     <datasources>
         <datasource name="LoanApplicationDS" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
