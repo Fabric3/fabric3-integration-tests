@@ -14,15 +14,15 @@
         <implementation.java class="org.fabric3.tests.standalone.application.TestClient"/>
         <reference name="testService" target="TestService"/>
         <!--<reference name="testService">-->
-            <!--<binding.jms>-->
-            <!--<destination jndiName="TestQueue1"/>-->
-            <!--<connectionFactory jndiName="TestConnectionFactory1"/>-->
-            <!--<response>-->
-            <!--<destination jndiName="TestResponseQueue1"/>-->
-            <!--<connectionFactory jndiName="TestConnectionFactory1"/>-->
-            <!--</response>-->
-            <!--</binding.jms>-->
-            <!--<binding.ws uri="http://localhost:7003/TestService"/>-->
+        <!--<binding.jms>-->
+        <!--<destination jndiName="TestQueue1"/>-->
+        <!--<connectionFactory jndiName="TestConnectionFactory1"/>-->
+        <!--<response>-->
+        <!--<destination jndiName="TestResponseQueue1"/>-->
+        <!--<connectionFactory jndiName="TestConnectionFactory1"/>-->
+        <!--</response>-->
+        <!--</binding.jms>-->
+        <!--<binding.ws uri="http://localhost:7003/TestService"/>-->
         <!--</reference>-->
     </component>
 
