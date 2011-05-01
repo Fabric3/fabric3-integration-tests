@@ -77,8 +77,9 @@
                 <module>test-capabilities-extension</module>
                 <module>test-capabilities</module>
                 <module>test-multiple-modules</module>
-                <module>tests-apps</module>
                 <module>tests-import-resolution</module>
+                <module>tests-apps</module>
+                <module>tests-cluster-apps</module>
             </modules>
         </profile>
         <profile>
