@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="org.codehaus.fabric3.tests"
+           name="JmsProviderComposite"
+           autowire="true">
+
+    <f3:jndi>
+        <context name="WLS">
+            <property name="java.naming.factory.initial" value="weblogic.jndi.WLInitialContextFactory"/>
+            <property name="java.naming.provider.url" value="t3://localhost:7001"/>
+        </context>
+    </f3:jndi>
+
+    <channel name="TestChannel">
+        <binding.jms cache="session">
+            <connectionFactory jndiName="ConnectionFactory1"/>
+            <destination jndiName="Queue1"/>
+        </binding.jms>
+    </channel>
+
+    <component name="TestProducer">
+        <implementation.java class="org.fabric3.tests.eventing.performance.TestProducerImpl"/>
+        <producer name="channel" target="TestChannel"/>
+    </component>
+
+    <component name="TestConsumer">
+        <implementation.java class="org.fabric3.tests.eventing.performance.TestConsumer"/>
+        <consumer name="onReceive" source="TestChannel"/>
+    </component>
+
+
+</composite>

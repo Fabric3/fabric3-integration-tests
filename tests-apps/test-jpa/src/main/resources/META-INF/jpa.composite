@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="org.codehaus.fabric3.tests"
+           name="JpaTestComposite"
+           autowire="true">
+
+    <component name="TestComponent">
+        <implementation.java class="org.fabric3.tests.jpa.TestComponent"/>
+    </component>
+
+    <component name="StoreComponent">
+        <implementation.java class="org.fabric3.tests.jpa.StoreComponent"/>
+    </component>
+
+    <f3:datasources>
+        <datasource name="MessageDS" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
+            <URL>jdbc:h2:mem:MessageDS;DB_CLOSE_ON_EXIT=FALSE</URL>
+            <minPoolSize>5</minPoolSize>
+            <maxPoolSize>10</maxPoolSize>
+        </datasource>
+    </f3:datasources>
+
+</composite>
