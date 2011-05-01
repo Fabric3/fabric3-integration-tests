@@ -21,4 +21,6 @@
     <include name="JMSFaultsComposite"/>
     <include name="JMSEventingComposite"/>
     <include name="CorrelationComposite"/>
+    <include name="ActivationComposite"/>
+    <!--<include name="MEPComposite"/>-->
 </composite>

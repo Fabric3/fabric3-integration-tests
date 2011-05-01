@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
+           name="ActivationComposite">
+    <!-- test activation spec -->
+
+    <component name="TestActivationClient">
+        <f3:junit class="org.fabric3.binding.jms.test.activation.TestActivationClient"/>
+        <reference name="activationService">
+            <binding.jms>
+                <destination jndiName="activationQueue"/>
+                <response>
+                    <activationSpec jndiName="activationQueueResponseQueue"/>
+                </response>
+            </binding.jms>
+        </reference>
+    </component>
+
+    <component name="ActivationService">
+        <implementation.java class="org.fabric3.binding.jms.test.primitives.PrimitiveServiceImpl"/>
+        <service name="PrimitiveService">
+            <binding.jms>
+                <activationSpec jndiName="activationQueue"/>
+                <response>
+                    <destination jndiName="activationQueueResponseQueue"/>
+                </response>
+            </binding.jms>
+        </service>
+    </component>
+
+    
+    <!--<component name="ActivationOneWayTest">-->
+        <!--<f3:junit class="org.fabric3.tests.binding.harness.callback.AsyncCallbackTest"/>-->
+        <!--<reference name="client" target="ActivationOneWayClient/AsyncClientService"/>-->
+    <!--</component>-->
+
+    <!--<component name="ActivationOneWayClient">-->
+        <!--<implementation.java class="org.fabric3.tests.binding.harness.callback.AsyncClientServiceImpl"/>-->
+        <!--<reference name="service">-->
+            <!--<binding.jms>-->
+                <!--<activationSpec jndiName="activationOneWayQueue"/>-->
+            <!--</binding.jms>-->
+            <!--<callback>-->
+                <!--<binding.jms>-->
+                    <!--<activationSpec jndiName="activationCallbackQueue"/>-->
+                <!--</binding.jms>-->
+            <!--</callback>-->
+        <!--</reference>-->
+    <!--</component>-->
+
+    <!--<component name="ActivationOneWayForwardService">-->
+        <!--<implementation.java class="org.fabric3.tests.binding.harness.callback.AsyncForwardServiceImpl"/>-->
+        <!--<service name="AsyncForwardService">-->
+            <!--<binding.jms>-->
+                <!--<activationSpec jndiName="activationOneWayQueue"/>-->
+            <!--</binding.jms>-->
+            <!--<callback>-->
+                <!--<binding.jms>-->
+                    <!--<activationSpec jndiName="activationCallbackQueue"/>-->
+                <!--</binding.jms>-->
+            <!--</callback>-->
+        <!--</service>-->
+    <!--</component>-->
+
+</composite>

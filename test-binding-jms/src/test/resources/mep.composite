@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
+           name="MEPComposite">
+    <!-- test spec MEP behavior-->
+
+    <!-- verifies a reply destination is automatically created-->
+    <component name="ReplyDestinationTest">
+        <f3:junit class="org.fabric3.binding.jms.test.primitives.PrimitiveTest"/>
+        <reference name="service">
+            <binding.jms>
+                <destination jndiName="primitiveServiceQueue"/>
+            </binding.jms>
+        </reference>
+    </component>
+
+    <component name="ReplyDestinationService">
+        <implementation.java class="org.fabric3.binding.jms.test.primitives.PrimitiveServiceImpl"/>
+        <service name="PrimitiveService">
+            <binding.jms>
+                <destination jndiName="primitiveServiceQueue"/>
+            </binding.jms>
+        </service>
+    </component>
+
+</composite>
