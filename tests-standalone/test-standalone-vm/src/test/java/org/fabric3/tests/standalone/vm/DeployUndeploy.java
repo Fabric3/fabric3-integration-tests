@@ -66,7 +66,7 @@ public class DeployUndeploy extends TestCase {
     private static final File APP_DIR = new File(".." + File.separator
             + "test-standalone-app" + File.separator
             + "target" + File.separator
-            + "test-standalone-app-0.1-SNAPSHOT.jar");
+            + "test-standalone-app-1.8.jar");
 
     private static String DOMAIN_ADDRESS = "service:jmx:rmi:///jndi/rmi://localhost:1199/server";
 

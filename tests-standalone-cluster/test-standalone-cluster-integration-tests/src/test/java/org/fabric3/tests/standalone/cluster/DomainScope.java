@@ -70,10 +70,10 @@ public class DomainScope extends TestCase {
             + "tests-cluster-apps" + File.separator
             + "domain-scope" + File.separator
             + "target" + File.separator
-            + "domain-scope-0.1-SNAPSHOT.jar");
+            + "domain-scope-1.8.jar");
 
 
-    private static final URI APP_URI = URI.create("domain-scope-0.1-SNAPSHOT.jar");
+    private static final URI APP_URI = URI.create("domain-scope-1.8.jar");
 
     private DomainController domain;
 

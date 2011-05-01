@@ -65,7 +65,7 @@ public class BindingSCA extends TestCase {
             + "test-binding-sca" + File.separator
             + "binding-sca-app-api" + File.separator
             + "target" + File.separator
-            + "binding-sca-app-api-0.1-SNAPSHOT.jar");
+            + "binding-sca-app-api-1.8.jar");
 
     private static final File APP1_DIR = new File(".." + File.separator
             + ".." + File.separator
@@ -73,7 +73,7 @@ public class BindingSCA extends TestCase {
             + "test-binding-sca" + File.separator
             + "binding-sca-app1" + File.separator
             + "target" + File.separator
-            + "binding-sca-app1-0.1-SNAPSHOT.jar");
+            + "binding-sca-app1-1.8.jar");
 
     private static final File APP2_DIR = new File(".." + File.separator
             + ".." + File.separator
@@ -81,11 +81,11 @@ public class BindingSCA extends TestCase {
             + "test-binding-sca" + File.separator
             + "binding-sca-app2" + File.separator
             + "target" + File.separator
-            + "binding-sca-app2-0.1-SNAPSHOT.jar");
+            + "binding-sca-app2-1.8.jar");
 
-    private static final URI API_URI = URI.create("binding-sca-app-api-0.1-SNAPSHOT.jar");
-    private static final URI APP1_URI = URI.create("binding-sca-app1-0.1-SNAPSHOT.jar");
-    private static final URI APP2_URI = URI.create("binding-sca-app2-0.1-SNAPSHOT.jar");
+    private static final URI API_URI = URI.create("binding-sca-app-api-1.8.jar");
+    private static final URI APP1_URI = URI.create("binding-sca-app1-1.8.jar");
+    private static final URI APP2_URI = URI.create("binding-sca-app2-1.8.jar");
 
     private DomainController domain;
 

@@ -12,12 +12,12 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>tests-standalone-parent-pom</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <version>1.8</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-standalone-app</artifactId>
     <packaging>jar</packaging>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.8</version>
     <name>Fabric3 Standalone Application</name>
     <description>Fabric3 Standalone Application</description>
 

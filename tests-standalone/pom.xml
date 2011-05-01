@@ -23,12 +23,12 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>ci</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <version>1.8</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>tests-standalone-parent-pom</artifactId>
     <packaging>pom</packaging>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.8</version>
     <name>Fabric3 Standalone Runtime Integration Tests</name>
     <description>Fabric3 Standalone Runtime Integration Tests</description>
     <modules>
