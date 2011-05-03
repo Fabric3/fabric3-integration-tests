@@ -33,6 +33,7 @@
     <modules>
         <module>test-eventing-performance</module>
         <module>test-jms-provider</module>
+        <module>test-jms-client</module>
         <module>test-jpa</module>
     </modules>
 </project>
