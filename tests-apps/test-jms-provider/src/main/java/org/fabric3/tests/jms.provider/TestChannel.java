@@ -1,4 +1,4 @@
-package org.fabric3.tests.eventing.performance;
+package org.fabric3.tests.jms.provider;
 
 /**
  * @version $Rev$ $Date$

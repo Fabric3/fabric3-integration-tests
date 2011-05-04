@@ -19,7 +19,7 @@
         </context>
     </f3:jndi>
 
-    <channel name="TestChannel"  requires="f3:durable">
+    <channel name="TestChannel" requires="f3:durable">
         <binding.jms cache="session">
             <connectionFactory jndiName="ConnectionFactory1"/>
             <destination jndiName="TestTopic"/>
@@ -27,12 +27,12 @@
     </channel>
 
     <component name="TestProducer">
-        <implementation.java class="org.fabric3.tests.eventing.performance.TestProducerImpl"/>
+        <implementation.java class="org.fabric3.tests.jms.provider.TestProducerImpl"/>
         <producer name="channel" target="TestChannel"/>
     </component>
 
     <component name="TestConsumer">
-        <implementation.java class="org.fabric3.tests.eventing.performance.TestConsumer"/>
+        <implementation.java class="org.fabric3.tests.jms.provider.TestConsumer"/>
         <consumer name="onReceive" source="TestChannel"/>
     </component>
 

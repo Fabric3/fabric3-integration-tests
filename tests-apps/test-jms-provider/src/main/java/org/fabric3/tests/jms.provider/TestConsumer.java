@@ -1,4 +1,4 @@
-package org.fabric3.tests.eventing.performance;
+package org.fabric3.tests.jms.provider;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -10,7 +10,7 @@ import org.fabric3.api.annotation.Consumer;
  * @version $Rev$ $Date$
  */
 @Scope("COMPOSITE")
-public class TestConsumer implements Statistics{
+public class TestConsumer implements Statistics {
     private AtomicInteger received = new AtomicInteger();
 
     public int getReceived() {
