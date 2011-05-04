@@ -12,17 +12,17 @@
            name="JmsProviderComposite"
            autowire="true">
 
-    <!--<f3:jndi>-->
-        <!--<context name="WLS">-->
-            <!--<property name="java.naming.factory.initial" value="weblogic.jndi.WLInitialContextFactory"/>-->
-            <!--<property name="java.naming.provider.url" value="t3://localhost:7001"/>-->
-        <!--</context>-->
-    <!--</f3:jndi>-->
+    <f3:jndi>
+        <context name="WLS">
+            <property name="java.naming.factory.initial" value="weblogic.jndi.WLInitialContextFactory"/>
+            <property name="java.naming.provider.url" value="t3://localhost:7001"/>
+        </context>
+    </f3:jndi>
 
-    <channel name="TestChannel">
+    <channel name="TestChannel"  requires="f3:durable">
         <binding.jms cache="session">
-            <!--<connectionFactory jndiName="ConnectionFactory1"/>-->
-            <destination jndiName="Queue1"/>
+            <connectionFactory jndiName="ConnectionFactory1"/>
+            <destination jndiName="TestTopic"/>
         </binding.jms>
     </channel>
 

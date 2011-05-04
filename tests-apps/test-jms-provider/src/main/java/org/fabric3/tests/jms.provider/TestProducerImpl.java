@@ -11,6 +11,8 @@ import org.fabric3.api.annotation.management.Management;
 import org.fabric3.api.annotation.management.ManagementOperation;
 
 /**
+ *
+ * To start: http://localhost:8181/management/TestProducer/start
  * @version $Rev$ $Date$
  */
 @Management
