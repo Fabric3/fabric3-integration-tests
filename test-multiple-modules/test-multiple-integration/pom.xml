@@ -12,11 +12,11 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>test-multiple-modules</artifactId>
-        <version>1.8</version>
+        <version>1.9</version>
     </parent>
     <artifactId>test-multiple-integration</artifactId>
     <packaging>jar</packaging>
-    <version>1.8</version>
+    <version>1.9</version>
     <name>Fabric3 Multiple Modules Integration Test</name>
     <description>Fabric3 Multiple Modules Integration Test</description>
     <dependencies>

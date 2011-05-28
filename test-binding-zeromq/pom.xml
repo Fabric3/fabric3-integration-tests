@@ -13,12 +13,12 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>ci</artifactId>
-        <version>1.8</version>
+        <version>1.9</version>
     </parent>
 
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-binding-zeromq</artifactId>
-    <version>1.8</version>
+    <version>1.9</version>
     <name>Fabric3 ZeroMQ Integration Tests</name>
     <packaging>jar</packaging>
     <description>Fabric3 ZeroMQ Tests.</description>

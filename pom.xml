@@ -24,7 +24,7 @@
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>ci</artifactId>
-    <version>1.8</version>
+    <version>1.9</version>
     <packaging>pom</packaging>
 
     <name>Fabric3 Continuous Integration Tests</name>
@@ -36,7 +36,7 @@
 
     <properties>
         <sca.api.version>1.1</sca.api.version>
-        <fabric3.version>1.8-SNAPSHOT</fabric3.version>
+        <fabric3.version>1.9-SNAPSHOT</fabric3.version>
         <jaxb.api.version>2.2-promoted-b50</jaxb.api.version>
         <jta.version>1.1.0</jta.version>
         <web.services.version>2.0-b24</web.services.version>
@@ -45,7 +45,7 @@
         <servlet.version>3.0.20100224</servlet.version>
         <jax.rs.version>1.1.1</jax.rs.version>
     </properties>
-    
+
     <profiles>
         <!-- Default profile containing modules that should always be run -->
         <profile>
@@ -58,21 +58,21 @@
                 <module>test-binding-harness</module>
                 <module>test-implementation-wsdl</module>
                 <module>test-function</module>
-                <module>test-eventing</module> 
+                <module>test-eventing</module>
                 <module>test-user-resource</module>
                 <module>test-resource</module>
                 <module>test-datasource</module>
                 <module>test-policy</module>
                 <module>test-jpa-hibernate</module>
-                <module>test-spring</module> 
+                <module>test-spring</module>
                 <module>test-binding-rs</module>
                 <module>test-timer-implementation</module>
                 <module>test-mock</module>
-                <module>test-binding-metro</module> 
+                <module>test-binding-metro</module>
                 <module>test-binding-ftp</module>
                 <module>test-binding-jms</module>
-                <module>test-wsdl</module> 
-                <module>test-cache-infinispan</module> 
+                <module>test-wsdl</module>
+                <module>test-cache-infinispan</module>
                 <module>test-management-rest</module>
                 <module>test-capabilities-extension</module>
                 <module>test-capabilities</module>
@@ -88,21 +88,21 @@
                 <module>test-binding-harness</module>
                 <module>test-implementation-wsdl</module>
                 <module>test-function</module>
-                <module>test-eventing</module> 
+                <module>test-eventing</module>
                 <module>test-user-resource</module>
                 <module>test-resource</module>
                 <module>test-datasource</module>
                 <module>test-policy</module>
                 <module>test-jpa-hibernate</module>
-                <module>test-spring</module> 
+                <module>test-spring</module>
                 <module>test-binding-rs</module>
                 <module>test-timer-implementation</module>
                 <module>test-mock</module>
-                <module>test-binding-metro</module> 
+                <module>test-binding-metro</module>
                 <module>test-binding-ftp</module>
                 <module>test-binding-jms</module>
-                <module>test-wsdl</module> 
-                <module>test-cache-infinispan</module> 
+                <module>test-wsdl</module>
+                <module>test-cache-infinispan</module>
                 <module>test-management-rest</module>
                 <module>test-capabilities-extension</module>
                 <module>test-capabilities</module>
