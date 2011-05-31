@@ -51,6 +51,11 @@
                     <extensions>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-binding-zeromq-library</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>fabric3-binding-zeromq</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
