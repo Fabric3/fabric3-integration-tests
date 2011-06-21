@@ -27,6 +27,7 @@ Public License. See the accompanying license file for details.
     <include name="AutoWireComposite"/>
     <include name="LifecycleComposite"/>
     <include name="AsyncComposite"/>
+    <include name="ExecutionComposite"/>
     <include name="CallbackComposite"/>
     <include name="OrderingComposite"/>
     <include name="GenericTestComposite"/>
