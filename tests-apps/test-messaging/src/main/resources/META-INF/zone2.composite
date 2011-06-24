@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="org.codehaus.fabric3.tests"
+           name="MessagingZone2Composite"
+           autowire="true">
+
+    <component name="TestService">
+        <implementation.java class="org.fabric3.tests.messaging.TestServiceImpl"/>
+        <service name="TestService">
+            <f3:binding.zeromq/>
+        </service>
+    </component>
+
+    <component name="TestOneWayService">
+        <implementation.java class="org.fabric3.tests.messaging.TestOneWayServiceImpl"/>
+        <service name="TestOneWayService">
+            <f3:binding.zeromq/>
+        </service>
+    </component>
+
+    <component name="TestCallbackService">
+        <implementation.java class="org.fabric3.tests.messaging.TestCallbackServiceImpl"/>
+        <service name="TestCallbackService">
+            <f3:binding.zeromq/>
+            <callback>
+                <f3:binding.zeromq/>
+            </callback>
+        </service>
+    </component>
+
+
+</composite>
