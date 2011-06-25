@@ -44,6 +44,18 @@
                 </executions>
                 <configuration>
                     <runtimeVersion>${fabric3.version}</runtimeVersion>
+                    <extensions>
+                        <extension>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-binding-zeromq-library</artifactId>
+                            <version>${fabric3.version}</version>
+                        </extension>
+                        <extension>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-binding-zeromq</artifactId>
+                            <version>${fabric3.version}</version>
+                        </extension>
+                    </extensions>
                     <profiles>
                         <!-- JPA support -->
                         <profile>
@@ -64,11 +76,11 @@
                             <version>${fabric3.version}</version>
                         </profile>
                         <!-- JMS support -->
-                        <profile>
-                            <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>profile-jms</artifactId>
-                            <version>${fabric3.version}</version>
-                        </profile>
+                        <!--<profile>-->
+                            <!--<groupId>org.codehaus.fabric3</groupId>-->
+                            <!--<artifactId>profile-jms</artifactId>-->
+                            <!--<version>${fabric3.version}</version>-->
+                        <!--</profile>-->
                         <!-- JAX-RS support -->
                         <profile>
                             <groupId>org.codehaus.fabric3</groupId>

@@ -1,11 +1,13 @@
 <config>
-    <runtime mode="participant" port.range="8281-8380"/>
+    <runtime mode="participant" port.range="8600-8900"/>
+    <thread.pool size="100"/>
     <federation logging="severe"/>
     <datasources>
         <datasource name="LoanApplicationDS" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
             <URL>jdbc:h2:mem:loadapplication;DB_CLOSE_DELAY=-1</URL>
         </datasource>
     </datasources>
+    <thread.pool size="100"/>
     <jms>
         <!--  <activemq broker.disabled="true"/>
        <connection.factory.templates>

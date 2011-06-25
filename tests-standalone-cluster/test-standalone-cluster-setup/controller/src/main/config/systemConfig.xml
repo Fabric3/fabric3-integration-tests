@@ -1,15 +1,15 @@
 <config>
     <runtime mode="controller" jmx.port="1199" management.security="AUTHORIZATION" management.access.roles="ROLE_FABRIC3_ADMIN" management.http.disabled="false"/>
     
-    <security>
-       <keystore>fabric3-keystore.jks</keystore>
-       <keystore.password>password</keystore.password>
-       <cert.password>password</cert.password>
-    </security>
+    <!--<security>-->
+       <!--<keystore>fabric3-keystore.jks</keystore>-->
+       <!--<keystore.password>password</keystore.password>-->
+       <!--<cert.password>password</cert.password>-->
+    <!--</security>-->
                             
     <federation logging="severe"/>
     <web.server>
-        <https port="8585" enabled="true"/>
+        <!--<https port="8585" enabled="true"/>-->
         <http port="8180"/>
     </web.server>
     <datasources>
