@@ -13,6 +13,10 @@
            autowire="true">
 
 
+    <channel name="TestChannel">
+        <f3:binding.zeromq/>
+    </channel>
+
     <component name="TestClient">
         <implementation.java class="org.fabric3.tests.messaging.TestClientImpl"/>
         <reference name="service">
@@ -30,5 +34,8 @@
 
     </component>
 
-
+    <component name="TestEventClient">
+        <implementation.java class="org.fabric3.tests.messaging.TestEventClient"/>
+        <producer name="producer" target="TestChannel"/>
+    </component>
 </composite>

@@ -14,6 +14,8 @@ public class TestServiceImpl implements TestService {
             start = System.currentTimeMillis();
         } else if (Message.Type.END == message.getType()) {
             System.out.println("Invoked: " + message.getSequence() + " [" + (System.currentTimeMillis() - start) + "]");
+        }  else {
+//            System.out.println("Invoked "+ message.getSequence());
         }
         return String.valueOf(message.getSequence());
     }

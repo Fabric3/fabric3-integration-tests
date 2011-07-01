@@ -37,4 +37,11 @@
     </component>
 
 
+    <component name="TestConsumer">
+        <implementation.java class="org.fabric3.tests.messaging.TestConsumerImpl"/>
+        <consumer name="publish" source="TestChannel"/>
+    </component>
+
+
+
 </composite>

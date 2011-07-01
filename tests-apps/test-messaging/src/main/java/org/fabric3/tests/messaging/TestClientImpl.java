@@ -114,21 +114,32 @@ public class TestClientImpl implements CallbackService {
         }
 
         public void run() {
-
             long start = System.currentTimeMillis();
-            invoke(Message.Type.START);
-            int i = 0;
-            while (!stop.get() && i < number) {
+            while (true) {
                 try {
-                    invoke(Message.Type.CONTINUE);
-                    i++;
-                } catch (RejectedExecutionException e) {
-//                    e.printStackTrace();
+                    invoke(Message.Type.START);
+
+                    break;
                 } catch (ServiceUnavailableException e) {
                     e.printStackTrace();
                 }
             }
-            invoke(Message.Type.END);
+            int i = 0;
+            while (!stop.get() && i < number) {
+                try {
+                    i++;
+                    invoke(Message.Type.CONTINUE);
+                } catch (RejectedExecutionException e) {
+                    e.printStackTrace();
+                } catch (ServiceUnavailableException e) {
+                    e.printStackTrace();
+                }
+            }
+            try {
+                invoke(Message.Type.END);
+            } catch (ServiceUnavailableException e) {
+                e.printStackTrace();
+            }
             latch.countDown();
             System.out.println("Runner time: " + (System.currentTimeMillis() - start));
         }
@@ -172,7 +183,9 @@ public class TestClientImpl implements CallbackService {
         @Override
         protected void invoke(Message.Type type) {
             long number = sequence.incrementAndGet();
+//            System.out.println("before: "+ number);
             service.invoke(new Message(uuid, number, type));
+//            System.out.println("after: "+ number);
         }
     }
 
