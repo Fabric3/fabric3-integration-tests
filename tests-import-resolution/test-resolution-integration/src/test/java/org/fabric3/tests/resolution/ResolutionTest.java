@@ -23,6 +23,9 @@ public class ResolutionTest extends TestCase {
         // Validates the class which is present in all contributions is resolved from the same contribution classloader.
         // This means the imports successfully resolved to a single export for the contributions which import and export the same packages
         ClassLoader loader1 = registry.getClassLoader(URI.create("test-resolution-app1-"+version+".jar"));
+        if (loader1 == null) {
+            throw new Exception("Classloader not found or version property is out-of-date");
+        }
         ClassLoader loader2 = registry.getClassLoader(URI.create("test-resolution-app2-"+version+".jar"));
         ClassLoader loader3 = registry.getClassLoader(URI.create("test-resolution-app3-"+version+".jar"));
         ClassLoader loader4 = registry.getClassLoader(URI.create("test-resolution-app4-"+version+".jar"));
