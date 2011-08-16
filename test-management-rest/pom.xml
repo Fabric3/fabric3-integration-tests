@@ -29,14 +29,12 @@
                 <version>${fabric3.version}</version>
                 <configuration>
                     <runtimeVersion>${fabric3.version}</runtimeVersion>
-                    <profiles>
-                        <profile>
-                            <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>profile-rs</artifactId>
-                            <version>${fabric3.version}</version>
-                        </profile>
-                    </profiles>
                     <extensions>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-databinding-json</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>fabric3-management-rest</artifactId>
