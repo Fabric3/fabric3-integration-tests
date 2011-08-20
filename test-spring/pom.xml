@@ -78,7 +78,7 @@
                             <datasources>
                                 <datasource name="SecurityDS" driver="org.h2.Driver" url="jdbc:h2:mem:SECURITY;INIT=RUNSCRIPT FROM '${project.build.directory}/classes/create.sql';DB_CLOSE_DELAY=-1" type="non_xa"/>
                             </datasources>
-                            <spring validating="true"/>
+                            <spring validating="false"/>
                             <security>
                                 <spring.security>
                                     <authentication-manager>
