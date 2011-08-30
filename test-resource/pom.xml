@@ -61,6 +61,12 @@
                         </dependency>
 
                         <dependency>
+                            <groupId>javax.transaction</groupId>
+                            <artifactId>com.springsource.javax.transaction</artifactId>
+                            <version>${jta.version}</version>
+                        </dependency>
+
+                        <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>fabric3-tx</artifactId>
                             <version>${fabric3.version}</version>
