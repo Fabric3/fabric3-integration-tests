@@ -1,0 +1,18 @@
+package org.drools.examples.helloworld
+ 
+import org.fabric3.tests.drools.message.TestMessage;
+import org.fabric3.tests.drools.message.MessageService;
+
+global MessageService reference
+ 
+rule "Test Reference"
+    dialect "mvel"
+    when
+        m : TestMessage( status == TestMessage.HELLO, message : message )
+    then
+        ;
+
+    modify ( m ) { message = reference.getMessage(),
+                   status = TestMessage.GOODBYE };
+end
+

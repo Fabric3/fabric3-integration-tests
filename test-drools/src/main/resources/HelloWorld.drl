@@ -2,8 +2,6 @@ package org.drools.examples.helloworld
  
 import org.fabric3.tests.drools.message.HelloMessage;
 
-//global java.util.List list
- 
 rule "Hello World"
     dialect "mvel"
     when
@@ -19,5 +17,5 @@ rule "Good Bye"
     when
         HelloMessage( status == HelloMessage.GOODBYE, message : message )
     then
-        System.out.println( message );
+       ;
 end

@@ -28,14 +28,32 @@
         <property name="property">test value</property>
     </component>
 
-    <!--<component name="HellowWorldTest">-->
-        <!--<f3:junit class="org.fabric3.tests.drools.HelloWorldClient"/>-->
-        <!--<reference name="helloService" target="HelloWorldBase"/>-->
-    <!--</component>-->
+    <component name="ReferenceBase">
+        <f3:implementation.drools>
+            <f3:service interface="org.fabric3.tests.drools.message.TestService"/>
+            <f3:resource source="ReferenceTest.drl"/>
+        </f3:implementation.drools>
+        <reference name="reference" target="MessageService"/>
+    </component>
+
+
+    <component name="MessageService">
+        <implementation.java class="org.fabric3.tests.drools.message.MessageServiceImpl"/>
+    </component>
+
+    <component name="HellowWorldTest">
+        <f3:junit class="org.fabric3.tests.drools.HelloWorldClient"/>
+        <reference name="helloService" target="HelloWorldBase"/>
+    </component>
 
     <component name="PropertyTestClient">
         <f3:junit class="org.fabric3.tests.drools.PropertyTestClient"/>
         <reference name="testService" target="PropertyBase"/>
+    </component>
+
+    <component name="ReferenceTestClient">
+        <f3:junit class="org.fabric3.tests.drools.ReferenceTestClient"/>
+        <reference name="testService" target="ReferenceBase"/>
     </component>
 
 </composite>
