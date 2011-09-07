@@ -19,5 +19,11 @@ public class HelloWorldClient extends TestCase {
         message.setMessage("Hello from client");
         message = helloService.hello(message);
         assertEquals("Goodbye cruel world", message.getMessage());
+
+        message.setMessage("Goodbye from client");
+        message.setStatus(HelloMessage.GOODBYE);
+        message = helloService.hello(message);
+        assertEquals("Goodbye from client", message.getMessage());
+
     }
 }
