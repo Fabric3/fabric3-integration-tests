@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Fabric3
- Copyright (c) 2009 Metaform Systems
+ Copyright (c) 2009-2011 Metaform Systems
 
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 
@@ -41,18 +41,13 @@
                 <version>${fabric3.version}</version>
                 <configuration>
                     <runtimeVersion>${fabric3.version}</runtimeVersion>
-                    <extensions>
+                    <profiles>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>fabric3-drools-library</artifactId>
+                            <artifactId>profile-drools</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
-                        <dependency>
-                            <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>fabric3-drools</artifactId>
-                            <version>${fabric3.version}</version>
-                        </dependency>
-                    </extensions>
+                    </profiles>
                 </configuration>
                 <executions>
                     <execution>
