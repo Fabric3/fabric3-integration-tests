@@ -1,0 +1,17 @@
+package org.drools.examples.helloworld
+ 
+import org.fabric3.tests.drools.message.TestMessage;
+
+global java.lang.String property
+ 
+rule "Test World"
+    dialect "mvel"
+    when
+        m : TestMessage( status == TestMessage.HELLO, message : message )
+    then
+        ;
+
+    modify ( m ) { message = property,
+                   status = TestMessage.GOODBYE };
+end
+

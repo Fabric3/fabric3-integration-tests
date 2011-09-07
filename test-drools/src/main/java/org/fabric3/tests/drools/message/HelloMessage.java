@@ -1,7 +1,5 @@
 package org.fabric3.tests.drools.message;
 
-import java.util.List;
-
 /**
  * @version $Rev$ $Date$
  */

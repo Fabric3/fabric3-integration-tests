@@ -20,8 +20,22 @@
         </f3:implementation.drools>
     </component>
 
-    <component name="HellowWorldTest">
-        <f3:junit class="org.fabric3.tests.drools.HelloWorldClient"/>
+    <component name="PropertyBase">
+        <f3:implementation.drools>
+            <f3:service interface="org.fabric3.tests.drools.message.TestService"/>
+            <f3:resource source="PropertyTest.drl"/>
+        </f3:implementation.drools>
+        <property name="property">test value</property>
+    </component>
+
+    <!--<component name="HellowWorldTest">-->
+        <!--<f3:junit class="org.fabric3.tests.drools.HelloWorldClient"/>-->
+        <!--<reference name="helloService" target="HelloWorldBase"/>-->
+    <!--</component>-->
+
+    <component name="PropertyTestClient">
+        <f3:junit class="org.fabric3.tests.drools.PropertyTestClient"/>
+        <reference name="testService" target="PropertyBase"/>
     </component>
 
 </composite>
