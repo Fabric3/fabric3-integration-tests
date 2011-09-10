@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Fabric3
+    Copyright (c) 2009-2011 Metaform Systems
+
+    Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+    $Rev$ $Date$
+-->
+<contribution xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:f3-tests="org.codehaus.fabric3.tests">
+    <export.java package="org.fabric3.tests.environment"/>
+    <deployable composite="f3-tests:EnvironmentGoodApplicationComposite" environments="production"/>
+    <deployable composite="f3-tests:ErrorEnvironmentApplicationComposite" environments="development test"/>
+</contribution>
