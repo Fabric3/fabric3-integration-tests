@@ -70,7 +70,6 @@
                 <module>test-drools</module>
                 <module>test-mock</module>
                 <module>test-binding-metro</module>
-                <module>test-binding-ftp</module>
                 <module>test-binding-jms</module>
        <!--         <module>test-binding-zeromq</module>-->
                 <module>test-wsdl</module>
@@ -80,8 +79,10 @@
                 <module>test-capabilities</module>
                 <module>test-multiple-modules</module>
                 <module>tests-import-resolution</module>
+                <module>test-environment</module>
                 <module>tests-apps</module>
                 <module>tests-cluster-apps</module>
+                <module>test-binding-ftp</module>
             </modules>
         </profile>
         <profile>
@@ -109,6 +110,7 @@
                 <module>test-management-rest</module>
                 <module>test-capabilities-extension</module>
                 <module>test-capabilities</module>
+                <module>test-environment</module>
                 <module>test-multiple-modules</module>
                 <module>tests-apps</module>
                 <module>tests-import-resolution</module>
