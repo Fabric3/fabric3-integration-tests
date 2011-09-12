@@ -16,8 +16,11 @@
 
 -->
 <!--
-     Verifies that only one of the composites (the one corresponding to the production environment) is loaded.
-     Otherwise, a service name class or runtime error will result if the other composite is loaded
+     Verifies:
+     
+      1. Base environment feature: Only one of the composites (the one corresponding to the production environment) is loaded. Otherwise, a service name class or runtime error will result if the other composite is loaded.
+      
+      2. Templates. A third composite with a template is loaded and applied
 
     $Rev$ $Date$
 -->
@@ -34,6 +37,7 @@
     <name>Fabric3 Environment Modules</name>
     <description>Fabric3 Environment Loading Maven Modules Tests</description>
     <modules>
+        <module>test-environment-template</module>
         <module>test-environment-application</module>
         <module>test-environment-integration</module>
     </modules>

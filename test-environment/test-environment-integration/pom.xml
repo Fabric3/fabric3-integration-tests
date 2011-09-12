@@ -53,10 +53,43 @@
                     <contributions>
                         <dependency>
                             <groupId>org.codehaus.fabric3.tests</groupId>
+                            <artifactId>test-environment-template</artifactId>
+                            <version>${project.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3.tests</groupId>
                             <artifactId>test-environment-application</artifactId>
                             <version>${project.version}</version>
                         </dependency>
                     </contributions>
+                    <profiles>
+                        <profile>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>profile-ws</artifactId>
+                            <version>${fabric3.version}</version>
+                        </profile>
+                    </profiles>
+                    <extensions>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-security-impl</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                        <dependency>
+                             <groupId>org.codehaus.fabric3</groupId>
+                             <artifactId>fabric3-jetty</artifactId>
+                             <version>${fabric3.version}</version>
+                         </dependency>
+                     </extensions>
+                    <systemConfig>
+                        <![CDATA[
+                        <config>
+                            <web.server>
+                                <http port="8900"/>
+                            </web.server>
+                        </config>
+                        ]]>
+                    </systemConfig>
                 </configuration>
                 <executions>
                     <execution>

@@ -7,14 +7,12 @@
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:f3="urn:fabric3.org"
            targetNamespace="org.codehaus.fabric3.tests"
-           name="EnvironmentGoodApplicationComposite">
+           name="EnvironmentTemplateApplicationComposite">
 
-    <component name="TestService">
-        <implementation.java class="org.fabric3.tests.environment.TestServiceImpl"/>
-        <service name="TestService">
-            <binding.ws/>
-        </service>
-    </component>
+    <f3:template name="TestServiceBinding">
+        <binding.ws uri="http://localhost:8900/TestService"/>
+    </f3:template>
 
-</composite>
+ </composite>
