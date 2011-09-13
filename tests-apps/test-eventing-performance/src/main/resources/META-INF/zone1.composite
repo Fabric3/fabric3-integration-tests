@@ -13,10 +13,10 @@
            autowire="true">
 
     <channel name="TestChannel">
-        <binding.jms cache="session">
-            <!--min.receivers="5" max.receivers="10"-->
-            <destination jndiName="TestChannelTopic"/>
-        </binding.jms>
+        <!--<binding.jms cache="session">-->
+            <!--&lt;!&ndash;min.receivers="5" max.receivers="10"&ndash;&gt;-->
+            <!--<destination jndiName="TestChannelTopic"/>-->
+        <!--</binding.jms>-->
     </channel>
 
     <component name="TestProducer">

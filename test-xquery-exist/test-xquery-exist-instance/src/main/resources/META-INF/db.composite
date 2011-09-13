@@ -28,7 +28,7 @@
     <!-- eXist DB Instance -->
     <component name="DefaultEXistDBInstance">
         <implementation.composite name="EXistDatabase" scdlResource="META-INF/exist-db.composite"/>
-        <property name="eXistDBConfig" type="f3-core:eXistDBConfig" source="$systemConfig//xquery.exist"/>
+        <property name="eXistDBConfig" type="f3-core:eXistDBConfig" source="$systemConfig//f3:xquery.exist"/>
     </component>
     
 </composite>

@@ -56,7 +56,7 @@
                     <compositeName>FunctionTestHarnessComposite</compositeName>
                     <systemConfig>
                         <![CDATA[
-                        <config>
+                        <config xmlns="urn:fabric3.org">
                             <web.server>
                                 <http port="8900"/>
                             </web.server>

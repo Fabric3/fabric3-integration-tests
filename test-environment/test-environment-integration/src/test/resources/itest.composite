@@ -15,6 +15,9 @@
         <reference name="service">
             <binding.template name="TestServiceBinding"/>
         </reference>
+        <reference name="systemConfigService">
+            <binding.template name="SystemConfigTestServiceBinding"/>
+        </reference>
     </component>
 
 

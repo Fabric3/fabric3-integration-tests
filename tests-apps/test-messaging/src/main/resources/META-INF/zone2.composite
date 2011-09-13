@@ -21,19 +21,19 @@
 
     <component name="TestOneWayService">
         <implementation.java class="org.fabric3.tests.messaging.TestOneWayServiceImpl"/>
-        <service name="TestOneWayService">
-            <f3:binding.zeromq/>
-        </service>
+        <!--<service name="TestOneWayService">-->
+            <!--<f3:binding.zeromq/>-->
+        <!--</service>-->
     </component>
 
     <component name="TestCallbackService">
         <implementation.java class="org.fabric3.tests.messaging.TestCallbackServiceImpl"/>
-        <service name="TestCallbackService">
-            <f3:binding.zeromq/>
-            <callback>
-                <f3:binding.zeromq/>
-            </callback>
-        </service>
+        <!--<service name="TestCallbackService">-->
+            <!--<f3:binding.zeromq/>-->
+            <!--<callback>-->
+                <!--<f3:binding.zeromq/>-->
+            <!--</callback>-->
+        <!--</service>-->
     </component>
 
 

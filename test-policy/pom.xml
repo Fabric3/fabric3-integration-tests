@@ -148,7 +148,7 @@
                     </extensions>
                     <systemConfig>
                         <![CDATA[
-                        <config>
+                        <config xmlns="urn:fabric3.org">
                             <users>
                                 <user>
                                     <username>foo</username>

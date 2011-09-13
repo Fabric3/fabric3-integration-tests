@@ -31,6 +31,8 @@
     <name>Fabric3 Test Apps</name>
     <description>Fabric3 Single-VM Test Apps Parent</description>
     <modules>
+        <module>test-eventing-clustering</module>
+        <module>test-messaging</module>
         <module>test-eventing-performance</module>
         <module>test-jms-provider</module>
         <module>test-jms-client</module>

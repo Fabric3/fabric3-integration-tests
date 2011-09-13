@@ -89,7 +89,7 @@
                      </extensions>
                     <systemConfig>
                         <![CDATA[
-                        <config>
+                        <config xmlns="urn:fabric3.org">
                             <web.server>
                                 <https enabled="true" port="8901"/>
                                 <http port="8900"/>

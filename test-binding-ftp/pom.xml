@@ -53,7 +53,7 @@
                     </profiles>
                     <systemConfig>
                         <![CDATA[
-                        <config>
+                        <config xmlns="urn:fabric3.org">
                             <ftp.server>
                                 <commandPort>2000</commandPort>
                                 <minPassivePort>6000</minPassivePort>

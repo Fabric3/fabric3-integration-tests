@@ -98,7 +98,7 @@
                     </extensions>
                     <systemConfig>
                         <![CDATA[
-                        <config>
+                        <config xmlns="urn:fabric3.org">
                            <security allow.http.authentication="true"/>
                            <web.server>
                               <http port="8900"/>

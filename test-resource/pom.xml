@@ -91,7 +91,7 @@
                         </dependency>
                     </extensions>
                     <systemConfig>
-                        <![CDATA[<config>
+                        <![CDATA[<config xmlns="urn:fabric3.org">
                             <datasources>
                                 <datasource name="EmployeeDS" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
                                     <URL>jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1</URL>

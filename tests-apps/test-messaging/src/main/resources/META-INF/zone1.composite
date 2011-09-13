@@ -22,15 +22,15 @@
         <reference name="service">
             <f3:binding.zeromq target="TestService"/>
         </reference>
-        <reference name="oneWayService">
-            <f3:binding.zeromq target="TestOneWayService"/>
-        </reference>
-        <reference name="callbackService">
-            <f3:binding.zeromq target="TestCallbackService"/>
-            <callback>
-                <f3:binding.zeromq/>
-            </callback>
-        </reference>
+        <reference name="oneWayService" target="TestOneWayService"/>
+            <!--<f3:binding.zeromq target="TestOneWayService"/>-->
+        <!--</reference>-->
+        <reference name="callbackService" target="TestCallbackService"/>
+            <!--<f3:binding.zeromq target="TestCallbackService"/>-->
+            <!--<callback>-->
+                <!--<f3:binding.zeromq/>-->
+            <!--</callback>-->
+        <!--</reference>-->
 
     </component>
 

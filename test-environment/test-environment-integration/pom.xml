@@ -83,10 +83,15 @@
                      </extensions>
                     <systemConfig>
                         <![CDATA[
-                        <config>
+                        <config xmlns="urn:fabric3.org" xmlns:f3="urn:fabric3.org" xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912">
                             <web.server>
                                 <http port="8900"/>
                             </web.server>
+                            <templates>
+                               <template name="SystemConfigTestServiceBinding">
+                                  <sca:binding.ws uri="http://localhost:8900/TestService"/>
+                               </template>
+                            </templates>
                         </config>
                         ]]>
                     </systemConfig>
