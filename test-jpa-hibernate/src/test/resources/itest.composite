@@ -47,4 +47,18 @@
         <implementation.java class="org.fabric3.jpa.service.MultiThreadedEmployeeSessionServiceImpl"/>
     </component>
 
+    <f3:persistence>
+        <f3:persistenceUnit name="employee">
+            <f3:properties>
+                <f3:property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+                <f3:property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            </f3:properties>
+        </f3:persistenceUnit>
+        <f3:persistenceUnit name="ex-employee">
+            <f3:properties>
+                <f3:property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+                <f3:property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            </f3:properties>
+        </f3:persistenceUnit>
+    </f3:persistence>
 </composite>

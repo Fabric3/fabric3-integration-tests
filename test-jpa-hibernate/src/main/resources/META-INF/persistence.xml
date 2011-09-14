@@ -17,19 +17,18 @@ Public License. See the accompanying license file for details.
     <persistence-unit name="employee" transaction-type="JTA">
         <jta-data-source>EmployeeDS</jta-data-source>
         <class>org.fabric3.jpa.model.Employee</class>
-        <properties>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
-        </properties>
+        <!--<properties>-->
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
+            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
+        <!--</properties>-->
     </persistence-unit>
 
     <persistence-unit name="ex-employee" transaction-type="JTA">
         <jta-data-source>EmployeeDS</jta-data-source>
         <class>org.fabric3.jpa.model.ExEmployee</class>
-        <properties>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
-        </properties>
+        <!--<properties>-->
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
+            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
+        <!--</properties>-->
     </persistence-unit>
-
 </persistence>
