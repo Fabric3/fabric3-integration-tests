@@ -54,12 +54,12 @@ public class EmployeeServiceSessionImpl implements EmployeeService {
     private Session employeeSession;
     private Session exEmployeeSession;
 
-    @PersistenceContext(name = "employeeEmf", unitName = "employee")
+    @PersistenceContext(unitName = "employee")
     public void setEmployeeSession(Session em) {
         this.employeeSession = em;
     }
 
-    @PersistenceContext(name = "exEmployeeEmf", unitName = "ex-employee")
+    @PersistenceContext(unitName = "ex-employee")
     public void setExEmployeeSession(Session em) {
         this.exEmployeeSession = em;
     }

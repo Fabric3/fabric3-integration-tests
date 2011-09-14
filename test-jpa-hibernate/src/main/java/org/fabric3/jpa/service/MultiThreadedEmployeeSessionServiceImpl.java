@@ -57,13 +57,13 @@ public class MultiThreadedEmployeeSessionServiceImpl implements EmployeeService 
     private Session employeeSession;
     private Session exEmployeeSession;
 
-    @PersistenceContext(name = "employeeEmf", unitName = "employee")
+    @PersistenceContext(unitName = "employee")
     public void setEmployeeSession(Session session) {
         this.employeeSession = session;
     }
 
 
-    @PersistenceContext(name = "exEmployeeEmf", unitName = "ex-employee")
+    @PersistenceContext(unitName = "ex-employee")
     public void setExEmployeeSession(Session session) {
         this.exEmployeeSession = session;
     }

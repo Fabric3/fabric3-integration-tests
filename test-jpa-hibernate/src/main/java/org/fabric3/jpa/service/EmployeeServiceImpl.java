@@ -55,12 +55,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EntityManager employeeEM;
     private EntityManager exEmployeeEM;
 
-    @PersistenceContext(name = "employeeEmf", unitName = "employee")
+    @PersistenceContext(unitName = "employee")
     public void setEmployeeEM(EntityManager em) {
         this.employeeEM = em;
     }
 
-    @PersistenceContext(name = "exEmployeeEmf", unitName = "ex-employee")
+    @PersistenceContext(unitName = "ex-employee")
     public void setExEmployeeEM(EntityManager em) {
         this.exEmployeeEM = em;
     }

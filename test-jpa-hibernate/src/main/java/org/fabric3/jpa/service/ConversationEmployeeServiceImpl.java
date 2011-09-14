@@ -56,12 +56,12 @@ public class ConversationEmployeeServiceImpl implements ConversationEmployeeServ
     private EntityManager employeeEM;
     private EntityManager exEmployeeEM;
 
-    @PersistenceContext(name = "employeeEmf", unitName = "employee", type = PersistenceContextType.EXTENDED)
+    @PersistenceContext(unitName = "employee", type = PersistenceContextType.EXTENDED)
     public void setEmployeeEM(EntityManager em) {
         this.employeeEM = em;
     }
 
-    @PersistenceContext(name = "exEmployeeEmf", unitName = "ex-employee", type = PersistenceContextType.EXTENDED)
+    @PersistenceContext(unitName = "ex-employee", type = PersistenceContextType.EXTENDED)
     public void setExEmployeeEM(EntityManager em) {
         this.exEmployeeEM = em;
     }
