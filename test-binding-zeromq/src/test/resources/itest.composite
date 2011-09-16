@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Fabric3
- Copyright (c) 2009 Metaform Systems
+ Copyright (c) 2009-2011 Metaform Systems
 
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 
@@ -12,5 +12,37 @@
            targetNamespace="urn:fabric3.org"
            name="TestComposite">
 
-                  
+    <!--<component name="TestEventClient">-->
+        <!--<f3:junit class="org.fabric3.binding.zeromq.test.eventing.TestClient"/>-->
+        <!--<reference name="producer" target="TestProducerConsumer/TestProducer"/>-->
+        <!--<reference name="consumer" target="TestProducerConsumer/TestConsumer"/>-->
+    <!--</component>-->
+
+    <component name="EchoTest">
+        <f3:junit class="org.fabric3.tests.binding.harness.EchoTest"/>
+        <reference name="service">
+            <f3:binding.zeromq target="EchoService"/>
+        </reference>
+    </component>
+
+
+    <component name="TestProducerConsumer">
+        <implementation.java class="org.fabric3.tests.binding.harness.eventing.TestProducerConsumerImpl"/>
+        <producer name="channel" target="TestChannel"/>
+        <consumer name="channel" source="TestChannel"/>
+    </component>
+
+    <channel name="TestChannel">
+        <f3:binding.zeromq/>
+    </channel>
+
+
+    <component name="EchoService">
+        <implementation.java class="org.fabric3.tests.binding.harness.EchoServiceImpl"/>
+        <service name="EchoService">
+            <f3:binding.zeromq/>
+        </service>
+    </component>
+
+
 </composite>

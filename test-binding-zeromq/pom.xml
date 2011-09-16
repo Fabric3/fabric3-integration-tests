@@ -35,6 +35,14 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.fabric3.tests</groupId>
+            <artifactId>test-binding-harness</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
     </dependencies>
 
     <build>
@@ -48,18 +56,28 @@
                 <version>${fabric3.version}</version>
                 <configuration>
                     <runtimeVersion>${fabric3.version}</runtimeVersion>
-                    <extensions>
-                        <dependency>
+                    <!--<systemConfig>-->
+                        <!--<![CDATA[-->
+                               <!--<config>-->
+                                  <!--<thread.pool size="100"/>-->
+                               <!--</config>-->
+                               <!--]]>-->
+                    <!--</systemConfig>-->
+                    
+                    <profiles>
+                        <profile>
                             <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>fabric3-binding-zeromq-library</artifactId>
+                            <artifactId>profile-zeromq</artifactId>
                             <version>${fabric3.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>fabric3-binding-zeromq</artifactId>
-                            <version>${fabric3.version}</version>
-                        </dependency>
-                    </extensions>
+                        </profile>
+                    </profiles>
+                    <systemConfig>
+                        <![CDATA[
+                               <config xmlns="urn:fabric3.org">
+                                  <runtime port.range="1090-1190"/>
+                               </config>
+                               ]]>
+                    </systemConfig>
                 </configuration>
                 <executions>
                     <execution>
