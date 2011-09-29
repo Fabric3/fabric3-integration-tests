@@ -23,12 +23,12 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>test-xquery-exist-parent-pom</artifactId>
-        <version>1.9</version>
+        <version>1.9.5</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-xquery-exist</artifactId>
     <packaging>jar</packaging>
-    <version>1.9</version>
+    <version>1.9.5</version>
     <name>Fabric3 Tests for eXist XQuery Implementation</name>
     <description>Fabric3 Tests for XQuery Implementation.</description>
     <dependencies>
@@ -70,7 +70,7 @@
                         <dependency>
                             <groupId>org.codehaus.fabric3.tests</groupId>
                             <artifactId>test-xquery-exist-instance</artifactId>
-                            <version>1.9</version>
+                            <version>1.9.5</version>
                         </dependency>
                     </extensions>
                 </configuration>

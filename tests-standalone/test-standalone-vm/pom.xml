@@ -12,12 +12,12 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>tests-standalone-parent-pom</artifactId>
-        <version>1.9</version>
+        <version>1.9.5</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-standalone-vm</artifactId>
     <packaging>jar</packaging>
-    <version>1.9</version>
+    <version>1.9.5</version>
     <name>Fabric3 Standalone Runtime Single VM Integration Tests</name>
     <description>Fabric3 Standalone Runtime Single VM Integration Tests</description>
     <dependencies>

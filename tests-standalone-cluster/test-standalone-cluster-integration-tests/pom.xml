@@ -12,12 +12,12 @@
     <parent>
        <groupId>org.codehaus.fabric3.tests</groupId>
        <artifactId>tests-standalone-cluster-parent-pom</artifactId>
-       <version>1.9</version>
+       <version>1.9.5</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-standalone-cluster-integration-tests</artifactId>
     <packaging>jar</packaging>
-    <version>1.9</version>
+    <version>1.9.5</version>
     <name>Fabric3 Standalone Runtime Cluster Integration Tests</name>
     <description>Fabric3 Standalone Runtime Cluster Integration Tests</description>
     <dependencies>
