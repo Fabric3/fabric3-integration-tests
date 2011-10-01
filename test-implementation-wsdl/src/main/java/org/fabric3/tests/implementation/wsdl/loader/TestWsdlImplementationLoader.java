@@ -44,7 +44,7 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 import org.oasisopen.sca.annotation.Reference;
-import org.osoa.sca.annotations.EagerInit;
+import org.oasisopen.sca.annotation.EagerInit;
 
 import org.fabric3.host.contribution.StoreException;
 import org.fabric3.model.type.component.Multiplicity;

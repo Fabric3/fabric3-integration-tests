@@ -2,7 +2,7 @@ package org.fabric3.binding.jms.test.mixed;
 
 import java.util.List;
 
-import org.osoa.sca.annotations.Remotable;
+import org.oasisopen.sca.annotation.Remotable;
 
 @Remotable
 public interface MixedTypeService { 

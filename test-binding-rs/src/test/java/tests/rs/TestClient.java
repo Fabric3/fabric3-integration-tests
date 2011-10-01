@@ -28,7 +28,7 @@ import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import junit.framework.TestCase;
 import org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider;
-import org.osoa.sca.annotations.Property;
+import org.oasisopen.sca.annotation.Property;
 
 import org.fabric3.tests.rs.Message;
 

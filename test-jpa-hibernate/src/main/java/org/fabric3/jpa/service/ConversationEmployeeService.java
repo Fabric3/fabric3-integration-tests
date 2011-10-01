@@ -37,7 +37,8 @@
 */
 package org.fabric3.jpa.service;
 
-import org.osoa.sca.annotations.Conversational;
+import org.osoa.sca.annotations.Conversational
+;
 import org.osoa.sca.annotations.EndsConversation;
 
 import org.fabric3.jpa.model.Employee;

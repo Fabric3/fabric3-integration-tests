@@ -37,7 +37,7 @@
 */
 package org.fabric3.tests.binding.harness;
 
-import org.osoa.sca.annotations.OneWay;
+import org.oasisopen.sca.annotation.OneWay;
 
 /**
  * Simple interface that echos a basic type.

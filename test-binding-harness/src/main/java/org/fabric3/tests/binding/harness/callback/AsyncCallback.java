@@ -37,7 +37,7 @@
 */
 package org.fabric3.tests.binding.harness.callback;
 
-import org.osoa.sca.annotations.OneWay;
+import org.oasisopen.sca.annotation.OneWay;
 
 /**
  * @version $Rev$ $Date$

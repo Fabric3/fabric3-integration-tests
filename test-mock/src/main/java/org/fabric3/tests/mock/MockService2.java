@@ -37,7 +37,8 @@
 */
 package org.fabric3.tests.mock;
 
-import org.osoa.sca.annotations.Conversational;
+import org.osoa.sca.annotations.Conversational
+;
 
 
 /**

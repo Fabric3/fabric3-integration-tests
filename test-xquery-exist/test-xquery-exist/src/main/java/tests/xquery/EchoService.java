@@ -16,7 +16,7 @@
  */
 package tests.xquery;
 
-import org.osoa.sca.annotations.Callback;
+import org.oasisopen.sca.annotation.Callback;
 
 /**
  * @version $Rev$ $Date$

@@ -2,7 +2,7 @@ package org.fabric3.tests.spring;
 
 import junit.framework.TestCase;
 import org.oasisopen.sca.ServiceRuntimeException;
-import org.osoa.sca.annotations.Reference;
+import org.oasisopen.sca.annotation.Reference;
 
 /**
  * @version $Rev$ $Date$

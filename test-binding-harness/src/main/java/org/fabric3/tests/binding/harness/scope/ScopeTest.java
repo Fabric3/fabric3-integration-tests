@@ -38,7 +38,7 @@
 package org.fabric3.tests.binding.harness.scope;
 
 import junit.framework.TestCase;
-import org.osoa.sca.annotations.Reference;
+import org.oasisopen.sca.annotation.Reference;
 
 /**
  * Verifies a binding supports basic conversational semantics

@@ -37,7 +37,9 @@
 */
 package org.fabric3.tests.function.conversation;
 
-import org.osoa.sca.annotations.Conversational;
+import org.osoa.sca.annotations.Conversational
+;
+import org.osoa.sca.annotations.EndsConversation;
 import org.osoa.sca.annotations.EndsConversation;
 
 /**

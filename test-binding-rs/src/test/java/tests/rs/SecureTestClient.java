@@ -34,7 +34,7 @@ import com.sun.jersey.api.client.filter.ClientFilter;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 import junit.framework.TestCase;
 import org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider;
-import org.osoa.sca.annotations.Property;
+import org.oasisopen.sca.annotation.Property;
 
 import org.fabric3.tests.rs.security.UsernamePasswordToken;
 

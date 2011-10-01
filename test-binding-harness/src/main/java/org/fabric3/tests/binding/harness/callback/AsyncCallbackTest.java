@@ -40,7 +40,7 @@ package org.fabric3.tests.binding.harness.callback;
 import java.util.concurrent.CountDownLatch;
 
 import junit.framework.TestCase;
-import org.osoa.sca.annotations.Reference;
+import org.oasisopen.sca.annotation.Reference;
 
 /**
  * @version $Rev$ $Date$

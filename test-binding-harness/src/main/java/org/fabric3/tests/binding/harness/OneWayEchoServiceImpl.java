@@ -40,7 +40,7 @@ package org.fabric3.tests.binding.harness;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-import org.osoa.sca.annotations.Scope;
+import org.oasisopen.sca.annotation.Scope;
 
 /**
  * @version $Rev$ $Date$
