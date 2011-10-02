@@ -53,7 +53,6 @@ public class MockTest extends TestCase {
     private OverloadedService mockedOverloadedService;
 
     private MockService1 mockService1;
-    private MockService2 mockService2;
     private UserComponent userComponent;
     private IMocksControl control;
 
@@ -65,11 +64,6 @@ public class MockTest extends TestCase {
     @Reference
     public void setMockService1(MockService1 mockService1) {
         this.mockService1 = mockService1;
-    }
-
-    @Reference
-    public void setMockService2(MockService2 mockService2) {
-        this.mockService2 = mockService2;
     }
 
     @Reference
@@ -87,8 +81,6 @@ public class MockTest extends TestCase {
         control.reset();
 
         mockService1.doMock1("test");
-        mockService2.doMock2(1);
-        mockService2.doMock0(1);
 
         control.replay();
 
@@ -103,7 +95,6 @@ public class MockTest extends TestCase {
         control.reset();
 
         mockService1.doMock1("test");
-        mockService2.doMock2(1);
 
         control.replay();
 

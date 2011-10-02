@@ -16,6 +16,5 @@ Public License. See the accompanying license file for details.
 
     <include name="StatelessCallbackComposite"/>
     <include name="CompositeCallbackComposite"/>
-    <include name="ConversationCallbackComposite"/>
     <include name="BindingCallbackComposite"/>
 </composite>

@@ -17,7 +17,6 @@
         <reference name="employeeService" target="EmployeeService"/>
         <reference name="employeeEMFService" target="EmployeeEMFService"/>
         <reference name="employeeMultiThreadedService" target="EmployeeMultiThreadedService"/>
-        <reference name="conversationEmployeeService" target="ConversationEmployeeService"/>
         <reference name="employeeSessionService" target="EmployeeServiceSession"/>
         <reference name="employeeMultiThreadedSessionService" target="MultiThreadedEmployeeSessionService"/>
     </component>
@@ -33,11 +32,6 @@
     <component name="EmployeeMultiThreadedService" requires="sca:managedTransaction">
         <implementation.java class="org.fabric3.jpa.service.MultiThreadedEmployeeServiceImpl"/>
     </component>
-
-    <component name="ConversationEmployeeService" requires="sca:managedTransaction">
-        <implementation.java class="org.fabric3.jpa.service.ConversationEmployeeServiceImpl"/>
-    </component>
-
 
     <component name="EmployeeServiceSession" requires="sca:managedTransaction">
         <implementation.java class="org.fabric3.jpa.service.EmployeeServiceSessionImpl"/>

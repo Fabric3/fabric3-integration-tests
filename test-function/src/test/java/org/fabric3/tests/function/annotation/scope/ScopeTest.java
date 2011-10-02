@@ -43,11 +43,6 @@ import org.oasisopen.sca.annotation.Reference;
 public class ScopeTest extends TestCase {
 
     @Reference
-    protected ConversationalService annotatedConversationalService;
-    @Reference
-    protected ConversationalService conversationalService;
-
-    @Reference
     protected StatelessService annotatedStatelessService;
     @Reference
     protected StatelessService statelessService;
@@ -109,26 +104,6 @@ public class ScopeTest extends TestCase {
 
         statelessService.incrementValue();
         assertEquals(0, statelessService.getValue());
-    }
-
-    public void testAnnotatedConversationalScope() throws Exception {
-        assertEquals(0, annotatedConversationalService.getValue());
-
-        annotatedConversationalService.incrementValue();
-        assertEquals(1, annotatedConversationalService.getValue());
-
-        annotatedConversationalService.incrementValue();
-        assertEquals(2, annotatedConversationalService.getValue());
-    }
-
-    public void testConversationalScope() throws Exception {
-        assertEquals(0, conversationalService.getValue());
-
-        conversationalService.incrementValue();
-        assertEquals(1, conversationalService.getValue());
-
-        conversationalService.incrementValue();
-        assertEquals(2, conversationalService.getValue());
     }
 
     public void testDomainScope() throws Exception {

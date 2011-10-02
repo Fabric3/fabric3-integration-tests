@@ -22,7 +22,6 @@
     <component name="MockComponent">
         <f3:implementation.mock>
             org.fabric3.tests.mock.MockService1
-            org.fabric3.tests.mock.MockService2
             org.fabric3.tests.mock.OverloadedService
         </f3:implementation.mock>
     </component>

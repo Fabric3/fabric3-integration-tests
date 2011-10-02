@@ -45,22 +45,15 @@ import org.oasisopen.sca.annotation.Reference;
 public class UserComponentImpl implements UserComponent {
 
     private MockService1 mockService1;
-    private MockService2 mockService2;
 
     @Reference
     public void setMockService1(MockService1 mockService1) {
         this.mockService1 = mockService1;
     }
 
-    @Reference
-    public void setMockService2(MockService2 mockService2) {
-        this.mockService2 = mockService2;
-    }
 
     public void userMethod() {
         mockService1.doMock1("test");
-        mockService2.doMock2(1);
-        mockService2.doMock0(1);
     }
 
 }

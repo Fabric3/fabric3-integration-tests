@@ -41,7 +41,7 @@ import junit.framework.TestCase;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * Verifies a binding supports basic conversational semantics
+ * Verifies a binding supports basic scope semantics
  *
  * @version $Rev$ $Date$
  */
