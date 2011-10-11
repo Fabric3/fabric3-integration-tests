@@ -109,11 +109,6 @@
                             <version>${jta.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>javax.resource</groupId>
-                            <artifactId>com.springsource.javax.resource</artifactId>
-                            <version>1.5.0</version>
-                        </dependency>
-                        <dependency>
                             <groupId>javax.annotation</groupId>
                             <artifactId>com.springsource.javax.annotation</artifactId>
                             <version>1.0.0</version>
