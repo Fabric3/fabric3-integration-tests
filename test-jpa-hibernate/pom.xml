@@ -58,7 +58,7 @@
             <version>3.5.3-Final</version>
             <exclusions>
                 <exclusion>
-                    <groupId>javax.transaction</groupId>
+                    <groupId>org.codehaus.fabric3.api</groupId>
                     <artifactId>jta</artifactId>
                 </exclusion>
                 <exclusion>
