@@ -47,9 +47,10 @@ import org.oasisopen.sca.annotation.Reference;
  * @version $Rev$ $Date$
  */
 public class TestAdapterClient extends TestCase {
-    private static final File DROP_DIR = new File("target/adapterdrop");
-    private static final File ERROR_DIRECTORY = new File("target/adapterdroperror");
-    private static final File ARCHIVE_DIRECTORY = new File("target/adapterarchive");
+    private static final File BASE = new File(TestAdapterClient.class.getClassLoader().getResource(".").getFile()).getParentFile();
+    private static final File DROP_DIR = new File(BASE, "adapterdrop");
+    private static final File ERROR_DIRECTORY = new File("adapterdroperror");
+    private static final File ARCHIVE_DIRECTORY = new File("adapterarchive");
     private static final File XML_FILE = new File(DROP_DIR, "filea.xml");
     private static final File HEADER_FILE = new File(DROP_DIR, "headera.xml");
     private static final File XML_ARCHIVE_FILE = new File(ARCHIVE_DIRECTORY, "filea.xml");

@@ -47,9 +47,10 @@ import org.oasisopen.sca.annotation.Reference;
  * @version $Rev$ $Date$
  */
 public class TestInputOutputClient extends TestCase {
-    private static final File DROP_DIR = new File("target/drop");
-    private static final File OUTPUT_DIR = new File("target/dropoutput");
-    private static final File ERROR_DIRECTORY = new File("target/droperror");
+    private static final File BASE = new File(TestAdapterClient.class.getClassLoader().getResource(".").getFile()).getParentFile();
+    private static final File DROP_DIR = new File(BASE, "drop");
+    private static final File OUTPUT_DIR = new File(BASE, "dropoutput");
+    private static final File ERROR_DIRECTORY = new File(BASE, "droperror");
     private File xmlFile;
     private File outputFile;
 

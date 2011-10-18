@@ -42,6 +42,7 @@ import java.io.File;
 /**
  * @version $Rev$ $Date$
  */
+@SuppressWarnings({"ResultOfMethodCallIgnored"})
 public class FileHelper {
 
     public static void delete(File file) {
