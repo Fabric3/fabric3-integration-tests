@@ -26,20 +26,20 @@
     <component name="FileService">
         <implementation.java class="org.fabric3.binding.file.test.FileServiceImpl"/>
         <service name="FileService">
-            <f3:binding.file location="target/drop" error.location="target/droperror" delay="200"/>
+            <f3:binding.file location="drop" error.location="droperror" delay="200"/>
         </service>
         <reference name="output">
-            <f3:binding.file location="target/dropoutput"/>
+            <f3:binding.file location="dropoutput"/>
         </reference>
     </component>
 
     <component name="AdaptedFileService">
         <implementation.java class="org.fabric3.binding.file.test.AdaptedFileServiceImpl"/>
         <service name="AdaptedFileService">
-            <f3:binding.file location="target/adapterdrop"
+            <f3:binding.file location="adapterdrop"
                              pattern="header.*\.xml"
-                             error.location="target/adapterdroperror"
-                             archive.location="target/adapterarchive"
+                             error.location="adapterdroperror"
+                             archive.location="adapterarchive"
                              strategy="archive"
                              delay="200"
                              adapter="org.fabric3.binding.file.test.Adapter"/>

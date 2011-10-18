@@ -47,9 +47,11 @@ import org.oasisopen.sca.annotation.Reference;
  * @version $Rev$ $Date$
  */
 public class TestInputOutputClient extends TestCase {
-    private static final File BASE = new File(TestAdapterClient.class.getClassLoader().getResource(".").getFile()).getParentFile();
+    private static final File RUNTIME_BASE = new File(System.getProperty("java.io.tmpdir"), ".f3");
+    private static final File BASE = new File(RUNTIME_BASE, "inbox");
+    private static final File BASE_OUTPUT = new File(RUNTIME_BASE, "outbox");
     private static final File DROP_DIR = new File(BASE, "drop");
-    private static final File OUTPUT_DIR = new File(BASE, "dropoutput");
+    private static final File OUTPUT_DIR = new File(BASE_OUTPUT, "dropoutput");
     private static final File ERROR_DIRECTORY = new File(BASE, "droperror");
     private File xmlFile;
     private File outputFile;
@@ -92,9 +94,21 @@ public class TestInputOutputClient extends TestCase {
     }
 
     private void clear() {
-        FileHelper.deleteContents(DROP_DIR);
-        FileHelper.deleteContents(ERROR_DIRECTORY);
-        FileHelper.deleteContents(OUTPUT_DIR);
+        if (DROP_DIR.exists()) {
+            FileHelper.deleteContents(DROP_DIR);
+        } else {
+            DROP_DIR.mkdirs();
+        }
+        if (ERROR_DIRECTORY.exists()) {
+            FileHelper.deleteContents(ERROR_DIRECTORY);
+        } else {
+            ERROR_DIRECTORY.mkdirs();
+        }
+        if (OUTPUT_DIR.exists()) {
+            FileHelper.deleteContents(OUTPUT_DIR);
+        } else {
+            OUTPUT_DIR.mkdirs();
+        }
     }
 
     private void cleanup() {

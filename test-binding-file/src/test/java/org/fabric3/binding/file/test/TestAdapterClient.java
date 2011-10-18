@@ -46,11 +46,13 @@ import org.oasisopen.sca.annotation.Reference;
 /**
  * @version $Rev$ $Date$
  */
+@SuppressWarnings({"ResultOfMethodCallIgnored"})
 public class TestAdapterClient extends TestCase {
-    private static final File BASE = new File(TestAdapterClient.class.getClassLoader().getResource(".").getFile()).getParentFile();
+    private static final File RUNTIME_BASE = new File(System.getProperty("java.io.tmpdir"), ".f3");
+    private static final File BASE = new File(RUNTIME_BASE, "inbox");
     private static final File DROP_DIR = new File(BASE, "adapterdrop");
-    private static final File ERROR_DIRECTORY = new File("adapterdroperror");
-    private static final File ARCHIVE_DIRECTORY = new File("adapterarchive");
+    private static final File ERROR_DIRECTORY = new File(BASE, "adapterdroperror");
+    private static final File ARCHIVE_DIRECTORY = new File(BASE, "adapterarchive");
     private static final File XML_FILE = new File(DROP_DIR, "filea.xml");
     private static final File HEADER_FILE = new File(DROP_DIR, "headera.xml");
     private static final File XML_ARCHIVE_FILE = new File(ARCHIVE_DIRECTORY, "filea.xml");
@@ -98,9 +100,21 @@ public class TestAdapterClient extends TestCase {
     }
 
     private void clear() {
-        FileHelper.deleteContents(DROP_DIR);
-        FileHelper.deleteContents(ERROR_DIRECTORY);
-        FileHelper.deleteContents(ARCHIVE_DIRECTORY);
+        if (DROP_DIR.exists()) {
+            FileHelper.deleteContents(DROP_DIR);
+        } else {
+            DROP_DIR.mkdirs();
+        }
+        if (ERROR_DIRECTORY.exists()) {
+            FileHelper.deleteContents(ERROR_DIRECTORY);
+        } else {
+            ERROR_DIRECTORY.mkdirs();
+        }
+        if (ARCHIVE_DIRECTORY.exists()) {
+            FileHelper.deleteContents(ARCHIVE_DIRECTORY);
+        } else {
+            ARCHIVE_DIRECTORY.mkdirs();
+        }
     }
 
 
