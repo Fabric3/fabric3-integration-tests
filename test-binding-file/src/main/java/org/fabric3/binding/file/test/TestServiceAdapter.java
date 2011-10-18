@@ -53,7 +53,7 @@ import org.fabric3.binding.file.api.ServiceAdapter;
  * @version $Rev$ $Date$
  */
 @SuppressWarnings({"ResultOfMethodCallIgnored"})
-public class Adapter implements ServiceAdapter {
+public class TestServiceAdapter implements ServiceAdapter {
 
     public Object[] beforeInvoke(File file) throws InvalidDataException {
         InputStream headerStream = null;

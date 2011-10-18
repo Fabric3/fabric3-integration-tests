@@ -38,33 +38,26 @@
 package org.fabric3.binding.file.test;
 
 import java.io.File;
-import java.io.FileWriter;
 
 import junit.framework.TestCase;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev$ $Date$
+ * @version $Rev: 10829 $ $Date: 2011-10-18 22:59:13 +0200 (Tue, 18 Oct 2011) $
  */
 @SuppressWarnings({"ResultOfMethodCallIgnored"})
-public class TestAdapterClient extends TestCase {
+public class TestReferenceAdapterClient extends TestCase {
     private static final File RUNTIME_BASE = new File(System.getProperty("java.io.tmpdir"), ".f3");
-    private static final File BASE = new File(RUNTIME_BASE, "inbox");
-    private static final File DROP_DIR = new File(BASE, "adapterdrop");
-    private static final File ERROR_DIRECTORY = new File(BASE, "adapterdroperror");
-    private static final File ARCHIVE_DIRECTORY = new File(BASE, "adapterarchive");
-    private static final File XML_FILE = new File(DROP_DIR, "filea.xml");
-    private static final File HEADER_FILE = new File(DROP_DIR, "headera.xml");
-    private static final File XML_ARCHIVE_FILE = new File(ARCHIVE_DIRECTORY, "filea.xml");
-    private static final File HEADER__ARCHIVE_FILE = new File(ARCHIVE_DIRECTORY, "headera.xml");
-
+    private static final File BASE = new File(RUNTIME_BASE, "outbox");
+    private static final File OUTPUT_BASE = new File(BASE, "customoutput");
+    private static final File XML_FILE = new File(OUTPUT_BASE, "test.xml");
 
     @Reference
-    protected LatchService latchService;
+    protected OutputService service;
 
     public void testInvoke() throws Exception {
-        latchService.await();
-        while (XML_FILE.exists() && HEADER_FILE.exists() && !XML_ARCHIVE_FILE.exists() && !HEADER__ARCHIVE_FILE.exists()) {
+        service.output("test.xml");
+        while (!XML_FILE.exists()) {
             Thread.sleep(10);
         }
     }
@@ -72,56 +65,17 @@ public class TestAdapterClient extends TestCase {
     @Override
     public void setUp() throws Exception {
         super.setUp();
-        clear();
-
-        FileWriter headerWriter = null;
-        FileWriter writer = null;
-        try {
-
-            writer = new FileWriter(XML_FILE);
-            writer.write("<?xml version='1.0' encoding='UTF-8'?><test/>");
-
-            headerWriter = new FileWriter(HEADER_FILE);
-            headerWriter.write("<?xml version='1.0' encoding='UTF-8'?><header/>");
-        } finally {
-            if (headerWriter != null) {
-                headerWriter.close();
-            }
-            if (writer != null) {
-                writer.close();
-            }
+        if (OUTPUT_BASE.exists()) {
+            FileHelper.deleteContents(BASE);
+        } else {
+            OUTPUT_BASE.mkdirs();
         }
     }
 
     @Override
     protected void tearDown() throws Exception {
         super.tearDown();
-        cleanup();
-    }
-
-    private void clear() {
-        if (DROP_DIR.exists()) {
-            FileHelper.deleteContents(DROP_DIR);
-        } else {
-            DROP_DIR.mkdirs();
-        }
-        if (ERROR_DIRECTORY.exists()) {
-            FileHelper.deleteContents(ERROR_DIRECTORY);
-        } else {
-            ERROR_DIRECTORY.mkdirs();
-        }
-        if (ARCHIVE_DIRECTORY.exists()) {
-            FileHelper.deleteContents(ARCHIVE_DIRECTORY);
-        } else {
-            ARCHIVE_DIRECTORY.mkdirs();
-        }
-    }
-
-
-    private void cleanup() {
-        FileHelper.delete(DROP_DIR);
-        FileHelper.delete(ERROR_DIRECTORY);
-        FileHelper.delete(ARCHIVE_DIRECTORY);
+        FileHelper.delete(OUTPUT_BASE);
     }
 
 }

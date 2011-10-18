@@ -47,25 +47,24 @@ import org.oasisopen.sca.annotation.Reference;
  * @version $Rev$ $Date$
  */
 @SuppressWarnings({"ResultOfMethodCallIgnored"})
-public class TestInputOutputClient extends TestCase {
+public class TestServiceAdapterClient extends TestCase {
     private static final File RUNTIME_BASE = new File(System.getProperty("java.io.tmpdir"), ".f3");
     private static final File BASE = new File(RUNTIME_BASE, "inbox");
-    private static final File BASE_OUTPUT = new File(RUNTIME_BASE, "outbox");
-    private static final File DROP_DIR = new File(BASE, "drop");
-    private static final File OUTPUT_DIR = new File(BASE_OUTPUT, "dropoutput");
-    private static final File ERROR_DIRECTORY = new File(BASE, "droperror");
-    private File xmlFile;
-    private File outputFile;
+    private static final File DROP_DIR = new File(BASE, "adapterdrop");
+    private static final File ERROR_DIRECTORY = new File(BASE, "adapterdroperror");
+    private static final File ARCHIVE_DIRECTORY = new File(BASE, "adapterarchive");
+    private static final File XML_FILE = new File(DROP_DIR, "filea.xml");
+    private static final File HEADER_FILE = new File(DROP_DIR, "headera.xml");
+    private static final File XML_ARCHIVE_FILE = new File(ARCHIVE_DIRECTORY, "filea.xml");
+    private static final File HEADER__ARCHIVE_FILE = new File(ARCHIVE_DIRECTORY, "headera.xml");
+
 
     @Reference
     protected LatchService latchService;
 
     public void testInvoke() throws Exception {
         latchService.await();
-        while (xmlFile.exists()) {
-            Thread.sleep(10);
-        }
-        while (!outputFile.exists()) {
+        while (XML_FILE.exists() && HEADER_FILE.exists() && !XML_ARCHIVE_FILE.exists() && !HEADER__ARCHIVE_FILE.exists()) {
             Thread.sleep(10);
         }
     }
@@ -74,14 +73,20 @@ public class TestInputOutputClient extends TestCase {
     public void setUp() throws Exception {
         super.setUp();
         clear();
-        outputFile = new File(OUTPUT_DIR, "testouput.xml");
 
+        FileWriter headerWriter = null;
         FileWriter writer = null;
         try {
-            xmlFile = new File(DROP_DIR, "test.xml");
-            writer = new FileWriter(xmlFile);
+
+            writer = new FileWriter(XML_FILE);
             writer.write("<?xml version='1.0' encoding='UTF-8'?><test/>");
+
+            headerWriter = new FileWriter(HEADER_FILE);
+            headerWriter.write("<?xml version='1.0' encoding='UTF-8'?><header/>");
         } finally {
+            if (headerWriter != null) {
+                headerWriter.close();
+            }
             if (writer != null) {
                 writer.close();
             }
@@ -89,7 +94,7 @@ public class TestInputOutputClient extends TestCase {
     }
 
     @Override
-    public void tearDown() throws Exception {
+    protected void tearDown() throws Exception {
         super.tearDown();
         cleanup();
     }
@@ -105,17 +110,18 @@ public class TestInputOutputClient extends TestCase {
         } else {
             ERROR_DIRECTORY.mkdirs();
         }
-        if (OUTPUT_DIR.exists()) {
-            FileHelper.deleteContents(OUTPUT_DIR);
+        if (ARCHIVE_DIRECTORY.exists()) {
+            FileHelper.deleteContents(ARCHIVE_DIRECTORY);
         } else {
-            OUTPUT_DIR.mkdirs();
+            ARCHIVE_DIRECTORY.mkdirs();
         }
     }
+
 
     private void cleanup() {
         FileHelper.delete(DROP_DIR);
         FileHelper.delete(ERROR_DIRECTORY);
-        FileHelper.delete(OUTPUT_DIR);
+        FileHelper.delete(ARCHIVE_DIRECTORY);
     }
 
 }

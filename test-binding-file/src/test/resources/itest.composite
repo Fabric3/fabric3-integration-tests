@@ -18,9 +18,13 @@
         <reference name="latchService" target="FileService/LatchService"/>
     </component>
 
-    <component name="TestAdapterClient">
-        <f3:junit class="org.fabric3.binding.file.test.TestAdapterClient"/>
+    <component name="TestServiceAdapterClient">
+        <f3:junit class="org.fabric3.binding.file.test.TestServiceAdapterClient"/>
         <reference name="latchService" target="AdaptedFileService/LatchService"/>
+    </component>
+
+    <component name="TestReferenceAdapterClient">
+        <f3:junit class="org.fabric3.binding.file.test.TestReferenceAdapterClient"/>
     </component>
 
     <component name="FileService">
@@ -42,8 +46,15 @@
                              archive.location="adapterarchive"
                              strategy="archive"
                              delay="200"
-                             adapter="org.fabric3.binding.file.test.Adapter"/>
+                             adapter="org.fabric3.binding.file.test.TestServiceAdapter"/>
         </service>
+    </component>
+
+    <component name="OutputService">
+        <implementation.java class="org.fabric3.binding.file.test.OutputServiceImpl"/>
+        <reference name="output">
+            <f3:binding.file location="customoutput"/>
+        </reference>
     </component>
 
 
