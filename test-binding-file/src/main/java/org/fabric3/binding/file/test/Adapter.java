@@ -46,6 +46,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import org.fabric3.binding.file.api.AdapterException;
 import org.fabric3.binding.file.api.FileBindingAdapter;
 import org.fabric3.binding.file.api.InvalidDataException;
 
@@ -74,10 +75,22 @@ public class Adapter implements FileBindingAdapter {
         close((InputStream) payload[1]);
     }
 
-    public void archive(File file, File archiveDirectory) {
-        doArchive(file, archiveDirectory);
+    public void error(File file, File errorDirectory, Exception e) throws AdapterException {
         File contentsFile = getContentsFile(file);
-        doArchive(contentsFile, archiveDirectory);
+        move(file, errorDirectory);
+        move(contentsFile, errorDirectory);
+    }
+
+    public void delete(File file) {
+        File contents = getContentsFile(file);
+        file.delete();
+        contents.delete();
+    }
+
+    public void archive(File file, File archiveDirectory) {
+        move(file, archiveDirectory);
+        File contentsFile = getContentsFile(file);
+        move(contentsFile, archiveDirectory);
     }
 
     private File getContentsFile(File file) {
@@ -86,18 +99,19 @@ public class Adapter implements FileBindingAdapter {
         return new File(file.getParentFile(), filename);
     }
 
-    private void doArchive(File file, File archiveDirectory) {
-        File archiveFile = new File(archiveDirectory, file.getName());
+    private void move(File file, File destinationDirectory) {
+        File destFile = new File(destinationDirectory, file.getName());
         InputStream input = null;
         OutputStream output = null;
         try {
             input = new FileInputStream(file);
-            output = new FileOutputStream(archiveFile);
+            output = new FileOutputStream(destFile);
             copy(input, output);
         } catch (IOException e) {
             close(input);
             close(output);
         }
+        file.delete();
     }
 
     private void close(Closeable stream) {
