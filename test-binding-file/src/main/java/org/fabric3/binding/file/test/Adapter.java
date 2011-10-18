@@ -46,9 +46,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import org.fabric3.binding.file.api.AdapterException;
-import org.fabric3.binding.file.api.ServiceAdapter;
 import org.fabric3.binding.file.api.InvalidDataException;
+import org.fabric3.binding.file.api.ServiceAdapter;
 
 /**
  * @version $Rev$ $Date$
@@ -76,7 +75,7 @@ public class Adapter implements ServiceAdapter {
         close((InputStream) payload[1]);
     }
 
-    public void error(File file, File errorDirectory, Exception e) throws AdapterException {
+    public void error(File file, File errorDirectory, Exception e) throws IOException {
         File contentsFile = getContentsFile(file);
         move(file, errorDirectory);
         move(contentsFile, errorDirectory);
