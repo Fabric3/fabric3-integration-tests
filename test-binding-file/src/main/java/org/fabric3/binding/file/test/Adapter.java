@@ -53,6 +53,7 @@ import org.fabric3.binding.file.api.InvalidDataException;
 /**
  * @version $Rev$ $Date$
  */
+@SuppressWarnings({"ResultOfMethodCallIgnored"})
 public class Adapter implements FileBindingAdapter {
 
     public Object[] beforeInvoke(File file) throws InvalidDataException {

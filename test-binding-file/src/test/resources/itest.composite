@@ -23,11 +23,10 @@
         <reference name="latchService" target="AdaptedFileService/LatchService"/>
     </component>
 
-
     <component name="FileService">
         <implementation.java class="org.fabric3.binding.file.test.FileServiceImpl"/>
         <service name="FileService">
-            <f3:binding.file location="target/drop" error.location="target/droperror"/>
+            <f3:binding.file location="target/drop" error.location="target/droperror" delay="200"/>
         </service>
         <reference name="output">
             <f3:binding.file location="target/dropoutput"/>
@@ -41,8 +40,8 @@
                              pattern="header.*\.xml"
                              error.location="target/adapterdroperror"
                              archive.location="target/adapterarchive"
-
                              strategy="archive"
+                             delay="200"
                              adapter="org.fabric3.binding.file.test.Adapter"/>
         </service>
     </component>
