@@ -47,14 +47,14 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import org.fabric3.binding.file.api.AdapterException;
-import org.fabric3.binding.file.api.FileBindingAdapter;
+import org.fabric3.binding.file.api.ServiceAdapter;
 import org.fabric3.binding.file.api.InvalidDataException;
 
 /**
  * @version $Rev$ $Date$
  */
 @SuppressWarnings({"ResultOfMethodCallIgnored"})
-public class Adapter implements FileBindingAdapter {
+public class Adapter implements ServiceAdapter {
 
     public Object[] beforeInvoke(File file) throws InvalidDataException {
         InputStream headerStream = null;
