@@ -19,8 +19,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.codehaus.fabric3</groupId>
-        <artifactId>fabric</artifactId>
-        <version>12</version>
+        <artifactId>parent</artifactId>
+        <version>7</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>ci</artifactId>
@@ -29,10 +29,6 @@
 
     <name>Fabric3 Continuous Integration Tests</name>
     <description>POM to run the integration tests depending on available resources.</description>
-
-    <build>
-        <defaultGoal>verify</defaultGoal>
-    </build>
 
     <properties>
         <sca.api.version>1.1.2</sca.api.version>
@@ -47,6 +43,80 @@
         <servlet.version>3.0.20100224</servlet.version>
         <jax.rs.version>1.1.1</jax.rs.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>3.8.2</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymock</artifactId>
+                <version>2.2</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymockclassextension</artifactId>
+                <version>2.2</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <defaultGoal>verify</defaultGoal>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <configuration>
+                        <source>1.5</source>
+                        <target>1.5</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.6</version>
+                    <configuration>
+                        <includes>
+                            <include>**/*TestCase.java</include>
+                        </includes>
+                        <reportFormat>brief</reportFormat>
+                        <useFile>false</useFile>
+                        <forkMode>once</forkMode>
+                        <argLine>-ea</argLine>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.3.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+    <repositories>
+        <repository>
+            <id>repository.codehaus.org</id>
+            <name>Fabric3 Releases</name>
+            <url>http://repository.codehaus.org/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 
     <profiles>
         <!-- Default profile containing modules that should always be run -->
@@ -73,6 +143,7 @@
                 <module>test-mock</module>
                 <module>test-binding-metro</module>
                 <module>test-binding-jms</module>
+                <module>test-binding-file</module>
        <!--         <module>test-binding-zeromq</module>-->
                 <module>test-wsdl</module>
        <!--         <module>test-cache-infinispan</module> -->
@@ -107,6 +178,7 @@
                 <module>test-binding-metro</module>
                 <module>test-binding-ftp</module>
                 <module>test-binding-jms</module>
+                <module>test-binding-file</module>
                 <module>test-wsdl</module>
                 <module>test-cache-infinispan</module>
                 <module>test-management-rest</module>
