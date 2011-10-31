@@ -1,14 +1,14 @@
 package org.fabric3.cache.infinispan;
 
-import java.util.concurrent.ConcurrentMap;
+import java.util.Map;
 
 /**
  * @version $Rev$ $Date$
  */
-public interface AssertionService<K, V> {
+public interface AssertionService {
 
-    boolean assertCount(int exceptedCount);
+    boolean assertCount(int count);
 
-    boolean assertItems(ConcurrentMap items);
+    boolean assertItems(Map<Integer, String> items);
 
 }

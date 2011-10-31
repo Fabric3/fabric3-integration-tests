@@ -1,30 +1,27 @@
 package org.fabric3.cache.infinispan;
 
+import java.text.MessageFormat;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentMap;
+
 import junit.framework.TestCase;
+import org.oasisopen.sca.annotation.Reference;
+
 import org.fabric3.api.MonitorChannel;
 import org.fabric3.api.annotation.Resource;
 import org.fabric3.api.annotation.monitor.Monitor;
-import org.fabric3.api.annotation.scope.Scopes;
-import org.oasisopen.sca.annotation.EagerInit;
-import org.oasisopen.sca.annotation.Reference;
-import org.oasisopen.sca.annotation.Scope;
-
-import java.text.MessageFormat;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 /**
  * @version $Rev$ $Date$
  */
-@EagerInit
-@Scope(Scopes.COMPOSITE)
 public class TestInsertingIntoCache extends TestCase {
 
     @Reference(required = true)
-    protected AssertionService<Integer, String> assertionReference;
+    protected AssertionService assertionReference;
 
     @Reference(required = true)
-    protected PublisherService<Integer, String> publisherReference;
+    protected PublisherService publisherReference;
 
     @Monitor
     protected MonitorChannel monitor;
@@ -37,14 +34,14 @@ public class TestInsertingIntoCache extends TestCase {
 
         int countToInsert = 10000;
 
-        ConcurrentMap<Integer, String> temp = new ConcurrentHashMap<Integer, String>();
+        Map<Integer, String> temp = new HashMap<Integer, String>();
         for (int i = 0; i < countToInsert; i++) {
             temp.put(i, Integer.toString(i));
         }
 
         long startDate = System.currentTimeMillis();
 
-        publisherReference.insertIntoCache(temp);
+        publisherReference.insert(temp);
         assertTrue(assertionReference.assertCount(countToInsert));
         assertTrue(assertionReference.assertItems(temp));
 

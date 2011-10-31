@@ -1,42 +1,33 @@
 package org.fabric3.cache.infinispan;
 
-import org.fabric3.api.annotation.Resource;
-import org.fabric3.api.annotation.scope.Scopes;
-import org.oasisopen.sca.annotation.EagerInit;
-import org.oasisopen.sca.annotation.Init;
-import org.oasisopen.sca.annotation.Scope;
-import org.oasisopen.sca.annotation.Service;
-
 import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
+
+import org.oasisopen.sca.annotation.Scope;
+
+import org.fabric3.api.annotation.Cache;
+import org.fabric3.api.annotation.scope.Scopes;
 
 /**
  * @version $Rev$ $Date$
  */
-@EagerInit
 @Scope(Scopes.COMPOSITE)
-@Service(AssertionService.class)
-public class AssertionServiceImpl implements AssertionService<Integer, String> {
+public class AssertionServiceImpl implements AssertionService {
 
-    @Resource(name = "dataIndexCache")
-    ConcurrentMap<Integer, String> cache;
+    @Cache(name = "dataIndexCache")
+    protected ConcurrentMap<Integer, String> cache;
 
-    @Init
-    public void init() {
-        System.out.println("Assertion service started.");
+    public boolean assertCount(int count) {
+        return cache.size() == count;
     }
 
-    public boolean assertCount(int exceptedCount) {
-        return cache.size() == exceptedCount;
-    }
-
-    public boolean assertItems(ConcurrentMap items) {
+    public boolean assertItems(Map<Integer, String> items) {
         if (cache.size() != items.size()) {
             return false;
         }
 
-        for (Object item : items.entrySet()) {
-            String value = cache.get(((Map.Entry) item).getKey());
+        for (Map.Entry<Integer, String> item : items.entrySet()) {
+            String value = cache.get(item.getKey());
             if (null == value || !value.equals(((Map.Entry) item).getValue())) {
                 return false;
             }

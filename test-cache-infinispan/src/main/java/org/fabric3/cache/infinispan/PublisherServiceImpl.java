@@ -1,31 +1,25 @@
 package org.fabric3.cache.infinispan;
 
-import org.fabric3.api.annotation.Resource;
-import org.fabric3.api.annotation.scope.Scopes;
-import org.oasisopen.sca.annotation.EagerInit;
-import org.oasisopen.sca.annotation.Init;
+import java.util.Map;
+import java.util.concurrent.ConcurrentMap;
+
 import org.oasisopen.sca.annotation.Scope;
 import org.oasisopen.sca.annotation.Service;
 
-import java.util.concurrent.ConcurrentMap;
+import org.fabric3.api.annotation.Resource;
+import org.fabric3.api.annotation.scope.Scopes;
 
 /**
  * @version $Rev$ $Date$
  */
-@EagerInit
 @Scope(Scopes.COMPOSITE)
 @Service(PublisherService.class)
-public class PublisherServiceImpl implements PublisherService<Integer, String> {
+public class PublisherServiceImpl implements PublisherService {
 
     @Resource(name = "dataIndexCache")
-    ConcurrentMap<Integer, String> cache;
+    protected ConcurrentMap<Integer, String> cache;
 
-    @Init
-    public void init() {
-        System.out.println("Publish service started.");
-    }
-
-    public void insertIntoCache(ConcurrentMap itemsToInsert) {
-        cache.putAll(itemsToInsert);
+    public void insert(Map<Integer, String> items) {
+        cache.putAll(items);
     }
 }

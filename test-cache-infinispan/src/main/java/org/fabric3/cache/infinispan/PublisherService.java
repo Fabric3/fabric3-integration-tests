@@ -1,12 +1,12 @@
 package org.fabric3.cache.infinispan;
 
-import java.util.concurrent.ConcurrentMap;
+import java.util.Map;
 
 /**
  * @version $Rev$ $Date$
  */
-public interface PublisherService<K, V> {
+public interface PublisherService {
 
-    void insertIntoCache(ConcurrentMap itemsToInsert);
+    void insert(Map<Integer, String> items);
 
 }

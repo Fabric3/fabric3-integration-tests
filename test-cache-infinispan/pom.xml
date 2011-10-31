@@ -61,8 +61,60 @@
                         </dependency>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-jaxb</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>fabric3-jgroups</artifactId>
                             <version>${fabric3.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-tx</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-atomikos-library</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-atomikos</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+
+                        <!-- JMS is needed for Atomikos -->
+                        <dependency>
+                            <groupId>org.codehaus.fabric3.api</groupId>
+                            <artifactId>javax-jms</artifactId>
+                            <version>${jms.version}</version>
+                        </dependency>
+
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-resource</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-datasource</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+
+                        <dependency>
+                            <groupId>org.codehaus.fabric3.api</groupId>
+                            <artifactId>javax-jta</artifactId>
+                            <version>${jta.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3.api</groupId>
+                            <artifactId>javax-annotation</artifactId>
+                            <version>${annotations.version}</version>
                         </dependency>
                     </extensions>
                 </configuration>

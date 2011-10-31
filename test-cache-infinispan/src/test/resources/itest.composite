@@ -18,6 +18,21 @@
         <f3:junit class="org.fabric3.cache.infinispan.TestInsertingIntoCache"/>
     </component>
 
-    <include name="f3:CacheComposite"/>
+    <component name="PublisherServiceImpl">
+        <implementation.java class="org.fabric3.cache.infinispan.PublisherServiceImpl"/>
+    </component>
+
+    <component name="AssertionServiceImpl">
+        <implementation.java class="org.fabric3.cache.infinispan.AssertionServiceImpl"/>
+    </component>
+
+    <f3:caches>
+        <f3:cache name="dataIndexCache">
+            <infinispan/>
+        </f3:cache>
+        <f3:cache name="dataIndexCache2">
+            <infinispan/>
+        </f3:cache>
+    </f3:caches>
 
 </composite>
