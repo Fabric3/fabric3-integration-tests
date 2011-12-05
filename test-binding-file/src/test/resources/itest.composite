@@ -13,9 +13,20 @@
            name="TestComposite"
            autowire="true">
 
-    <component name="TestInputOutputClient">
-        <f3:junit class="org.fabric3.binding.file.test.TestInputOutputClient"/>
+    <component name="TestAdaptorClient">
+        <f3:junit class="org.fabric3.binding.file.test.TestClient"/>
         <reference name="latchService" target="FileService/LatchService"/>
+        <property name="dropDir">drop</property>
+        <property name="outputDir">dropoutput</property>
+        <property name="errorDir">droperror</property>
+    </component>
+
+    <component name="TestComponentAdaptorClient">
+        <f3:junit class="org.fabric3.binding.file.test.TestClient"/>
+        <reference name="latchService" target="AdaptedComponentFileService/LatchService"/>
+        <property name="dropDir">adaptercomponentdrop</property>
+        <property name="outputDir">adaptercomponentdroparchive</property>
+        <property name="errorDir">adaptercomponentdropdroperror</property>
     </component>
 
     <component name="TestServiceAdapterClient">
@@ -48,6 +59,9 @@
                              delay="200"
                              adapter="org.fabric3.binding.file.test.TestServiceAdapter"/>
         </service>
+        <reference name="output">
+            <f3:binding.file location="dropoutput"/>
+        </reference>
     </component>
 
     <component name="OutputService">
@@ -57,5 +71,24 @@
         </reference>
     </component>
 
+    <component name="AdaptedComponentFileService">
+        <implementation.java class="org.fabric3.binding.file.test.AdaptedFileServiceImpl"/>
+        <service name="AdaptedFileService">
+            <f3:binding.file location="adaptercomponentdrop"
+                             error.location="adaptercomponentdropdroperror"
+                             archive.location="adaptercomponentdroparchive"
+                             strategy="archive"
+                             delay="200"
+                             adapter.component="AdapterComponent"/>
+        </service>
+        <reference name="output">
+            <f3:binding.file location="adaptercomponentdroparchive"/>
+        </reference>
+
+    </component>
+
+    <component name="AdapterComponent">
+        <implementation.java class="org.fabric3.binding.file.test.AdapterComponent"/>
+    </component>
 
 </composite>

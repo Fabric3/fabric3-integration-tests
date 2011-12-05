@@ -41,24 +41,42 @@ import java.io.File;
 import java.io.FileWriter;
 
 import junit.framework.TestCase;
+import org.oasisopen.sca.annotation.Property;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
  * @version $Rev$ $Date$
  */
 @SuppressWarnings({"ResultOfMethodCallIgnored"})
-public class TestInputOutputClient extends TestCase {
+public class TestClient extends TestCase {
     private static final File RUNTIME_BASE = new File(System.getProperty("java.io.tmpdir"), ".f3");
     private static final File BASE = new File(RUNTIME_BASE, "inbox");
-    private static final File BASE_OUTPUT = new File(RUNTIME_BASE, "outbox");
-    private static final File DROP_DIR = new File(BASE, "drop");
-    private static final File OUTPUT_DIR = new File(BASE_OUTPUT, "dropoutput");
-    private static final File ERROR_DIRECTORY = new File(BASE, "droperror");
+    private static final File BASE_OUT = new File(RUNTIME_BASE, "outbox");
+
+    private File dropDir = new File(BASE, "drop");
+    private File outputDir = new File(BASE_OUT, "dropoutput");
+    private File errorDir = new File(BASE, "droperror");
+
     private File xmlFile;
     private File outputFile;
 
     @Reference
     protected LatchService latchService;
+
+    @Property
+    public void setDropDir(String dropDir) {
+        this.dropDir = new File(BASE, dropDir);
+    }
+
+    @Property
+    public void setOutputDir(String outputDir) {
+        this.outputDir = new File(BASE_OUT, outputDir);
+    }
+
+    @Property
+    public void setErrorDir(String errorDir) {
+        this.errorDir = new File(BASE, errorDir);
+    }
 
     public void testInvoke() throws Exception {
         latchService.await();
@@ -74,11 +92,11 @@ public class TestInputOutputClient extends TestCase {
     public void setUp() throws Exception {
         super.setUp();
         clear();
-        outputFile = new File(OUTPUT_DIR, "testouput.xml");
+        outputFile = new File(outputDir, "test.xml");
 
         FileWriter writer = null;
         try {
-            xmlFile = new File(DROP_DIR, "test.xml");
+            xmlFile = new File(dropDir, "test.xml");
             writer = new FileWriter(xmlFile);
             writer.write("<?xml version='1.0' encoding='UTF-8'?><test/>");
         } finally {
@@ -95,27 +113,27 @@ public class TestInputOutputClient extends TestCase {
     }
 
     private void clear() {
-        if (DROP_DIR.exists()) {
-            FileHelper.deleteContents(DROP_DIR);
+        if (dropDir.exists()) {
+            FileHelper.deleteContents(dropDir);
         } else {
-            DROP_DIR.mkdirs();
+            dropDir.mkdirs();
         }
-        if (ERROR_DIRECTORY.exists()) {
-            FileHelper.deleteContents(ERROR_DIRECTORY);
+        if (errorDir.exists()) {
+            FileHelper.deleteContents(errorDir);
         } else {
-            ERROR_DIRECTORY.mkdirs();
+            errorDir.mkdirs();
         }
-        if (OUTPUT_DIR.exists()) {
-            FileHelper.deleteContents(OUTPUT_DIR);
+        if (outputDir.exists()) {
+            FileHelper.deleteContents(outputDir);
         } else {
-            OUTPUT_DIR.mkdirs();
+            outputDir.mkdirs();
         }
     }
 
     private void cleanup() {
-        FileHelper.delete(DROP_DIR);
-        FileHelper.delete(ERROR_DIRECTORY);
-        FileHelper.delete(OUTPUT_DIR);
+        FileHelper.delete(dropDir);
+        FileHelper.delete(errorDir);
+        FileHelper.delete(outputDir);
     }
 
 }

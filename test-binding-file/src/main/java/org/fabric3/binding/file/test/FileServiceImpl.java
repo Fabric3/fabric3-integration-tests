@@ -63,7 +63,7 @@ public class FileServiceImpl implements FileService, LatchService {
     public void transferData(InputStream data) throws Exception {
         OutputStream stream = null;
         try {
-            stream = output.openStream("testouput.xml");
+            stream = output.openStream("test.xml");
             stream.write("<?xml version='1.0' encoding='UTF-8'?><test/>".getBytes());
         } finally {
             if (stream != null) {

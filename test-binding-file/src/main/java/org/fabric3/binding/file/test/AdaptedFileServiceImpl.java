@@ -38,8 +38,10 @@
 package org.fabric3.binding.file.test;
 
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.concurrent.CountDownLatch;
 
+import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Scope;
 import org.oasisopen.sca.annotation.Service;
 
@@ -50,6 +52,10 @@ import org.oasisopen.sca.annotation.Service;
 @Service(names = {AdaptedFileService.class, LatchService.class})
 public class AdaptedFileServiceImpl implements AdaptedFileService, LatchService {
     private CountDownLatch latch = new CountDownLatch(1);
+
+    @Reference
+    FileOutput output;
+
     private AssertionError error;
 
     public void await() throws InterruptedException {
@@ -65,6 +71,16 @@ public class AdaptedFileServiceImpl implements AdaptedFileService, LatchService 
         } else if (data == null) {
             error = new AssertionError("Data was null");
         }
+        OutputStream stream = null;
+        try {
+            stream = output.openStream("test.xml");
+            stream.write("<?xml version='1.0' encoding='UTF-8'?><test/>".getBytes());
+        } finally {
+            if (stream != null) {
+                stream.close();
+            }
+        }
+
         latch.countDown();
     }
 
