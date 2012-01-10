@@ -12,15 +12,15 @@
 
     <component name="TestClient">
         <f3:junit class="tests.rs.TestClient"/>
-        <property name="baseMessageUri">http://localhost:8900/messages</property>
-        <property name="baseJsonMessageUri">http://localhost:8900/jsonmessages</property>
-        <property name="baseStatelessUri">http://localhost:8900/stateless</property>
-        <property name="baseInterfaceUri">http://localhost:8900/interface</property>
+        <property name="baseMessageUri">http://localhost:8900/messages/</property>
+        <property name="baseJsonMessageUri">http://localhost:8900/jsonmessages/</property>
+        <property name="baseStatelessUri">http://localhost:8900/stateless/</property>
+        <property name="baseInterfaceUri">http://localhost:8900/interface/</property>
     </component>
 
     <component name="SecureTestClient">
         <f3:junit class="tests.rs.SecureTestClient"/>
-        <property name="baseUri">http://localhost:8900/secureAuthorization</property>
+        <property name="baseUri">http://localhost:8900/secureAuthorization/</property>
         <property name="authentication">http://localhost:8900/fabric/security/token</property>
     </component>
 
@@ -57,6 +57,16 @@
         <service name="SecureService">
             <f3:binding.rs uri="/secureAuthorization"/>
         </service>
+    </component>
+    
+    <component name="TestRESTRefClient">
+        <f3:junit class="tests.rs.TestRESTReference"/>        
+        <reference name="xmlRef">
+            <f3:binding.rs uri="http://localhost:8900/messages"/>
+        </reference>
+        <reference name="jsonRef">
+            <f3:binding.rs uri="http://localhost:8900/jsonmessages"/>
+        </reference>
     </component>
 
 </composite>
