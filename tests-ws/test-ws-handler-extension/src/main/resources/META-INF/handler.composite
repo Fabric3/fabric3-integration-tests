@@ -12,8 +12,8 @@
            targetNamespace="urn:fabric3.org"
            name="TestWsHandlerExtensionComposite">
 
-    <component name="HelloService">
-        <f3:implementation.system class="org.fabric3.tests.capabilities.HelloService"/>
+    <component name="SOAPHandler">
+        <f3:implementation.system class="org.fabric3.tests.binding.handler.SOAPHandler"/>
     </component>
 
 </composite>
