@@ -40,7 +40,11 @@ public class SOAPHandler implements BindingHandler<SOAPMessage> {
         return BINDING;
     }
 
-    public void handle(SOAPMessage soapMessage, Message message) {
+    public void handleOutbound(Message message, SOAPMessage context) {
+
+    }
+
+    public void handleInbound(SOAPMessage soapMessage, Message message) {
 
     }
 }
