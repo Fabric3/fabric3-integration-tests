@@ -8,7 +8,8 @@
     $Rev$ $Date$
 -->
 <contribution xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-              xmlns:f3="urn:fabric3.org">
+              xmlns:f3="urn:fabric3.org"
+              f3:extension="true">
     <import.java package="org.fabric3.spi.*"/>
     <deployable composite="f3:TestWsHandlerExtensionComposite"/>
 </contribution>
