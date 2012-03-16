@@ -35,9 +35,20 @@
         </f3:implementation.wsdl>
         <service name="HelloWorldPortType">
             <!-- test policy attachement-->
-            <binding.ws uri="/HelloWorldService" requires="sca:clientAuthentication.message"/>
+            <binding.ws uri="/HelloWorldService" requires="sca:clientAuthentication.message">
+               <f3:handler target="TestHandler" />
+            </binding.ws>
         </service>
         <reference name="helloJavaService" target="HelloJavaService"/>
+    </component>
+    
+    <component name="TestHandler">
+        <implementation.java class="org.fabric3.tests.binding.metro.soap.TestSoapBindingHandler"/>
+        <reference name="h" target="TestHandlerReferenceJavaService" />       
+    </component>
+    
+    <component name="TestHandlerReferenceJavaService">
+        <implementation.java class="org.fabric3.tests.binding.metro.wsdl.HelloJavaServiceImpl"/>
     </component>
 
     <component name="HelloJavaService">
