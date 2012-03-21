@@ -9,10 +9,14 @@ import javax.xml.soap.SOAPMessage;
 
 import org.fabric3.spi.binding.handler.BindingHandler;
 import org.fabric3.spi.invocation.Message;
+import org.fabric3.spi.invocation.WorkContext;
+import org.fabric3.spi.invocation.WorkContextTunnel;
 import org.fabric3.tests.binding.metro.wsdl.HelloJavaService;
 import org.oasisopen.sca.annotation.Reference;
 
 public class TestSoapBindingHandler implements BindingHandler<SOAPMessage> {
+	
+	public static final String TEST_HANDLER_HEADER = "TestHandlerHeader";
 	
 	@Reference private HelloJavaService h;
 
@@ -26,6 +30,8 @@ public class TestSoapBindingHandler implements BindingHandler<SOAPMessage> {
 
 	public void handleInbound(SOAPMessage context, Message message) {
 		printMessage("In ",context);
+		message.getWorkContext().setHeader(TEST_HANDLER_HEADER, "bugaga");
+		
 	}
 	
 	private void printMessage(String prefix ,SOAPMessage context) {
