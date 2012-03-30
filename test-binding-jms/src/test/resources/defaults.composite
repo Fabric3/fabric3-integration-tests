@@ -26,6 +26,7 @@
                 <response>
                     <destination jndiName="defaultClientResponseQueue"/>
                 </response>
+                <f3:handler target="jmsHandler" />
             </binding.jms>
             <callback>
                 <binding.jms>
@@ -51,6 +52,9 @@
             </callback>
         </service>
     </component>
-
-
+    
+    <component name="jmsHandler">
+       <implementation.java class="org.fabric3.binding.jms.test.primitives.SystemOutTestHandler"/>
+    </component>
+    
 </composite>

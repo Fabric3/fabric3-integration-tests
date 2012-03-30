@@ -1,0 +1,5 @@
+<contribution xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+              xmlns:f3="urn:fabric3.org">
+    <import.java package="org.fabric3.spi.*" version="1.9.5"/>
+    <import.java package="javax.jms.*" version="1.1.0"/>
+</contribution>
