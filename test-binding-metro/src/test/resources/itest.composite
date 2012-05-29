@@ -11,6 +11,7 @@
            name="TestComposite" >
 
     <include name="JaxbTest"/>
+    <include name="HandlerTest"/>
     <include name="InteractionTest" />
     <include name="SOAPPolicyTest" />
     <include name="SecurityPolicyTest" />

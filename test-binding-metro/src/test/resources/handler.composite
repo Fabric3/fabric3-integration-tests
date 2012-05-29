@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:f3="urn:fabric3.org"
+           xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance"
+           targetNamespace="urn:fabric3.org"
+           name="HandlerTest">
+
+    <component name="HandlerTest">
+        <f3:junit class="org.fabric3.tests.binding.metro.HandlerTest"/>
+        <reference name="service">
+            <binding.ws uri="http://localhost:8900/handlerService">
+                <f3:handler target="TestHandler"/>
+            </binding.ws>
+        </reference>
+    </component>
+
+    <component name="HandlerService">
+        <implementation.java class="org.fabric3.tests.binding.metro.handler.HandlerServiceImpl"/>
+        <service name="HandlerService">
+            <binding.ws uri="/handlerService">
+                <f3:handler target="TestHandler"/>
+            </binding.ws>
+        </service>
+    </component>
+
+
+    <component name="TestHandler">
+        <implementation.java class="org.fabric3.tests.binding.metro.handler.TestHandler"/>
+    </component>
+
+</composite>
