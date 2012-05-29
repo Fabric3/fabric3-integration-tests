@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+           xmlns:f3="urn:fabric3.org"
+           targetNamespace="urn:fabric3.org"
+           name="JMSHandlerComposite"
+           autowire="false">
+    <!-- test configuration defaults, i.e. minimal JMS configuration -->
+
+    <component name="HandlerTest">
+        <f3:junit class="org.fabric3.binding.jms.test.handler.HandlerTest"/>
+        <reference name="service">
+            <binding.jms>
+                <f3:handler target="TestHandler"/>
+                <destination jndiName="HandlerClientQueue"/>
+                <response>
+                    <destination jndiName="HandlerClientResponseQueue"/>
+                </response>
+            </binding.jms>
+        </reference>
+    </component>
+
+    <component name="HandlerServiceImpl">
+        <implementation.java class="org.fabric3.binding.jms.test.handler.HandlerServiceImpl"/>
+        <service name="HandlerService">
+            <binding.jms>
+                <f3:handler target="TestHandler"/>
+                <destination jndiName="HandlerClientQueue"/>
+                <response>
+                    <destination jndiName="HandlerClientResponseQueue"/>
+                </response>
+            </binding.jms>
+         </service>
+    </component>
+
+    <component name="TestHandler">
+        <implementation.java class="org.fabric3.binding.jms.test.handler.TestHandler"/>
+    </component>
+
+</composite>
