@@ -7,6 +7,7 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:f3="urn:fabric3.org"
+           xmlns:infinispan="urn:infinispan:config:5.1"
            targetNamespace="urn:fabric3.org"
            name="TestComposite">
 
@@ -28,10 +29,10 @@
 
     <f3:caches>
         <f3:cache name="dataIndexCache">
-            <infinispan/>
+            <infinispan:infinispan/>
         </f3:cache>
         <f3:cache name="dataIndexCache2">
-            <infinispan/>
+            <infinispan:infinispan/>
         </f3:cache>
     </f3:caches>
 
