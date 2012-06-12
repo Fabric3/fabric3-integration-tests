@@ -8,10 +8,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-         <groupId>org.codehaus.fabric3.tests</groupId>
-         <artifactId>ci</artifactId>
-         <version>1.9.5</version>
-     </parent>
+        <groupId>org.codehaus.fabric3.tests</groupId>
+        <artifactId>ci</artifactId>
+        <version>1.9.5</version>
+    </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-binding-metro</artifactId>
     <version>1.9.5</version>
@@ -29,15 +29,9 @@
 
         <!-- required for WSDL stub test -->
         <dependency>
-           <groupId>org.codehaus.fabric3</groupId>
-           <artifactId>fabric3-spi</artifactId>
-           <version>${fabric3.version}</version>
-       </dependency>
-
-        <dependency>
-            <groupId>javax.xml</groupId>
-            <artifactId>webservices-api-osgi</artifactId>
-            <version>${web.services.version}</version>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-spi</artifactId>
+            <version>${fabric3.version}</version>
         </dependency>
 
         <dependency>
@@ -70,6 +64,13 @@
                             <version>${fabric3.version}</version>
                         </profile>
                     </profiles>
+                    <!--<shared>-->
+                        <!--<dependency>-->
+                            <!--<groupId>javax.xml.soap</groupId>-->
+                            <!--<artifactId>saaj-api</artifactId>-->
+                            <!--<version>1.3.4</version>-->
+                        <!--</dependency>-->
+                    <!--</shared>-->
                     <extensions>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
@@ -77,16 +78,16 @@
                             <version>${fabric3.version}</version>
                         </dependency>
                         <dependency>
-                             <groupId>org.codehaus.fabric3</groupId>
-                             <artifactId>fabric3-jetty</artifactId>
-                             <version>${fabric3.version}</version>
-                         </dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-jetty</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
                         <dependency>
                             <groupId>org.codehaus.fabric3.tests</groupId>
                             <artifactId>test-implementation-wsdl</artifactId>
                             <version>1.9.5</version>
                         </dependency>
-                     </extensions>
+                    </extensions>
                     <systemConfig>
                         <![CDATA[
                         <config xmlns="urn:fabric3.org">
