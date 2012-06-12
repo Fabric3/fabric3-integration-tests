@@ -130,7 +130,6 @@
                 <module>test-binding-harness</module>
                 <module>test-implementation-wsdl</module>
                 <module>test-function</module>
-                <module>test-async</module>
                 <module>test-eventing</module>
                 <module>test-user-resource</module>
                 <module>test-resource</module>
