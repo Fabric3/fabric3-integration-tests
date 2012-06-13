@@ -31,13 +31,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.codehaus.fabric3.api</groupId>
-            <artifactId>javax-jms</artifactId>
-            <version>${jms.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
             <groupId>org.codehaus.fabric3.spec</groupId>
             <artifactId>sca-api</artifactId>
             <version>${sca.api.version}</version>
@@ -50,12 +43,6 @@
             <scope>provided</scope>
         </dependency>
         
-        <dependency>
-            <groupId>org.codehaus.fabric3</groupId>
-            <artifactId>fabric3-spi</artifactId>
-            <version>${fabric3.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.codehaus.fabric3.tests</groupId>
             <artifactId>test-binding-harness</artifactId>
