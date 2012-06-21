@@ -139,7 +139,6 @@
                 <module>test-spring</module>
                 <module>test-binding-rs</module>
                 <module>test-timer-implementation</module>
-                <module>test-drools</module>
                 <module>test-mock</module>
                 <module>test-binding-metro</module>
                 <module>test-binding-jms</module>
@@ -176,7 +175,6 @@
                 <module>test-spring</module>
                 <module>test-binding-rs</module>
                 <module>test-timer-implementation</module>
-                <module>test-drools</module>
                 <module>test-mock</module>
                 <module>test-binding-metro</module>
                 <module>test-binding-ftp</module>
