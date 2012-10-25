@@ -13,12 +13,12 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>ci</artifactId>
-        <version>1.9.5</version>
+        <version>1.9.6</version>
     </parent>
 
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-binding-file</artifactId>
-    <version>1.9.5</version>
+    <version>1.9.6</version>
     <name>Fabric3 File Binding Integration Tests</name>
     <packaging>jar</packaging>
     <description>Fabric3 File Binding Tests.</description>

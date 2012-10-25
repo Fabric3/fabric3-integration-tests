@@ -23,11 +23,11 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>ci</artifactId>
-        <version>1.9.5</version>
+        <version>1.9.6</version>
     </parent>
     <artifactId>tests-ws-parent-pom</artifactId>
     <packaging>pom</packaging>
-    <version>1.9.5</version>
+    <version>1.9.6</version>
     <name>Fabric3 Web Service Tests</name>
     <description>Fabric3 Web Service Tests Parent</description>
     <modules>

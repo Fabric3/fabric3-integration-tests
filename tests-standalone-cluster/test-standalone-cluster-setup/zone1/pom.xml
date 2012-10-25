@@ -20,7 +20,7 @@
     <parent>
        <groupId>org.codehaus.fabric3.tests</groupId>
        <artifactId>tests-standalone-cluster-setup-parent-pom</artifactId>
-       <version>1.9.5</version>
+       <version>1.9.6</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-standalone-cluster-setup-zone1</artifactId>
