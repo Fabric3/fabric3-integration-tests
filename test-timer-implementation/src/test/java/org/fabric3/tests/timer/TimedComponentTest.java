@@ -48,22 +48,8 @@ public class TimedComponentTest extends TestCase {
     @Reference
     protected LatchService latchService;
 
-    @Reference
-    protected LatchService trxLatchService;
-
-    @Reference
-    protected LatchService trxIntervalLatchService;
-
     public void testFire() throws Exception {
         assertTrue(latchService.await());
-    }
-
-    public void testTrxFire() throws Exception {
-        assertTrue(trxLatchService.await());
-    }
-
-    public void testTrxIntervalFire() throws Exception {
-        assertTrue(trxIntervalLatchService.await());
     }
 
 }
