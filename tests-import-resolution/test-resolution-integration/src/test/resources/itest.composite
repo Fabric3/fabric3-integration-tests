@@ -13,7 +13,7 @@
 
     <component f3:key="one" name="map.one">
         <f3:junit class="org.fabric3.tests.resolution.ResolutionTest"/>
-        <property name="version">1.9.6</property>
+        <property name="version">1.9.7</property>
     </component>
 
 </composite>

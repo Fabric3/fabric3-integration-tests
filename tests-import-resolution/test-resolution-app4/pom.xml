@@ -12,11 +12,11 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>tests-import-resolution</artifactId>
-        <version>1.9.6</version>
+        <version>1.9.7</version>
     </parent>
     <artifactId>test-resolution-app4</artifactId>
     <packaging>jar</packaging>
-    <version>1.9.6</version>
+    <version>1.9.7</version>
     <name>Fabric3 Resolution Integration Test Application 4</name>
     <description>Fabric3 Resolution Integration Test Application 4</description>
     <dependencies>

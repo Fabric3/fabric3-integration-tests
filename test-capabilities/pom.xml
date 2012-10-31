@@ -11,11 +11,11 @@
     <parent>
          <groupId>org.codehaus.fabric3.tests</groupId>
          <artifactId>ci</artifactId>
-         <version>1.9.6</version>
+         <version>1.9.7</version>
      </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-capabilities</artifactId>
-    <version>1.9.6</version>
+    <version>1.9.7</version>
     <name>Fabric3 Test Capabilities</name>
     <description>Fabric3 Capabilities Ordering Test.</description>
     <packaging>jar</packaging>

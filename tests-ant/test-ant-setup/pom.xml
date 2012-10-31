@@ -12,12 +12,12 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>tests-ant-parent-pom</artifactId>
-        <version>1.9.6</version>
+        <version>1.9.7</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-ant-setup</artifactId>
     <packaging>jar</packaging>
-    <version>1.9.6</version>
+    <version>1.9.7</version>
     <name>Fabric3 Ant Runtime Integration Tests Setup</name>
     <description>Fabric3 Ant Runtime Integration Tests Setup</description>
     <dependencies>

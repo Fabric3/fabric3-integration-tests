@@ -12,11 +12,11 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests.cluster.apps</groupId>
         <artifactId>test-cluster-apps-parent-pom</artifactId>
-        <version>1.9.6</version>
+        <version>1.9.7</version>
     </parent>
     <artifactId>domain-scope</artifactId>
     <packaging>jar</packaging>
-    <version>1.9.6</version>
+    <version>1.9.7</version>
     <name>Fabric3 Cluster Domain Scope Test Application</name>
     <description>Fabric3 Cluster Domain Scope Test Application</description>
     <dependencies>

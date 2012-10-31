@@ -23,12 +23,12 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>test-xquery-exist-parent-pom</artifactId>
-        <version>1.9.6</version>
+        <version>1.9.7</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-xquery-exist-instance</artifactId>
     <packaging>sca-contribution-jar</packaging>
-    <version>1.9.6</version>
+    <version>1.9.7</version>
     <name>Fabric3 Tests for eXist XQuery Implementation DB Instance</name>
     <description>Fabric3 Tests for XQuery Implementation DB Instance.</description>
     <build>

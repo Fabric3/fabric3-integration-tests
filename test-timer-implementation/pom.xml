@@ -11,12 +11,12 @@
     <parent>
          <groupId>org.codehaus.fabric3.tests</groupId>
          <artifactId>ci</artifactId>
-         <version>1.9.6</version>
+         <version>1.9.7</version>
      </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-timer-implementation</artifactId>
     <packaging>jar</packaging>
-    <version>1.9.6</version>
+    <version>1.9.7</version>
     <name>Fabric3 Timer Component Tests</name>
     <description>Fabric3 Timer Component Tests.</description>
 
