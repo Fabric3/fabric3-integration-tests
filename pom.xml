@@ -23,7 +23,7 @@
         <version>7</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests</groupId>
-    <artifactId>ci</artifactId>
+    <artifactId>fabric3-integration-tests</artifactId>
     <version>1.9.7</version>
     <packaging>pom</packaging>
 
