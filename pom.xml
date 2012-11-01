@@ -186,7 +186,7 @@
                 <module>test-multiple-modules</module>
                 <module>tests-apps</module>
                 <module>tests-import-resolution</module>
-                <module>tests-ant</module>
+                <!--<module>tests-ant</module>-->
                 <module>tests-cluster-apps</module>
                 <module>tests-ws</module>
            </modules>
