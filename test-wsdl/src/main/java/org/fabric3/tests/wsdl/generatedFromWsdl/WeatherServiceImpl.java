@@ -39,7 +39,7 @@
 package org.fabric3.tests.wsdl.generatedFromWsdl;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class WeatherServiceImpl implements WeatherService {
     public WeatherResponse getWeather(WeatherRequest weatherRequest) {

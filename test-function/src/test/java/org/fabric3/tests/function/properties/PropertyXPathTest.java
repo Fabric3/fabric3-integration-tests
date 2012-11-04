@@ -43,7 +43,7 @@ import junit.framework.TestCase;
 import org.oasisopen.sca.annotation.Property;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class PropertyXPathTest extends TestCase {
     @Property

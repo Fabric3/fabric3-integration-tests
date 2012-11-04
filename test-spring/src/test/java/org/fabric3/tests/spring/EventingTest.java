@@ -7,7 +7,7 @@ import org.fabric3.tests.binding.harness.eventing.TestConsumer;
 import org.fabric3.tests.binding.harness.eventing.TestProducer;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class EventingTest extends TestCase {
 

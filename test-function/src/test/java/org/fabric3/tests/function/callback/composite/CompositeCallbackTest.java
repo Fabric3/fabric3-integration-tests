@@ -44,8 +44,6 @@ import org.fabric3.tests.function.callback.common.CallbackData;
 
 /**
  * Tests for callbacks with composite-scoped components.
- *
- * @version $Rev$ $Date$
  */
 public class CompositeCallbackTest extends TestCase {
     @Reference

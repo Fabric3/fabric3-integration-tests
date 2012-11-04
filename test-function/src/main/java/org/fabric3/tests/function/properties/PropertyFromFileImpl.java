@@ -40,7 +40,7 @@ package org.fabric3.tests.function.properties;
 import org.oasisopen.sca.annotation.Property;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class PropertyFromFileImpl implements PropertyFromFile {
     private String string;

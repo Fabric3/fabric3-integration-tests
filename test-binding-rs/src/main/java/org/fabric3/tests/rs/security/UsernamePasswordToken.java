@@ -40,7 +40,7 @@ package org.fabric3.tests.rs.security;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @XmlRootElement
 public class UsernamePasswordToken {

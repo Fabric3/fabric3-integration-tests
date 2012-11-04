@@ -44,7 +44,7 @@ import org.fabric3.tests.function.common.IdentityService;
 import org.fabric3.tests.function.common.Source;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class InnerCompositeTest extends TestCase {
     @Reference

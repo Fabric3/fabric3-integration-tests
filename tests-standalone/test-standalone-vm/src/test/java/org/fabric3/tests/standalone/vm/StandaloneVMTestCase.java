@@ -41,8 +41,6 @@ import junit.framework.TestSuite;
 
 /**
  * Initiates integration tests for the standalone runtime booted in single-VM mode.
- *
- * @version $Rev: 7845 $ $Date: 2009-11-16 15:25:29 +0100 (Mon, 16 Nov 2009) $
  */
 public class StandaloneVMTestCase {
 

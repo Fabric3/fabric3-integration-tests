@@ -1,7 +1,7 @@
 package org.fabric3.tests.spring;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class SpringServiceImpl implements TestService {
 

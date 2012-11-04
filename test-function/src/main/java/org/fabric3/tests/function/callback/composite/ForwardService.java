@@ -40,7 +40,7 @@ package org.fabric3.tests.function.callback.composite;
 import org.oasisopen.sca.annotation.Callback;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Callback(CallbackService.class)
 public interface ForwardService extends ClientService {

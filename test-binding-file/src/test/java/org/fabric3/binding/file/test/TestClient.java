@@ -45,7 +45,7 @@ import org.oasisopen.sca.annotation.Property;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @SuppressWarnings({"ResultOfMethodCallIgnored"})
 public class TestClient extends TestCase {

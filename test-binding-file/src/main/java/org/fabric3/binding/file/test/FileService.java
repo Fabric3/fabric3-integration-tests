@@ -40,7 +40,7 @@ package org.fabric3.binding.file.test;
 import java.io.InputStream;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface FileService {
 

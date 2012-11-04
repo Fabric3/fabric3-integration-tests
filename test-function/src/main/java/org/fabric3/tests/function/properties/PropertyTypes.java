@@ -48,8 +48,6 @@ import javax.xml.namespace.QName;
 
 /**
  * Test service for returning Properties with different types.
- *
- * @version $Rev$ $Date$
  */
 public interface PropertyTypes {
 

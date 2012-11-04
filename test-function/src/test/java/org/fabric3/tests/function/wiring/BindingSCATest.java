@@ -45,7 +45,7 @@ import org.oasisopen.sca.annotation.Reference;
 import org.fabric3.tests.function.common.HelloService;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class BindingSCATest extends TestCase {
 

@@ -41,8 +41,6 @@ import org.oasisopen.sca.annotation.OneWay;
 
 /**
  * Simple interface that echos a basic type.
- *
- * @version $Rev$ $Date$
  */
 public interface OneWayEchoService {
 

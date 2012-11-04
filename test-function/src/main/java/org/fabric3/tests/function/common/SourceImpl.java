@@ -40,7 +40,7 @@ package org.fabric3.tests.function.common;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class SourceImpl implements Source {
     private Target target;

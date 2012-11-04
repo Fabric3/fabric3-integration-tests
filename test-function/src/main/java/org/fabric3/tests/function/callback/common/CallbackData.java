@@ -40,7 +40,7 @@ package org.fabric3.tests.function.callback.common;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class CallbackData {
     private CountDownLatch latch;

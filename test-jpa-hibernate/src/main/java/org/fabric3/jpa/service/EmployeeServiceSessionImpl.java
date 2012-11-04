@@ -48,7 +48,7 @@ import org.fabric3.jpa.model.Employee;
 import org.fabric3.jpa.model.ExEmployee;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class EmployeeServiceSessionImpl implements EmployeeService {
     private Session employeeSession;

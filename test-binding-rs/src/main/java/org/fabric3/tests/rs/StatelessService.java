@@ -25,7 +25,7 @@ import javax.ws.rs.core.MediaType;
 
 
 /**
- * @version $Rev: 8746 $ $Date: 2010-03-27 22:35:03 +0100 (Sat, 27 Mar 2010) $
+ *
  */
 @Path("/")
 @Produces(MediaType.APPLICATION_XML)

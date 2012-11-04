@@ -43,8 +43,6 @@ import org.fabric3.tests.function.callback.common.CallbackData;
 
 /**
  * Interface for test cases to verify and reset the callback client.
- *
- * @version $Rev$ $Date$
  */
 public interface ClientService {
 

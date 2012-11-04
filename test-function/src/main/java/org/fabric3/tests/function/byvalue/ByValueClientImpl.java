@@ -6,7 +6,7 @@ import org.oasisopen.sca.annotation.AllowsPassByReference;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class ByValueClientImpl implements ByValueClient {
 

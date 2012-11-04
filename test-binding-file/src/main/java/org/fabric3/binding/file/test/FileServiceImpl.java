@@ -46,7 +46,7 @@ import org.oasisopen.sca.annotation.Scope;
 import org.oasisopen.sca.annotation.Service;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 @Service(names = {FileService.class, LatchService.class})

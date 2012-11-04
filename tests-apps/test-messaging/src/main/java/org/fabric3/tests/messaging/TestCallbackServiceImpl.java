@@ -7,7 +7,7 @@ import org.oasisopen.sca.annotation.Callback;
 import org.oasisopen.sca.annotation.Scope;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 public class TestCallbackServiceImpl implements TestCallbackService {

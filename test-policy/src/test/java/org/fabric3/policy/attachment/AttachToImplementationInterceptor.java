@@ -42,7 +42,7 @@ import org.fabric3.spi.wire.Interceptor;
 
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class AttachToImplementationInterceptor implements Interceptor {
     private Interceptor next;

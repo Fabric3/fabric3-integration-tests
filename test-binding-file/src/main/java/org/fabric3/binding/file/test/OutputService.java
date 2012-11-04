@@ -40,7 +40,7 @@ package org.fabric3.binding.file.test;
 import java.io.IOException;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface OutputService {
 

@@ -9,7 +9,7 @@ import org.fabric3.api.annotation.Cache;
 import org.fabric3.api.annotation.scope.Scopes;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope(Scopes.COMPOSITE)
 public class AssertionServiceImpl implements AssertionService {

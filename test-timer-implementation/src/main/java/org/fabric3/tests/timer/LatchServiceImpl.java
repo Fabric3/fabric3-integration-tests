@@ -44,7 +44,7 @@ import org.oasisopen.sca.annotation.Property;
 import org.oasisopen.sca.annotation.Scope;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 public class LatchServiceImpl implements LatchService {

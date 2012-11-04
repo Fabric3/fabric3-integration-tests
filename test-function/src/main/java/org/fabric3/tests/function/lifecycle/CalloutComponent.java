@@ -45,8 +45,6 @@ import org.oasisopen.sca.annotation.Reference;
 /**
  * Used to verify invocations during @Init and @Destroy. Best practice dictates services should not be invoked during @Destroy but this serves to
  * verify the runtime functions properly if it is done.
- *
- * @version $Rev$ $Date$
  */
 public class CalloutComponent implements CalloutService {
     @Reference

@@ -44,7 +44,7 @@ import junit.framework.TestCase;
 import org.fabric3.api.annotation.Resource;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class DataSourceTest extends TestCase {
 

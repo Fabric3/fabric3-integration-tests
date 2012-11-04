@@ -42,7 +42,7 @@ import java.util.concurrent.CountDownLatch;
 import org.oasisopen.sca.annotation.OneWay;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface AsyncService {
 

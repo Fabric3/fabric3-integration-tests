@@ -42,8 +42,6 @@ import org.oasisopen.sca.annotation.Reference;
 
 /**
  * Verifies a binding supports basic scope semantics
- *
- * @version $Rev$ $Date$
  */
 public class ScopeTest extends TestCase {
 

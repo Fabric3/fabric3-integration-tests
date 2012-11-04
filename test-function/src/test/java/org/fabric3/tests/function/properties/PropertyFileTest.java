@@ -42,7 +42,7 @@ import org.oasisopen.sca.annotation.Property;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class PropertyFileTest extends TestCase {
     @Property

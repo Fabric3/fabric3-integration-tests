@@ -40,7 +40,7 @@ package org.fabric3.binding.file.test;
 import java.io.OutputStream;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface FileOutput {
 

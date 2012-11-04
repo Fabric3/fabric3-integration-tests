@@ -11,9 +11,7 @@ import org.fabric3.api.annotation.management.ManagementOperation;
 
 /**
  *
- * To start: http://localhost:8181/management/TestProducer/start
- * @version $Rev$ $Date$
- */
+ * To start: http://localhost:8181/management/TestProducer/start*/
 @Management
 @Scope("COMPOSITE")
 public class TestProducerImpl implements TestProducer {

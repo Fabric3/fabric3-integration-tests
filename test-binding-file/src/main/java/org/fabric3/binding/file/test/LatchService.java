@@ -38,7 +38,7 @@
 package org.fabric3.binding.file.test;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface LatchService {
 

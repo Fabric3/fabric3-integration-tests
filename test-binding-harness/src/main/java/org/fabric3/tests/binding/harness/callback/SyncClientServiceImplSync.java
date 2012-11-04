@@ -42,7 +42,7 @@ import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Service;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Service(names = {SyncClientService.class, SyncCallbackService.class})
 public class SyncClientServiceImplSync implements SyncClientService, SyncCallbackService {

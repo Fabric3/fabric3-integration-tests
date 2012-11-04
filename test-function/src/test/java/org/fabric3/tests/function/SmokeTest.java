@@ -44,8 +44,6 @@ import org.fabric3.tests.function.common.IdentityService;
 
 /**
  * Simple test case that checks that the test harness is running.
- *
- * @version $Rev$ $Date$
  */
 public class SmokeTest extends TestCase {
     @Reference

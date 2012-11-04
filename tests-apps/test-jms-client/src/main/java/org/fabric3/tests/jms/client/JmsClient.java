@@ -14,7 +14,7 @@ import org.apache.activemq.broker.TransportConnector;
 
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class JmsClient {
 

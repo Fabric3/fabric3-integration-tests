@@ -43,7 +43,7 @@ import org.oasisopen.sca.annotation.Reference;
 import org.fabric3.tests.function.common.Target;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class NoAutowireTest extends TestCase {
     private Target service;

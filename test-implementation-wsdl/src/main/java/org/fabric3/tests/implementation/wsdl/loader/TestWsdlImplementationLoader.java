@@ -65,7 +65,7 @@ import org.fabric3.wsdl.contribution.WsdlServiceContractSymbol;
 import org.fabric3.wsdl.model.WsdlServiceContract;
 
 /**
- * @version $Revision$ $Date$
+ *
  */
 @EagerInit
 public class TestWsdlImplementationLoader implements TypeLoader<TestWsdlImplementation> {

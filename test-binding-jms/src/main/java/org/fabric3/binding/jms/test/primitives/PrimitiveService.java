@@ -38,7 +38,7 @@
 package org.fabric3.binding.jms.test.primitives;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface PrimitiveService {
 

@@ -5,9 +5,7 @@ import java.util.List;
 import org.oasisopen.sca.annotation.AllowsPassByReference;
 
 /**
- * Tests use of @AllowsPassByReference on the implmentation class
- * @version $Rev$ $Date$
- */
+ * Tests use of @AllowsPassByReference on the implmentation class*/
 @AllowsPassByReference
 public class RemoteByReferenceServiceImpl2 implements RemoteService {
 

@@ -43,7 +43,7 @@ import java.io.OutputStream;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev: 10816 $ $Date: 2011-10-18 13:52:02 +0200 (Tue, 18 Oct 2011) $
+ *
  */
 public class OutputServiceImpl implements OutputService {
     private FileOutput output;

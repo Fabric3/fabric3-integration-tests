@@ -9,7 +9,7 @@ import org.fabric3.api.annotation.Consumer;
 import org.fabric3.api.annotation.Producer;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 @Service(names={TestConsumer.class, TestProducer.class})

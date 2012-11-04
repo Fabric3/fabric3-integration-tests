@@ -40,7 +40,7 @@ package org.fabric3.resource.itest.impl;
 import org.fabric3.resource.itest.TestResource;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TestResourceImpl implements TestResource {
 

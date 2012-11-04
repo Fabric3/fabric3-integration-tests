@@ -5,7 +5,7 @@ import java.util.List;
 import org.oasisopen.sca.annotation.Remotable;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Remotable
 public interface ByValueClient {

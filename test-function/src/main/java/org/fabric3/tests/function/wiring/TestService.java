@@ -40,7 +40,7 @@ package org.fabric3.tests.function.wiring;
 import org.fabric3.tests.function.common.HelloService;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface TestService {
 

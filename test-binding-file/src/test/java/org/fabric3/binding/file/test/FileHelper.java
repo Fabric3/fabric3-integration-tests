@@ -40,7 +40,7 @@ package org.fabric3.binding.file.test;
 import java.io.File;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @SuppressWarnings({"ResultOfMethodCallIgnored"})
 public class FileHelper {

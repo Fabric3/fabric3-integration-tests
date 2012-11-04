@@ -3,7 +3,7 @@ package org.fabric3.tests.rs;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @XmlRootElement
 public class Reason {

@@ -46,8 +46,6 @@ import junit.framework.Test;
 
 /**
  * A test fixture that boots the F3 server once for a suite of tests.
- *
- * @version $Rev$ $Date$
  */
 public class StandaloneBootFixture extends TestSetup {
     private static final String IDEA_DEBUG = "-Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y -Xmx512M -XX:MaxPermSize=512M";

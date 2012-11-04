@@ -48,8 +48,6 @@ import org.fabric3.jpa.model.ExEmployee;
 
 /**
  * Exercises multi-threaded EntityManager operation
- *
- * @version $Rev$ $Date$
  */
 @Scope("COMPOSITE")
 public class MultiThreadedEmployeeSessionServiceImpl implements EmployeeService {

@@ -41,8 +41,6 @@ import junit.framework.TestSuite;
 
 /**
  * Configures integration tests to be run against a multi-zoned topology.
- *
- * @version $Rev$ $Date$
  */
 public class ClusterTestCase {
 

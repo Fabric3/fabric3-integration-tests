@@ -40,7 +40,7 @@ package org.fabric3.tests.function.common;
 import org.oasisopen.sca.annotation.Remotable;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Remotable
 public interface Helloservice2 extends HelloService {

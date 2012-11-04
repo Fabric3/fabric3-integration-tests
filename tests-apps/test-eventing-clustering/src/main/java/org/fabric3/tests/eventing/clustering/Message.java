@@ -3,7 +3,7 @@ package org.fabric3.tests.eventing.clustering;
 import java.io.Serializable;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class Message implements Serializable {
     private static final long serialVersionUID = 5733197758657279113L;

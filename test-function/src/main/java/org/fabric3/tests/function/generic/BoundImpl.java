@@ -38,7 +38,7 @@
 package org.fabric3.tests.function.generic;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class BoundImpl implements BoundInterface {
     public String echo(String s) {

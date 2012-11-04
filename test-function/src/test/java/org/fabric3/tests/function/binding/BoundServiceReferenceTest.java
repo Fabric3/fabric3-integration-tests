@@ -46,8 +46,6 @@ import org.fabric3.tests.function.common.HelloService;
 
 /**
  * Verifies a service and reference explictly bound in respective component definitions (as opposed to through promotion)are handled properly.
- *
- * @version $Rev$ $Date$
  */
 public class BoundServiceReferenceTest extends TestCase {
 

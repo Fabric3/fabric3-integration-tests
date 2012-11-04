@@ -40,7 +40,7 @@ package org.fabric3.tests.binding.harness;
 import java.util.Collections;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class EchoTestCase extends EchoTest {
     protected void setUp() throws Exception {

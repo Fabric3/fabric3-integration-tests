@@ -46,7 +46,7 @@ import org.fabric3.jpa.model.Employee;
 import org.fabric3.jpa.model.ExEmployee;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class EmployeeServiceImplTest extends TestCase {
     @Reference

@@ -38,7 +38,7 @@
 package org.fabric3.tests.standalone.cluster.bindingsca.app1;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface TestClientService {
 

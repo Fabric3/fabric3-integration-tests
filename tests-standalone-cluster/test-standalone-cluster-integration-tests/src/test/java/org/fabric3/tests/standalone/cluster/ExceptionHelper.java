@@ -5,7 +5,7 @@ import org.fabric3.management.contribution.ErrorInfo;
 import org.fabric3.management.contribution.InvalidContributionException;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class ExceptionHelper {
 

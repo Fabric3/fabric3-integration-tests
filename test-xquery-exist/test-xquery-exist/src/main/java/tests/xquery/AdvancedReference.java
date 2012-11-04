@@ -16,9 +16,7 @@
  */
 package tests.xquery;
 
-/** 
- * @version $Rev$ $Date$
- */
+/** */
 public interface AdvancedReference {
   String reference(String val, String[] list);
 

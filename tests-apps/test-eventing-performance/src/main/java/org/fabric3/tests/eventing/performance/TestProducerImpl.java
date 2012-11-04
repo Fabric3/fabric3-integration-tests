@@ -11,7 +11,7 @@ import org.fabric3.api.annotation.management.Management;
 import org.fabric3.api.annotation.management.ManagementOperation;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Management
 @Scope("COMPOSITE")

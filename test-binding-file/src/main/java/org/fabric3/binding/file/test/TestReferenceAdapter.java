@@ -46,7 +46,7 @@ import java.io.OutputStream;
 import org.fabric3.binding.file.api.ReferenceAdapter;
 
 /**
- * @version $Rev: 10834 $ $Date: 2011-10-19 00:42:33 +0200 (Wed, 19 Oct 2011) $
+ *
  */
 public class TestReferenceAdapter implements ReferenceAdapter {
 

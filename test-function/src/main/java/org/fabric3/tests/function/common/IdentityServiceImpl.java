@@ -40,7 +40,7 @@ package org.fabric3.tests.function.common;
 import org.oasisopen.sca.annotation.Property;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class IdentityServiceImpl implements IdentityService {
     private final String identity;

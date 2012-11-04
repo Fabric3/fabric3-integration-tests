@@ -43,7 +43,7 @@ import junit.framework.TestCase;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class GenericInterfaceTest extends TestCase {
 

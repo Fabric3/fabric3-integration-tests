@@ -58,7 +58,7 @@ import org.fabric3.tests.binding.metro.helloworld.HelloFaultException;
 
 
 /**
- * @version $Rev: 7770 $ $Date: 2009-10-09 12:14:53 +0200 (Fri, 09 Oct 2009) $
+ *
  */
 public class HelloStub {
     private static String XML =

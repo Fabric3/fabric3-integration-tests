@@ -43,7 +43,7 @@ import junit.framework.TestCase;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev: 10829 $ $Date: 2011-10-18 22:59:13 +0200 (Tue, 18 Oct 2011) $
+ *
  */
 @SuppressWarnings({"ResultOfMethodCallIgnored"})
 public class TestReferenceAdapterClient extends TestCase {

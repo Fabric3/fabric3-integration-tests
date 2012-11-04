@@ -40,7 +40,7 @@ package org.fabric3.tests.implementation.wsdl.provision;
 import org.fabric3.spi.model.physical.PhysicalComponentDefinition;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class PhysicalWsdlComponentDefinition extends PhysicalComponentDefinition {
     private static final long serialVersionUID = 276755006650652589L;

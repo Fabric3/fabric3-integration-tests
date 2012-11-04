@@ -42,7 +42,7 @@ import org.oasisopen.sca.annotation.Scope;
 import org.fabric3.api.annotation.security.RolesAllowed;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 public class SecureRolesServiceImpl implements SecureService {

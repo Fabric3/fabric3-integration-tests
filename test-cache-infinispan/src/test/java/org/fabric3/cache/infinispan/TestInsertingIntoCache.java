@@ -13,7 +13,7 @@ import org.fabric3.api.annotation.Resource;
 import org.fabric3.api.annotation.monitor.Monitor;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TestInsertingIntoCache extends TestCase {
 

@@ -40,7 +40,7 @@ package org.fabric3.tests.function.callback.binding;
 import org.fabric3.tests.function.callback.common.CallbackData;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface CallbackService {
     void onCallback(CallbackData data);

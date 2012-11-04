@@ -57,8 +57,6 @@ import org.fabric3.management.contribution.ContributionInfo;
 
 /**
  * Integration tests for the domain scope.
- *
- * @version $Rev$ $Date$
  */
 public class DomainScope extends TestCase {
     private static final int WAIT = 20000;

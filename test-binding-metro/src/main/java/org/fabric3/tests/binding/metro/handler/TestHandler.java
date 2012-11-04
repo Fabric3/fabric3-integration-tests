@@ -9,7 +9,7 @@ import org.fabric3.spi.binding.handler.BindingHandler;
 import org.fabric3.spi.invocation.Message;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 public class TestHandler implements BindingHandler<SOAPMessage>{

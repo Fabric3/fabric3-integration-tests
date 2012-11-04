@@ -40,7 +40,7 @@ package org.fabric3.resource.itest;
 import org.fabric3.api.annotation.Resource;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class CtorResourceComponent implements TestService {
     private TestResource resource;

@@ -33,7 +33,7 @@ import org.oasisopen.sca.annotation.Callback;
 import org.oasisopen.sca.annotation.OneWay;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Callback(TestServiceCallback.class)
 public interface TestService {

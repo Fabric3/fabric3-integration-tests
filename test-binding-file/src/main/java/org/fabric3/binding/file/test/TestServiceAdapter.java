@@ -50,7 +50,7 @@ import org.fabric3.binding.file.api.InvalidDataException;
 import org.fabric3.binding.file.api.ServiceAdapter;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @SuppressWarnings({"ResultOfMethodCallIgnored"})
 public class TestServiceAdapter implements ServiceAdapter {

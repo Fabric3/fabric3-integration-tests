@@ -3,7 +3,7 @@ package org.fabric3.tests.messaging;
 import org.oasisopen.sca.annotation.Scope;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 public class TestOneWayServiceImpl implements TestOneWayService {

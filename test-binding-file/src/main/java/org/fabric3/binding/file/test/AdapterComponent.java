@@ -54,7 +54,7 @@ import org.fabric3.binding.file.api.ReferenceAdapter;
 import org.fabric3.binding.file.api.ServiceAdapter;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @SuppressWarnings({"ResultOfMethodCallIgnored"})
 @Scope("COMPOSITE")

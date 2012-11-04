@@ -39,7 +39,7 @@ import org.oasisopen.sca.annotation.Property;
 import org.fabric3.tests.rs.security.UsernamePasswordToken;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class SecureTestClient extends TestCase {
 

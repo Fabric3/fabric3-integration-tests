@@ -43,7 +43,7 @@ import org.fabric3.jpa.model.Employee;
 import org.fabric3.jpa.model.ExEmployee;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface EmployeeService {
 

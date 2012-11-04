@@ -54,7 +54,7 @@ import org.fabric3.tests.standalone.cluster.bindingsca.client.TestClientService;
 import org.fabric3.tests.standalone.cluster.bindingsca.client.TestClientServiceService;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class BindingSCA extends TestCase {
     private static final int WAIT = 20000;

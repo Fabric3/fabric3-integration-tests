@@ -36,7 +36,7 @@ import org.oasisopen.sca.annotation.Scope;
 
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Path("/")
 @Consumes({MediaType.APPLICATION_JSON})

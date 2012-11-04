@@ -44,7 +44,7 @@ import org.oasisopen.sca.annotation.Reference;
 import org.fabric3.api.Fabric3RequestContext;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class HeaderTest extends TestCase {
 

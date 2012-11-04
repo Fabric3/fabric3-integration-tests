@@ -39,7 +39,7 @@ package org.fabric3.tests.mock;
 
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface MockService1 {
 

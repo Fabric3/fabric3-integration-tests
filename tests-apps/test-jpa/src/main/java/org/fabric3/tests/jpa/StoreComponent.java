@@ -8,7 +8,7 @@ import org.oasisopen.sca.annotation.ManagedTransaction;
 import org.oasisopen.sca.annotation.Scope;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 @ManagedTransaction

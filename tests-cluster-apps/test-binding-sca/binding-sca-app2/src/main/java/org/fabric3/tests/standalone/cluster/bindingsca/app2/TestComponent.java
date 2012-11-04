@@ -44,7 +44,7 @@ import org.fabric3.tests.standalone.cluster.bindingsca.api.TestService;
 import org.fabric3.tests.standalone.cluster.bindingsca.api.TestServiceCallback;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TestComponent implements TestService {
     private TestMonitor monitor;

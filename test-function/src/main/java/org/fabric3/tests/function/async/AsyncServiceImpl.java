@@ -40,7 +40,7 @@ package org.fabric3.tests.function.async;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class AsyncServiceImpl implements AsyncService {
 

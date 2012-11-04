@@ -42,7 +42,7 @@ import java.util.concurrent.CountDownLatch;
 import org.oasisopen.sca.annotation.Scope;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 public class ExecutionServiceImpl implements ExecutionService {

@@ -4,7 +4,7 @@ import junit.framework.TestCase;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @SuppressWarnings({"JavaDoc"})
 public class TestClient extends TestCase {

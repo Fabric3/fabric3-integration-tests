@@ -40,7 +40,7 @@ package org.fabric3.tests.mock;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class UserComponentImpl implements UserComponent {
 

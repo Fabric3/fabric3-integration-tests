@@ -21,9 +21,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-/** 
- * @version $Rev$ $Date$
- */
+/** */
 public interface AdvancedService {
     //XMLStreamReader xmlStream(XMLStreamReader reader);
     Document xmlDoc(Document doc );

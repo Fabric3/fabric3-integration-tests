@@ -48,7 +48,7 @@ import org.fabric3.api.annotation.transaction.PropagatesTransaction;
 import org.fabric3.api.annotation.transaction.SuspendsTransaction;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @ManagedTransaction
 public class AnnotatedManagedTransactionService implements TransactionalService {

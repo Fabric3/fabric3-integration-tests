@@ -38,7 +38,7 @@
 package org.fabric3.tests.binding.harness.callback;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface SyncClientService {
 

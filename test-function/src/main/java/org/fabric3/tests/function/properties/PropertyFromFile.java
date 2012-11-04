@@ -38,7 +38,7 @@
 package org.fabric3.tests.function.properties;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface PropertyFromFile {
     String getString();

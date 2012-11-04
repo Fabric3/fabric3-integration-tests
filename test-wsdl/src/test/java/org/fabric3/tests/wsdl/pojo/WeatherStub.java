@@ -49,7 +49,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 /**
- * @version $Rev: 7754 $ $Date: 2009-10-03 02:14:36 +0200 (Sat, 03 Oct 2009) $
+ *
  */
 public class WeatherStub {
 

@@ -40,7 +40,7 @@ package org.fabric3.tests.function.headers;
 import org.oasisopen.sca.annotation.OneWay;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface AsyncHeaderService {
 

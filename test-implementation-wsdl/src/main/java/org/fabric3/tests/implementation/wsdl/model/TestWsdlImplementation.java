@@ -43,7 +43,7 @@ import org.fabric3.host.Namespaces;
 import org.fabric3.model.type.component.Implementation;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TestWsdlImplementation extends Implementation<TestWsdlComponentType> {
     private static final long serialVersionUID = -4675722283728361261L;

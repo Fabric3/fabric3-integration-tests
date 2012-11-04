@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class MixedTypeServiceImpl implements MixedTypeService {
 

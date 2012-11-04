@@ -33,7 +33,7 @@ import org.oasisopen.sca.annotation.Property;
 import org.fabric3.tests.rs.Message;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TestClient extends TestCase {
 

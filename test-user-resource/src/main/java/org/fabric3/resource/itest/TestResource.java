@@ -38,7 +38,7 @@
 package org.fabric3.resource.itest;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface TestResource {
     String echo(String message);

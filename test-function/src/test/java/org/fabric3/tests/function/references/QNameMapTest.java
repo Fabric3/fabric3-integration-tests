@@ -46,7 +46,7 @@ import org.oasisopen.sca.annotation.Reference;
 import org.fabric3.tests.function.common.IdentityService;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class QNameMapTest extends TestCase {
 

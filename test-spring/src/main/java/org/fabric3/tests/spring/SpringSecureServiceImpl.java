@@ -3,7 +3,7 @@ package org.fabric3.tests.spring;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class SpringSecureServiceImpl implements SecureTestService {
 

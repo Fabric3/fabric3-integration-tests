@@ -38,7 +38,7 @@
 package org.fabric3.tests.function.generic;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface GenericInterface<T> {
 

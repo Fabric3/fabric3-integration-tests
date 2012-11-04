@@ -47,7 +47,7 @@ import org.fabric3.spi.classloader.ClassLoaderRegistry;
 import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlComponentDefinition;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TestWsdlComponentBuilder implements ComponentBuilder<PhysicalWsdlComponentDefinition, TestWsdlComponent> {
     private ClassLoaderRegistry registry;

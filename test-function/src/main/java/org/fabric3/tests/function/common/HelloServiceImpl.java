@@ -38,7 +38,7 @@
 package org.fabric3.tests.function.common;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class HelloServiceImpl implements HelloService {
     public String send(String msg) {

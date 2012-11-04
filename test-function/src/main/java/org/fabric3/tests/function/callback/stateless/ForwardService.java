@@ -44,8 +44,6 @@ import org.fabric3.tests.function.callback.common.CallbackData;
 
 /**
  * Target service of a forward invocation.
- *
- * @version $Rev$ $Date$
  */
 @Callback(CallbackService.class)
 public interface ForwardService {

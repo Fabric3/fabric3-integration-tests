@@ -39,7 +39,7 @@ package org.fabric3.policy.security;
 
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface SecureService {
 

@@ -38,7 +38,7 @@
 package org.fabric3.policy.attachment;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TestInvocationContext {
     public static final ThreadLocal<String> CONTEXT = new ThreadLocal<String>();

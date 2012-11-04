@@ -49,7 +49,7 @@ import javax.xml.namespace.QName;
 import org.oasisopen.sca.annotation.Property;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class PublicSetterPropertyTypesImpl implements PropertyTypes {
 

@@ -44,7 +44,7 @@ import org.oasisopen.sca.annotation.Scope;
 import org.fabric3.tests.function.callback.common.CallbackData;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 public class ForwardServiceImpl implements ForwardService {

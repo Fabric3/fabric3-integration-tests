@@ -10,7 +10,7 @@ import org.fabric3.api.annotation.Resource;
 import org.fabric3.api.annotation.scope.Scopes;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope(Scopes.COMPOSITE)
 @Service(PublisherService.class)

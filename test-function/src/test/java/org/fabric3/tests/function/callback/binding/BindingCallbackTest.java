@@ -46,8 +46,6 @@ import org.fabric3.tests.function.callback.common.CallbackData;
 
 /**
  * Tests for stateless calbacks.
- *
- * @version $Rev$ $Date$
  */
 public class BindingCallbackTest extends TestCase {
     @Reference

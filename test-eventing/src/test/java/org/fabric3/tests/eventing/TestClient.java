@@ -9,7 +9,7 @@ import org.fabric3.tests.binding.harness.eventing.TestProducer;
 import org.fabric3.tests.binding.harness.eventing.TestUnTypedProducer;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TestClient extends TestCase {
 

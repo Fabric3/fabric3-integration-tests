@@ -30,7 +30,7 @@ import org.fabric3.api.annotation.security.RolesAllowed;
 
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Path("/")
 @Consumes({MediaType.APPLICATION_JSON})

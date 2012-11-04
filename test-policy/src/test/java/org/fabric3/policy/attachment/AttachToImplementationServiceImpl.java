@@ -40,7 +40,7 @@ package org.fabric3.policy.attachment;
 import junit.framework.Assert;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class AttachToImplementationServiceImpl implements AttachService {
     public void invoke() {

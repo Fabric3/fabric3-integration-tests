@@ -5,7 +5,7 @@ import org.oasisopen.sca.annotation.Scope;
 import org.fabric3.api.annotation.Consumer;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 public class TestConsumer {

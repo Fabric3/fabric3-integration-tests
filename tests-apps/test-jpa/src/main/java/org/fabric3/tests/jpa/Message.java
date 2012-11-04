@@ -10,7 +10,7 @@ import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlElement;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "CREATOR"))

@@ -47,7 +47,7 @@ import org.oasisopen.sca.annotation.Reference;
 import org.fabric3.api.annotation.Resource;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TransactionalTimedComponent implements Runnable {
     @Reference

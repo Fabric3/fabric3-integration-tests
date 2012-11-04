@@ -14,7 +14,7 @@ import org.fabric3.spi.binding.handler.BindingHandlerRegistry;
 import org.fabric3.spi.invocation.Message;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @EagerInit
 public class SOAPHandler implements BindingHandler<SOAPMessage> {

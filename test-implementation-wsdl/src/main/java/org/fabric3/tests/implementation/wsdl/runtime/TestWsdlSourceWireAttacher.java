@@ -52,7 +52,7 @@ import org.fabric3.spi.wire.Wire;
 import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlSourceDefinition;
 
 /**
- * @version $Rev: 7750 $ $Date: 2009-10-03 01:44:34 +0200 (Sat, 03 Oct 2009) $
+ *
  */
 @EagerInit
 public class TestWsdlSourceWireAttacher implements SourceWireAttacher<PhysicalWsdlSourceDefinition> {

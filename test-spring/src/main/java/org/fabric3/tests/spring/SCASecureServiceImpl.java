@@ -3,7 +3,7 @@ package org.fabric3.tests.spring;
 import org.fabric3.api.annotation.security.RolesAllowed;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class SCASecureServiceImpl implements SecureTestService {
 

@@ -38,7 +38,7 @@
 package org.fabric3.tests.function.generic;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class GenericImpl<T> implements GenericInterface<T> {
     public T echo(T t) {

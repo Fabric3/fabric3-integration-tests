@@ -48,7 +48,7 @@ import org.fabric3.spi.component.Component;
 import org.fabric3.spi.wire.Wire;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TestWsdlComponent implements Component {
     private URI classLoaderId;

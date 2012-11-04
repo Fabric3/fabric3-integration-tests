@@ -44,8 +44,6 @@ import org.fabric3.tests.function.common.HelloService;
 
 /**
  * Verifies service and reference promotion.
- *
- * @version $Rev$ $Date$
  */
 public class PromotionTest extends TestCase {
     private HelloService helloService;

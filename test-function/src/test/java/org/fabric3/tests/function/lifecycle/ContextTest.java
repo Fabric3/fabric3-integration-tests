@@ -44,7 +44,7 @@ import org.oasisopen.sca.annotation.Context;
 import org.oasisopen.sca.annotation.Property;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class ContextTest extends TestCase {
 

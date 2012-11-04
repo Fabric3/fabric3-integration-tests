@@ -3,7 +3,7 @@ package org.fabric3.tests.function.byvalue;
 import java.util.List;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class RemoteByValueServiceImpl implements RemoteService {
 

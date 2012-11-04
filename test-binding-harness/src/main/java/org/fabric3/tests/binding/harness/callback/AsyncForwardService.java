@@ -41,7 +41,7 @@ import org.oasisopen.sca.annotation.OneWay;
 import org.oasisopen.sca.annotation.Callback;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Callback(AsyncCallback.class)
 public interface AsyncForwardService {

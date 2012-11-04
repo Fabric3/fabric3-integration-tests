@@ -53,7 +53,7 @@ import org.fabric3.spi.wire.Wire;
 import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlTargetDefinition;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @EagerInit
 public class TestWsdlTargetWireAttacher implements TargetWireAttacher<PhysicalWsdlTargetDefinition> {

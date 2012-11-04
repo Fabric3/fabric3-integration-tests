@@ -38,7 +38,7 @@
 package org.fabric3.tests.function.headers;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface HeaderService {
 

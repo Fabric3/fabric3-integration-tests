@@ -42,7 +42,7 @@ import org.oasisopen.sca.ServiceRuntimeException;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class NotAuthorizedSecureServiceTest extends TestCase {
 

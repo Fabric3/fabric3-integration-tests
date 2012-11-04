@@ -59,7 +59,7 @@ import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlSourceDefinit
 import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlTargetDefinition;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TestWsdlImplementationGenerator implements ComponentGenerator<LogicalComponent<TestWsdlImplementation>> {
 

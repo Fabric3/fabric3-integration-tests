@@ -38,7 +38,7 @@
 package org.fabric3.tests.binding.harness;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class EchoFault extends Exception {
     public EchoFault() {

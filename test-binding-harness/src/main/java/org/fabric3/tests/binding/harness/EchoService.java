@@ -39,8 +39,6 @@ package org.fabric3.tests.binding.harness;
 
 /**
  * Simple interface that echos a basic type.
- *
- * @version $Rev$ $Date$
  */
 public interface EchoService {
 

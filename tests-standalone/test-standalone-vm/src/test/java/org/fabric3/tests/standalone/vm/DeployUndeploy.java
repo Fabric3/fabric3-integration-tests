@@ -58,8 +58,6 @@ import org.fabric3.management.contribution.ContributionInfo;
 
 /**
  * Runs basic smoke tests for the standalone runtime booted in single-VM mode.
- *
- * @version $Rev$ $Date$
  */
 public class DeployUndeploy extends TestCase {
 

@@ -6,9 +6,7 @@ import org.oasisopen.sca.annotation.AllowsPassByReference;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * Tests the use of  @AllowsPassByReference on an implementation class
- * @version $Rev$ $Date$
- */
+ * Tests the use of  @AllowsPassByReference on an implementation class*/
 @AllowsPassByReference
 public class ByValueClientImpl2 implements ByValueClient {
 

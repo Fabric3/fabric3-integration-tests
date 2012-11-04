@@ -40,7 +40,7 @@ package org.fabric3.tests.binding.harness.callback;
 import org.oasisopen.sca.annotation.Callback;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class AsyncForwardServiceImpl implements AsyncForwardService {
     @Callback

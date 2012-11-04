@@ -38,7 +38,7 @@
 package org.fabric3.binding.jms.test.jaxb;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public enum WeatherCondition {
 

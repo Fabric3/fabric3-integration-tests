@@ -41,7 +41,7 @@ import org.oasisopen.sca.annotation.Callback;
 
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class SyncForwardServiceImpl implements SyncForwardService {
     @Callback

@@ -19,7 +19,7 @@ package tests.xquery;
 import org.oasisopen.sca.annotation.Callback;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Callback(EchoServiceCallback.class)
 public interface EchoService {

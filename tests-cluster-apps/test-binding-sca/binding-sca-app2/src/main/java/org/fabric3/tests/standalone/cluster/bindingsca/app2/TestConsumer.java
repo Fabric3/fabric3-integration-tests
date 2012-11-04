@@ -47,7 +47,7 @@ import org.fabric3.api.annotation.monitor.Monitor;
 import org.fabric3.tests.standalone.cluster.bindingsca.api.TestEvent;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 public class TestConsumer {

@@ -40,7 +40,7 @@ package org.fabric3.tests.function.generic;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class GenericDelegate implements GenericInterface<String> {
     @Reference

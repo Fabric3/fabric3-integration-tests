@@ -40,7 +40,7 @@ package org.fabric3.tests.binding.harness.callback;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface AsyncClientService {
 

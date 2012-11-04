@@ -45,8 +45,6 @@ import org.fabric3.tests.function.common.HelloService;
 /**
  * Verifies a local wire to a service on a component will use the binding as configured on the component and not the binding specified when the
  * service is promoted at the composite level.
- *
- * @version $Rev$ $Date$
  */
 public class PromotionDirectorWireTest extends TestCase {
     private HelloService helloService;

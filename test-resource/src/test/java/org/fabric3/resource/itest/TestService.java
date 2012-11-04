@@ -38,7 +38,7 @@
 package org.fabric3.resource.itest;
 
 /**
- * @version $Rev: 7870 $ $Date: 2009-11-21 00:11:04 +0100 (Sat, 21 Nov 2009) $
+ *
  */
 public interface TestService {
 

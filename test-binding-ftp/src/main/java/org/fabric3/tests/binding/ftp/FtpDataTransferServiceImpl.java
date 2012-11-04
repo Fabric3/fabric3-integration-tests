@@ -47,7 +47,7 @@ import org.oasisopen.sca.annotation.Context;
 import org.fabric3.api.Fabric3RequestContext;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class FtpDataTransferServiceImpl implements FtpDataTransferService {
 

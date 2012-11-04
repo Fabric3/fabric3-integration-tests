@@ -42,7 +42,7 @@ import org.oasisopen.sca.annotation.OneWay;
 import org.fabric3.tests.function.callback.common.CallbackData;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface ClientService {
     @OneWay

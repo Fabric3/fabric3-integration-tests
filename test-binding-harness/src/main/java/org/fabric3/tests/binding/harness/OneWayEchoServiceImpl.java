@@ -43,7 +43,7 @@ import java.util.concurrent.TimeUnit;
 import org.oasisopen.sca.annotation.Scope;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @Scope("COMPOSITE")
 public class OneWayEchoServiceImpl implements OneWayEchoService {

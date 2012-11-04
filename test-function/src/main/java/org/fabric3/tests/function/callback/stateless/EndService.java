@@ -44,8 +44,6 @@ import org.fabric3.tests.function.callback.common.CallbackData;
 
 /**
  * Terminating service in a callback sequence.
- *
- * @version $Rev$ $Date$
  */
 @Callback(CallbackService.class)
 public interface EndService {

@@ -40,7 +40,7 @@ package org.fabric3.tests.implementation.wsdl.runtime;
 import org.fabric3.spi.builder.BuilderException;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class InvalidStubException extends BuilderException{
     private static final long serialVersionUID = 7547488117073531218L;

@@ -54,8 +54,6 @@ import junit.framework.Test;
  * </pre>
  * <p/>
  * This topology allows for a battery of integration tests to be run via multiple contribution deployments.
- *
- * @version $Rev$ $Date$
  */
 public class ClusterBootFixture extends TestSetup {
     private static final String DEBUG = "-Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y -Xmx512M -XX:MaxPermSize=512M";

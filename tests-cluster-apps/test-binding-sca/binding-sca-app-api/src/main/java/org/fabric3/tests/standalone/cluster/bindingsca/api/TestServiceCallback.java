@@ -32,7 +32,7 @@ package org.fabric3.tests.standalone.cluster.bindingsca.api;
 import org.oasisopen.sca.annotation.OneWay;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public interface TestServiceCallback {
 

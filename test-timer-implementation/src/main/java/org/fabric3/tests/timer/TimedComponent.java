@@ -44,7 +44,7 @@ import org.fabric3.api.annotation.Producer;
 import org.fabric3.tests.binding.harness.eventing.ProducerChannel;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class TimedComponent implements Runnable {
     @Reference

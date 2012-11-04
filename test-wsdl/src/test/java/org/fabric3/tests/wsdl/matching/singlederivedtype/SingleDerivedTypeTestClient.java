@@ -43,7 +43,7 @@ import org.oasisopen.sca.annotation.Reference;
 
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class SingleDerivedTypeTestClient extends TestCase {
 

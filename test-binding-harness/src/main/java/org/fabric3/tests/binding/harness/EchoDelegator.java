@@ -40,7 +40,7 @@ package org.fabric3.tests.binding.harness;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class EchoDelegator implements EchoService {
     private final EchoService delegate;

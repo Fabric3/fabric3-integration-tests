@@ -9,7 +9,7 @@ import org.fabric3.api.annotation.Resource;
 import org.fabric3.spi.classloader.ClassLoaderRegistry;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class ResolutionTest extends TestCase {
 

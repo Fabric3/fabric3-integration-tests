@@ -44,7 +44,7 @@ import org.fabric3.api.annotation.monitor.Info;
 import org.fabric3.api.annotation.monitor.Monitor;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 public class MonitorTest extends TestCase {
 

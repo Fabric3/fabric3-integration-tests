@@ -19,7 +19,7 @@
 package org.fabric3.tests.rs;
 
 /**
- * @version $Rev: 8746 $ $Date: 2010-03-27 22:35:03 +0100 (Sat, 27 Mar 2010) $
+ *
  */
 public class InterfaceServiceImpl implements InterfaceService {
 

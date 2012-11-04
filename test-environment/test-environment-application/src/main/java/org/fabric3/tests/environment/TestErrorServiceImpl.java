@@ -5,7 +5,7 @@ import org.oasisopen.sca.annotation.Init;
 import org.oasisopen.sca.annotation.Scope;
 
 /**
- * @version $Rev$ $Date$
+ *
  */
 @EagerInit
 @Scope("COMPOSITE")
