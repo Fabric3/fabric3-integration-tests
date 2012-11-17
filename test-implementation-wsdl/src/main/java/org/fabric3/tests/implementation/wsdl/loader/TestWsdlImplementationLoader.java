@@ -104,7 +104,7 @@ public class TestWsdlImplementationLoader implements TypeLoader<TestWsdlImplemen
     private void parseService(TestWsdlComponentType type, XMLStreamReader reader, IntrospectionContext context) {
         String name = reader.getAttributeValue(null, "contract");
         if (name == null) {
-            MissingAttribute error = new MissingAttribute("Missing service name attribute", reader);
+            MissingAttribute error = new MissingAttribute("Missing service name attribute", null);
             context.addError(error);
             return;
         }
@@ -116,23 +116,23 @@ public class TestWsdlImplementationLoader implements TypeLoader<TestWsdlImplemen
             String prefix = e.getPrefix();
             URI uri = context.getContributionUri();
             context.addError(new InvalidQNamePrefix("The prefix " + prefix + " specified in contribution " + uri
-                    + " is invalid", reader));
+                    + " is invalid", null));
             return;
         }
 
-        WsdlServiceContract contract = resolveContract(qName, reader, context);
+        WsdlServiceContract contract = resolveContract(qName, context);
         ServiceDefinition service = new ServiceDefinition(qName.getLocalPart(), contract);
         type.add(service);
     }
 
-    private WsdlServiceContract resolveContract(QName portTypeName, XMLStreamReader reader, IntrospectionContext context) {
+    private WsdlServiceContract resolveContract(QName portTypeName, IntrospectionContext context) {
         WsdlServiceContractSymbol symbol = new WsdlServiceContractSymbol(portTypeName);
         URI contributionUri = context.getContributionUri();
         ResourceElement<WsdlServiceContractSymbol, WsdlServiceContract> element;
         try {
             element = store.resolve(contributionUri, WsdlServiceContract.class, symbol, context);
         } catch (StoreException e) {
-            ElementLoadFailure failure = new ElementLoadFailure("Error loading element", e, reader);
+            ElementLoadFailure failure = new ElementLoadFailure("Error loading element", e, null);
             context.addError(failure);
             return null;
         }
@@ -147,7 +147,7 @@ public class TestWsdlImplementationLoader implements TypeLoader<TestWsdlImplemen
     private void parseReference(TestWsdlComponentType type, XMLStreamReader reader, IntrospectionContext context) {
         String name = reader.getAttributeValue(null, "name");
         if (name == null) {
-            MissingAttribute error = new MissingAttribute("Missing reference name attribute", reader);
+            MissingAttribute error = new MissingAttribute("Missing reference name attribute", null);
             context.addError(error);
             return;
         }
@@ -155,7 +155,7 @@ public class TestWsdlImplementationLoader implements TypeLoader<TestWsdlImplemen
 
         String contractName = reader.getAttributeValue(null, "contract");
         if (contractName == null) {
-            MissingAttribute error = new MissingAttribute("Missing reference contract attribute", reader);
+            MissingAttribute error = new MissingAttribute("Missing reference contract attribute", null);
             context.addError(error);
             return;
         }
@@ -167,12 +167,12 @@ public class TestWsdlImplementationLoader implements TypeLoader<TestWsdlImplemen
             String prefix = e.getPrefix();
             URI uri = context.getContributionUri();
             context.addError(new InvalidQNamePrefix("The prefix " + prefix + " specified in contribution " + uri
-                    + " is invalid", reader));
+                    + " is invalid", null));
             return;
         }
         boolean required = Boolean.valueOf(reader.getAttributeValue(null, "required"));
         Multiplicity multiplicity = (required) ? Multiplicity.ONE_ONE : Multiplicity.ZERO_ONE;
-        WsdlServiceContract contract = resolveContract(qName, reader, context);
+        WsdlServiceContract contract = resolveContract(qName, context);
         ReferenceDefinition reference = new ReferenceDefinition(name, contract, multiplicity);
         type.add(reference);
     }
