@@ -7,9 +7,7 @@
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>fabric3-integration-tests</artifactId>
@@ -24,7 +22,6 @@
     <description>Fabric3 Spring Tests.</description>
 
     <dependencies>
-
         <dependency>
             <groupId>org.codehaus.fabric3</groupId>
             <artifactId>fabric3-api</artifactId>
@@ -41,8 +38,8 @@
         <dependency>
             <groupId>org.codehaus.fabric3</groupId>
             <artifactId>fabric3-spring-library</artifactId>
-            <version>${fabric3.version}</version>
             <scope>compile</scope>
+            <version>${fabric3.version}</version>
         </dependency>
 
         <dependency>
@@ -52,9 +49,7 @@
     </dependencies>
 
     <build>
-
         <defaultGoal>verify</defaultGoal>
-
         <plugins>
             <plugin>
                 <groupId>org.codehaus.fabric3</groupId>
@@ -99,7 +94,7 @@
                         <dependency>
                             <groupId>com.h2database</groupId>
                             <artifactId>h2</artifactId>
-                            <version>1.2.140</version>
+                            <version>${h2.version}</version>
                         </dependency>
                     </shared>
                     <extensions>

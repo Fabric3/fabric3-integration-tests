@@ -13,13 +13,13 @@
            name="TestComposite"
            autowire="true">
 
-    <component name="TestAdaptorClient">
-        <f3:junit class="org.fabric3.binding.file.test.TestClient"/>
-        <reference name="latchService" target="FileService/LatchService"/>
-        <property name="dropDir">drop</property>
-        <property name="outputDir">dropoutput</property>
-        <property name="errorDir">droperror</property>
-    </component>
+    <!--<component name="TestAdaptorClient">-->
+        <!--<f3:junit class="org.fabric3.binding.file.test.TestClient"/>-->
+        <!--<reference name="latchService" target="FileService/LatchService"/>-->
+        <!--<property name="dropDir">drop</property>-->
+        <!--<property name="outputDir">dropoutput</property>-->
+        <!--<property name="errorDir">droperror</property>-->
+    <!--</component>-->
 
     <component name="TestComponentAdaptorClient">
         <f3:junit class="org.fabric3.binding.file.test.TestClient"/>
@@ -29,47 +29,47 @@
         <property name="errorDir">adaptercomponentdropdroperror</property>
     </component>
 
-    <component name="TestServiceAdapterClient">
-        <f3:junit class="org.fabric3.binding.file.test.TestServiceAdapterClient"/>
-        <reference name="latchService" target="AdaptedFileService/LatchService"/>
-    </component>
+    <!--<component name="TestServiceAdapterClient">-->
+        <!--<f3:junit class="org.fabric3.binding.file.test.TestServiceAdapterClient"/>-->
+        <!--<reference name="latchService" target="AdaptedFileService/LatchService"/>-->
+    <!--</component>-->
 
-    <component name="TestReferenceAdapterClient">
-        <f3:junit class="org.fabric3.binding.file.test.TestReferenceAdapterClient"/>
-    </component>
+    <!--<component name="TestReferenceAdapterClient">-->
+        <!--<f3:junit class="org.fabric3.binding.file.test.TestReferenceAdapterClient"/>-->
+    <!--</component>-->
 
-    <component name="FileService">
-        <implementation.java class="org.fabric3.binding.file.test.FileServiceImpl"/>
-        <service name="FileService">
-            <f3:binding.file location="drop" error.location="droperror" delay="200"/>
-        </service>
-        <reference name="output">
-            <f3:binding.file location="dropoutput"/>
-        </reference>
-    </component>
+    <!--<component name="FileService">-->
+        <!--<implementation.java class="org.fabric3.binding.file.test.FileServiceImpl"/>-->
+        <!--<service name="FileService">-->
+            <!--<f3:binding.file location="drop" error.location="droperror" delay="200"/>-->
+        <!--</service>-->
+        <!--<reference name="output">-->
+            <!--<f3:binding.file location="dropoutput"/>-->
+        <!--</reference>-->
+    <!--</component>-->
 
-    <component name="AdaptedFileService">
-        <implementation.java class="org.fabric3.binding.file.test.AdaptedFileServiceImpl"/>
-        <service name="AdaptedFileService">
-            <f3:binding.file location="adapterdrop"
-                             pattern="header.*\.xml"
-                             error.location="adapterdroperror"
-                             archive.location="adapterarchive"
-                             strategy="archive"
-                             delay="200"
-                             adapter="org.fabric3.binding.file.test.TestServiceAdapter"/>
-        </service>
-        <reference name="output">
-            <f3:binding.file location="dropoutput"/>
-        </reference>
-    </component>
+    <!--<component name="AdaptedFileService">-->
+        <!--<implementation.java class="org.fabric3.binding.file.test.AdaptedFileServiceImpl"/>-->
+        <!--<service name="AdaptedFileService">-->
+            <!--<f3:binding.file location="adapterdrop"-->
+                             <!--pattern="header.*\.xml"-->
+                             <!--error.location="adapterdroperror"-->
+                             <!--archive.location="adapterarchive"-->
+                             <!--strategy="archive"-->
+                             <!--delay="200"-->
+                             <!--adapter="org.fabric3.binding.file.test.TestServiceAdapter"/>-->
+        <!--</service>-->
+        <!--<reference name="output">-->
+            <!--<f3:binding.file location="dropoutput"/>-->
+        <!--</reference>-->
+    <!--</component>-->
 
-    <component name="OutputService">
-        <implementation.java class="org.fabric3.binding.file.test.OutputServiceImpl"/>
-        <reference name="output">
-            <f3:binding.file location="customoutput"/>
-        </reference>
-    </component>
+    <!--<component name="OutputService">-->
+        <!--<implementation.java class="org.fabric3.binding.file.test.OutputServiceImpl"/>-->
+        <!--<reference name="output">-->
+            <!--<f3:binding.file location="customoutput"/>-->
+        <!--</reference>-->
+    <!--</component>-->
 
     <component name="AdaptedComponentFileService">
         <implementation.java class="org.fabric3.binding.file.test.AdaptedFileServiceImpl"/>

@@ -46,6 +46,7 @@
                         </goals>
                         <configuration>
                             <tasks>
+                                <property name="build.compiler" value="extJavac"/>
                                 <ant target="main">
                                      <property name="test-classpath" refid="maven.test.classpath"/>
                                 </ant>

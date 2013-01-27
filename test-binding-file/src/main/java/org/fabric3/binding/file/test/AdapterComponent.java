@@ -37,21 +37,12 @@
 */
 package org.fabric3.binding.file.test;
 
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayInputStream;
-import java.io.Closeable;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-
-import org.oasisopen.sca.annotation.Scope;
-
 import org.fabric3.binding.file.api.InvalidDataException;
 import org.fabric3.binding.file.api.ReferenceAdapter;
 import org.fabric3.binding.file.api.ServiceAdapter;
+import org.oasisopen.sca.annotation.Scope;
+
+import java.io.*;
 
 /**
  *
@@ -96,6 +87,8 @@ public class AdapterComponent implements ServiceAdapter, ReferenceAdapter {
             output = new FileOutputStream(destFile);
             copy(input, output);
         } catch (IOException e) {
+            e.printStackTrace();
+        }  finally {
             close(input);
             close(output);
         }

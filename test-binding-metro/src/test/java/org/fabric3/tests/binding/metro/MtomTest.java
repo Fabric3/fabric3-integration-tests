@@ -37,12 +37,12 @@
  */
 package org.fabric3.tests.binding.metro;
 
-import javax.activation.DataHandler;
-
 import junit.framework.TestCase;
+import org.fabric3.tests.binding.metro.upload.UploadPortType;
 import org.oasisopen.sca.annotation.Reference;
 
-import org.fabric3.tests.binding.metro.upload.UploadPortType;
+import javax.activation.DataHandler;
+import java.io.File;
 
 public class MtomTest extends TestCase {
 
@@ -52,7 +52,8 @@ public class MtomTest extends TestCase {
     public void testUpload() throws Exception {
         DataHandler dataHandler = new DataHandler(getClass().getClassLoader().getResource("data/test.dat"));
         int total = uploadPortType.upload("data/test.dat", dataHandler);
-        assertEquals(21732480, total);
+        long expected = new File(getClass().getClassLoader().getResource("data/test.dat").toURI()).length();
+        assertEquals(expected, total);
     }
 
 }
