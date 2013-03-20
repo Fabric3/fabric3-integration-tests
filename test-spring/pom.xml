@@ -70,23 +70,23 @@
                                   <connection.factory name="default" broker.url="vm://broker" type="local"/>
                                </connection.factories>
                             </jms>
-                            <datasources>
-                                <datasource name="SecurityDS" driver="org.h2.Driver" url="jdbc:h2:mem:SECURITY;INIT=RUNSCRIPT FROM '${project.build.directory}/classes/create.sql';DB_CLOSE_DELAY=-1" type="non_xa"/>
-                            </datasources>
+                            <!--<datasources>-->
+                                <!--<datasource name="SecurityDS" driver="org.h2.Driver" url="jdbc:h2:mem:SECURITY;INIT=RUNSCRIPT FROM '${project.build.directory}/classes/create.sql';DB_CLOSE_DELAY=-1" type="non_xa"/>-->
+                            <!--</datasources>-->
                             <spring validating="false"/>
-                            <security>
-                                <spring.security>
-                                    <authentication-manager>
-                                       <authentication-provider>
-                                            <jdbc-user-service data-source-ref="SecurityDS"/>
-                                       </authentication-provider>
-                                    <!--
-                                       <ldap-server url="ldap://localhost:1389/dc=example,dc=com" manager-dn="cn=Directory Manager" manager-password="password"/>
-                                       <ldap-authentication-provider user-search-base="ou=people" user-search-filter="uid={0}" group-search-filter="member={0}" group-search-base="ou=groups"/>
-                                    -->
-                                    </authentication-manager>
-                                </spring.security>
-                            </security>
+                            <!--<security>-->
+                                <!--<spring.security>-->
+                                    <!--<authentication-manager>-->
+                                       <!--<authentication-provider>-->
+                                            <!--<jdbc-user-service data-source-ref="SecurityDS"/>-->
+                                       <!--</authentication-provider>-->
+                                    <!--&lt;!&ndash;-->
+                                       <!--<ldap-server url="ldap://localhost:1389/dc=example,dc=com" manager-dn="cn=Directory Manager" manager-password="password"/>-->
+                                       <!--<ldap-authentication-provider user-search-base="ou=people" user-search-filter="uid={0}" group-search-filter="member={0}" group-search-base="ou=groups"/>-->
+                                    <!--&ndash;&gt;-->
+                                    <!--</authentication-manager>-->
+                                <!--</spring.security>-->
+                            <!--</security>-->
                         </config>
                         ]]>
                     </systemConfig>

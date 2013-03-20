@@ -12,16 +12,16 @@
            targetNamespace="urn:fabric3.org"
            name="TestComposite">
 
-    <!--<component name="TestEventClient">-->
-        <!--<f3:junit class="org.fabric3.binding.zeromq.test.eventing.TestClient"/>-->
-        <!--<reference name="producer" target="TestProducerConsumer/TestProducer"/>-->
-        <!--<reference name="consumer" target="TestProducerConsumer/TestConsumer"/>-->
-    <!--</component>-->
+    <component name="TestEventClient">
+        <f3:junit class="org.fabric3.binding.zeromq.test.eventing.TestClient"/>
+        <reference name="producer" target="TestProducerConsumer/TestProducer"/>
+        <reference name="consumer" target="TestProducerConsumer/TestConsumer"/>
+    </component>
 
-    <component name="EchoTest">
-        <f3:junit class="org.fabric3.tests.binding.harness.EchoTest"/>
-        <reference name="service">
-            <f3:binding.zeromq target="EchoService"/>
+    <component name="TestServiceClient">
+        <f3:junit class="org.fabric3.binding.zeromq.test.service.TestServiceClient"/>
+        <reference name="testService">
+            <f3:binding.zeromq target="TestService"/>
         </reference>
     </component>
 
@@ -37,9 +37,9 @@
     </channel>
 
 
-    <component name="EchoService">
-        <implementation.java class="org.fabric3.tests.binding.harness.EchoServiceImpl"/>
-        <service name="EchoService">
+    <component name="TestService">
+        <implementation.java class="org.fabric3.binding.zeromq.test.service.TestServiceImpl"/>
+        <service name="TestService">
             <f3:binding.zeromq/>
         </service>
     </component>
