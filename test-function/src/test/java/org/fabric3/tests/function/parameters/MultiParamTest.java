@@ -38,26 +38,16 @@
 package org.fabric3.tests.function.parameters;
 
 import junit.framework.TestCase;
-import org.fabric3.tests.function.ordering.Item;
-import org.fabric3.tests.function.ordering.ItemDisplayService;
 import org.oasisopen.sca.annotation.Reference;
 
 /**
- * Tests the retention of composite file order for injected components
+ * T
  */
 public class MultiParamTest extends TestCase {
-    @Reference(name = "displayService")
-    protected ItemDisplayService displayService;
+    @Reference
+    protected MultiParamService service;
 
-    public void testOrderedInjection() {
-        String[] expectedItemNames = {"ONE", "TWO", "THREE", "FOUR",
-                "FIVE", "SIX", "SEVEN", "EIGHT"};
-
-        Item[] actualItems = displayService.getItems();
-
-        assertEquals(expectedItemNames.length, actualItems.length);
-        for (int idx = 0; idx < expectedItemNames.length; idx++) {
-            assertEquals(expectedItemNames[idx], actualItems[idx].getName());
-        }
+    public void testInvoke() {
+        assertEquals("test", service.invoke("test", "test"));
     }
 }

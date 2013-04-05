@@ -12,27 +12,15 @@ Public License. See the accompanying license file for details.
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:f3="urn:fabric3.org"
            targetNamespace="urn:fabric3.org"
-           name="ReferencesComposite">
+           name="ParametersComposite">
 
-    <component name="MultiplicityTest">
-        <f3:junit class="org.fabric3.tests.function.references.MultiplicityTest"/>
-        <reference name="listCdi1" target="map.one map.two map.three"/>
-        <reference name="listCdi2" target="map.one map.two map.three"/>
-        <reference name="listSetter" target="map.one map.two map.three"/>
-        <reference name="listField" target="map.one map.two map.three"/>
+    <component name="MultiParamTest">
+        <f3:junit class="org.fabric3.tests.function.parameters.MultiParamTest"/>
+        <reference name="service" target="MultiParamService"/>
     </component>
 
-    <component name="MapTest">
-        <f3:junit class="org.fabric3.tests.function.references.MapTest"/>
-        <reference name="constructor" target="map.one map.two map.three"/>
-        <reference name="setter" target="map.one map.two map.three"/>
-        <reference name="field" target="map.one map.two map.three"/>
+    <component name="MultiParamService">
+        <implementation.java class="org.fabric3.tests.function.parameters.MultiParamServiceImpl"/>
     </component>
 
-    <component name="QNameMapTest">
-        <f3:junit class="org.fabric3.tests.function.references.QNameMapTest"/>
-        <reference name="field" target="test.test"/>
-    </component>
-
-    <include name="MapComposite" scdlResource="org/fabric3/tests/function/references/map.composite"/>
 </composite>

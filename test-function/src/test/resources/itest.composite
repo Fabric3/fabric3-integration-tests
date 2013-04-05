@@ -33,5 +33,6 @@ Public License. See the accompanying license file for details.
     <include name="ScopeComposite"/>
     <include name="HeaderComposite"/>
     <include name="ByValueComposite"/>
+    <include name="ParametersComposite"/>
 
 </composite>
