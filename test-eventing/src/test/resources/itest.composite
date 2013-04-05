@@ -39,11 +39,6 @@
         <consumer name="event" source="TestUnTypedChannel"/>
     </component>
 
-    <component name="TestChannelMonitor">
-        <implementation.monitor/>
-        <consumer name="monitor" source="MonitorChannel"/>
-    </component>
-
     <channel name="TestChannel"/>
 
     <channel name="TestUnTypedChannel"/>
