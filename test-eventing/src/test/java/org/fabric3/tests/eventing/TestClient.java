@@ -22,7 +22,7 @@ public class TestClient extends TestCase {
     @Reference
     protected TestConsumer consumer;
 
-    @Monitor("MonitorChannel")
+    @Monitor
     protected TestMonitor monitor;
 
     public void testMonitor() throws Exception {

@@ -37,5 +37,6 @@
         <module>test-jms-provider</module>
         <module>test-jms-client</module>
         <module>test-jpa</module>
+        <module>test-monitor-performance</module>
     </modules>
 </project>

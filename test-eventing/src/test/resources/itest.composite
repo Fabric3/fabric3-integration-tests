@@ -39,10 +39,26 @@
         <consumer name="event" source="TestUnTypedChannel"/>
     </component>
 
+    <component name="TestSequenceClient">
+        <f3:junit class="org.fabric3.tests.eventing.TestSequenceClient"/>
+        <producer name="channel" target="RingBufferChannel"/>
+    </component>
+
+    <component name="SequenceConsumer0">
+        <implementation.java class="org.fabric3.tests.eventing.SequenceConsumer0"/>
+        <consumer name="onEvent" source="RingBufferChannel"/>
+    </component>
+
+    <component name="SequenceConsumer1">
+        <implementation.java class="org.fabric3.tests.eventing.SequenceConsumer1"/>
+        <consumer name="onEvent" source="RingBufferChannel"/>
+    </component>
+
     <channel name="TestChannel"/>
 
     <channel name="TestUnTypedChannel"/>
 
-    <channel name="MonitorChannel" requires="f3:synchronous"/>
+    <channel name="RingBufferChannel" type="ring.buffer"/>
+
 
 </composite>

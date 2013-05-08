@@ -1,47 +1,37 @@
 package org.fabric3.tests.eventing.performance;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-import org.oasisopen.sca.annotation.Scope;
-
 import org.fabric3.api.annotation.Consumer;
+import org.fabric3.api.annotation.management.Management;
+import org.fabric3.api.annotation.management.ManagementOperation;
+import org.oasisopen.sca.annotation.Scope;
 
 /**
  *
  */
 @Scope("COMPOSITE")
-public class TestConsumer implements Statistics{
-    private AtomicInteger received = new AtomicInteger();
-
-    public int getReceived() {
-        return received.get();
-    }
-
-    public TestConsumer() {
-        new Thread(new Gatherer()).start();
-    }
+@Management
+public class TestConsumer {
+    private int received;
+    private long start;
 
     @Consumer
     public void onReceive(String msg) {
-        received.incrementAndGet();
-    }
-
-
-    private class Gatherer implements Runnable {
-
-        public void run() {
-            long started = System.currentTimeMillis();
-            while (true) {
-                long elapsed = System.currentTimeMillis() - started;
-                System.out.println(elapsed + " : " + received);
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-            }
+        if (received == 1000000) {
+            System.out.println("Started");
+            start = System.nanoTime();
+        } else if (received == 2000000) {
+            long elapsed = System.nanoTime() - start;
+            double rate = elapsed / 1000000;
+            System.out.println("Total time: " + elapsed + "  Rate: " + rate);
         }
+        received++;
+
     }
 
+    @ManagementOperation
+    public void reset() {
+        received = 0;
+        start = 0;
+    }
 
 }

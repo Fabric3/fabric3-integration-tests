@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009-2012 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+    $Rev$ $Date$
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.codehaus.fabric3.tests</groupId>
+        <artifactId>test-apps-parent-pom</artifactId>
+        <version>1.9.7</version>
+    </parent>
+    <artifactId>test-monitor-performance</artifactId>
+    <packaging>jar</packaging>
+    <version>1.9.7</version>
+    <name>Fabric3 Monitor Performance Test Application</name>
+    <description>Fabric3 Monitor Performance Test Application</description>
+    <dependencies>
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-api</artifactId>
+            <version>${fabric3.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+</project>

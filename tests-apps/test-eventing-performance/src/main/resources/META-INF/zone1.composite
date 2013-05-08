@@ -12,10 +12,10 @@
            name="EventingPerformanceZone1Composite"
            autowire="true">
 
-    <channel name="TestChannel">
+    <channel name="TestChannel" type="ring.buffer">
         <!--<binding.jms cache="session">-->
-            <!--&lt;!&ndash;min.receivers="5" max.receivers="10"&ndash;&gt;-->
-            <!--<destination jndiName="TestChannelTopic"/>-->
+        <!--&lt;!&ndash;min.receivers="5" max.receivers="10"&ndash;&gt;-->
+        <!--<destination jndiName="TestChannelTopic"/>-->
         <!--</binding.jms>-->
     </channel>
 
