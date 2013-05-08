@@ -40,10 +40,10 @@ package org.fabric3.tests.binding.metro;
 import javax.xml.ws.soap.SOAPFaultException;
 
 import junit.framework.TestCase;
+import org.fabric3.spi.invocation.WorkContextCache;
 import org.oasisopen.sca.annotation.Reference;
 
 import org.fabric3.spi.invocation.WorkContext;
-import org.fabric3.spi.invocation.WorkContextTunnel;
 import org.fabric3.tests.binding.metro.helloworld.HelloWorldPortType;
 import org.fabric3.tests.binding.metro.soap.TestSoapBindingHandler;
 
@@ -55,7 +55,7 @@ public class WsdlTest extends TestCase {
     public void testHello() throws Exception {
         String hello = portType.sayHello("hello");
         assertEquals("hello", hello);
-        WorkContext wc = WorkContextTunnel.getThreadWorkContext();
+        WorkContext wc = WorkContextCache.getThreadWorkContext();
         assertNotNull(wc);
         String header = wc.getHeader(String.class, TestSoapBindingHandler.TEST_HANDLER_HEADER);
 		assertNotNull(header);
