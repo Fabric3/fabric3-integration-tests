@@ -19,6 +19,16 @@
         <reference name="consumer" target="TestConsumer"/>
     </component>
 
+    <component name="TestSequenceClient">
+        <f3:junit class="org.fabric3.tests.eventing.TestSequenceClient"/>
+        <producer name="channel" target="RingBufferChannel"/>
+    </component>
+
+    <component name="TestChannelEventClient">
+        <f3:junit class="org.fabric3.tests.eventing.TestChannelEventClient"/>
+        <producer name="channel" target="ChannelEventChannel"/>
+    </component>
+
     <component name="TestProducer">
         <implementation.java class="org.fabric3.tests.binding.harness.eventing.TestProducerImpl"/>
         <producer name="channel" target="TestChannel"/>
@@ -39,11 +49,6 @@
         <consumer name="event" source="TestUnTypedChannel"/>
     </component>
 
-    <component name="TestSequenceClient">
-        <f3:junit class="org.fabric3.tests.eventing.TestSequenceClient"/>
-        <producer name="channel" target="RingBufferChannel"/>
-    </component>
-
     <component name="SequenceConsumer0">
         <implementation.java class="org.fabric3.tests.eventing.SequenceConsumer0"/>
         <consumer name="onEvent" source="RingBufferChannel"/>
@@ -54,11 +59,28 @@
         <consumer name="onEvent" source="RingBufferChannel"/>
     </component>
 
+    <component name="ChannelEventConsumer0">
+        <implementation.java class="org.fabric3.tests.eventing.ChannelEventConsumer0"/>
+        <consumer name="onEvent" source="ChannelEventChannel"/>
+    </component>
+
+    <component name="ChannelEventConsumer1">
+        <implementation.java class="org.fabric3.tests.eventing.ChannelEventConsumer1"/>
+        <consumer name="onEvent" source="ChannelEventChannel"/>
+    </component>
+
+    <component name="ChannelEventConsumer2">
+        <implementation.java class="org.fabric3.tests.eventing.ChannelEventConsumer2"/>
+        <consumer name="onEvent" source="ChannelEventChannel"/>
+    </component>
+
     <channel name="TestChannel"/>
 
     <channel name="TestUnTypedChannel"/>
 
     <channel name="RingBufferChannel" type="ring.buffer"/>
+
+    <channel name="ChannelEventChannel" type="ring.buffer"/>
 
 
 </composite>
