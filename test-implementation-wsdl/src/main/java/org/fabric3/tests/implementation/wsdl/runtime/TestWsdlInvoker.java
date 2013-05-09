@@ -37,11 +37,9 @@
 */
 package org.fabric3.tests.implementation.wsdl.runtime;
 
-import org.w3c.dom.Node;
-
 import org.fabric3.spi.invocation.Message;
-import org.fabric3.spi.invocation.MessageImpl;
 import org.fabric3.spi.wire.Interceptor;
+import org.w3c.dom.Node;
 
 /**
  *
@@ -53,8 +51,8 @@ public class TestWsdlInvoker implements Interceptor {
         this.component = component;
     }
 
-    public Message invoke(Message msg) {
-        Object body = msg.getBody();
+    public Message invoke(Message message) {
+        Object body = message.getBody();
         Object returnValue;
         if (body == null) {
             returnValue = component.invoke(null);
@@ -72,14 +70,14 @@ public class TestWsdlInvoker implements Interceptor {
                 throw new AssertionError("Unexpected input format");
             }
         }
-        Message ret = new MessageImpl();
+        message.reset();
         if (returnValue instanceof Exception && !(returnValue instanceof RuntimeException)) {
             // checked exception was thrown
-            ret.setBodyWithFault(returnValue);
+            message.setBodyWithFault(returnValue);
         } else {
-            ret.setBody(returnValue);
+            message.setBody(returnValue);
         }
-        return ret;
+        return message;
     }
 
     public void setNext(Interceptor next) {
