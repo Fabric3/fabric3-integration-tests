@@ -6,7 +6,8 @@
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -84,6 +85,14 @@
                     <runtimeVersion>${fabric3.version}</runtimeVersion>
                     <systemConfig>
                         <![CDATA[<config xmlns="urn:fabric3.org">
+                            <!-- <transaction.manager monitor.level="TRACE"/> -->
+                            <!--<runtime>-->
+                                  <!--<monitor>-->
+                                     <!--<provider.levels>-->
+                                        <!--<level name="org.hibernate" value="DEBUG"/>-->
+                                     <!--</provider.levels>-->
+                                  <!--</monitor>-->
+                            <!--</runtime>-->
                             <datasources>
                                 <datasource name="EmployeeDS" driver="org.h2.jdbcx.JdbcDataSource" type="xa">
                                     <URL>jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1</URL>

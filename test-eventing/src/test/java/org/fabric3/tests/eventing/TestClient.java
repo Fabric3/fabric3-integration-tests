@@ -32,6 +32,7 @@ public class TestClient extends TestCase {
     public void testProduce() throws Exception {
         consumer.setWaitCount(2);
         producer.produce("message");
+        producer.produce("message");
         consumer.waitOnEvents();
     }
 

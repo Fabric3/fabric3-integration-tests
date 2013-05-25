@@ -37,11 +37,10 @@
 */
 package org.fabric3.tests.timer;
 
+import org.fabric3.api.annotation.Producer;
+import org.fabric3.tests.binding.harness.eventing.ProducerStringChannel;
 import org.oasisopen.sca.annotation.Property;
 import org.oasisopen.sca.annotation.Reference;
-
-import org.fabric3.api.annotation.Producer;
-import org.fabric3.tests.binding.harness.eventing.ProducerChannel;
 
 /**
  *
@@ -54,7 +53,7 @@ public class TimedComponent implements Runnable {
     protected String property;
 
     @Producer
-    protected ProducerChannel channel;
+    protected ProducerStringChannel channel;
 
     public void run() {
         if (!"value".equals(property)) {

@@ -12,7 +12,9 @@
            name="EventingClusteringZone1Composite"
            autowire="true">
 
-    <channel name="TestChannel"/>
+    <channel name="TestChannel">
+        <f3:binding.zeromq/>
+    </channel>
 
     <component name="TestProducer">
         <implementation.java class="org.fabric3.tests.eventing.clustering.TestProducerImpl"/>

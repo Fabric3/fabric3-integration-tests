@@ -97,6 +97,13 @@
                     <systemConfig>
                         <![CDATA[
                                <config xmlns="urn:fabric3.org">
+                               <runtime>
+                                  <!-- <monitor>
+                                     <provider.levels>
+                                        <level name="org.apache.activemq" value="DEBUG"/>
+                                     </provider.levels>
+                                  </monitor>  -->
+                               </runtime>
                                   <thread.pool size="100"/>
                                </config>
                                ]]>

@@ -8,14 +8,14 @@ import org.fabric3.api.annotation.Producer;
 public class TestProducerImpl implements TestProducer {
 
     @Producer
-    protected ProducerChannel channel;
+    protected ProducerStringChannel channel;
 
-    public void setChannel(ProducerChannel channel) {
+    // required for Spring
+    public void setChannel(ProducerStringChannel channel) {
         this.channel = channel;
     }
 
     public void produce(String message) {
         channel.sendEvent(message);
-        channel.sendEvent(new TestEvent(message));
     }
 }

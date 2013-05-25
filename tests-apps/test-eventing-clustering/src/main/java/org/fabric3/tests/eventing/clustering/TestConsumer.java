@@ -11,9 +11,8 @@ import org.fabric3.api.annotation.Consumer;
 public class TestConsumer {
 
     @Consumer
-    public void onReceive(Message msg) {
-        System.out.println("Received: " + msg.getSequence() + "[" + msg.getRuntime() + "]");
+    public void onReceive(String msg) {
+        //System.out.println("Received: " + msg);
     }
-
 
 }

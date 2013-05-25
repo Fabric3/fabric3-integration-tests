@@ -19,12 +19,11 @@ public class TestClient extends TestCase {
 
     public void testDurableProduce() throws Exception {
         long start = System.currentTimeMillis();
-        consumer.setWaitCount(1000000);
-//        for (int i = 0; i < 1001000; i++) {
-//            producer.produce("message");
-//        }
-//        consumer.waitOnEvents();
-//        System.out.println("==============>" + (System.currentTimeMillis() - start));
+        consumer.setWaitCount(1);
+        for (int i = 0; i < 2; i++) {
+            producer.produce("message");
+        }
+        consumer.waitOnEvents();
     }
 
 

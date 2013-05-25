@@ -17,12 +17,11 @@ public class TestConsumer {
     @Consumer
     public void onReceive(String msg) {
         if (received == 1000000) {
-            System.out.println("Started");
-            start = System.nanoTime();
+//            start = System.nanoTime();
         } else if (received == 2000000) {
-            long elapsed = System.nanoTime() - start;
-            double rate = elapsed / 1000000;
-            System.out.println("Total time: " + elapsed + "  Rate: " + rate);
+//            long elapsed = System.nanoTime() - start;
+//            double rate = elapsed / 1000000;
+//            System.out.println("Total time: " + elapsed + "  Rate: " + rate);
         }
         received++;
 

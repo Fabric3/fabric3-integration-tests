@@ -18,7 +18,7 @@
                            http://docs.oasis-open.org/opencsa/sca-assembly/sca-1.1.xsd">
 
 
-    <sca:consumer name="consumer" type="org.fabric3.tests.binding.harness.eventing.TestEvent" target="TestConsumer/onEvent"/>
+    <sca:consumer name="consumer" type="java.lang.Object" target="TestConsumer/onEvent"/>
 
     <sca:service name="TestProducer" target="TestProducer"/>
     <sca:service name="TestConsumer" target="TestConsumer"/>
@@ -29,6 +29,6 @@
 
     <bean name="TestConsumer" class="org.fabric3.tests.binding.harness.eventing.TestConsumerImpl"/>
 
-    <sca:producer name="producer" type="org.fabric3.tests.binding.harness.eventing.ProducerChannel" target="ProducerChannel"/>
+    <sca:producer name="producer" type="org.fabric3.tests.binding.harness.eventing.ProducerStringChannel" target="ProducerChannel"/>
 
 </beans>

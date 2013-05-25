@@ -15,9 +15,9 @@ import org.fabric3.api.annotation.Producer;
 @Service(names={TestConsumer.class, TestProducer.class})
 public class TestProducerConsumerImpl implements TestConsumer, TestProducer {
     private CountDownLatch latch;
-    private ProducerChannel channel;
+    private ProducerStringChannel channel;
 
-    public TestProducerConsumerImpl(@Producer("channel") ProducerChannel channel) {
+    public TestProducerConsumerImpl(@Producer("channel") ProducerStringChannel channel) {
         this.channel = channel;
     }
 
