@@ -71,6 +71,18 @@
                             <version>${fabric3.version}</version>
                         </profile>
                     </profiles>
+                    <extensions>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-bytecode-proxy</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-channel-disruptor</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                    </extensions>
                     <systemConfig>
                         <![CDATA[
                                <config xmlns="urn:fabric3.org">

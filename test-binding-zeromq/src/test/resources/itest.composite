@@ -40,7 +40,7 @@
         <consumer name="channel" source="TestChannel"/>
     </component>
 
-    <channel name="TestChannel">
+    <channel name="TestChannel" type="ring.buffer">
         <f3:binding.zeromq/>
     </channel>
 
