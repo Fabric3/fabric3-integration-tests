@@ -12,11 +12,11 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests.cluster.apps</groupId>
         <artifactId>test-binding-sca-parent-pom</artifactId>
-        <version>1.9.7</version>
+        <version>2.0.0</version>
     </parent>
     <artifactId>binding-sca-app1</artifactId>
     <packaging>jar</packaging>
-    <version>1.9.7</version>
+    <version>2.0.0</version>
     <name>Fabric3 Cluster Binding SCA Test Application 1</name>
     <description>Fabric3 Cluster Binding SCA Test Application 1</description>
     <dependencies>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>org.codehaus.fabric3.tests.cluster.apps</groupId>
             <artifactId>binding-sca-app-api</artifactId>
-            <version>1.9.7</version>
+            <version>2.0.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
