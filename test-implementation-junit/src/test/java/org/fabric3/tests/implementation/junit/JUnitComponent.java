@@ -37,16 +37,37 @@
 */
 package org.fabric3.tests.implementation.junit;
 
+import java.io.IOException;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
  *
  */
 public class JUnitComponent {
+    private boolean invoked;
+
+    @Before
+    public void before() {
+        invoked = true;
+    }
+
+    @After
+    public void after() {
+
+    }
 
     @Test
-    public void handleExpectedException() {
+    public void testBefore() {
+        Assert.assertTrue(invoked);
+    }
 
+    @Test(expected = IOException.class)
+    public void handleExpectedException() throws Exception {
+        throw new IOException("This exception should be ignored");
     }
 
 }
