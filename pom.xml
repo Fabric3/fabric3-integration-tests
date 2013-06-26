@@ -45,6 +45,7 @@
         <disruptor.version>3.1.0</disruptor.version>
         <h2.version>1.3.170</h2.version>
         <easy.mock.version>3.1</easy.mock.version>
+        <junit.version>4.11</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -52,7 +53,7 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.9</version>
+                <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -81,6 +82,7 @@
             <modules>
                 <module>test-binding-harness</module>
                 <module>test-implementation-wsdl</module>
+                <module>test-implementation-junit</module>
                 <module>test-function</module>
                 <module>test-eventing</module>
                 <module>test-user-resource</module>
@@ -115,6 +117,7 @@
             <modules>
                 <module>test-binding-harness</module>
                 <module>test-implementation-wsdl</module>
+                <module>test-implementation-junit</module>
                 <module>test-function</module>
                 <module>test-eventing</module>
                 <module>test-user-resource</module>
