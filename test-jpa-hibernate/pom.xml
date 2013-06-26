@@ -49,14 +49,14 @@
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <version>1.0.0.Final</version>
+            <version>1.0.1.Final</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>3.5.3-Final</version>
+            <version>4.2.2.Final</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.codehaus.fabric3.api</groupId>
@@ -90,6 +90,7 @@
                                   <!--<monitor>-->
                                      <!--<provider.levels>-->
                                         <!--<level name="org.hibernate" value="DEBUG"/>-->
+                                        <!--<level name="org.jboss" value="DEBUG"/>-->
                                      <!--</provider.levels>-->
                                   <!--</monitor>-->
                             <!--</runtime>-->

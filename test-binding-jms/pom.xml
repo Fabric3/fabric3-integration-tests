@@ -98,11 +98,12 @@
                         <![CDATA[
                                <config xmlns="urn:fabric3.org">
                                <runtime>
-                                  <!-- <monitor>
+                                 <!-- <monitor>
                                      <provider.levels>
                                         <level name="org.apache.activemq" value="DEBUG"/>
+                                        <level name="com.atomikos" value = "DEBUG"/>
                                      </provider.levels>
-                                  </monitor>  -->
+                                  </monitor> -->
                                </runtime>
                                   <thread.pool size="100"/>
                                </config>

@@ -73,6 +73,11 @@
                     </profiles>
                     <extensions>
                         <dependency>
+                            <groupId>com.lmax</groupId>
+                            <artifactId>disruptor</artifactId>
+                            <version>${disruptor.version}</version>
+                        </dependency>
+                        <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>fabric3-bytecode-proxy</artifactId>
                             <version>${fabric3.version}</version>

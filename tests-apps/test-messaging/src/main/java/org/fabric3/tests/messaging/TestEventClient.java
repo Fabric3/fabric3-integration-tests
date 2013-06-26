@@ -88,6 +88,8 @@ public class TestEventClient {
                 }
             }
             invoke(Message.Type.END);
+            invoke(Message.Type.END);
+            invoke(Message.Type.END);
             latch.countDown();
             System.out.println("Runner time: " + (System.currentTimeMillis() - start));
         }
@@ -106,6 +108,7 @@ public class TestEventClient {
         protected void invoke(Message.Type type) {
             long number = sequence.incrementAndGet();
             producer.publish(new Message(uuid, number, type));
+            System.out.println("end sent----------------");
         }
     }
 
