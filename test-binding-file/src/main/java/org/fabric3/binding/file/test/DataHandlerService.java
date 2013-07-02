@@ -37,34 +37,13 @@
 */
 package org.fabric3.binding.file.test;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-
-import org.oasisopen.sca.annotation.Reference;
-import org.oasisopen.sca.annotation.Scope;
+import javax.activation.DataHandler;
 
 /**
  *
  */
-@Scope("COMPOSITE")
-public class FileServiceImpl implements FileService {
-    @Reference
-    protected LatchService latch;
+public interface DataHandlerService {
 
-    @Reference
-    FileOutput output;
-
-    public void transferData(InputStream data) throws Exception {
-        OutputStream stream = null;
-        try {
-            stream = output.openStream("test.xml");
-            stream.write("<?xml version='1.0' encoding='UTF-8'?><test/>".getBytes());
-        } finally {
-            if (stream != null) {
-                stream.close();
-            }
-        }
-        latch.countDown();
-    }
+    void transferData(DataHandler data) throws Exception;
 
 }

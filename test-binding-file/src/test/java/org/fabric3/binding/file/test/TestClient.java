@@ -79,7 +79,6 @@ public class TestClient extends TestCase {
     }
 
     public void testInvoke() throws Exception {
-        latchService.await();
         while (xmlFile.exists()) {
             Thread.sleep(10);
         }

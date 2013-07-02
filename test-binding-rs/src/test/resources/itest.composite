@@ -24,6 +24,13 @@
         <property name="authentication">http://localhost:8900/fabric/security/token</property>
     </component>
 
+    <component name="TestRESTRefClient">
+        <f3:junit class="tests.rs.TestRESTReference"/>
+        <reference name="jsonRef">
+            <f3:binding.rs uri="http://localhost:8900/jsonmessages"/>
+        </reference>
+    </component>
+
     <component name="MessageService">
         <implementation.java class="org.fabric3.tests.rs.MessageService"/>
         <service name="MessageService">
@@ -58,15 +65,6 @@
             <f3:binding.rs uri="/secureAuthorization"/>
         </service>
     </component>
-    
-    <component name="TestRESTRefClient">
-        <f3:junit class="tests.rs.TestRESTReference"/>        
-        <reference name="xmlRef">
-            <f3:binding.rs uri="http://localhost:8900/messages"/>
-        </reference>
-        <reference name="jsonRef">
-            <f3:binding.rs uri="http://localhost:8900/jsonmessages"/>
-        </reference>
-    </component>
+
 
 </composite>

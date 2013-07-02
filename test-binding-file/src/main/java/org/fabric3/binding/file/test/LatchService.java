@@ -42,6 +42,10 @@ package org.fabric3.binding.file.test;
  */
 public interface LatchService {
 
-    void await() throws InterruptedException;
+    boolean await() throws InterruptedException;
+
+    void countDown();
+
+    void countDown(AssertionError e);
 
 }

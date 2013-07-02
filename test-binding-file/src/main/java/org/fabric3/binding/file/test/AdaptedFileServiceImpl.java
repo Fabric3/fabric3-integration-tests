@@ -39,33 +39,23 @@ package org.fabric3.binding.file.test;
 
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.concurrent.CountDownLatch;
 
 import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Scope;
-import org.oasisopen.sca.annotation.Service;
 
 /**
  *
  */
 @Scope("COMPOSITE")
-@Service(names = {AdaptedFileService.class, LatchService.class})
-public class AdaptedFileServiceImpl implements AdaptedFileService, LatchService {
-    private CountDownLatch latch = new CountDownLatch(1);
+public class AdaptedFileServiceImpl implements AdaptedFileService {
+    @Reference
+    protected LatchService latch;
 
     @Reference
     FileOutput output;
 
-    private AssertionError error;
-
-    public void await() throws InterruptedException {
-        latch.await();
-        if (error != null) {
-            throw error;
-        }
-    }
-
     public void transferData(InputStream header, InputStream data) throws Exception {
+        AssertionError error = null;
         if (header == null || data == null) {
             error = new AssertionError("Header was null");
         } else if (data == null) {
@@ -80,8 +70,10 @@ public class AdaptedFileServiceImpl implements AdaptedFileService, LatchService 
                 stream.close();
             }
         }
-
-        latch.countDown();
+        if (error != null) {
+            latch.countDown(error);
+        }
+        latch.countDown(error);
     }
 
 }

@@ -9,17 +9,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/")
-@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 public interface RestReferenceInterface {
-    
-	@GET
+
+    @GET
     @Path("message/{id}")
     Message retrieve(@PathParam("id") Integer id);
-	
-	
+
     @PUT
-    @Path("message")    
+    @Path("message")
     void putMsg(Message msg);
-    
+
 }

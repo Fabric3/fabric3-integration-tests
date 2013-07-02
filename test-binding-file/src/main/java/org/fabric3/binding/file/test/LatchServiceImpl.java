@@ -37,34 +37,38 @@
 */
 package org.fabric3.binding.file.test;
 
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
-import org.oasisopen.sca.annotation.Reference;
+import org.oasisopen.sca.annotation.Property;
 import org.oasisopen.sca.annotation.Scope;
 
 /**
  *
  */
 @Scope("COMPOSITE")
-public class FileServiceImpl implements FileService {
-    @Reference
-    protected LatchService latch;
+public class LatchServiceImpl implements LatchService {
+    private CountDownLatch latch;
+    private AssertionError error;
 
-    @Reference
-    FileOutput output;
+    public LatchServiceImpl(@Property(name = "count") int count) {
+        this.latch = new CountDownLatch(count);
+    }
 
-    public void transferData(InputStream data) throws Exception {
-        OutputStream stream = null;
-        try {
-            stream = output.openStream("test.xml");
-            stream.write("<?xml version='1.0' encoding='UTF-8'?><test/>".getBytes());
-        } finally {
-            if (stream != null) {
-                stream.close();
-            }
+    public boolean await() throws InterruptedException {
+        boolean result = latch.await(10000, TimeUnit.MILLISECONDS);
+        if (error != null) {
+            throw error;
         }
+        return result;
+    }
+
+    public void countDown() {
         latch.countDown();
     }
 
+    public void countDown(AssertionError e) {
+        error = e;
+        latch.countDown();
+    }
 }

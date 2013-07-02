@@ -63,7 +63,6 @@ public class TestServiceAdapterClient extends TestCase {
     protected LatchService latchService;
 
     public void testInvoke() throws Exception {
-        latchService.await();
         while (XML_FILE.exists() && HEADER_FILE.exists() && !XML_ARCHIVE_FILE.exists() && !HEADER__ARCHIVE_FILE.exists()) {
             Thread.sleep(10);
         }

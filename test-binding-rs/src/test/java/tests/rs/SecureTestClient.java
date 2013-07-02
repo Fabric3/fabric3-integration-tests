@@ -16,27 +16,28 @@
  */
 package tests.rs;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.ws.rs.ForbiddenException;
+import javax.ws.rs.NotAuthorizedException;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.ClientRequestContext;
+import javax.ws.rs.client.ClientRequestFilter;
+import javax.ws.rs.client.ClientResponseContext;
+import javax.ws.rs.client.ClientResponseFilter;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.UriBuilder;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientHandlerException;
-import com.sun.jersey.api.client.ClientRequest;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.UniformInterfaceException;
-import com.sun.jersey.api.client.WebResource;
-import com.sun.jersey.api.client.config.ClientConfig;
-import com.sun.jersey.api.client.config.DefaultClientConfig;
-import com.sun.jersey.api.client.filter.ClientFilter;
-import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
+import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import junit.framework.TestCase;
-import org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider;
-import org.oasisopen.sca.annotation.Property;
-
 import org.fabric3.tests.rs.security.UsernamePasswordToken;
+import org.glassfish.jersey.client.filter.HttpBasicAuthFilter;
+import org.oasisopen.sca.annotation.Property;
 
 /**
  *
@@ -52,74 +53,73 @@ public class SecureTestClient extends TestCase {
     private Client client;
 
     public void testSecureAccessFail() {
-        WebResource resource = client.resource(uri.path("").build());
+        WebTarget resource = client.target(uri.path("").build());
 
         try {
-            resource.type(MediaType.APPLICATION_JSON).get(String.class);
+            resource.request(MediaType.APPLICATION_JSON).get(String.class);
             fail();
-        } catch (UniformInterfaceException e) {
+        } catch (NotAuthorizedException e) {
             assertEquals(401, e.getResponse().getStatus());
             assertNotNull(e.getResponse().getHeaders().get("WWW-Authenticate"));
         }
     }
 
     public void testBasicAuthInvalidPassword() {
-        client.addFilter(new HTTPBasicAuthFilter("foo", "invalid"));
-        WebResource resource = client.resource(uri.path("").build());
+        client.register(new HttpBasicAuthFilter("foo", "invalid"));
+        WebTarget resource = client.target(uri.path("").build());
         try {
-            resource.type(MediaType.APPLICATION_JSON).get(String.class);
+            resource.request(MediaType.APPLICATION_JSON).get(String.class);
             fail();
-        } catch (UniformInterfaceException e) {
+        } catch (ForbiddenException e) {
             assertEquals(403, e.getResponse().getStatus());
         }
     }
 
     public void testBasicAuthNotAuthorized() {
-        client.addFilter(new HTTPBasicAuthFilter("baz", "fred"));
-        WebResource resource = client.resource(uri.path("").build());
+        client.register(new HttpBasicAuthFilter("baz", "fred"));
+        WebTarget resource = client.target(uri.path("").build());
         try {
-            resource.type(MediaType.APPLICATION_JSON).get(String.class);
+            resource.request(MediaType.APPLICATION_JSON).get(String.class);
             fail();
-        } catch (UniformInterfaceException e) {
+        } catch (ForbiddenException e) {
             assertEquals(403, e.getResponse().getStatus());
         }
     }
 
     public void testBasicAuth() {
-        client.addFilter(new HTTPBasicAuthFilter("foo", "bar"));
-        WebResource resource = client.resource(uri.path("").build());
-        resource.type(MediaType.APPLICATION_JSON).get(String.class);
+        client.register(new HttpBasicAuthFilter("foo", "bar"));
+        WebTarget resource = client.target(uri.path("").build());
+        resource.request(MediaType.APPLICATION_JSON).get(String.class);
     }
 
     public void testFabricLogin() {
-        client.addFilter(new ClientFilter() {
-            private List<NewCookie> cookies = new ArrayList<NewCookie>();
+        final List<NewCookie> cookies = new ArrayList<NewCookie>();
+        client.register(new ClientResponseFilter() {
+            public void filter(ClientRequestContext requestContext, ClientResponseContext responseContext) throws IOException {
+                cookies.addAll(responseContext.getCookies().values());
+            }
+        });
+        client.register(new ClientRequestFilter() {
 
-            @Override
-            public ClientResponse handle(ClientRequest cr) throws ClientHandlerException {
+            public void filter(ClientRequestContext cr) {
                 for (NewCookie cookie : cookies) {
                     cr.getHeaders().putSingle("Cookie", cookie.getName() + "=" + cookie.getValue());
                 }
-                ClientResponse resp = getNext().handle(cr);
-                for (NewCookie cookie : resp.getCookies()) {
-                    cookies.add(cookie);
-                }
-                return resp;
             }
         });
         UriBuilder authBuilder = UriBuilder.fromUri(authentication);
-        WebResource authResource = client.resource(authBuilder.path("").build());
-        authResource.type(MediaType.APPLICATION_JSON_TYPE).post(new UsernamePasswordToken("foo", "bar"));
-        WebResource resource = client.resource(uri.path("").build());
-        resource.type(MediaType.APPLICATION_JSON).get(String.class);
+        WebTarget authResource = client.target(authBuilder.path("").build());
+        Entity<UsernamePasswordToken> entity = Entity.entity(new UsernamePasswordToken("foo", "bar"), MediaType.APPLICATION_JSON);
+        authResource.request(MediaType.APPLICATION_JSON_TYPE).post(entity);
+        WebTarget resource = client.target(uri.path("").build());
+        resource.request(MediaType.APPLICATION_JSON).get(String.class);
     }
 
-    @Override
     protected void setUp() throws Exception {
         super.setUp();
-        ClientConfig cc = new DefaultClientConfig();
-        cc.getClasses().add(JacksonJaxbJsonProvider.class);
-        client = Client.create(cc);
+
+        client = ClientBuilder.newClient();
+        client.register(JacksonJaxbJsonProvider.class);
 
         uri = UriBuilder.fromUri(baseUri);
 

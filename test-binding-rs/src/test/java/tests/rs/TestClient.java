@@ -16,21 +16,19 @@
  */
 package tests.rs;
 
-import java.net.URI;
+import javax.ws.rs.NotFoundException;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
+import java.net.URI;
 
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.UniformInterfaceException;
-import com.sun.jersey.api.client.WebResource;
-import com.sun.jersey.api.client.config.ClientConfig;
-import com.sun.jersey.api.client.config.DefaultClientConfig;
 import junit.framework.TestCase;
-import org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider;
-import org.oasisopen.sca.annotation.Property;
-
 import org.fabric3.tests.rs.Message;
+import org.oasisopen.sca.annotation.Property;
 
 /**
  *
@@ -57,15 +55,16 @@ public class TestClient extends TestCase {
         message.setId(1L);
         message.setText("this is a test");
 
-        Client client = Client.create();
+        Client client = ClientBuilder.newClient();
         UriBuilder uri = UriBuilder.fromUri(baseMessageUri);
-        WebResource resource = client.resource(uri.path("message").build());
+        WebTarget resource = client.target(uri.path("message").build());
 
-        resource.put(message);
+        Response response = resource.request().put(Entity.entity(message, MediaType.APPLICATION_XML));
+        assertEquals(201, response.getStatus());
 
-        resource = client.resource(uri.path("1").build());
-        Message response = resource.get(Message.class);
-        assertEquals("this is a test", response.getText());
+        resource = client.target(UriBuilder.fromUri(baseMessageUri).path("message").path("1").build());
+        Message result = resource.request(MediaType.APPLICATION_XML).get(Message.class);
+        assertEquals("this is a test", result.getText());
     }
 
     public void testJSONCreate() {
@@ -73,48 +72,43 @@ public class TestClient extends TestCase {
         message.setId(1L);
         message.setText("this is a test");
 
-        ClientConfig cc = new DefaultClientConfig();
-        cc.getClasses().add(JacksonJaxbJsonProvider.class);
-        Client client = Client.create(cc);
+        Client client = ClientBuilder.newClient();
         UriBuilder uri = UriBuilder.fromUri(baseJsonMessageUri);
-        WebResource resource = client.resource(uri.path("message").build());
+        WebTarget resource = client.target(uri.path("message").build());
+        Response response = resource.request(MediaType.APPLICATION_JSON).put(Entity.entity(message, MediaType.APPLICATION_JSON));
+        assertEquals(201, response.getStatus());
 
-        resource.type(MediaType.APPLICATION_JSON).put(message);
-        resource = client.resource(uri.path("1").build());
-
-        Message response = resource.type(MediaType.APPLICATION_JSON).get(Message.class);
-        assertEquals("this is a test", response.getText());
+        resource = client.target(UriBuilder.fromUri(baseJsonMessageUri).path("message").path("1").build());
+        Message result = resource.request(MediaType.APPLICATION_JSON).get(Message.class);
+        assertEquals("this is a test", result.getText());
     }
 
-
     public void testNotExist() {
-        Client client = Client.create();
-        UriBuilder uri = UriBuilder.fromUri(baseMessageUri);
-        WebResource resource = client.resource(uri.path("2").build());
+        Client client = ClientBuilder.newClient();
+        WebTarget resource = client.target(UriBuilder.fromUri(baseMessageUri).path("message").path("2").build());
         try {
-            resource.get(Message.class);
+            resource.request().get(Message.class);
             fail();
-        } catch (UniformInterfaceException e) {
-            assertEquals(ClientResponse.Status.NOT_FOUND, e.getResponse().getClientResponseStatus());
+        } catch (NotFoundException e) {
+            // expected
         }
     }
 
-
     public void testStateless() {
-        Client client = Client.create();
+        Client client = ClientBuilder.newClient();
         UriBuilder uri = UriBuilder.fromUri(baseStatelessUri);
-        WebResource resource = client.resource(uri.build());
-        String response = resource.get(String.class);
+        WebTarget resource = client.target(uri.build());
+        String response = resource.request().get(String.class);
         assertEquals("0", response);
-        response = resource.get(String.class);
+        response = resource.request().get(String.class);
         assertEquals("0", response);
     }
 
     public void testInterface() {
-        Client client = Client.create();
+        Client client = ClientBuilder.newClient();
         UriBuilder uri = UriBuilder.fromUri(baseInterfaceUri);
-        WebResource resource = client.resource(uri.build());
-        String response = resource.get(String.class);
+        WebTarget resource = client.target(uri.build());
+        String response = resource.request().get(String.class);
         assertEquals("test", response);
     }
 
