@@ -5,7 +5,7 @@
 
     Fabric3 integration tests are licensed under the Apache 2.0 license.
 
-    $Rev$ $Date$
+
 -->
 <contribution xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912">
     <import.java package="org.fabric3.tests.environment"/>
