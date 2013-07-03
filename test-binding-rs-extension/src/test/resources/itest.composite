@@ -31,11 +31,6 @@
         </reference>
     </component>
 
-    <component name="CustomMediaTestClient">
-        <f3:junit class="tests.rs.CustomMediaTestClient"/>
-        <property name="baseUri">http://localhost:8900/custommessages/</property>
-    </component>
-
     <component name="MessageService">
         <implementation.java class="org.fabric3.tests.rs.MessageService"/>
         <service name="MessageService">
@@ -68,13 +63,6 @@
         <implementation.java class="org.fabric3.tests.rs.security.SecureService"/>
         <service name="SecureService">
             <f3:binding.rs uri="/secureAuthorization"/>
-        </service>
-    </component>
-
-    <component name="CustomMediaTypeService">
-        <implementation.java class="org.fabric3.tests.rs.CustomMediaTypeService"/>
-        <service name="CustomMediaTypeService">
-            <f3:binding.rs uri="/custommessages"/>
         </service>
     </component>
 

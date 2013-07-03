@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009-2013 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.codehaus.fabric3.tests</groupId>
+        <artifactId>fabric3-integration-tests</artifactId>
+        <version>2.0.0</version>
+    </parent>
+    <groupId>org.codehaus.fabric3.tests</groupId>
+    <artifactId>test-binding-rs-extension</artifactId>
+    <packaging>jar</packaging>
+    <version>2.0.0</version>
+    <name>Fabric3 JAX-RS Binding Test Extension</name>
+    <description>Tests extending the JAX-RS binding by adding a custom MessageBodyReader.</description>
+    <dependencies>
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-api</artifactId>
+            <version>${fabric3.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-common</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>${jax.rs.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
