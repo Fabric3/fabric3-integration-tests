@@ -21,6 +21,7 @@
     <component name="SpringComponent">
         <implementation.spring location="META-INF/application1.context.xml"/>
         <reference name="SCAService" target="SCAService"/>
+        <property name="testProperty">test</property>
     </component>
 
     <component name="SpringMultiServiceComponent">

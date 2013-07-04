@@ -4,6 +4,7 @@ package org.fabric3.tests.spring;
  *
  */
 public class SpringServiceImpl implements TestService {
+    private String testProperty;
 
     private TestService service;
 
@@ -13,6 +14,14 @@ public class SpringServiceImpl implements TestService {
 
     public void setService(TestService service) {
         this.service = service;
+    }
+
+    public String getTestProperty() {
+        return testProperty;
+    }
+
+    public void setTestProperty(String testProperty) {
+        this.testProperty = testProperty;
     }
 
     public String invoke(String message) {

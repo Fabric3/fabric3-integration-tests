@@ -16,8 +16,11 @@
 
     <sca:service name="TestService" type="org.fabric3.tests.spring.TestService" target="SpringService"/>
 
+    <sca:property name="testProperty">test</sca:property>
+
     <bean name="SpringService" class="org.fabric3.tests.spring.SpringServiceImpl">
         <property name="service" ref="SCAService"/>
+        <property name="testProperty" ref="testProperty"/>
     </bean>
 
     <sca:reference name="SCAService" type="org.fabric3.tests.spring.TestService"/>
