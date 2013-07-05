@@ -1,10 +1,16 @@
 package org.fabric3.tests.spring;
 
+import org.fabric3.api.Fabric3RequestContext;
+import org.oasisopen.sca.annotation.Context;
+
 /**
  *
  */
 public class SpringServiceImpl implements TestService {
     private String testProperty;
+
+    @Context
+    Fabric3RequestContext context;
 
     private TestService service;
 
@@ -25,6 +31,11 @@ public class SpringServiceImpl implements TestService {
     }
 
     public String invoke(String message) {
+        if (context == null) {
+            throw new AssertionError("Context not injected");
+        }
+        context.getCurrentSubject();
+
         return service.invoke(message);
     }
 
