@@ -19,6 +19,11 @@ Public License. See the accompanying license file for details.
         <property name="uri">fabric3://domain/ContextTest</property>
     </component>
 
+    <component name="F3ContextTest">
+        <f3:junit class="org.fabric3.tests.function.lifecycle.F3ContextTest"/>
+        <property name="uri">fabric3://domain/F3ContextTest</property>
+    </component>
+
     <component name="EagerInitTest">
         <f3:junit class="org.fabric3.tests.function.lifecycle.EagerInitTest"/>
         <reference name="callout" target="CalloutComponent"/>
