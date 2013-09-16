@@ -23,12 +23,12 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>fabric3-integration-tests</artifactId>
-        <version>2.0.0</version>
+        <version>2.5.0</version>
     </parent>
     <groupId>org.codehaus.fabric3.tests.cluster.apps</groupId>
     <artifactId>test-cluster-apps-parent-pom</artifactId>
     <packaging>pom</packaging>
-    <version>2.0.0</version>
+    <version>2.5.0</version>
     <name>Fabric3 Cluster Test Apps</name>
     <description>Fabric3 Cluster Test Apps Parent</description>
     <modules>

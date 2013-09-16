@@ -12,11 +12,11 @@
     <parent>
         <groupId>org.codehaus.fabric3.tests</groupId>
         <artifactId>test-environment-modules</artifactId>
-        <version>2.0.0</version>
+        <version>2.5.0</version>
     </parent>
     <artifactId>test-environment-application</artifactId>
     <packaging>jar</packaging>
-    <version>2.0.0</version>
+    <version>2.5.0</version>
     <name>Fabric3 Environment Loading Test Application</name>
     <description>Fabric3 Environment Loading Test Application</description>
     <dependencies>
