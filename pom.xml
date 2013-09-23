@@ -115,6 +115,7 @@
                 <module>tests-cluster-apps</module>
                 <module>tests-ws</module>
                 <module>test-binding-ftp</module>
+                <module>test-fabric-node</module>
             </modules>
         </profile>
         <profile>
@@ -151,6 +152,7 @@
                 <!--<module>tests-ant</module>-->
                 <module>tests-cluster-apps</module>
                 <module>tests-ws</module>
+                <module>test-fabric-node</module>
             </modules>
         </profile>
     </profiles>
