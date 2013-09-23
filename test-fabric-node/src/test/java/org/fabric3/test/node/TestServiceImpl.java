@@ -37,47 +37,15 @@
 */
 package org.fabric3.test.node;
 
-import java.net.URL;
-
-import junit.framework.TestCase;
-import org.fabric3.api.node.Bootstrap;
-import org.fabric3.api.node.Domain;
-import org.fabric3.api.node.Fabric;
+import org.fabric3.api.annotation.scope.Scopes;
+import org.oasisopen.sca.annotation.Scope;
 
 /**
  *
  */
-public class FabricTestCase extends TestCase {
-
-    public void testDeployAndGetService() throws Exception {
-        Fabric fabric = Bootstrap.initialize();
-        fabric.start();
-
-        Domain domain = fabric.getDomain();
-        domain.deploy(TestService.class, new TestService() {
-            public String message(String message) {
-                return message;
-            }
-        });
-
-        TestService service = domain.getService(TestService.class);
-        assertEquals("test", service.message("test"));
-
-        fabric.stop();
+@Scope(Scopes.COMPOSITE)
+public class TestServiceImpl implements TestService {
+    public String message(String message) {
+        return message;
     }
-
-    public void testDeployContribution() throws Exception {
-        Fabric fabric = Bootstrap.initialize();
-        fabric.start();
-
-        Domain domain = fabric.getDomain();
-        URL resource = getClass().getClassLoader().getResource("test.composite");
-        domain.deploy(resource);
-
-        TestService service = domain.getService(TestService.class);
-        assertEquals("test", service.message("test"));
-
-        fabric.stop();
-    }
-
 }
