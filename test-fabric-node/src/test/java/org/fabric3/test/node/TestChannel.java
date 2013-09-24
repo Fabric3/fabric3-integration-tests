@@ -37,60 +37,10 @@
 */
 package org.fabric3.test.node;
 
-import java.net.URL;
-
-import junit.framework.TestCase;
-import org.fabric3.api.node.Bootstrap;
-import org.fabric3.api.node.Domain;
-import org.fabric3.api.node.Fabric;
-
 /**
  *
  */
-public class FabricTestCase extends TestCase {
+public interface TestChannel {
 
-    public void testDeployAndGetService() throws Exception {
-        Fabric fabric = Bootstrap.initialize();
-        fabric.start();
-
-        Domain domain = fabric.getDomain();
-        domain.deploy(TestService.class, new TestService() {
-            public String message(String message) {
-                return message;
-            }
-        });
-
-        TestService service = domain.getService(TestService.class);
-        assertEquals("test", service.message("test"));
-
-        fabric.stop();
-    }
-
-    public void testDeployContribution() throws Exception {
-        Fabric fabric = Bootstrap.initialize();
-        fabric.start();
-
-        Domain domain = fabric.getDomain();
-        URL resource = getClass().getClassLoader().getResource("test.composite");
-        domain.deploy(resource);
-
-        TestService service = domain.getService(TestService.class);
-        assertEquals("test", service.message("test"));
-
-        fabric.stop();
-    }
-
-    public void testGetChannel() throws Exception {
-        Fabric fabric = Bootstrap.initialize();
-        fabric.start();
-
-        Domain domain = fabric.getDomain();
-        URL resource = getClass().getClassLoader().getResource("channel.composite");
-        domain.deploy(resource);
-
-        TestChannel channel = domain.getChannel(TestChannel.class, "TestChannel");
-        channel.send("test");
-
-        fabric.stop();
-    }
+    void send(String message);
 }
