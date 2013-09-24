@@ -43,6 +43,7 @@ import junit.framework.TestCase;
 import org.fabric3.api.node.Bootstrap;
 import org.fabric3.api.node.Domain;
 import org.fabric3.api.node.Fabric;
+import org.oasisopen.sca.ServiceRuntimeException;
 
 /**
  *
@@ -54,15 +55,23 @@ public class FabricTestCase extends TestCase {
         fabric.start();
 
         Domain domain = fabric.getDomain();
-        domain.deploy(TestService.class, new TestService() {
+        TestService instance = new TestService() {
             public String message(String message) {
                 return message;
             }
-        });
+        };
+        domain.deploy(TestService.class, instance);
 
         TestService service = domain.getService(TestService.class);
         assertEquals("test", service.message("test"));
 
+        domain.undeploy(TestService.class, instance);
+        try {
+            domain.getService(TestService.class);
+            fail();
+        } catch (ServiceRuntimeException e) {
+            // expected
+        }
         fabric.stop();
     }
 
@@ -77,6 +86,14 @@ public class FabricTestCase extends TestCase {
         TestService service = domain.getService(TestService.class);
         assertEquals("test", service.message("test"));
 
+        domain.undeploy(resource);
+
+        try {
+            domain.getService(TestService.class);
+            fail();
+        } catch (ServiceRuntimeException e) {
+            // expected
+        }
         fabric.stop();
     }
 
