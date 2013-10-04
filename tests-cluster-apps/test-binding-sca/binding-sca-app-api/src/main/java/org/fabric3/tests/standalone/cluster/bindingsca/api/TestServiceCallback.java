@@ -30,10 +30,12 @@
 package org.fabric3.tests.standalone.cluster.bindingsca.api;
 
 import org.oasisopen.sca.annotation.OneWay;
+import org.oasisopen.sca.annotation.Remotable;
 
 /**
  *
  */
+@Remotable
 public interface TestServiceCallback {
 
     @OneWay
