@@ -43,9 +43,9 @@ import java.net.URI;
 import javax.xml.namespace.QName;
 
 import org.fabric3.api.annotation.monitor.MonitorLevel;
-import org.fabric3.spi.builder.WiringException;
-import org.fabric3.spi.component.Component;
-import org.fabric3.spi.wire.Wire;
+import org.fabric3.spi.container.builder.WiringException;
+import org.fabric3.spi.container.component.Component;
+import org.fabric3.spi.container.wire.Wire;
 
 /**
  *

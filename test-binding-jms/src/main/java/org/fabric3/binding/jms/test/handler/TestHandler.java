@@ -4,8 +4,8 @@ import javax.xml.namespace.QName;
 
 import org.oasisopen.sca.annotation.Scope;
 
-import org.fabric3.spi.binding.handler.BindingHandler;
-import org.fabric3.spi.invocation.Message;
+import org.fabric3.spi.container.binding.handler.BindingHandler;
+import org.fabric3.spi.container.invocation.Message;
 
 /**
  *

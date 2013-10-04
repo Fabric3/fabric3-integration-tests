@@ -9,9 +9,9 @@ import org.oasisopen.sca.annotation.EagerInit;
 import org.oasisopen.sca.annotation.Init;
 import org.oasisopen.sca.annotation.Reference;
 
-import org.fabric3.spi.binding.handler.BindingHandler;
-import org.fabric3.spi.binding.handler.BindingHandlerRegistry;
-import org.fabric3.spi.invocation.Message;
+import org.fabric3.spi.container.binding.handler.BindingHandler;
+import org.fabric3.spi.container.binding.handler.BindingHandlerRegistry;
+import org.fabric3.spi.container.invocation.Message;
 
 /**
  *

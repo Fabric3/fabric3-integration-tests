@@ -40,10 +40,10 @@ package org.fabric3.tests.binding.metro;
 import javax.xml.ws.soap.SOAPFaultException;
 
 import junit.framework.TestCase;
-import org.fabric3.spi.invocation.WorkContextCache;
+import org.fabric3.spi.container.invocation.WorkContextCache;
 import org.oasisopen.sca.annotation.Reference;
 
-import org.fabric3.spi.invocation.WorkContext;
+import org.fabric3.spi.container.invocation.WorkContext;
 import org.fabric3.tests.binding.metro.helloworld.HelloWorldPortType;
 import org.fabric3.tests.binding.metro.soap.TestSoapBindingHandler;
 

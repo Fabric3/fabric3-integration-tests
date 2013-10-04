@@ -41,8 +41,8 @@ import java.net.URI;
 
 import org.oasisopen.sca.annotation.Reference;
 
-import org.fabric3.spi.builder.BuilderException;
-import org.fabric3.spi.builder.component.ComponentBuilder;
+import org.fabric3.spi.container.builder.BuilderException;
+import org.fabric3.spi.container.builder.component.ComponentBuilder;
 import org.fabric3.spi.classloader.ClassLoaderRegistry;
 import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlComponentDefinition;
 
