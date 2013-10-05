@@ -83,7 +83,7 @@ public class FabricClusterTestCase extends TestCase {
         TestService remoteService = domain2.getService(TestService.class);
         assertEquals("test", remoteService.message("test"));
 
-        // domain2.undeploy(clientComposite);
+        domain2.undeploy(clientComposite);
         fabric2.stop();
 
         domain1.undeploy(serviceComposite);
