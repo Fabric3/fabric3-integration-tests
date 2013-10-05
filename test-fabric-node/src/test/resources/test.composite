@@ -7,11 +7,16 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            targetNamespace="urn:fabric3.org"
-           name="TestComposite">
+           name="TestComposite"
+           autowire="true">
 
 
-    <component name="TestServiceImpl">
+    <component name="TestService">
         <implementation.java class="org.fabric3.test.node.TestServiceImpl"/>
+    </component>
+
+    <component name="TestOneWayService">
+        <implementation.java class="org.fabric3.test.node.TestOneWayServiceImpl"/>
     </component>
 
 </composite>

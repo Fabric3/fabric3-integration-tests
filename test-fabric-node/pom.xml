@@ -39,6 +39,21 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- hack to deal with DLL -->
+        <dependency>
+            <groupId>org.zeromq</groupId>
+            <artifactId>jzmq</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>profile-zeromq</artifactId>
+            <version>${fabric3.version}</version>
+            <type>zip</type>
+            <classifier>bin</classifier>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -47,5 +62,15 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.fabric3</groupId>
+                <artifactId>fabric3-zip-plugin</artifactId>
+                <version>${fabric3.version}</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

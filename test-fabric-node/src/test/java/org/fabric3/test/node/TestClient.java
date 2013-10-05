@@ -43,7 +43,9 @@ import org.oasisopen.sca.annotation.Remotable;
  *
  */
 @Remotable
-public interface TestService {
+public interface TestClient {
 
-    String message(String message);
+    String invoke(String message);
+
+    boolean invokeOneWay(String message);
 }

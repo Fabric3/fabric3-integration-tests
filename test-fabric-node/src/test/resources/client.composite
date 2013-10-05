@@ -7,10 +7,12 @@
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            targetNamespace="urn:fabric3.org"
-           name="TestChannelComposite"
+           name="TestClientComposite"
            autowire="true">
 
 
-    <channel name="TestChannel"/>
+    <component name="TestClient">
+        <implementation.java class="org.fabric3.test.node.TestClientImpl"/>
+    </component>
 
 </composite>

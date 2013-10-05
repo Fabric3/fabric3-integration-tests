@@ -37,13 +37,43 @@
 */
 package org.fabric3.test.node;
 
-import org.oasisopen.sca.annotation.Remotable;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+
+import org.fabric3.api.annotation.scope.Scopes;
+import org.oasisopen.sca.annotation.Reference;
+import org.oasisopen.sca.annotation.Scope;
+import org.oasisopen.sca.annotation.Service;
 
 /**
  *
  */
-@Remotable
-public interface TestService {
+@Scope(Scopes.COMPOSITE)
+@Service(names = {TestClient.class, CallbackService.class})
+public class TestClientImpl implements TestClient, CallbackService {
+    private CountDownLatch latch;
 
-    String message(String message);
+    @Reference
+    protected TestService service;
+
+    @Reference
+    protected TestOneWayService oneWayService;
+
+    public String invoke(String message) {
+        return service.message(message);
+    }
+
+    public boolean invokeOneWay(String message) {
+        latch = new CountDownLatch(1);
+        oneWayService.message(message);
+        try {
+            return latch.await(5000, TimeUnit.MILLISECONDS);
+        } catch (InterruptedException e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    public void reply(String reply) {
+        latch.countDown();
+    }
 }

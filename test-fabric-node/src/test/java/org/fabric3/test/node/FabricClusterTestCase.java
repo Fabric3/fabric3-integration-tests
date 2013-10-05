@@ -37,13 +37,58 @@
 */
 package org.fabric3.test.node;
 
-import org.oasisopen.sca.annotation.Remotable;
+import java.net.URL;
+
+import junit.framework.TestCase;
+import org.fabric3.api.node.Bootstrap;
+import org.fabric3.api.node.Domain;
+import org.fabric3.api.node.Fabric;
 
 /**
  *
  */
-@Remotable
-public interface TestService {
+public class FabricClusterTestCase extends TestCase {
 
-    String message(String message);
+    public void testBasicCluster() throws Exception {
+        Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
+        fabric1.start();
+
+        Fabric fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
+        fabric2.start();
+
+        Domain domain1 = fabric1.getDomain();
+        URL serviceComposite = getClass().getClassLoader().getResource("test.composite");
+        domain1.deploy(serviceComposite);
+
+        // wait for the runtimes to converge before deploying client composite
+        Thread.sleep(2000);
+
+        Domain domain2 = fabric2.getDomain();
+        URL clientComposite = getClass().getClassLoader().getResource("client.composite");
+        domain2.deploy(clientComposite);
+
+        // invoke local service
+        TestService service = domain1.getService(TestService.class);
+        assertEquals("test", service.message("test"));
+
+        TestClient client = domain2.getService(TestClient.class);
+
+        // invoke local client connected to the remote service in runtime 1
+        assertEquals("test", client.invoke("test"));
+
+        // test one-way callbacks
+        assertTrue(client.invokeOneWay("test"));
+
+        // invoke remote service
+        TestService remoteService = domain2.getService(TestService.class);
+        assertEquals("test", remoteService.message("test"));
+
+        // domain2.undeploy(clientComposite);
+        fabric2.stop();
+
+        domain1.undeploy(serviceComposite);
+        fabric1.stop();
+
+    }
+
 }

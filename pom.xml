@@ -108,7 +108,6 @@
                 <module>test-capabilities-extension</module>
                 <module>test-capabilities</module>
                 <module>test-multiple-modules</module>
-                <module>tests-ant</module>
                 <module>tests-import-resolution</module>
                 <module>test-environment</module>
                 <module>tests-apps</module>
@@ -149,7 +148,6 @@
                 <module>test-multiple-modules</module>
                 <module>tests-apps</module>
                 <module>tests-import-resolution</module>
-                <!--<module>tests-ant</module>-->
                 <module>tests-cluster-apps</module>
                 <module>tests-ws</module>
                 <module>test-fabric-node</module>

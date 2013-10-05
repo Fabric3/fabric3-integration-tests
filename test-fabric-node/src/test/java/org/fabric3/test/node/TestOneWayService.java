@@ -37,13 +37,17 @@
 */
 package org.fabric3.test.node;
 
+import org.oasisopen.sca.annotation.Callback;
+import org.oasisopen.sca.annotation.OneWay;
 import org.oasisopen.sca.annotation.Remotable;
 
 /**
  *
  */
 @Remotable
-public interface TestService {
+@Callback(CallbackService.class)
+public interface TestOneWayService {
 
-    String message(String message);
+    @OneWay
+    void message(String message);
 }
