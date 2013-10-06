@@ -47,9 +47,9 @@ import org.fabric3.api.node.Fabric;
 /**
  *
  */
-public class FabricClusterTestCase extends TestCase {
+public class FabricBasicClusterTestCase extends TestCase {
 
-    public void testBasicCluster() throws Exception {
+    public void testClusterWiringBetweenTwoZones() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
         fabric1.start();
 
@@ -91,4 +91,37 @@ public class FabricClusterTestCase extends TestCase {
 
     }
 
+    public void testClusterDeploymentAfterRuntimesConverge() throws Exception {
+        Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
+        fabric1.start();
+
+        Fabric fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
+        fabric2.start();
+
+        // wait for the runtimes to converge before deploying client composite
+        Thread.sleep(1000);
+
+        Domain domain1 = fabric1.getDomain();
+        URL serviceComposite = getClass().getClassLoader().getResource("test.composite");
+        domain1.deploy(serviceComposite);
+
+        // wait for snapshot to replicate
+        Thread.sleep(1000);
+
+        Domain domain2 = fabric2.getDomain();
+        URL clientComposite = getClass().getClassLoader().getResource("client.composite");
+        domain2.deploy(clientComposite);
+
+        TestClient client = domain2.getService(TestClient.class);
+
+        // invoke local client connected to the remote service in runtime 1
+        assertEquals("test", client.invoke("test"));
+
+        domain2.undeploy(clientComposite);
+        fabric2.stop();
+
+        domain1.undeploy(serviceComposite);
+        fabric1.stop();
+
+    }
 }

@@ -48,9 +48,9 @@ import org.oasisopen.sca.ServiceRuntimeException;
 /**
  *
  */
-public class FabricTestCase extends TestCase {
+public class FabricLocalTestCase extends TestCase {
 
-    public void testDeployAndGetService() throws Exception {
+    public void testDeployAndGetLocalService() throws Exception {
         Fabric fabric = Bootstrap.initialize();
         fabric.start();
 
@@ -97,7 +97,7 @@ public class FabricTestCase extends TestCase {
         fabric.stop();
     }
 
-    public void testGetChannel() throws Exception {
+    public void testGetLocalChannel() throws Exception {
         Fabric fabric = Bootstrap.initialize();
         fabric.start();
 
