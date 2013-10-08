@@ -43,62 +43,13 @@ import junit.framework.TestCase;
 import org.fabric3.api.node.Bootstrap;
 import org.fabric3.api.node.Domain;
 import org.fabric3.api.node.Fabric;
-import org.oasisopen.sca.ServiceRuntimeException;
 
 /**
  *
  */
-public class FabricLocalTestCase extends TestCase {
+public class FabricLocalChannelTestCase extends TestCase {
     public void testBlank() throws Exception {
 
-
-    }
-
-    public void testDeployAndGetLocalService() throws Exception {
-        Fabric fabric = Bootstrap.initialize();
-        fabric.start();
-
-        Domain domain = fabric.getDomain();
-        TestService instance = new TestService() {
-            public String message(String message) {
-                return message;
-            }
-        };
-        domain.deploy(TestService.class, instance);
-
-        TestService service = domain.getService(TestService.class);
-        assertEquals("test", service.message("test"));
-
-        domain.undeploy(TestService.class, instance);
-        try {
-            domain.getService(TestService.class);
-            fail();
-        } catch (ServiceRuntimeException e) {
-            // expected
-        }
-        fabric.stop();
-    }
-
-    public void testDeployContribution() throws Exception {
-        Fabric fabric = Bootstrap.initialize();
-        fabric.start();
-
-        Domain domain = fabric.getDomain();
-        URL resource = getClass().getClassLoader().getResource("test.composite");
-        domain.deploy(resource);
-
-        TestService service = domain.getService(TestService.class);
-        assertEquals("test", service.message("test"));
-
-        domain.undeploy(resource);
-
-        try {
-            domain.getService(TestService.class);
-            fail();
-        } catch (ServiceRuntimeException e) {
-            // expected
-        }
-        fabric.stop();
     }
 
     public void testGetLocalChannel() throws Exception {
@@ -106,12 +57,32 @@ public class FabricLocalTestCase extends TestCase {
         fabric.start();
 
         Domain domain = fabric.getDomain();
-        URL resource = getClass().getClassLoader().getResource("channel.composite");
-        domain.deploy(resource);
+        URL channelComposite = getClass().getClassLoader().getResource("channel.composite");
+        domain.deploy(channelComposite);
 
         TestChannel channel = domain.getChannel(TestChannel.class, "TestChannel");
         channel.send("test");
 
         fabric.stop();
+    }
+
+    public void testProducerConsumer() throws Exception {
+        Fabric fabric = Bootstrap.initialize();
+        fabric.start();
+
+        Domain domain = fabric.getDomain();
+
+        URL channelComposite = getClass().getClassLoader().getResource("channel.composite");
+        domain.deploy(channelComposite);
+
+        URL producerComposite = getClass().getClassLoader().getResource("producer.composite");
+        domain.deploy(producerComposite);
+
+        URL consumerComposite = getClass().getClassLoader().getResource("consumer.composite");
+        domain.deploy(consumerComposite);
+
+        TestProducer producer = domain.getService(TestProducer.class);
+        producer.send();
+
     }
 }

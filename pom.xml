@@ -115,10 +115,11 @@
                 <module>tests-ws</module>
                 <module>test-binding-ftp</module>
                 <module>test-fabric-node</module>
+                <module>test-fabric-node-cluster</module>
             </modules>
         </profile>
         <profile>
-            <id>cluster</id>
+            <id>fast</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
@@ -150,11 +151,8 @@
                 <module>test-multiple-modules</module>
                 <module>tests-import-resolution</module>
                 <module>test-environment</module>
-                <module>tests-apps</module>
-                <module>tests-cluster-apps</module>
-                <module>tests-ws</module>
                 <module>test-binding-ftp</module>
-                <module>test-fabric-node-cluster</module>
+                <module>test-fabric-node</module>
             </modules>
         </profile>
         <profile>
