@@ -118,6 +118,46 @@
             </modules>
         </profile>
         <profile>
+            <id>cluster</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <modules>
+                <module>test-binding-harness</module>
+                <module>test-implementation-wsdl</module>
+                <module>test-implementation-junit</module>
+                <module>test-function</module>
+                <module>test-eventing</module>
+                <module>test-user-resource</module>
+                <module>test-resource</module>
+                <module>test-datasource</module>
+                <module>test-policy</module>
+                <module>test-jpa-hibernate</module>
+                <module>test-spring</module>
+                <module>test-binding-rs-extension</module>
+                <module>test-binding-rs</module>
+                <module>test-timer-implementation</module>
+                <module>test-mock</module>
+                <module>test-binding-zeromq</module>
+                <module>test-binding-metro</module>
+                <module>test-binding-jms</module>
+                <module>test-binding-file</module>
+                <module>test-wsdl</module>
+                <module>test-management-rest</module>
+                <module>test-capabilities-extension</module>
+                <module>test-capabilities</module>
+                <module>test-multiple-modules</module>
+                <module>tests-import-resolution</module>
+                <module>test-environment</module>
+                <module>tests-apps</module>
+                <module>tests-cluster-apps</module>
+                <module>tests-ws</module>
+                <module>test-binding-ftp</module>
+                <module>test-fabric-node-cluster</module>
+            </modules>
+        </profile>
+        <profile>
             <id>bamboo</id>
             <modules>
                 <module>test-binding-harness</module>
@@ -151,6 +191,7 @@
                 <module>tests-cluster-apps</module>
                 <module>tests-ws</module>
                 <module>test-fabric-node</module>
+                <module>test-fabric-node-cluster</module>
             </modules>
         </profile>
     </profiles>

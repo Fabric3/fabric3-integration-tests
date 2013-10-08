@@ -18,11 +18,11 @@
     </parent>
 
     <groupId>org.codehaus.fabric3.tests</groupId>
-    <artifactId>test-fabric-node</artifactId>
+    <artifactId>test-fabric-node-cluster</artifactId>
     <version>2.5.0</version>
-    <name>Fabric3 Fabric Node Integration Tests</name>
+    <name>Fabric3 Fabric Node Cluster Integration Tests</name>
     <packaging>jar</packaging>
-    <description>Fabric3 Fabric Node Integration Tests.</description>
+    <description>Fabric3 Fabric Node Cluster Integration Tests.</description>
 
     <dependencies>
 
@@ -37,6 +37,27 @@
             <artifactId>fabric3-node-distribution</artifactId>
             <version>${fabric3.version}</version>
             <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.fabric3.tests</groupId>
+            <artifactId>test-fabric-node</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- hack to deal with DLL -->
+        <dependency>
+            <groupId>org.zeromq</groupId>
+            <artifactId>jzmq</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>profile-zeromq</artifactId>
+            <version>${fabric3.version}</version>
+            <type>zip</type>
+            <classifier>bin</classifier>
         </dependency>
 
         <dependency>

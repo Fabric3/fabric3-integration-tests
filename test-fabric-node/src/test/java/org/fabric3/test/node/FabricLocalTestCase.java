@@ -49,6 +49,10 @@ import org.oasisopen.sca.ServiceRuntimeException;
  *
  */
 public class FabricLocalTestCase extends TestCase {
+    public void testBlank() throws Exception {
+
+
+    }
 
     public void testDeployAndGetLocalService() throws Exception {
         Fabric fabric = Bootstrap.initialize();

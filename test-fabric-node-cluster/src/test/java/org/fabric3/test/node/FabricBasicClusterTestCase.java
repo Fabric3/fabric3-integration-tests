@@ -49,6 +49,10 @@ import org.fabric3.api.node.Fabric;
  */
 public class FabricBasicClusterTestCase extends TestCase {
 
+    public void testBlank() throws Exception {
+
+    }
+
     public void testClusterWiringBetweenTwoZones() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
         fabric1.start();
