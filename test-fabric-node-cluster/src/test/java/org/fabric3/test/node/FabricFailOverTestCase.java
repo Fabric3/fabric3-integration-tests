@@ -49,6 +49,10 @@ import org.fabric3.api.node.Fabric;
  */
 public class FabricFailOverTestCase extends TestCase {
 
+    public void testBlank() throws Exception {
+
+    }
+
     public void testClusterFailOverWhenNodeIsRemoved() throws Exception {
         Fabric fabric1a = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
         fabric1a.start();

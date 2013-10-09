@@ -84,5 +84,8 @@ public class FabricLocalChannelTestCase extends TestCase {
         TestProducer producer = domain.getService(TestProducer.class);
         producer.send();
 
+        LatchService latchService = domain.getService(LatchService.class);
+        latchService.await();
+
     }
 }

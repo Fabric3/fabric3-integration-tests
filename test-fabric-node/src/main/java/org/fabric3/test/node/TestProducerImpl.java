@@ -37,29 +37,23 @@
 */
 package org.fabric3.test.node;
 
-import java.util.concurrent.CountDownLatch;
-
 import org.fabric3.api.annotation.Producer;
 import org.fabric3.api.annotation.scope.Composite;
-import org.oasisopen.sca.annotation.Service;
 
 /**
  *
  */
 @Composite
-@Service(names = {LatchService.class, TestProducer.class})
-public class TestProducerImpl implements TestProducer, LatchService {
-    private CountDownLatch latch = new CountDownLatch(1);
+public class TestProducerImpl implements TestProducer {
 
     @Producer
     protected TestChannel channel;
 
     public void send() throws Exception {
         channel.send("test");
-        latch.await();
     }
 
-    public void countDown() {
-        latch.countDown();
+    public void await() throws Exception {
+        throw new UnsupportedOperationException();
     }
 }

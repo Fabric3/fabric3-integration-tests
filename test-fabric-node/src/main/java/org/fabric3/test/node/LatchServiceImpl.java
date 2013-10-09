@@ -37,15 +37,23 @@
 */
 package org.fabric3.test.node;
 
-import org.oasisopen.sca.annotation.OneWay;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+
+import org.fabric3.api.annotation.scope.Composite;
 
 /**
  *
  */
-public interface LatchService {
+@Composite
+public class LatchServiceImpl implements LatchService {
+    private CountDownLatch latch = new CountDownLatch(1);
 
-    void await() throws Exception;
+    public void await() throws Exception {
+        latch.await(10000, TimeUnit.MILLISECONDS);
+    }
 
-    @OneWay
-    void countDown();
+    public void countDown() {
+        latch.countDown();
+    }
 }

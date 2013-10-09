@@ -11,14 +11,14 @@
            autowire="true">
 
 
-    <component name="TestConsumer">
+    <component name="RemoteTestConsumer">
         <implementation.java class="org.fabric3.test.node.TestConsumer"/>
         <consumer name="onMessage" source="TestChannel"/>
     </component>
 
-
     <component name="LatchService">
         <implementation.java class="org.fabric3.test.node.LatchServiceImpl"/>
     </component>
+
 
 </composite>

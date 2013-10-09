@@ -50,6 +50,10 @@ import org.oasisopen.sca.ServiceRuntimeException;
  */
 public class FabricNodeRestartTestCase extends TestCase {
 
+    public void testBlank() throws Exception {
+
+    }
+
     public void testServiceNodeRestart() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
         fabric1.start();
@@ -200,8 +204,5 @@ public class FabricNodeRestartTestCase extends TestCase {
         fabric1.stop();
     }
 
-    public void testChannelNodeRestart() throws Exception {
-        // TODO implement
-    }
 
 }
