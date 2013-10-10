@@ -68,15 +68,5 @@
 
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.fabric3</groupId>
-                <artifactId>fabric3-zip-plugin</artifactId>
-                <version>${fabric3.version}</version>
-                <extensions>true</extensions>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
