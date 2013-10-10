@@ -189,7 +189,7 @@
                 <module>tests-cluster-apps</module>
                 <module>tests-ws</module>
                 <module>test-fabric-node</module>
-                <module>test-fabric-node-cluster</module>
+                <!--<module>test-fabric-node-cluster</module>-->
             </modules>
         </profile>
     </profiles>
