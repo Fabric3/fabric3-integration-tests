@@ -35,38 +35,22 @@
  * GNU General Public License along with Fabric3.
  * If not, see <http://www.gnu.org/licenses/>.
 */
+package org.fabric3.test.node;
 
-package org.fabric3.tests.implementation.wsdl.provision;
-
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.fabric3.api.model.type.contract.DataType;
-import org.fabric3.spi.model.physical.PhysicalDataTypes;
-import org.fabric3.spi.model.physical.PhysicalSourceDefinition;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
  */
-public class PhysicalWsdlSourceDefinition extends PhysicalSourceDefinition {
-    private static final long serialVersionUID = -6401712349639574580L;
-    private List<DataType<?>> physicalDataTypes = new ArrayList<DataType<?>>();
+@Path("/")
+@Consumes({MediaType.APPLICATION_XML})
+@Produces({MediaType.APPLICATION_XML})
+public interface TestRsService {
 
-    private String name;
-
-    public PhysicalWsdlSourceDefinition(String name, URI componentUri) {
-        this.name = name;
-        setUri(componentUri);
-        physicalDataTypes.add(PhysicalDataTypes.DOM);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public List<DataType<?>> getPhysicalDataTypes() {
-        return physicalDataTypes;
-    }
+    @GET
+    String test();
 }

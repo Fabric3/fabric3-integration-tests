@@ -37,64 +37,39 @@
 */
 package org.fabric3.test.node;
 
-import java.net.URL;
-
 import junit.framework.TestCase;
 import org.fabric3.api.node.Bootstrap;
 import org.fabric3.api.node.Domain;
 import org.fabric3.api.node.Fabric;
-import org.fabric3.api.model.type.builder.ComponentDefinitionBuilder;
-import org.fabric3.api.model.type.component.ComponentDefinition;
 import org.oasisopen.sca.ServiceRuntimeException;
 
 /**
  *
  */
-public class FabricLocalServiceTestCase extends TestCase {
-    public void testBlank() throws Exception {
+public class Fabric3BindingTestCase extends TestCase {
 
-    }
-
-    public void testDeployAndGetLocalService() throws Exception {
-        Fabric fabric = Bootstrap.initialize();
-        fabric.start();
-
-        Domain domain = fabric.getDomain();
-        TestService instance = new TestService() {
-            public String message(String message) {
-                return message;
-            }
-        };
-        domain.deploy("TestService", instance);
-
-        TestService service = domain.getService(TestService.class);
-        assertEquals("test", service.message("test"));
-
-        domain.undeploy("TestService");
-        try {
-            domain.getService(TestService.class);
-            fail();
-        } catch (ServiceRuntimeException e) {
-            // expected
-        }
-        fabric.stop();
-    }
-
-    public void testDeployAndGetComponentDefinition() throws Exception {
+    public void testDeployServiceEndpoint() throws Exception {
 
         Fabric fabric = Bootstrap.initialize();
+        fabric.addProfile("rs").addExtension("fabric3-databinding-json").addExtension("fabric3-jetty");
         fabric.start();
 
         Domain domain = fabric.getDomain();
 
-        TestServiceImpl instance = new TestServiceImpl();
-        ComponentDefinition definition = ComponentDefinitionBuilder.newBuilder("TestService", instance).build();
-        domain.deploy(definition);
+        TestRsServiceImpl instance = new TestRsServiceImpl();
+        domain.deploy("TestRsService", instance);
+//        ComponentDefinitionBuilder builder = ComponentDefinitionBuilder.newBuilder("TestRsService", instance);
+//        BindingDefinition bindingDefinition = new RsBindingDefinition("TestRsService", URI.create("/service"));
+//        builder.binding("TestRsService", bindingDefinition);
+//
+//        ComponentDefinition definition = builder.build();
+//
+//        domain.deploy(definition);
 
-        TestService service = domain.getService(TestService.class);
-        assertEquals("test", service.message("test"));
+        TestRsService service = domain.getService(TestRsService.class);
+        assertEquals("test", service.test());
 
-        domain.undeploy("TestService");
+        domain.undeploy("TestRsService");
         try {
             domain.getService(TestService.class);
             fail();
@@ -104,27 +79,4 @@ public class FabricLocalServiceTestCase extends TestCase {
         fabric.stop();
 
     }
-
-    public void testDeployContribution() throws Exception {
-        Fabric fabric = Bootstrap.initialize();
-        fabric.start();
-
-        Domain domain = fabric.getDomain();
-        URL resource = getClass().getClassLoader().getResource("test.composite");
-        domain.deploy(resource);
-
-        TestService service = domain.getService(TestService.class);
-        assertEquals("test", service.message("test"));
-
-        domain.undeploy(resource);
-
-        try {
-            domain.getService(TestService.class);
-            fail();
-        } catch (ServiceRuntimeException e) {
-            // expected
-        }
-        fabric.stop();
-    }
-
 }

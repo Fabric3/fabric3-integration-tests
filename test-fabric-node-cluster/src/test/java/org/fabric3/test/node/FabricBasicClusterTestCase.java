@@ -55,11 +55,11 @@ public class FabricBasicClusterTestCase extends TestCase {
 
     public void testClusterWiringBetweenTwoZones() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
-        fabric1.addProfile("zeromq");
+        fabric1.addProfile(Configuration.BINDING_PROFILE);
         fabric1.start();
 
         Fabric fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
-        fabric2.addProfile("zeromq");
+        fabric2.addProfile(Configuration.BINDING_PROFILE);
         fabric2.start();
 
         Domain domain1 = fabric1.getDomain();
@@ -99,11 +99,11 @@ public class FabricBasicClusterTestCase extends TestCase {
 
     public void testClusterDeploymentAfterRuntimesConverge() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
-        fabric1.addProfile("zeromq");
+        fabric1.addProfile(Configuration.BINDING_PROFILE);
         fabric1.start();
 
         Fabric fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
-        fabric2.addProfile("zeromq");
+        fabric2.addProfile(Configuration.BINDING_PROFILE);
         fabric2.start();
 
         // wait for the runtimes to converge before deploying client composite

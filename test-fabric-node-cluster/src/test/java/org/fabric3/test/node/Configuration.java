@@ -35,38 +35,12 @@
  * GNU General Public License along with Fabric3.
  * If not, see <http://www.gnu.org/licenses/>.
 */
-
-package org.fabric3.tests.implementation.wsdl.provision;
-
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.fabric3.api.model.type.contract.DataType;
-import org.fabric3.spi.model.physical.PhysicalDataTypes;
-import org.fabric3.spi.model.physical.PhysicalSourceDefinition;
+package org.fabric3.test.node;
 
 /**
  *
  */
-public class PhysicalWsdlSourceDefinition extends PhysicalSourceDefinition {
-    private static final long serialVersionUID = -6401712349639574580L;
-    private List<DataType<?>> physicalDataTypes = new ArrayList<DataType<?>>();
+public interface Configuration {
 
-    private String name;
-
-    public PhysicalWsdlSourceDefinition(String name, URI componentUri) {
-        this.name = name;
-        setUri(componentUri);
-        physicalDataTypes.add(PhysicalDataTypes.DOM);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public List<DataType<?>> getPhysicalDataTypes() {
-        return physicalDataTypes;
-    }
+    String BINDING_PROFILE = "zeromq";
 }

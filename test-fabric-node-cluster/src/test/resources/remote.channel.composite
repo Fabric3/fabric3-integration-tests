@@ -13,7 +13,7 @@
 
 
     <channel name="TestChannel">
-        <f3:binding.zeromq/>
+        <binding.sca/>
     </channel>
 
 </composite>

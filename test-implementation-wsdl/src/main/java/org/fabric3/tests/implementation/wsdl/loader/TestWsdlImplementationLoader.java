@@ -46,10 +46,10 @@ import javax.xml.stream.XMLStreamReader;
 import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.EagerInit;
 
-import org.fabric3.host.contribution.StoreException;
-import org.fabric3.model.type.component.Multiplicity;
-import org.fabric3.model.type.component.ReferenceDefinition;
-import org.fabric3.model.type.component.ServiceDefinition;
+import org.fabric3.api.host.contribution.StoreException;
+import org.fabric3.api.model.type.component.Multiplicity;
+import org.fabric3.api.model.type.component.ReferenceDefinition;
+import org.fabric3.api.model.type.component.ServiceDefinition;
 import org.fabric3.spi.contribution.MetaDataStore;
 import org.fabric3.spi.contribution.ResourceElement;
 import org.fabric3.spi.introspection.IntrospectionContext;

@@ -56,11 +56,11 @@ public class FabricNodeRestartTestCase extends TestCase {
 
     public void testServiceNodeRestart() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
-        fabric1.addProfile("zeromq");
+        fabric1.addProfile(Configuration.BINDING_PROFILE);
         fabric1.start();
 
         Fabric fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
-        fabric2.addProfile("zeromq");
+        fabric2.addProfile(Configuration.BINDING_PROFILE);
         fabric2.start();
 
         Domain domain1 = fabric1.getDomain();
@@ -85,7 +85,7 @@ public class FabricNodeRestartTestCase extends TestCase {
 
         // restart and deploy the service
         fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
-        fabric1.addProfile("zeromq");
+        fabric1.addProfile(Configuration.BINDING_PROFILE);
         fabric1.start();
         domain1 = fabric1.getDomain();
         domain1.deploy(serviceComposite);
@@ -105,11 +105,11 @@ public class FabricNodeRestartTestCase extends TestCase {
 
     public void testClientNodeRestart() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
-        fabric1.addProfile("zeromq");
+        fabric1.addProfile(Configuration.BINDING_PROFILE);
         fabric1.start();
 
         Fabric fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
-        fabric2.addProfile("zeromq");
+        fabric2.addProfile(Configuration.BINDING_PROFILE);
         fabric2.start();
 
         Domain domain1 = fabric1.getDomain();
@@ -146,7 +146,7 @@ public class FabricNodeRestartTestCase extends TestCase {
 
         // restart and deploy the service
         fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
-        fabric2.addProfile("zeromq");
+        fabric2.addProfile(Configuration.BINDING_PROFILE);
         fabric2.start();
 
         // wait for runtime to converge
@@ -170,11 +170,11 @@ public class FabricNodeRestartTestCase extends TestCase {
 
     public void testCleanupOnClientNodeFailure() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
-        fabric1.addProfile("zeromq");
+        fabric1.addProfile(Configuration.BINDING_PROFILE);
         fabric1.start();
 
         Fabric fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
-        fabric2.addProfile("zeromq");
+        fabric2.addProfile(Configuration.BINDING_PROFILE);
         fabric2.start();
 
         Domain domain1 = fabric1.getDomain();

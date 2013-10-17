@@ -38,7 +38,7 @@
 package org.fabric3.tests.implementation.wsdl.loader;
 
 
-import org.fabric3.host.failure.ValidationFailure;
+import org.fabric3.api.host.failure.ValidationFailure;
 
 /**
  *

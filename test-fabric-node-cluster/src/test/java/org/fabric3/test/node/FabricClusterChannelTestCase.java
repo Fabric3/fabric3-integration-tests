@@ -54,11 +54,11 @@ public class FabricClusterChannelTestCase extends TestCase {
 
     public void testPublishToRemoteChannel() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
-        fabric1.addProfile("zeromq");
+        fabric1.addProfile(Configuration.BINDING_PROFILE);
         fabric1.start();
 
         Fabric fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
-        fabric2.addProfile("zeromq");
+        fabric2.addProfile(Configuration.BINDING_PROFILE);
         fabric2.start();
 
         Domain domain1 = fabric1.getDomain();
@@ -90,11 +90,11 @@ public class FabricClusterChannelTestCase extends TestCase {
 
     public void testSendViaProducerToRemoteChannel() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
-        fabric1.addProfile("zeromq");
+        fabric1.addProfile(Configuration.BINDING_PROFILE);
         fabric1.start();
 
         Fabric fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
-        fabric2.addProfile("zeromq");
+        fabric2.addProfile(Configuration.BINDING_PROFILE);
         fabric2.start();
 
         Domain domain1 = fabric1.getDomain();
@@ -130,11 +130,11 @@ public class FabricClusterChannelTestCase extends TestCase {
 
     public void testSendToRemoteConsumer() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
-        fabric1.addProfile("zeromq");
+        fabric1.addProfile(Configuration.BINDING_PROFILE);
         fabric1.start();
 
         Fabric fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
-        fabric2.addProfile("zeromq");
+        fabric2.addProfile(Configuration.BINDING_PROFILE);
         fabric2.start();
 
         Domain domain1 = fabric1.getDomain();

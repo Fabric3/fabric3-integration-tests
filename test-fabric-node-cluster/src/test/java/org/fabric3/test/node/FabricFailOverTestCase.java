@@ -55,11 +55,11 @@ public class FabricFailOverTestCase extends TestCase {
 
     public void testClusterFailOverWhenNodeIsRemoved() throws Exception {
         Fabric fabric1a = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
-        fabric1a.addProfile("zeromq");
+        fabric1a.addProfile(Configuration.BINDING_PROFILE);
         fabric1a.start();
 
         Fabric fabric2 = Bootstrap.initialize(getClass().getResource("/systemConfigZone2.xml"));
-        fabric2.addProfile("zeromq");
+        fabric2.addProfile(Configuration.BINDING_PROFILE);
         fabric2.start();
 
         Domain domain1a = fabric1a.getDomain();
@@ -80,7 +80,7 @@ public class FabricFailOverTestCase extends TestCase {
 
         // startup second node in zone1
         Fabric fabric1b = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
-        fabric1b.addProfile("zeromq");
+        fabric1b.addProfile(Configuration.BINDING_PROFILE);
         fabric1b.start();
         Domain domain1b = fabric1b.getDomain();
         domain1b.deploy(serviceComposite);
