@@ -40,6 +40,8 @@ package org.fabric3.test.node;
 import java.net.URL;
 
 import junit.framework.TestCase;
+import org.fabric3.api.model.type.builder.ChannelDefinitionBuilder;
+import org.fabric3.api.model.type.component.ChannelDefinition;
 import org.fabric3.api.node.Bootstrap;
 import org.fabric3.api.node.Domain;
 import org.fabric3.api.node.Fabric;
@@ -87,5 +89,36 @@ public class FabricLocalChannelTestCase extends TestCase {
         LatchService latchService = domain.getService(LatchService.class);
         latchService.await();
 
+        fabric.stop();
+    }
+
+    public void testDeployChannelDefinition() throws Exception {
+        Fabric fabric = Bootstrap.initialize();
+        fabric.start();
+
+        Domain domain = fabric.getDomain();
+
+        ChannelDefinition definition = ChannelDefinitionBuilder.newBuilder("TestChannel").build();
+        domain.deploy(definition);
+
+        TestChannel channel = domain.getChannel(TestChannel.class, "TestChannel");
+        channel.send("test");
+
+        fabric.stop();
+    }
+
+    public void testDeployConsumer() throws Exception {
+        Fabric fabric = Bootstrap.initialize();
+        fabric.start();
+
+        Domain domain = fabric.getDomain();
+
+        ChannelDefinition definition = ChannelDefinitionBuilder.newBuilder("TestChannel").build();
+        domain.deploy(definition);
+
+        domain.deploy("LatchService", new LatchServiceImpl());
+        domain.deploy("TestConsumer", new TestConsumer());
+
+        fabric.stop();
     }
 }

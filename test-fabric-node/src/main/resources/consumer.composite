@@ -13,7 +13,7 @@
 
     <component name="TestConsumer">
         <implementation.java class="org.fabric3.test.node.TestConsumer"/>
-        <consumer name="onMessage" source="TestChannel"/>
+        <consumer name="TestChannel" source="TestChannel"/>
     </component>
 
 

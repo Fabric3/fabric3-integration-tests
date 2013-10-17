@@ -50,7 +50,7 @@ public class TestConsumer {
     @Reference
     protected LatchService latchService;
 
-    @Consumer
+    @Consumer("TestChannel")
     public void onMessage(String message) {
         latchService.countDown();
     }
