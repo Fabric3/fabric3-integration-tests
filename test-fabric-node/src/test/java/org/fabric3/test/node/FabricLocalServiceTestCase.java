@@ -40,11 +40,11 @@ package org.fabric3.test.node;
 import java.net.URL;
 
 import junit.framework.TestCase;
+import org.fabric3.api.model.type.builder.JavaComponentDefinitionBuilder;
+import org.fabric3.api.model.type.component.ComponentDefinition;
 import org.fabric3.api.node.Bootstrap;
 import org.fabric3.api.node.Domain;
 import org.fabric3.api.node.Fabric;
-import org.fabric3.api.model.type.builder.ComponentDefinitionBuilder;
-import org.fabric3.api.model.type.component.ComponentDefinition;
 import org.oasisopen.sca.ServiceRuntimeException;
 
 /**
@@ -88,7 +88,7 @@ public class FabricLocalServiceTestCase extends TestCase {
         Domain domain = fabric.getDomain();
 
         TestServiceImpl instance = new TestServiceImpl();
-        ComponentDefinition definition = ComponentDefinitionBuilder.newBuilder("TestService", instance).build();
+        ComponentDefinition definition = JavaComponentDefinitionBuilder.newBuilder("TestService", instance).build();
         domain.deploy(definition);
 
         TestService service = domain.getService(TestService.class);
