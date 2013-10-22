@@ -46,7 +46,7 @@ import org.oasisopen.sca.ServiceRuntimeException;
 /**
  *
  */
-public class Fabric3BindingTestCase extends TestCase {
+public class FabricBindingTestCase extends TestCase {
 
     public void testDeployServiceEndpoint() throws Exception {
 

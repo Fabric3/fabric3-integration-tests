@@ -13,7 +13,7 @@ Public License. See the accompanying license file for details.
            xmlns:f3="urn:fabric3.org"
            targetNamespace="urn:fabric3.org"
            name="FunctionTestHarnessComposite">
-
+    <include name="DSLComposite"/>
     <include name="CommonComposite"/>
     <include name="SmokeTestComposite"/>
     <include name="AnnotationComposite"/>
