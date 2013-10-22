@@ -376,6 +376,14 @@ Public License. See the accompanying license file for details.
         </test:globalElement1>
     </property>
 
+    <property name="complexNoNsType">
+        <value>
+            <firstData>complex1</firstData>
+            <secondData>complex2</secondData>
+        </value>
+    </property>
+
+
     <property name="complexType">
         <value>
             <test:firstData>complex1</test:firstData>

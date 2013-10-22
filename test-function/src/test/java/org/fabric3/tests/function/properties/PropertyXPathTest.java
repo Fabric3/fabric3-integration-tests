@@ -40,6 +40,7 @@ package org.fabric3.tests.function.properties;
 import java.util.Map;
 
 import junit.framework.TestCase;
+import org.fabric3.api.annotation.Source;
 import org.oasisopen.sca.annotation.Property;
 
 /**
@@ -56,6 +57,10 @@ public class PropertyXPathTest extends TestCase {
     protected String complexType;
 
     @Property
+    @Source(value = "$complexNoNsType//sca:firstData")
+    protected String complexAnnotation;
+
+    @Property
     protected Map<String, String> nestedMap;
 
     public void testSimpleXPath() {
@@ -68,6 +73,10 @@ public class PropertyXPathTest extends TestCase {
 
     public void testComplexTypeXPath() {
         assertEquals("complex1", complexType);
+    }
+
+    public void testComplexTypeXPathFromAnnotation() {
+        assertEquals("complex1", complexAnnotation);
     }
 
     public void testNestedMapXPath() {
