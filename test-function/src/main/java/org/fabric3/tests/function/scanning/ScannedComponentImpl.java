@@ -45,4 +45,7 @@ import org.fabric3.api.annotation.model.Component;
  */
 @Component(composite = Namespaces.F3_PREFIX + "ScannedComposite")
 public class ScannedComponentImpl implements ScannedComponent {
+
+    public void invoke() {
+    }
 }

@@ -37,11 +37,20 @@
 */
 package org.fabric3.tests.function.scanning;
 
+import org.fabric3.api.Namespaces;
+import org.fabric3.api.annotation.Producer;
+import org.fabric3.api.annotation.model.Component;
+
 /**
  *
  */
-public interface ScannedComponent {
+@Component(composite = Namespaces.F3_PREFIX + "DSLComposite")
+public class ScannedComponentImpl2 implements ScannedComponent {
 
-    void invoke();
+    @Producer(target = "DSLChannel")
+    protected DSLChannel channel;
 
+    public void invoke() {
+        channel.send("test");
+    }
 }

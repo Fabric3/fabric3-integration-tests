@@ -40,8 +40,8 @@ package org.fabric3.tests.function.scanning;
 /**
  *
  */
-public interface ScannedComponent {
+public interface DSLChannel {
 
-    void invoke();
+    void send(String message);
 
 }

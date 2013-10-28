@@ -37,11 +37,22 @@
 */
 package org.fabric3.tests.function.scanning;
 
+import java.util.List;
+
+import junit.framework.TestCase;
+import org.oasisopen.sca.annotation.Reference;
+
 /**
  *
  */
-public interface ScannedComponent {
+public class ScanningTest extends TestCase {
 
-    void invoke();
+    @Reference
+    protected List<ScannedComponent> components;
 
+    public void testScannedComponents() throws Exception {
+        for (ScannedComponent component : components) {
+            component.invoke();
+        }
+    }
 }

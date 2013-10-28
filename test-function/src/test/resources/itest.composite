@@ -34,5 +34,6 @@ Public License. See the accompanying license file for details.
     <include name="HeaderComposite"/>
     <include name="ByValueComposite"/>
     <include name="ParametersComposite"/>
+    <include name="ScanningTestComposite"/>
 
 </composite>
