@@ -37,20 +37,38 @@
 */
 package org.fabric3.tests.function.scanning;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+
 import org.fabric3.api.Namespaces;
+import org.fabric3.api.annotation.Consumer;
 import org.fabric3.api.annotation.Producer;
 import org.fabric3.api.annotation.model.Component;
+import org.fabric3.api.annotation.scope.Composite;
+import org.oasisopen.sca.ServiceRuntimeException;
 
 /**
  *
  */
 @Component(composite = Namespaces.F3_PREFIX + "DSLComposite")
+@Composite
 public class ScannedComponentImpl2 implements ScannedComponent {
+    private CountDownLatch latch = new CountDownLatch(1);
 
     @Producer(target = "DSLChannel")
     protected DSLChannel channel;
 
+    @Consumer(source = "DSLChannel")
+    public void onMessage(String message) {
+        latch.countDown();
+    }
+
     public void invoke() {
         channel.send("test");
+        try {
+            latch.await(10000, TimeUnit.MILLISECONDS);
+        } catch (InterruptedException e) {
+            throw new ServiceRuntimeException(e);
+        }
     }
 }
