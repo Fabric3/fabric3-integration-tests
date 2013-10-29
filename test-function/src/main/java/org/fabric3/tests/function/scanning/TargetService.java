@@ -37,31 +37,11 @@
 */
 package org.fabric3.tests.function.scanning;
 
-import java.util.List;
-
-import junit.framework.TestCase;
-import org.fabric3.api.annotation.Target;
-import org.oasisopen.sca.annotation.Reference;
-
 /**
  *
  */
-public class ScanningTest extends TestCase {
+public interface TargetService {
 
-    @Reference
-    protected List<ScannedComponent> components;
+    String getName();
 
-    @Reference
-    @Target("TargetServiceImpl2")
-    protected TargetService targetService;
-
-    public void testScannedComponents() throws Exception {
-        for (ScannedComponent component : components) {
-            component.invoke();
-        }
-    }
-
-    public void testSpecifiedTarget() throws Exception {
-        assertEquals(TargetServiceImpl2.class.getName(), targetService.getName());
-    }
 }
