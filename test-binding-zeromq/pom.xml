@@ -82,13 +82,6 @@
                             <version>${fabric3.version}</version>
                         </profile>
                     </profiles>
-                    <shared>
-                        <dependency>
-                            <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>fabric3-binding-zeromq-api</artifactId>
-                            <version>${fabric3.version}</version>
-                        </dependency>
-                    </shared>
                     <extensions>
                         <dependency>
                             <groupId>com.lmax</groupId>
