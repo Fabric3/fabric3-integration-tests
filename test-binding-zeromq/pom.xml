@@ -6,7 +6,8 @@
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -30,6 +31,16 @@
             <artifactId>fabric3-api</artifactId>
             <version>${fabric3.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-model-api</artifactId>
+            <version>${fabric3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-binding-zeromq-api</artifactId>
+            <version>${fabric3.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -42,7 +53,7 @@
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
-        
+
     </dependencies>
 
     <build>
@@ -57,13 +68,13 @@
                 <configuration>
                     <runtimeVersion>${fabric3.version}</runtimeVersion>
                     <!--<systemConfig>-->
-                        <!--<![CDATA[-->
-                               <!--<config>-->
-                                  <!--<thread.pool size="100"/>-->
-                               <!--</config>-->
-                               <!--]]>-->
+                    <!--<![CDATA[-->
+                    <!--<config>-->
+                    <!--<thread.pool size="100"/>-->
+                    <!--</config>-->
+                    <!--]]>-->
                     <!--</systemConfig>-->
-                    
+
                     <profiles>
                         <profile>
                             <groupId>org.codehaus.fabric3</groupId>
@@ -71,6 +82,13 @@
                             <version>${fabric3.version}</version>
                         </profile>
                     </profiles>
+                    <shared>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-binding-zeromq-api</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                    </shared>
                     <extensions>
                         <dependency>
                             <groupId>com.lmax</groupId>

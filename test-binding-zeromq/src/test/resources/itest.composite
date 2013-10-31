@@ -63,5 +63,6 @@
         <implementation.java class="org.fabric3.binding.zeromq.test.service.ServiceLatchImpl"/>
     </component>
 
+    <include name="f3:ScannedComposite"/>
 
 </composite>
