@@ -45,7 +45,6 @@ import org.fabric3.api.annotation.model.Component;
 import org.fabric3.api.annotation.scope.Composite;
 import org.fabric3.api.binding.zeromq.annotation.ZeroMQ;
 import org.oasisopen.sca.ServiceRuntimeException;
-import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Service;
 
 /**
@@ -59,7 +58,6 @@ public class ScannedServiceClientImpl implements ScannedServiceClient, ScannedSe
     private String message;
 
     @ZeroMQ(target = "ScannedService")
-    @Reference
     protected ScannedService scannedService;
 
     public String message(String message) {
