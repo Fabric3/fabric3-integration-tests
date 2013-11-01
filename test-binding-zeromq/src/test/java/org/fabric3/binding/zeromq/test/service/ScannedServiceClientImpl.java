@@ -45,14 +45,12 @@ import org.fabric3.api.annotation.model.Component;
 import org.fabric3.api.annotation.scope.Composite;
 import org.fabric3.api.binding.zeromq.annotation.ZeroMQ;
 import org.oasisopen.sca.ServiceRuntimeException;
-import org.oasisopen.sca.annotation.Service;
 
 /**
  *
  */
 @Composite
 @Component(composite = Namespaces.F3_PREFIX + "ScannedComposite")
-@Service(names = {ScannedServiceClient.class, ScannedServiceCallback.class})
 public class ScannedServiceClientImpl implements ScannedServiceClient, ScannedServiceCallback {
     private CountDownLatch latch = new CountDownLatch(1);
     private String message;
