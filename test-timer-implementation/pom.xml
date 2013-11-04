@@ -32,6 +32,11 @@
             <version>${fabric3.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-timer-api</artifactId>
+            <version>${fabric3.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.codehaus.fabric3.api</groupId>
             <artifactId>javax-jta</artifactId>
             <version>${jta.version}</version>

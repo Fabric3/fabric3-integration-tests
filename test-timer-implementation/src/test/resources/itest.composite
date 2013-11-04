@@ -33,9 +33,9 @@
         <f3:implementation.timer poolName="TestPool" class="org.fabric3.tests.timer.TransactionalTimedComponent" requires="sca:managedTransaction" repeatInterval="100"/>
     </component>
 
-    <component name="TrxTimerIntervalComponent">
-        <f3:implementation.timer poolName="TestPool" class="org.fabric3.tests.timer.TransactionalTimedIntervalComponent" requires="sca:managedTransaction"/>
-    </component>
+    <!--<component name="TrxTimerIntervalComponent">-->
+        <!--<f3:implementation.timer poolName="TestPool" class="org.fabric3.tests.timer.TransactionalTimedIntervalComponent" requires="sca:managedTransaction"/>-->
+    <!--</component>-->
 
 
     <f3:timer.pool name="TestPool" size="5"/>

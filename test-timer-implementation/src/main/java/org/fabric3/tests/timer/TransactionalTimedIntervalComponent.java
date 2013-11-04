@@ -37,22 +37,31 @@
 */
 package org.fabric3.tests.timer;
 
-import java.util.concurrent.atomic.AtomicBoolean;
 import javax.transaction.Status;
 import javax.transaction.SystemException;
 import javax.transaction.TransactionManager;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.oasisopen.sca.ServiceRuntimeException;
-import org.oasisopen.sca.annotation.Reference;
-
+import org.fabric3.api.Namespaces;
 import org.fabric3.api.annotation.Resource;
+import org.fabric3.api.annotation.model.Component;
+import org.fabric3.api.annotation.scope.Composite;
+import org.fabric3.api.implementation.timer.annotation.Timer;
+import org.fabric3.api.implementation.timer.model.TimerType;
+import org.oasisopen.sca.ServiceRuntimeException;
+import org.oasisopen.sca.annotation.ManagedTransaction;
+import org.oasisopen.sca.annotation.Reference;
 
 /**
  *
  */
+@ManagedTransaction
+@Composite
+@Component(composite = Namespaces.F3_PREFIX + "TestComposite")
+@Timer(type = TimerType.RECURRING, pool = "TestPool")
 public class TransactionalTimedIntervalComponent implements Runnable {
     private static AtomicBoolean FIRED = new AtomicBoolean();
-    
+
     @Reference
     protected LatchService latchService;
 
