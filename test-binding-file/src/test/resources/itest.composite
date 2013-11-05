@@ -98,19 +98,19 @@
 
     </component>
 
-    <component name="DataHandlerService">
-        <implementation.java class="org.fabric3.binding.file.test.DataHandlerServiceImpl"/>
-        <service name="DataHandlerService">
-            <f3:binding.file location="handlerdrop"
-                             error.location="handlerarchive"
-                             archive.location="handlererror"
-                             strategy="archive"
-                             delay="200"/>
-        </service>
-        <reference name="output">
-            <f3:binding.file location="handlerarchive"/>
-        </reference>
-    </component>
+    <!--<component name="DataHandlerService">-->
+        <!--<implementation.java class="org.fabric3.binding.file.test.DataHandlerServiceImpl"/>-->
+        <!--<service name="DataHandlerService">-->
+            <!--<f3:binding.file location="handlerdrop"-->
+                             <!--error.location="handlerarchive"-->
+                             <!--archive.location="handlererror"-->
+                             <!--strategy="archive"-->
+                             <!--delay="200"/>-->
+        <!--</service>-->
+        <!--<reference name="output">-->
+            <!--<f3:binding.file location="handlerarchive"/>-->
+        <!--</reference>-->
+    <!--</component>-->
 
     <component name="AdapterComponent">
         <implementation.java class="org.fabric3.binding.file.test.AdapterComponent"/>

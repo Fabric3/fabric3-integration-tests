@@ -32,6 +32,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-binding-file-api</artifactId>
+            <version>${fabric3.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
@@ -56,13 +62,13 @@
                 <version>${fabric3.version}</version>
                 <configuration>
                     <runtimeVersion>${fabric3.version}</runtimeVersion>
-                    <extensions>
+                    <profiles>
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
-                            <artifactId>fabric3-binding-file</artifactId>
+                            <artifactId>profile-file</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
-                    </extensions>
+                    </profiles>
                 </configuration>
                 <executions>
                     <execution>

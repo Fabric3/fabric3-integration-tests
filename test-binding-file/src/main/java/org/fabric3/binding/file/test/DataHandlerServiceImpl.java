@@ -41,6 +41,10 @@ import javax.activation.DataHandler;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import org.fabric3.api.Namespaces;
+import org.fabric3.api.annotation.model.Component;
+import org.fabric3.binding.file.api.annotation.FileBinding;
+import org.fabric3.binding.file.api.annotation.Strategy;
 import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Scope;
 
@@ -48,11 +52,13 @@ import org.oasisopen.sca.annotation.Scope;
  *
  */
 @Scope("COMPOSITE")
+@Component(composite = Namespaces.F3_PREFIX + "TestComposite")
+@FileBinding(location = "handlerdrop", errorLocation = "handlerarchive", archiveLocation = "handlererror", strategy = Strategy.ARCHIVE, delay = 200)
 public class DataHandlerServiceImpl implements DataHandlerService {
     @Reference
     protected LatchService latch;
 
-    @Reference
+    @FileBinding(location = "handlerarchive")
     FileOutput output;
 
     public void transferData(DataHandler data) throws Exception {
@@ -73,3 +79,4 @@ public class DataHandlerServiceImpl implements DataHandlerService {
     }
 
 }
+
