@@ -37,9 +37,9 @@
 */
 package org.fabric3.binding.file.test;
 
-import org.fabric3.binding.file.api.InvalidDataException;
-import org.fabric3.binding.file.api.ReferenceAdapter;
-import org.fabric3.binding.file.api.ServiceAdapter;
+import org.fabric3.api.binding.file.InvalidDataException;
+import org.fabric3.api.binding.file.ReferenceAdapter;
+import org.fabric3.api.binding.file.ServiceAdapter;
 import org.oasisopen.sca.annotation.Scope;
 
 import java.io.*;

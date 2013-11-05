@@ -34,49 +34,30 @@
  * You should have received a copy of the
  * GNU General Public License along with Fabric3.
  * If not, see <http://www.gnu.org/licenses/>.
-*/
-package org.fabric3.binding.file.test;
-
-import javax.activation.DataHandler;
-import java.io.InputStream;
-import java.io.OutputStream;
+ */
+package org.fabric3.tests.binding.metro.scanned;
 
 import org.fabric3.api.Namespaces;
 import org.fabric3.api.annotation.model.Component;
-import org.fabric3.api.binding.file.annotation.FileBinding;
-import org.fabric3.api.binding.file.annotation.Strategy;
-import org.oasisopen.sca.annotation.Reference;
-import org.oasisopen.sca.annotation.Scope;
+import org.fabric3.api.binding.ws.annotation.BindingConfiguration;
+import org.fabric3.api.binding.ws.annotation.WebServiceBinding;
+import org.fabric3.tests.binding.metro.weather.WeatherFaultException;
+import org.fabric3.tests.binding.metro.weather.WeatherPortType;
+import org.fabric3.tests.binding.metro.weather.WeatherRequest;
+import org.fabric3.tests.binding.metro.weather.WeatherResponse;
 
-/**
- *
- */
-@Scope("COMPOSITE")
 @Component(composite = Namespaces.F3_PREFIX + "TestComposite")
-@FileBinding(location = "handlerdrop", errorLocation = "handlerarchive", archiveLocation = "handlererror", strategy = Strategy.ARCHIVE, delay = 200)
-public class DataHandlerServiceImpl implements DataHandlerService {
-    @Reference
-    protected LatchService latch;
+@WebServiceBinding(uri = "scannedWeatherService",
+                   retries = 2,
+                   configuration = {@BindingConfiguration(key = "foo", value = "bar"), @BindingConfiguration(key = "foo", value = "bar")})
+public class ScannedWeatherPortTypeImpl implements WeatherPortType {
 
-    @FileBinding(location = "handlerarchive")
-    FileOutput output;
+    public WeatherResponse getWeather(WeatherRequest weatherRequest) throws WeatherFaultException {
+        WeatherResponse weatherResponse = new WeatherResponse();
+        weatherResponse.setForecast("SUNNY");
+        weatherResponse.setTemperature(12.0);
 
-    public void transferData(DataHandler data) throws Exception {
-
-        InputStream inputStream = data.getInputStream();
-
-        OutputStream outputStream = null;
-        try {
-            outputStream = output.openStream("test.xml");
-            outputStream.write("<?xml version='1.0' encoding='UTF-8'?><test/>".getBytes());
-        } finally {
-            if (outputStream != null) {
-                outputStream.close();
-            }
-        }
-
-        latch.countDown();
+        return weatherResponse;
     }
 
 }
-

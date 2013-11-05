@@ -27,6 +27,12 @@
             <version>${sca.api.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-binding-ws-api</artifactId>
+            <version>${fabric3.version}</version>
+        </dependency>
+
         <!-- required for WSDL stub test -->
         <dependency>
             <groupId>org.codehaus.fabric3</groupId>
