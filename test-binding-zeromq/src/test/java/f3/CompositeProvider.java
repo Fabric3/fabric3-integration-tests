@@ -40,6 +40,7 @@ package f3;
 import javax.xml.namespace.QName;
 
 import org.fabric3.api.Namespaces;
+import org.fabric3.api.annotation.model.Environment;
 import org.fabric3.api.annotation.model.Provides;
 import org.fabric3.api.model.type.builder.CompositeBuilder;
 import org.fabric3.api.model.type.component.Composite;
@@ -50,7 +51,10 @@ import org.fabric3.api.model.type.component.Composite;
 public class CompositeProvider {
 
     @Provides
-    public static Composite getScannedComposite() {
+    public static Composite getScannedComposite(@Environment String environment) {
+        if (!"production".equals(environment)) {
+            throw new AssertionError("Environment not properly set");
+        }
         return CompositeBuilder.newBuilder(QName.valueOf(Namespaces.F3_PREFIX + "ScannedComposite")).build();
     }
 }
