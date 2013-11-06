@@ -90,6 +90,9 @@
                                <template name="SystemConfigTestServiceBinding">
                                   <sca:binding.ws uri="http://localhost:8900/TestService"/>
                                </template>
+                               <template name="ScannedTestServiceBinding">
+                                  <sca:binding.ws uri="TestScannedService"/>
+                               </template>
                             </templates>
                         </config>
                         ]]>
