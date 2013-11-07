@@ -23,5 +23,6 @@
     <include name="CorrelationComposite"/>
     <include name="ActivationComposite"/>
     <include name="JMSHandlerComposite"/>
+    <include name="JMSScannedComposite"/>
     <!--<include name="MEPComposite"/>-->
 </composite>
