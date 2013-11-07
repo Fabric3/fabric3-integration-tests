@@ -46,10 +46,17 @@ import org.oasisopen.sca.annotation.Reference;
 public class ScannedTest extends TestCase {
 
     @Reference
-    protected BiDirectionalClient client;
+    protected BiDirectionalClient biDirectionalClient;
+
+    @Reference
+    protected RequestReplyClient requestReplyClient;
 
     public void testCallbackInvoke() {
-        assertEquals("test", client.invoke("test"));
+        assertEquals("test", biDirectionalClient.invoke("test"));
+    }
+
+    public void testRequestReplyInvoke() {
+        assertEquals("test", requestReplyClient.invoke("test"));
     }
 
 }
