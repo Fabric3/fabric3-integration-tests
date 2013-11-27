@@ -46,7 +46,7 @@ import org.fabric3.tests.function.callback.common.CallbackData;
 /**
  *
  */
-@Service(names = {ClientService.class, CallbackService.class})
+@Service({ClientService.class, CallbackService.class})
 public class ClientServiceImpl implements ClientService, CallbackService {
 
     @Reference

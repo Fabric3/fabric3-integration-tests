@@ -58,7 +58,7 @@ import org.fabric3.tests.standalone.cluster.bindingsca.api.TestServiceCallback;
 /**
  *
  */
-@Service(names = {TestClientService.class, TestServiceCallback.class})
+@Service({TestClientService.class, TestServiceCallback.class})
 @Scope("COMPOSITE")
 @EagerInit
 @Management
