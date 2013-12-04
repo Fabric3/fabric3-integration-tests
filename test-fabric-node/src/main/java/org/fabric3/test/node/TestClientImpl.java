@@ -49,7 +49,7 @@ import org.oasisopen.sca.annotation.Service;
  *
  */
 @Scope(Scopes.COMPOSITE)
-@Service(names = {TestClient.class, CallbackService.class})
+@Service({TestClient.class, CallbackService.class})
 public class TestClientImpl implements TestClient, CallbackService {
     private CountDownLatch latch;
 

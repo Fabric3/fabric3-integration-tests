@@ -50,7 +50,7 @@ import org.oasisopen.sca.annotation.Service;
  *
  */
 @Scope("COMPOSITE")
-@Service(names = {AsyncClientService.class, AsyncCallback.class})
+@Service({AsyncClientService.class, AsyncCallback.class})
 public class AsyncClientServiceImpl implements AsyncClientService, AsyncCallback {
     @Context
     protected ComponentContext context;

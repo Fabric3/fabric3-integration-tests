@@ -47,7 +47,7 @@ import org.fabric3.tests.function.callback.common.CallbackData;
 /**
  *
  */
-@Service(names = {ForwardService.class, CallbackService.class})
+@Service({ForwardService.class, CallbackService.class})
 public class ForwardServiceImpl implements ForwardService, CallbackService {
     @Reference
     protected EndService endService;

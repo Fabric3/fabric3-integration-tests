@@ -12,7 +12,7 @@ import org.fabric3.api.annotation.Producer;
  *
  */
 @Scope("COMPOSITE")
-@Service(names={TestConsumer.class, TestProducer.class})
+@Service({TestConsumer.class, TestProducer.class})
 public class TestProducerConsumerImpl implements TestConsumer, TestProducer {
     private CountDownLatch latch;
     private ProducerStringChannel channel;
