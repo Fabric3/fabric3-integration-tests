@@ -13,6 +13,9 @@
     <component name="TestClient">
         <f3:junit class="tests.rs.TestClient"/>
         <property name="baseMessageUri">http://localhost:8900/messages/</property>
+        <property name="baseFilterUri">http://localhost:8900/filter/</property>
+        <property name="baseFilterNameUri">http://localhost:8900/filtername/</property>
+        <property name="baseFilterNameMethodUri">http://localhost:8900/filternamemethod/</property>
         <property name="baseJsonMessageUri">http://localhost:8900/jsonmessages/</property>
         <property name="baseStatelessUri">http://localhost:8900/stateless/</property>
         <property name="baseInterfaceUri">http://localhost:8900/interface/</property>
@@ -40,6 +43,27 @@
         <implementation.java class="org.fabric3.tests.rs.MessageService"/>
         <service name="MessageService">
             <f3:binding.rs uri="/messages"/>
+        </service>
+    </component>
+
+    <component name="FilterMessageService">
+        <implementation.java class="org.fabric3.tests.rs.FilterMessageService"/>
+        <service name="FilterMessageService">
+            <f3:binding.rs uri="/filter"/>
+        </service>
+    </component>
+
+    <component name="FilterNameBindingMessageService">
+        <implementation.java class="org.fabric3.tests.rs.FilterNameBindingMessageService"/>
+        <service name="FilterNameBindingMessageService">
+            <f3:binding.rs uri="/filtername"/>
+        </service>
+    </component>
+
+    <component name="FilterNameBindingMethodMessageService">
+        <implementation.java class="org.fabric3.tests.rs.FilterNameBindingMethodMessageService"/>
+        <service name="FilterNameBindingMethodMessageService">
+            <f3:binding.rs uri="/filternamemethod"/>
         </service>
     </component>
 
@@ -77,6 +101,8 @@
             <f3:binding.rs uri="/custommessages"/>
         </service>
     </component>
+
+    <include name="ScannedComposite"/>
 
 
 </composite>

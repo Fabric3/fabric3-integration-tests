@@ -8,24 +8,24 @@ import org.oasisopen.sca.annotation.Reference;
 
 public class TestRESTReference extends TestCase {
 
-	@Reference
-	protected RestReferenceInterface jsonRef;
+    @Reference
+    protected RestReferenceInterface jsonRef;
 
-	public void testJsonReferenceBinding() {
-		
-		for (long i = 0; i < 10; i++) {
-			Message msg = new Message();
-			msg.setId(i);
-			msg.setText("this is a json test "+i);
+    public void testJsonReferenceBinding() {
 
-			jsonRef.putMsg(msg);
+        for (long i = 0; i < 10; i++) {
+            Message msg = new Message();
+            msg.setId(i);
+            msg.setText("this is a json test " + i);
 
-			Message result = jsonRef.retrieve(msg.getId().intValue());
+            jsonRef.putMsg(msg);
 
-			assertNotNull(result);
-			assertEquals(msg.getText(), result.getText());
-		}
-		
-	}
+            Message result = jsonRef.retrieve(msg.getId().intValue());
+
+            assertNotNull(result);
+            assertEquals(msg.getText(), result.getText());
+        }
+
+    }
 
 }

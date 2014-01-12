@@ -39,6 +39,15 @@ public class TestClient extends TestCase {
     protected String baseMessageUri;
 
     @Property
+    protected String baseFilterUri;
+
+    @Property
+    protected String baseFilterNameUri;
+
+    @Property
+    protected String baseFilterNameMethodUri;
+
+    @Property
     protected String baseJsonMessageUri;
 
     @Property
@@ -51,8 +60,7 @@ public class TestClient extends TestCase {
     }
 
     public void testJAXBCreate() {
-        Message message = new Message();
-        message.setId(1L);
+        Message message = new Message(1L, "this is a test");
         message.setText("this is a test");
 
         Client client = ClientBuilder.newClient();
@@ -68,8 +76,7 @@ public class TestClient extends TestCase {
     }
 
     public void testJSONCreate() {
-        Message message = new Message();
-        message.setId(1L);
+        Message message = new Message(1L, "this is a test");
         message.setText("this is a test");
 
         Client client = ClientBuilder.newClient();
@@ -110,6 +117,30 @@ public class TestClient extends TestCase {
         WebTarget resource = client.target(uri.build());
         String response = resource.request().get(String.class);
         assertEquals("test", response);
+    }
+
+    public void testFilters() {
+        Message message = new Message(1L, "this is a test");
+        message.setText("this is a test");
+
+        Client client = ClientBuilder.newClient();
+
+        WebTarget resource = client.target(UriBuilder.fromUri(baseFilterUri).path("message").path("1").build());
+        Message result = resource.request(MediaType.APPLICATION_XML).get(Message.class);
+        assertEquals("this is a test", result.getText());
+
+        resource = client.target(UriBuilder.fromUri(baseFilterNameUri).path("message").path("1").build());
+        result = resource.request(MediaType.APPLICATION_XML).get(Message.class);
+        assertEquals("this is a test", result.getText());
+
+        resource = client.target(UriBuilder.fromUri(baseFilterNameMethodUri).path("message").path("1").build());
+        result = resource.request(MediaType.APPLICATION_XML).get(Message.class);
+        assertEquals("this is a test", result.getText());
+
+        resource = client.target(UriBuilder.fromUri(baseFilterNameMethodUri).path("messagenofilter").path("1").build());
+        result = resource.request(MediaType.APPLICATION_XML).get(Message.class);
+        assertEquals("this is a test", result.getText());
+
     }
 
 }
