@@ -37,6 +37,8 @@
 */
 package org.fabric3.tests.rs;
 
+import javax.annotation.Priority;
+import javax.ws.rs.Priorities;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.ext.Provider;
@@ -49,6 +51,7 @@ import org.fabric3.api.annotation.model.Component;
  *
  */
 @Provider
+@Priority(Priorities.AUTHENTICATION)
 @Component(composite = Namespaces.F3_PREFIX + "ScannedComposite")
 public class TestRequestFilter implements ContainerRequestFilter {
     public static boolean SET = false;

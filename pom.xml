@@ -36,7 +36,7 @@
         <fabric3.version>2.5.0-SNAPSHOT</fabric3.version>
         <jta.version>1.1.1</jta.version>
         <jms.version>1.1.1</jms.version>
-        <annotations.version>1.0.1</annotations.version>
+        <annotations.version>1.2</annotations.version>
         <jaxb.api.version>2.2-promoted-b50</jaxb.api.version>
         <web.services.version>2.0.1</web.services.version>
         <servlet.groupId>org.mortbay.jetty</servlet.groupId>

@@ -6,7 +6,8 @@
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -77,7 +78,7 @@
                             <artifactId>fabric3-atomikos-library</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
-                        
+
                         <dependency>
                             <groupId>org.codehaus.fabric3</groupId>
                             <artifactId>fabric3-atomikos</artifactId>
@@ -109,8 +110,8 @@
                             <version>${jta.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>org.codehaus.fabric3.api</groupId>
-                            <artifactId>javax-annotation</artifactId>
+                            <groupId>javax.annotation</groupId>
+                            <artifactId>javax.annotation-api</artifactId>
                             <version>${annotations.version}</version>
                         </dependency>
                     </extensions>
