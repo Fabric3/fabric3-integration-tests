@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009-2013 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.codehaus.fabric3.tests</groupId>
+        <artifactId>fabric3-integration-tests</artifactId>
+        <version>2.5.0</version>
+    </parent>
+
+    <groupId>org.codehaus.fabric3.tests</groupId>
+    <artifactId>test-binding-jeromq</artifactId>
+    <version>2.5.0</version>
+    <name>Fabric3 JeroMQ Integration Tests</name>
+    <packaging>jar</packaging>
+    <description>Fabric3 JeroMQ Tests.</description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-api</artifactId>
+            <version>${fabric3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-model-api</artifactId>
+            <version>${fabric3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-binding-zeromq-api</artifactId>
+            <version>${fabric3.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.fabric3.tests</groupId>
+            <artifactId>test-binding-harness</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+
+        <defaultGoal>verify</defaultGoal>
+
+        <plugins>
+
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>../test-binding-zeromq/src/main/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-test-source</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>../test-binding-zeromq/src/test/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-resource</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>add-resource</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>../test-binding-zeromq/src/main/resources</directory>
+                                    <targetPath>.</targetPath>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-test-resource</id>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>add-test-resource</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>../test-binding-zeromq/src/test/resources</directory>
+                                    <targetPath>.</targetPath>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.fabric3</groupId>
+                <artifactId>fabric3-itest-plugin</artifactId>
+                <version>${fabric3.version}</version>
+                <configuration>
+                    <runtimeVersion>${fabric3.version}</runtimeVersion>
+
+                    <profiles>
+                        <profile>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>profile-jeromq</artifactId>
+                            <version>${fabric3.version}</version>
+                        </profile>
+                    </profiles>
+                    <extensions>
+                        <dependency>
+                            <groupId>com.lmax</groupId>
+                            <artifactId>disruptor</artifactId>
+                            <version>${disruptor.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-bytecode-proxy</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.fabric3</groupId>
+                            <artifactId>fabric3-channel-disruptor</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                    </extensions>
+                    <systemConfig>
+                        <![CDATA[
+                               <config xmlns="urn:fabric3.org">
+                                  <runtime port.range="1090-1190"/>
+                               </config>
+                               ]]>
+                    </systemConfig>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
