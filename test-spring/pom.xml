@@ -63,7 +63,7 @@
                         <config xmlns="urn:fabric3.org">
                             <runtime port.range="5000-11000"/>
                             <web.server>
-                                <http port="8900"/>
+                                <http port="18900"/>
                             </web.server>
                             <thread.pool size="100"/>
                             <jms>

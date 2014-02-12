@@ -15,7 +15,7 @@
     <component name="HandlerTest">
         <f3:junit class="org.fabric3.tests.binding.metro.HandlerTest"/>
         <reference name="service">
-            <binding.ws uri="http://localhost:8900/handlerService">
+            <binding.ws uri="http://localhost:18900/handlerService">
                 <f3:handler target="TestHandler"/>
             </binding.ws>
         </reference>

@@ -12,7 +12,7 @@
            name="EnvironmentTemplateApplicationComposite">
 
     <f3:template name="TestServiceBinding">
-        <binding.ws uri="http://localhost:8900/TestService"/>
+        <binding.ws uri="http://localhost:18900/TestService"/>
     </f3:template>
 
  </composite>

@@ -95,7 +95,7 @@
                         <config xmlns="urn:fabric3.org">
                            <security allow.http.authentication="true"/>
                            <web.server>
-                              <http port="8900"/>
+                              <http port="18900"/>
                             </web.server>
                             <users>
                                 <user>

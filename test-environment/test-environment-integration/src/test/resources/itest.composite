@@ -19,7 +19,7 @@
             <binding.template name="SystemConfigTestServiceBinding"/>
         </reference>
         <reference name="scannedService">
-            <binding.ws uri="http://localhost:8900/TestScannedService"/>
+            <binding.ws uri="http://localhost:18900/TestScannedService"/>
         </reference>
     </component>
 

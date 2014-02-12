@@ -14,7 +14,7 @@
     <component name="RestTest">
         <f3:junit class="org.fabric3.tests.binding.metro.RestTest"/>
         <reference name="searchService">
-            <binding.ws uri="http://localhost:8900/searchBooks" requires="f3:metroRest"/>
+            <binding.ws uri="http://localhost:18900/searchBooks" requires="f3:metroRest"/>
         </reference>
     </component>
 

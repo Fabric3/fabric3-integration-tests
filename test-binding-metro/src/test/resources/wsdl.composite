@@ -19,7 +19,7 @@
         <f3:junit class="org.fabric3.tests.binding.metro.WsdlTest"/>
         <reference name="portType">
             <!-- test policy attachement-->
-            <binding.ws uri="https://localhost:8901/HelloWorldService" requires="sca:clientAuthentication.message">
+            <binding.ws uri="https://localhost:18901/HelloWorldService" requires="sca:clientAuthentication.message">
                 <configuration>
                     <username>foo</username>
                     <password>bar</password>

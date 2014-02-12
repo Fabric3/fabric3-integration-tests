@@ -91,8 +91,8 @@
                         <![CDATA[
                         <config xmlns="urn:fabric3.org">
                             <web.server>
-                                <https enabled="true" port="8901"/>
-                                <http port="8900"/>
+                                <https enabled="true" port="18901"/>
+                                <http port="18900"/>
                             </web.server>
                             <security>
                                 <keystore>fabric3-keystore.jks</keystore>

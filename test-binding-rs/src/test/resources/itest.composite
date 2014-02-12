@@ -12,31 +12,31 @@
 
     <component name="TestClient">
         <f3:junit class="tests.rs.TestClient"/>
-        <property name="baseMessageUri">http://localhost:8900/messages/</property>
-        <property name="baseFilterUri">http://localhost:8900/filter/</property>
-        <property name="baseFilterNameUri">http://localhost:8900/filtername/</property>
-        <property name="baseFilterNameMethodUri">http://localhost:8900/filternamemethod/</property>
-        <property name="baseJsonMessageUri">http://localhost:8900/jsonmessages/</property>
-        <property name="baseStatelessUri">http://localhost:8900/stateless/</property>
-        <property name="baseInterfaceUri">http://localhost:8900/interface/</property>
+        <property name="baseMessageUri">http://localhost:18900/messages/</property>
+        <property name="baseFilterUri">http://localhost:18900/filter/</property>
+        <property name="baseFilterNameUri">http://localhost:18900/filtername/</property>
+        <property name="baseFilterNameMethodUri">http://localhost:18900/filternamemethod/</property>
+        <property name="baseJsonMessageUri">http://localhost:18900/jsonmessages/</property>
+        <property name="baseStatelessUri">http://localhost:18900/stateless/</property>
+        <property name="baseInterfaceUri">http://localhost:18900/interface/</property>
     </component>
 
     <component name="SecureTestClient">
         <f3:junit class="tests.rs.SecureTestClient"/>
-        <property name="baseUri">http://localhost:8900/secureAuthorization/</property>
-        <property name="authentication">http://localhost:8900/fabric/security/token</property>
+        <property name="baseUri">http://localhost:18900/secureAuthorization/</property>
+        <property name="authentication">http://localhost:18900/fabric/security/token</property>
     </component>
 
     <component name="TestRESTRefClient">
         <f3:junit class="tests.rs.TestRESTReference"/>
         <reference name="jsonRef">
-            <f3:binding.rs uri="http://localhost:8900/jsonmessages"/>
+            <f3:binding.rs uri="http://localhost:18900/jsonmessages"/>
         </reference>
     </component>
 
     <component name="CustomMediaTestClient">
         <f3:junit class="tests.rs.CustomMediaTestClient"/>
-        <property name="baseUri">http://localhost:8900/custommessages/</property>
+        <property name="baseUri">http://localhost:18900/custommessages/</property>
     </component>
 
     <component name="MessageService">

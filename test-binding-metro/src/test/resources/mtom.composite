@@ -15,7 +15,7 @@
     <component name="MtomTest">
         <f3:junit class="org.fabric3.tests.binding.metro.MtomTest"/>
         <reference name="uploadPortType">
-            <binding.ws uri="http://localhost:8900/upload" requires="f3:messageOptimization"/>
+            <binding.ws uri="http://localhost:18900/upload" requires="f3:messageOptimization"/>
         </reference>
     </component>
 

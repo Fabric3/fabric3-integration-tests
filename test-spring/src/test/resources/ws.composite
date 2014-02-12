@@ -15,7 +15,7 @@
     <component name="WSTest">
         <f3:junit class="org.fabric3.tests.spring.BindingTest"/>
         <reference name="service">
-            <binding.ws uri="http://localhost:8900/TestService"/>
+            <binding.ws uri="http://localhost:18900/TestService"/>
         </reference>
     </component>
 

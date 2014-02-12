@@ -54,7 +54,7 @@
 
     <service name="WeatherService">
         <port name="WeatherPort" binding="tns:WeatherBinding">
-            <soap:address location="http://localhost:8900/weather"/>
+            <soap:address location="http://localhost:18900/weather"/>
         </port>
     </service>
 

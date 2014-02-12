@@ -84,11 +84,11 @@
                         <![CDATA[
                         <config xmlns="urn:fabric3.org" xmlns:f3="urn:fabric3.org" xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912">
                             <web.server>
-                                <http port="8900"/>
+                                <http port="18900"/>
                             </web.server>
                             <templates>
                                <template name="SystemConfigTestServiceBinding">
-                                  <sca:binding.ws uri="http://localhost:8900/TestService"/>
+                                  <sca:binding.ws uri="http://localhost:18900/TestService"/>
                                </template>
                                <template name="ScannedTestServiceBinding">
                                   <sca:binding.ws uri="TestScannedService"/>

@@ -63,7 +63,7 @@
                         <![CDATA[
                         <config xmlns="urn:fabric3.org">
                             <web.server>
-                                <http port="8900"/>
+                                <http port="18900"/>
                             </web.server>
                             <sca enableByValue="true"/>
                         </config>

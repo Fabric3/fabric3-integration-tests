@@ -18,7 +18,7 @@
         <reference name="service">
             <!--<binding.ws requires="f3:clientAuthentication.X509">-->
             <!--<binding.ws requires="sca:confidentiality.transport">-->
-            <binding.ws requires="sca:clientAuthentication.message" uri="https://localhost:8901/authenticationService">
+            <binding.ws requires="sca:clientAuthentication.message" uri="https://localhost:18901/authenticationService">
                 <configuration>
                     <!--<alias>fabric3key</alias>-->
                     <username>foo</username>
