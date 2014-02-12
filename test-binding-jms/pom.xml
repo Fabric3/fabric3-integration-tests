@@ -108,7 +108,7 @@
                     <systemConfig>
                         <![CDATA[
                                <config xmlns="urn:fabric3.org">
-                               <runtime>
+                                 <runtime port.range="5000-11000">
                                  <!-- <monitor>
                                      <provider.levels>
                                         <level name="org.apache.activemq" value="DEBUG"/>
