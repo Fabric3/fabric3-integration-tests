@@ -231,11 +231,21 @@
             <modules>
                 <module>test-binding-rs-extension</module>
                 <module>test-binding-rs</module>
-                <module>test-binding-metro</module>
                 <module>test-binding-ftp</module>
                 <module>test-binding-file</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>bamboo-ws</id>
+            <modules>
+                <module>test-binding-metro</module>
                 <module>test-wsdl</module>
                 <module>tests-ws</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>bamboo-jms</id>
+            <modules>
                 <module>test-binding-jms</module>
             </modules>
         </profile>
