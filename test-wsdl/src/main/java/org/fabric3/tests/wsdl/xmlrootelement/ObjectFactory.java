@@ -55,7 +55,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:weather", name = "weatherRequest")
     public JAXBElement<WeatherRequest> createWeatherRequest(WeatherRequest value) {
-        return new JAXBElement<WeatherRequest>(_WeatherRequest_QNAME, WeatherRequest.class, null, value);
+        return new JAXBElement<>(_WeatherRequest_QNAME, WeatherRequest.class, null, value);
     }
 
     /**
@@ -63,7 +63,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:weather", name = "weatherFault")
     public JAXBElement<WeatherFault> createWeatherFault(WeatherFault value) {
-        return new JAXBElement<WeatherFault>(_WeatherFault_QNAME, WeatherFault.class, null, value);
+        return new JAXBElement<>(_WeatherFault_QNAME, WeatherFault.class, null, value);
     }
 
     /**
@@ -71,7 +71,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:weather", name = "weatherResponse")
     public JAXBElement<WeatherResponse> createWeatherResponse(WeatherResponse value) {
-        return new JAXBElement<WeatherResponse>(_WeatherResponse_QNAME, WeatherResponse.class, null, value);
+        return new JAXBElement<>(_WeatherResponse_QNAME, WeatherResponse.class, null, value);
     }
 
 }

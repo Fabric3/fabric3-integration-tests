@@ -93,7 +93,7 @@ public class SecureTestClient extends TestCase {
     }
 
     public void testFabricLogin() {
-        final List<NewCookie> cookies = new ArrayList<NewCookie>();
+        final List<NewCookie> cookies = new ArrayList<>();
         client.register(new ClientResponseFilter() {
             public void filter(ClientRequestContext requestContext, ClientResponseContext responseContext) throws IOException {
                 cookies.addAll(responseContext.getCookies().values());

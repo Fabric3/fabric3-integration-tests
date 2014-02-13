@@ -41,7 +41,7 @@ package org.fabric3.policy.attachment;
  *
  */
 public class TestInvocationContext {
-    public static final ThreadLocal<String> CONTEXT = new ThreadLocal<String>();
+    public static final ThreadLocal<String> CONTEXT = new ThreadLocal<>();
 
     private TestInvocationContext() {
     }

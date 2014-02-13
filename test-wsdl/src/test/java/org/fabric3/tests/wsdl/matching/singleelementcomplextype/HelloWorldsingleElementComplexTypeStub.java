@@ -64,7 +64,7 @@ public class HelloWorldsingleElementComplexTypeStub {
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document document = builder.newDocument();
         QName qName = new QName("urn:helloworld:sect", "sayHelloResponseType");
-        JAXBElement<SayHelloResponseType> element = new JAXBElement<SayHelloResponseType>(qName, SayHelloResponseType.class, response);
+        JAXBElement<SayHelloResponseType> element = new JAXBElement<>(qName, SayHelloResponseType.class, response);
         context.createMarshaller().marshal(element, document);
         return document;
     }

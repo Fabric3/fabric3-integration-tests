@@ -61,7 +61,7 @@ public class AddNumbersType {
      */
     public List<Integer> getArg() {
         if (arg == null) {
-            arg = new ArrayList<Integer>();
+            arg = new ArrayList<>();
         }
         return this.arg;
     }

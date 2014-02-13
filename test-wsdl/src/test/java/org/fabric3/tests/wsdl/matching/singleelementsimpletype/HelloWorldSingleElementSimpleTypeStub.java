@@ -66,7 +66,7 @@ public class HelloWorldSingleElementSimpleTypeStub {
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document document = builder.newDocument();
         QName qName = new QName("http://www.w3.org/2001/XMLSchema", "string");
-        JAXBElement<String> element = new JAXBElement<String>(qName, String.class, msg);
+        JAXBElement<String> element = new JAXBElement<>(qName, String.class, msg);
         context.createMarshaller().marshal(element, document);
         return document;
     }

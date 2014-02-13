@@ -50,7 +50,7 @@ import org.fabric3.spi.model.physical.PhysicalTargetDefinition;
 public class PhysicalWsdlTargetDefinition extends PhysicalTargetDefinition {
     private static final long serialVersionUID = -702484228489202926L;
 
-    private static List<DataType<?>> PHYSICAL_DATA_TYPES = new ArrayList<DataType<?>>();
+    private static List<DataType<?>> PHYSICAL_DATA_TYPES = new ArrayList<>();
 
     static {
         PHYSICAL_DATA_TYPES.add(PhysicalDataTypes.DOM);

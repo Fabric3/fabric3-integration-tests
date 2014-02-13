@@ -129,9 +129,7 @@ public class TestClientImpl implements CallbackService {
                 try {
                     i++;
                     invoke(Message.Type.CONTINUE);
-                } catch (RejectedExecutionException e) {
-                    e.printStackTrace();
-                } catch (ServiceUnavailableException e) {
+                } catch (RejectedExecutionException | ServiceUnavailableException e) {
                     e.printStackTrace();
                 }
             }

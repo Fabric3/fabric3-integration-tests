@@ -91,7 +91,7 @@ public class MultiplicityTest extends TestCase {
     private static final Set<String> IDS;
 
     static {
-        IDS = new HashSet<String>(3);
+        IDS = new HashSet<>(3);
         IDS.add("map.one");
         IDS.add("map.two");
         IDS.add("map.three");

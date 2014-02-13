@@ -43,7 +43,7 @@ import org.oasisopen.sca.annotation.Scope;
 @Produces({MediaType.APPLICATION_XML})
 @Scope("COMPOSITE")
 public class MessageService {
-    private Map<Long, Message> messages = new ConcurrentHashMap<Long, Message>();
+    private Map<Long, Message> messages = new ConcurrentHashMap<>();
 
     @PUT
     @Path("/message")

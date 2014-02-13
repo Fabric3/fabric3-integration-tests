@@ -51,7 +51,7 @@ import org.fabric3.spi.model.physical.PhysicalSourceDefinition;
  */
 public class PhysicalWsdlSourceDefinition extends PhysicalSourceDefinition {
     private static final long serialVersionUID = -6401712349639574580L;
-    private List<DataType<?>> physicalDataTypes = new ArrayList<DataType<?>>();
+    private List<DataType<?>> physicalDataTypes = new ArrayList<>();
 
     private String name;
 

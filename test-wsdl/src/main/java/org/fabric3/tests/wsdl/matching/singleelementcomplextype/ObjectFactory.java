@@ -55,7 +55,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:helloworld", name = "sayHelloRequest")
     public JAXBElement<SayHelloRequestType> createSayHelloRequest(SayHelloRequestType value) {
-        return new JAXBElement<SayHelloRequestType>(_SayHelloRequest_QNAME, SayHelloRequestType.class, null, value);
+        return new JAXBElement<>(_SayHelloRequest_QNAME, SayHelloRequestType.class, null, value);
     }
 
     /**
@@ -64,7 +64,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:helloworld", name = "sayHelloResponse")
     public JAXBElement<SayHelloResponseType> createSayHelloResponse(SayHelloResponseType value) {
-        return new JAXBElement<SayHelloResponseType>(_SayHelloResponse_QNAME, SayHelloResponseType.class, null, value);
+        return new JAXBElement<>(_SayHelloResponse_QNAME, SayHelloResponseType.class, null, value);
     }
 
 }

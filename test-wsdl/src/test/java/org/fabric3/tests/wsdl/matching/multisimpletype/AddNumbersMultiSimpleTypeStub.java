@@ -68,7 +68,7 @@ public class AddNumbersMultiSimpleTypeStub {
         JAXBContext context = JAXBContext.newInstance(Integer.class);
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document document = builder.newDocument();
-        JAXBElement<Integer> element = new JAXBElement<Integer>(new QName("http://www.w3.org/2001/XMLSchema", "int"), Integer.class, total);
+        JAXBElement<Integer> element = new JAXBElement<>(new QName("http://www.w3.org/2001/XMLSchema", "int"), Integer.class, total);
         context.createMarshaller().marshal(element, document);
         return document;
     }

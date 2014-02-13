@@ -55,19 +55,19 @@ public class ByValueTest extends TestCase {
     protected ByValueClient client2;
 
     public void testByValue() throws Exception {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         list.add("test");
         client1.invoke(list);
     }
 
     public void testAllowsByReference() throws Exception {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         list.add("test");
         client1.invokeByReference(list);
     }
 
     public void testAllowsByReferenceOnImplementation() throws Exception {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         list.add("test");
         client2.invokeByReference(list);
     }

@@ -64,7 +64,7 @@ public class WeatherStub {
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document document = builder.newDocument();
         QName qName = new QName("http://pojo.wsdl.tests.fabric3.org/", "weatherResponse");
-        JAXBElement<WeatherResponse> element = new JAXBElement<WeatherResponse>(qName, WeatherResponse.class, response);
+        JAXBElement<WeatherResponse> element = new JAXBElement<>(qName, WeatherResponse.class, response);
         context.createMarshaller().marshal(element, document);
         return document;
     }

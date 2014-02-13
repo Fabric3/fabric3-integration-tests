@@ -63,11 +63,7 @@ public class TestWsdlComponentBuilder implements ComponentBuilder<PhysicalWsdlCo
             Class subClass = loader.loadClass(definition.getStub());
             Object instance = subClass.newInstance();
             return new TestWsdlComponent(uri, instance);
-        } catch (ClassNotFoundException e) {
-            throw new InvalidStubException(e);
-        } catch (IllegalAccessException e) {
-            throw new InvalidStubException(e);
-        } catch (InstantiationException e) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             throw new InvalidStubException(e);
         }
     }

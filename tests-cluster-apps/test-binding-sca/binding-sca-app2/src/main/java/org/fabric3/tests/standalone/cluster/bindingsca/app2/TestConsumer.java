@@ -58,7 +58,7 @@ public class TestConsumer {
     }
 
     private int count;
-    Map<String, String> seen = new ConcurrentHashMap<String, String>();
+    Map<String, String> seen = new ConcurrentHashMap<>();
 
     @Consumer
     public void onEvent(TestEvent event) {

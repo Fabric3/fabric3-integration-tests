@@ -51,7 +51,7 @@ public class Counter {
 
     public Counter(int times) {
         latch = new CountDownLatch(times);
-        errors = new ArrayList<String>();
+        errors = new ArrayList<>();
     }
 
     public void increment() {

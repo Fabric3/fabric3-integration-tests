@@ -124,9 +124,7 @@ public class TestWsdlComponent implements Component {
         }
         try {
             setWireMethod.invoke(instance, name, wire);
-        } catch (IllegalAccessException e) {
-            throw new WiringException(e);
-        } catch (InvocationTargetException e) {
+        } catch (IllegalAccessException | InvocationTargetException e) {
             throw new WiringException(e);
         }
 

@@ -20,7 +20,7 @@ public class ObjectFactory {
 
     @XmlElementDecl(namespace = "urn:bookstore", name = "searchResult")
     public JAXBElement<SearchResult> createWeatherRequest(SearchResult value) {
-        return new JAXBElement<SearchResult>(_SearchResult_QNAME, SearchResult.class, null, value);
+        return new JAXBElement<>(_SearchResult_QNAME, SearchResult.class, null, value);
     }
 
 }

@@ -49,7 +49,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:helloworld", name = "helloFault")
     public JAXBElement<HelloFault> createHelloFault(HelloFault value) {
-        return new JAXBElement<HelloFault>(_HelloFault_QNAME, HelloFault.class, null, value);
+        return new JAXBElement<>(_HelloFault_QNAME, HelloFault.class, null, value);
     }
 
     /**
@@ -58,7 +58,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:helloworld", name = "response")
     public JAXBElement<String> createResponse(String value) {
-        return new JAXBElement<String>(_Response_QNAME, String.class, null, value);
+        return new JAXBElement<>(_Response_QNAME, String.class, null, value);
     }
 
     /**
@@ -67,7 +67,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:helloworld", name = "request")
     public JAXBElement<String> createRequest(String value) {
-        return new JAXBElement<String>(_Request_QNAME, String.class, null, value);
+        return new JAXBElement<>(_Request_QNAME, String.class, null, value);
     }
 
 }

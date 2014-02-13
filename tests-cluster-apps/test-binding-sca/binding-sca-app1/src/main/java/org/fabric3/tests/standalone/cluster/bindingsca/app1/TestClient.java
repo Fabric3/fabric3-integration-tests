@@ -67,7 +67,7 @@ public class TestClient implements TestClientService, TestServiceCallback {
     private TestMonitor monitor;
     private TestEventStream stream;
 
-    private Map<String, CountDownLatch> latches = new ConcurrentHashMap<String, CountDownLatch>();
+    private Map<String, CountDownLatch> latches = new ConcurrentHashMap<>();
 
     public TestClient(@Reference(name = "testService") TestService testService,
                       @Producer("producer") TestEventStream stream,

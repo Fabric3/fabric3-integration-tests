@@ -13,7 +13,7 @@ public class MixedTypeServiceImpl implements MixedTypeService {
     }
 
     public List<ReturnType> getTypes(String message) {
-        List<ReturnType> types = new ArrayList<ReturnType>();
+        List<ReturnType> types = new ArrayList<>();
         types.add(new ReturnType());
         return types;
     }
