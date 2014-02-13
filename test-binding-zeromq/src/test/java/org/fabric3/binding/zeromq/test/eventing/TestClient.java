@@ -18,7 +18,6 @@ public class TestClient extends TestCase {
     protected TestConsumer consumer;
 
     public void testDurableProduce() throws Exception {
-        long start = System.currentTimeMillis();
         consumer.setWaitCount(1);
         for (int i = 0; i < 2; i++) {
             producer.produce("message");

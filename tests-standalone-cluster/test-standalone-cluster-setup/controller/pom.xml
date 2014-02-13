@@ -22,7 +22,6 @@
        <artifactId>tests-standalone-cluster-setup-parent-pom</artifactId>
        <version>2.5.0</version>
     </parent>
-    <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-standalone-cluster-setup-controller</artifactId>
     <packaging>pom</packaging>
     <name>Fabric3 Controller Setup</name>

@@ -37,10 +37,6 @@
 */
 package org.fabric3.tests.function.execution;
 
-import java.util.concurrent.CountDownLatch;
-
-import org.oasisopen.sca.annotation.OneWay;
-
 /**
  *
  */

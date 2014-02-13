@@ -41,6 +41,8 @@ package org.fabric3.tests.binding.harness;
  *
  */
 public class EchoFault extends Exception {
+    private static final long serialVersionUID = 9055164797462961055L;
+
     public EchoFault() {
     }
 

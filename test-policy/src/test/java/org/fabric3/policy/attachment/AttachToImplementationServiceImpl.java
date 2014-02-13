@@ -37,7 +37,7 @@
 */
 package org.fabric3.policy.attachment;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 /**
  *

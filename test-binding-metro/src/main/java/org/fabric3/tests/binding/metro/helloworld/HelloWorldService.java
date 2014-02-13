@@ -1,13 +1,13 @@
 
 package org.fabric3.tests.binding.metro.helloworld;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import javax.xml.ws.WebEndpoint;
 import javax.xml.ws.WebServiceClient;
 import javax.xml.ws.WebServiceFeature;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 /**
@@ -48,7 +48,7 @@ public class HelloWorldService
      */
     @WebEndpoint(name = "HelloWorldPort")
     public HelloWorldPortType getHelloWorldPort() {
-        return (HelloWorldPortType)super.getPort(new QName("urn:helloworld", "HelloWorldPort"), HelloWorldPortType.class);
+        return super.getPort(new QName("urn:helloworld", "HelloWorldPort"), HelloWorldPortType.class);
     }
 
     /**
@@ -60,7 +60,7 @@ public class HelloWorldService
      */
     @WebEndpoint(name = "HelloWorldPort")
     public HelloWorldPortType getHelloWorldPort(WebServiceFeature... features) {
-        return (HelloWorldPortType)super.getPort(new QName("urn:helloworld", "HelloWorldPort"), HelloWorldPortType.class, features);
+        return super.getPort(new QName("urn:helloworld", "HelloWorldPort"), HelloWorldPortType.class, features);
     }
 
 }

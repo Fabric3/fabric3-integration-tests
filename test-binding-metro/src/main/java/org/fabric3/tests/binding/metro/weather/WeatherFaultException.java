@@ -3,6 +3,7 @@ package org.fabric3.tests.binding.metro.weather;
 import javax.xml.ws.WebFault;
 
 
+@SuppressWarnings("NonSerializableFieldInSerializableClass")
 @WebFault(name = "weatherFault", targetNamespace = "urn:weather")
 public class WeatherFaultException extends Exception {
     private static final long serialVersionUID = 4149042745728181426L;

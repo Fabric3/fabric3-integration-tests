@@ -49,6 +49,6 @@ public class OrderedDisplayService implements ItemDisplayService {
     }
 
     public Item[] getItems() {
-        return items.toArray(new Item[0]);
+        return items.toArray(new Item[items.size()]);
     }
 }

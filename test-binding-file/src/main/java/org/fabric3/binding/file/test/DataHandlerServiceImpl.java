@@ -38,7 +38,6 @@
 package org.fabric3.binding.file.test;
 
 import javax.activation.DataHandler;
-import java.io.InputStream;
 import java.io.OutputStream;
 
 import org.fabric3.api.Namespaces;
@@ -59,11 +58,9 @@ public class DataHandlerServiceImpl implements DataHandlerService {
     protected LatchService latch;
 
     @FileBinding(location = "handlerarchive")
-    FileOutput output;
+    protected FileOutput output;
 
     public void transferData(DataHandler data) throws Exception {
-
-        InputStream inputStream = data.getInputStream();
 
         OutputStream outputStream = null;
         try {

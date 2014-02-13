@@ -17,7 +17,6 @@
         <version>2.5.0</version>
     </parent>
 
-    <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-binding-jeromq</artifactId>
     <version>2.5.0</version>
     <name>Fabric3 JeroMQ Integration Tests</name>

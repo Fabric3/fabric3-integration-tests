@@ -13,7 +13,6 @@
          <artifactId>fabric3-integration-tests</artifactId>
          <version>2.5.0</version>
     </parent>
-    <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-binding-harness</artifactId>
     <name>Fabric3 Binding Test Harness</name>
     <description>Fabric3 Test Harness for Binding Extensions.</description>

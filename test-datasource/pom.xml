@@ -17,7 +17,6 @@
         <version>2.5.0</version>
     </parent>
 
-    <groupId>org.codehaus.fabric3.tests</groupId>
     <artifactId>test-datasource</artifactId>
     <version>2.5.0</version>
     <name>Fabric3 DataSource Extension Test</name>
