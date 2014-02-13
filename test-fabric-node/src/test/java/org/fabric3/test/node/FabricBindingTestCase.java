@@ -50,7 +50,7 @@ public class FabricBindingTestCase extends TestCase {
 
     public void testDeployServiceEndpoint() throws Exception {
 
-        Fabric fabric = Bootstrap.initialize();
+        Fabric fabric = Bootstrap.initialize(getClass().getResource("/testConfig.xml"));
         fabric.addProfile("rs").addExtension("fabric3-databinding-json").addExtension("fabric3-jetty");
         fabric.start();
 
@@ -58,13 +58,13 @@ public class FabricBindingTestCase extends TestCase {
 
         TestRsServiceImpl instance = new TestRsServiceImpl();
         domain.deploy("TestRsService", instance);
-//        ComponentDefinitionBuilder builder = ComponentDefinitionBuilder.newBuilder("TestRsService", instance);
-//        BindingDefinition bindingDefinition = new RsBindingDefinition("TestRsService", URI.create("/service"));
-//        builder.binding("TestRsService", bindingDefinition);
-//
-//        ComponentDefinition definition = builder.build();
-//
-//        domain.deploy(definition);
+        //        ComponentDefinitionBuilder builder = ComponentDefinitionBuilder.newBuilder("TestRsService", instance);
+        //        BindingDefinition bindingDefinition = new RsBindingDefinition("TestRsService", URI.create("/service"));
+        //        builder.binding("TestRsService", bindingDefinition);
+        //
+        //        ComponentDefinition definition = builder.build();
+        //
+        //        domain.deploy(definition);
 
         TestRsService service = domain.getService(TestRsService.class);
         assertEquals("test", service.test());

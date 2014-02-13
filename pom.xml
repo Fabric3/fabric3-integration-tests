@@ -253,8 +253,6 @@
             <id>bamboo-management</id>
             <modules>
                 <module>test-management-rest</module>
-                <module>test-fabric-node</module>
-                <!--<module>test-fabric-node-cluster</module>-->
             </modules>
         </profile>
         <profile>
