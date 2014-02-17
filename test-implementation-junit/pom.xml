@@ -37,6 +37,19 @@
         </dependency>
 
         <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-api</artifactId>
+            <version>${fabric3.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.fabric3</groupId>
+            <artifactId>fabric3-junit-api</artifactId>
+            <version>${fabric3.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
@@ -51,7 +64,6 @@
                 <version>${fabric3.version}</version>
                 <configuration>
                     <runtimeVersion>${fabric3.version}</runtimeVersion>
-                    <compositeName>JUnitTestHarnessComposite</compositeName>
                     <systemConfig>
                         <![CDATA[
                         <config xmlns="urn:fabric3.org">

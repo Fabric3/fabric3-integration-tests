@@ -35,54 +35,17 @@
  * GNU General Public License along with Fabric3.
  * If not, see <http://www.gnu.org/licenses/>.
 */
-package org.fabric3.tests.implementation.junit;
+package org.fabric3.tests.implementation;
 
-import java.io.IOException;
-
-import org.fabric3.api.annotation.Target;
-import org.fabric3.api.implementation.junit.Fabric3Runner;
-import org.fabric3.tests.implementation.TestService;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.oasisopen.sca.annotation.Reference;
+import org.fabric3.api.annotation.model.Component;
 
 /**
  *
  */
-@RunWith(Fabric3Runner.class)
-public class JUnitComponent {
-    private boolean invoked;
+@Component
+public class TestServiceImpl implements TestService {
 
-    @Reference
-    @Target("TestServiceImpl")
-    protected TestService service;
-
-    @Before
-    public void before() {
-        invoked = true;
-    }
-
-    @After
-    public void after() {
+    public void invoke() {
 
     }
-
-    @Test
-    public void testBefore() {
-        Assert.assertTrue(invoked);
-    }
-
-    @Test(expected = IOException.class)
-    public void handleExpectedException() throws Exception {
-        throw new IOException("This exception should be ignored");
-    }
-
-    @Test
-    public void invokeService() {
-        service.invoke();
-    }
-
 }

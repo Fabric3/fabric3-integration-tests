@@ -102,7 +102,4 @@
         </service>
     </component>
 
-    <include name="ScannedComposite"/>
-
-
 </composite>
