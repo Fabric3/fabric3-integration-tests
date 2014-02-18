@@ -70,7 +70,7 @@
                             <web.server>
                                 <http port="18900"/>
                             </web.server>
-                            <sca enableByValue="true"/>
+                            <domain autowire="on"/>
                         </config>
                         ]]>
                     </systemConfig>

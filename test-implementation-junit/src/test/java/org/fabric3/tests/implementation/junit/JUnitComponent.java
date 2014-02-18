@@ -39,7 +39,6 @@ package org.fabric3.tests.implementation.junit;
 
 import java.io.IOException;
 
-import org.fabric3.api.annotation.Target;
 import org.fabric3.api.implementation.junit.Fabric3Runner;
 import org.fabric3.tests.implementation.TestService;
 import org.junit.After;
@@ -57,7 +56,6 @@ public class JUnitComponent {
     private boolean invoked;
 
     @Reference
-    @Target("TestServiceImpl")
     protected TestService service;
 
     @Before
