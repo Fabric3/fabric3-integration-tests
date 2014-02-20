@@ -7,7 +7,7 @@ This repository hosts the Fabric3 integration tests. Information on Fabric3 can 
 Running the Integration Tests
 -------------------------------
 
-Requirements are JDK 7 and Maven 3.0.4+.
+Requirements are JDK 7 and Maven 3.1.1+.
 
 To build the source, execute:
 
