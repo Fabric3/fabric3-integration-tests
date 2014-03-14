@@ -57,7 +57,6 @@
             <groupId>org.codehaus.fabric3.tests</groupId>
             <artifactId>test-binding-harness</artifactId>
             <version>${project.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>

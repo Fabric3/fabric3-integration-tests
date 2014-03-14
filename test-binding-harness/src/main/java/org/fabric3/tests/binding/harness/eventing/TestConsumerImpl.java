@@ -11,7 +11,7 @@ import org.fabric3.api.annotation.Consumer;
  */
 @Scope("COMPOSITE")
 public class TestConsumerImpl implements TestConsumer {
-    private CountDownLatch latch;
+    protected CountDownLatch latch;
 
     public void setWaitCount(int count) {
         latch = new CountDownLatch(count);
