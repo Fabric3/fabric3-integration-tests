@@ -42,12 +42,12 @@ import java.util.List;
 
 import org.fabric3.api.model.type.contract.DataType;
 import org.fabric3.spi.model.physical.PhysicalDataTypes;
-import org.fabric3.spi.model.physical.PhysicalTargetDefinition;
+import org.fabric3.spi.model.physical.PhysicalWireTargetDefinition;
 
 /**
  *
  */
-public class PhysicalWsdlTargetDefinition extends PhysicalTargetDefinition {
+public class PhysicalWsdlWireTargetDefinition extends PhysicalWireTargetDefinition {
     private static final long serialVersionUID = -702484228489202926L;
 
     private static List<DataType> PHYSICAL_DATA_TYPES = new ArrayList<>();
@@ -57,7 +57,7 @@ public class PhysicalWsdlTargetDefinition extends PhysicalTargetDefinition {
     }
 
     @Override
-    public List<DataType> getPhysicalDataTypes() {
+    public List<DataType> getDataTypes() {
         return PHYSICAL_DATA_TYPES;
     }
 }

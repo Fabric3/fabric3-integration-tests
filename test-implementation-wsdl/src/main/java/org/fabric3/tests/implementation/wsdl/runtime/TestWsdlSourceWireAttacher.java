@@ -45,24 +45,24 @@ import org.oasisopen.sca.annotation.Reference;
 import org.fabric3.spi.container.builder.WiringException;
 import org.fabric3.spi.container.builder.component.SourceWireAttacher;
 import org.fabric3.spi.container.component.ComponentManager;
-import org.fabric3.spi.model.physical.PhysicalTargetDefinition;
+import org.fabric3.spi.model.physical.PhysicalWireTargetDefinition;
 import org.fabric3.spi.container.objectfactory.ObjectFactory;
 import org.fabric3.spi.util.UriHelper;
 import org.fabric3.spi.container.wire.Wire;
-import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlSourceDefinition;
+import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlWireSourceDefinition;
 
 /**
  *
  */
 @EagerInit
-public class TestWsdlSourceWireAttacher implements SourceWireAttacher<PhysicalWsdlSourceDefinition> {
+public class TestWsdlSourceWireAttacher implements SourceWireAttacher<PhysicalWsdlWireSourceDefinition> {
     private ComponentManager manager;
 
     public TestWsdlSourceWireAttacher(@Reference ComponentManager manager) {
         this.manager = manager;
     }
 
-    public void attach(PhysicalWsdlSourceDefinition source, PhysicalTargetDefinition target, Wire wire) throws WiringException {
+    public void attach(PhysicalWsdlWireSourceDefinition source, PhysicalWireTargetDefinition target, Wire wire) throws WiringException {
         URI uri = source.getUri();
         TestWsdlComponent component = (TestWsdlComponent) manager.getComponent(UriHelper.getDefragmentedName(uri));
         if (component == null) {
@@ -71,16 +71,16 @@ public class TestWsdlSourceWireAttacher implements SourceWireAttacher<PhysicalWs
         component.setWire(source.getName(), wire);
     }
 
-    public void attachObjectFactory(PhysicalWsdlSourceDefinition source, ObjectFactory<?> objectFactory, PhysicalTargetDefinition target)
+    public void attachObjectFactory(PhysicalWsdlWireSourceDefinition source, ObjectFactory<?> objectFactory, PhysicalWireTargetDefinition target)
             throws WiringException {
 
     }
 
-    public void detach(PhysicalWsdlSourceDefinition source, PhysicalTargetDefinition target) throws WiringException {
+    public void detach(PhysicalWsdlWireSourceDefinition source, PhysicalWireTargetDefinition target) throws WiringException {
 
     }
 
-    public void detachObjectFactory(PhysicalWsdlSourceDefinition source, PhysicalTargetDefinition target) throws WiringException {
+    public void detachObjectFactory(PhysicalWsdlWireSourceDefinition source, PhysicalWireTargetDefinition target) throws WiringException {
 
     }
 

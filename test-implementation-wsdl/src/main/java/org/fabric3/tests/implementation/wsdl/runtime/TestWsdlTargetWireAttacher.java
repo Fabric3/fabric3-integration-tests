@@ -39,31 +39,31 @@ package org.fabric3.tests.implementation.wsdl.runtime;
 
 import java.net.URI;
 
+import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlWireTargetDefinition;
 import org.oasisopen.sca.annotation.EagerInit;
 import org.oasisopen.sca.annotation.Reference;
 
 import org.fabric3.spi.container.builder.WiringException;
 import org.fabric3.spi.container.builder.component.TargetWireAttacher;
 import org.fabric3.spi.container.component.ComponentManager;
-import org.fabric3.spi.model.physical.PhysicalSourceDefinition;
+import org.fabric3.spi.model.physical.PhysicalWireSourceDefinition;
 import org.fabric3.spi.container.objectfactory.ObjectFactory;
 import org.fabric3.spi.util.UriHelper;
 import org.fabric3.spi.container.wire.InvocationChain;
 import org.fabric3.spi.container.wire.Wire;
-import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlTargetDefinition;
 
 /**
  *
  */
 @EagerInit
-public class TestWsdlTargetWireAttacher implements TargetWireAttacher<PhysicalWsdlTargetDefinition> {
+public class TestWsdlTargetWireAttacher implements TargetWireAttacher<PhysicalWsdlWireTargetDefinition> {
     private ComponentManager manager;
 
     public TestWsdlTargetWireAttacher(@Reference ComponentManager manager) {
         this.manager = manager;
     }
 
-    public void attach(PhysicalSourceDefinition source, PhysicalWsdlTargetDefinition target, Wire wire) throws WiringException {
+    public void attach(PhysicalWireSourceDefinition source, PhysicalWsdlWireTargetDefinition target, Wire wire) throws WiringException {
         URI uri = target.getUri();
         TestWsdlComponent component = (TestWsdlComponent) manager.getComponent(UriHelper.getDefragmentedName(uri));
         if (component == null) {
@@ -75,11 +75,11 @@ public class TestWsdlTargetWireAttacher implements TargetWireAttacher<PhysicalWs
         }
     }
 
-    public void detach(PhysicalSourceDefinition source, PhysicalWsdlTargetDefinition target) throws WiringException {
+    public void detach(PhysicalWireSourceDefinition source, PhysicalWsdlWireTargetDefinition target) throws WiringException {
 
     }
 
-    public ObjectFactory<?> createObjectFactory(PhysicalWsdlTargetDefinition target) throws WiringException {
+    public ObjectFactory<?> createObjectFactory(PhysicalWsdlWireTargetDefinition target) throws WiringException {
         return null;
     }
 }

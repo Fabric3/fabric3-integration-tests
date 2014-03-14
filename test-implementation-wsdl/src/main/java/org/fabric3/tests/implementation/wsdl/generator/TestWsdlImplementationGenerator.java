@@ -51,12 +51,12 @@ import org.fabric3.spi.model.instance.LogicalService;
 import org.fabric3.spi.model.physical.PhysicalComponentDefinition;
 import org.fabric3.spi.model.physical.PhysicalConnectionSourceDefinition;
 import org.fabric3.spi.model.physical.PhysicalConnectionTargetDefinition;
-import org.fabric3.spi.model.physical.PhysicalSourceDefinition;
-import org.fabric3.spi.model.physical.PhysicalTargetDefinition;
+import org.fabric3.spi.model.physical.PhysicalWireSourceDefinition;
+import org.fabric3.spi.model.physical.PhysicalWireTargetDefinition;
 import org.fabric3.tests.implementation.wsdl.model.TestWsdlImplementation;
 import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlComponentDefinition;
-import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlSourceDefinition;
-import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlTargetDefinition;
+import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlWireSourceDefinition;
+import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlWireTargetDefinition;
 
 /**
  *
@@ -68,20 +68,20 @@ public class TestWsdlImplementationGenerator implements ComponentGenerator<Logic
         return new PhysicalWsdlComponentDefinition(stub);
     }
 
-    public PhysicalSourceDefinition generateSource(LogicalReference reference, EffectivePolicy policy) throws GenerationException {
+    public PhysicalWireSourceDefinition generateSource(LogicalReference reference, EffectivePolicy policy) throws GenerationException {
         String name = reference.getDefinition().getName();
         URI componentUri = reference.getParent().getUri();
-        return new PhysicalWsdlSourceDefinition(name, componentUri);
+        return new PhysicalWsdlWireSourceDefinition(name, componentUri);
     }
 
-    public PhysicalTargetDefinition generateTarget(LogicalService service, EffectivePolicy policy) throws GenerationException {
-        PhysicalWsdlTargetDefinition definition = new PhysicalWsdlTargetDefinition();
+    public PhysicalWireTargetDefinition generateTarget(LogicalService service, EffectivePolicy policy) throws GenerationException {
+        PhysicalWsdlWireTargetDefinition definition = new PhysicalWsdlWireTargetDefinition();
         URI uri = service.getUri();
         definition.setUri(uri);
         return definition;
     }
 
-    public PhysicalSourceDefinition generateCallbackSource(LogicalService service, EffectivePolicy policy) throws GenerationException {
+    public PhysicalWireSourceDefinition generateCallbackSource(LogicalService service, EffectivePolicy policy) throws GenerationException {
         throw new UnsupportedOperationException();
     }
 
@@ -93,7 +93,7 @@ public class TestWsdlImplementationGenerator implements ComponentGenerator<Logic
         throw new UnsupportedOperationException();
     }
 
-    public PhysicalSourceDefinition generateResourceSource(LogicalResourceReference resourceReference) throws GenerationException {
+    public PhysicalWireSourceDefinition generateResourceSource(LogicalResourceReference resourceReference) throws GenerationException {
         throw new UnsupportedOperationException();
     }
 }

@@ -44,18 +44,18 @@ import java.util.List;
 
 import org.fabric3.api.model.type.contract.DataType;
 import org.fabric3.spi.model.physical.PhysicalDataTypes;
-import org.fabric3.spi.model.physical.PhysicalSourceDefinition;
+import org.fabric3.spi.model.physical.PhysicalWireSourceDefinition;
 
 /**
  *
  */
-public class PhysicalWsdlSourceDefinition extends PhysicalSourceDefinition {
+public class PhysicalWsdlWireSourceDefinition extends PhysicalWireSourceDefinition {
     private static final long serialVersionUID = -6401712349639574580L;
     private List<DataType> physicalDataTypes = new ArrayList<>();
 
     private String name;
 
-    public PhysicalWsdlSourceDefinition(String name, URI componentUri) {
+    public PhysicalWsdlWireSourceDefinition(String name, URI componentUri) {
         this.name = name;
         setUri(componentUri);
         physicalDataTypes.add(PhysicalDataTypes.DOM);
@@ -66,7 +66,7 @@ public class PhysicalWsdlSourceDefinition extends PhysicalSourceDefinition {
     }
 
     @Override
-    public List<DataType> getPhysicalDataTypes() {
+    public List<DataType> getDataTypes() {
         return physicalDataTypes;
     }
 }
