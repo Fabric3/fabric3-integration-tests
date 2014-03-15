@@ -39,9 +39,9 @@ package org.fabric3.tests.implementation.wsdl.runtime;
 
 import java.net.URI;
 
+import org.fabric3.spi.container.builder.BuildException;
 import org.oasisopen.sca.annotation.Reference;
 
-import org.fabric3.spi.container.builder.BuilderException;
 import org.fabric3.spi.container.builder.component.ComponentBuilder;
 import org.fabric3.spi.classloader.ClassLoaderRegistry;
 import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlComponentDefinition;
@@ -56,7 +56,7 @@ public class TestWsdlComponentBuilder implements ComponentBuilder<PhysicalWsdlCo
         this.registry = registry;
     }
 
-    public TestWsdlComponent build(PhysicalWsdlComponentDefinition definition) throws BuilderException {
+    public TestWsdlComponent build(PhysicalWsdlComponentDefinition definition) throws BuildException {
         URI uri = definition.getComponentUri();
         ClassLoader loader = registry.getClassLoader(definition.getClassLoaderId());
         try {
@@ -68,7 +68,7 @@ public class TestWsdlComponentBuilder implements ComponentBuilder<PhysicalWsdlCo
         }
     }
 
-    public void dispose(PhysicalWsdlComponentDefinition definition, TestWsdlComponent component) throws BuilderException {
+    public void dispose(PhysicalWsdlComponentDefinition definition, TestWsdlComponent component) throws BuildException {
         // no-op
     }
 }
