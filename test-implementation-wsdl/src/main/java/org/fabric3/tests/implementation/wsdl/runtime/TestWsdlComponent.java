@@ -43,7 +43,7 @@ import java.net.URI;
 import javax.xml.namespace.QName;
 
 import org.fabric3.api.annotation.monitor.MonitorLevel;
-import org.fabric3.spi.container.builder.WiringException;
+import org.fabric3.spi.container.builder.BuilderException;
 import org.fabric3.spi.container.component.Component;
 import org.fabric3.spi.container.wire.Wire;
 
@@ -118,14 +118,14 @@ public class TestWsdlComponent implements Component {
         this.level = level;
     }
 
-    public void setWire(String name, Wire wire) throws WiringException {
+    public void setWire(String name, Wire wire) throws BuilderException {
         if (setWireMethod == null) {
-            throw new WiringException("Stub class " + instance.getClass() + " must have a setWire(String, Wire) method if it is wired");
+            throw new BuilderException("Stub class " + instance.getClass() + " must have a setWire(String, Wire) method if it is wired");
         }
         try {
             setWireMethod.invoke(instance, name, wire);
         } catch (IllegalAccessException | InvocationTargetException e) {
-            throw new WiringException(e);
+            throw new BuilderException(e);
         }
 
     }

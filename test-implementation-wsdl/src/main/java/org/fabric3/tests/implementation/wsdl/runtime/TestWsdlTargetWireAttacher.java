@@ -43,7 +43,7 @@ import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlWireTargetDef
 import org.oasisopen.sca.annotation.EagerInit;
 import org.oasisopen.sca.annotation.Reference;
 
-import org.fabric3.spi.container.builder.WiringException;
+import org.fabric3.spi.container.builder.BuilderException;
 import org.fabric3.spi.container.builder.component.TargetWireAttacher;
 import org.fabric3.spi.container.component.ComponentManager;
 import org.fabric3.spi.model.physical.PhysicalWireSourceDefinition;
@@ -63,11 +63,11 @@ public class TestWsdlTargetWireAttacher implements TargetWireAttacher<PhysicalWs
         this.manager = manager;
     }
 
-    public void attach(PhysicalWireSourceDefinition source, PhysicalWsdlWireTargetDefinition target, Wire wire) throws WiringException {
+    public void attach(PhysicalWireSourceDefinition source, PhysicalWsdlWireTargetDefinition target, Wire wire) throws BuilderException {
         URI uri = target.getUri();
         TestWsdlComponent component = (TestWsdlComponent) manager.getComponent(UriHelper.getDefragmentedName(uri));
         if (component == null) {
-            throw new WiringException("Component not found: " + uri);
+            throw new BuilderException("Component not found: " + uri);
         }
         for (InvocationChain chain : wire.getInvocationChains()) {
             TestWsdlInvoker invoker = new TestWsdlInvoker(component);
@@ -75,11 +75,11 @@ public class TestWsdlTargetWireAttacher implements TargetWireAttacher<PhysicalWs
         }
     }
 
-    public void detach(PhysicalWireSourceDefinition source, PhysicalWsdlWireTargetDefinition target) throws WiringException {
+    public void detach(PhysicalWireSourceDefinition source, PhysicalWsdlWireTargetDefinition target) throws BuilderException {
 
     }
 
-    public ObjectFactory<?> createObjectFactory(PhysicalWsdlWireTargetDefinition target) throws WiringException {
+    public ObjectFactory<?> createObjectFactory(PhysicalWsdlWireTargetDefinition target) throws BuilderException {
         return null;
     }
 }
