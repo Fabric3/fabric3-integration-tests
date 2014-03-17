@@ -37,12 +37,12 @@
 */
 package org.fabric3.tests.implementation.wsdl.runtime;
 
-import org.fabric3.spi.container.builder.BuildException;
+import org.fabric3.spi.container.ContainerException;
 
 /**
  *
  */
-public class InvalidStubException extends BuildException {
+public class InvalidStubException extends ContainerException {
     private static final long serialVersionUID = 7547488117073531218L;
 
     public InvalidStubException(Throwable cause) {

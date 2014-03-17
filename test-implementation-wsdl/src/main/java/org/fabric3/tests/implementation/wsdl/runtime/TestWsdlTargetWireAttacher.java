@@ -39,7 +39,7 @@ package org.fabric3.tests.implementation.wsdl.runtime;
 
 import java.net.URI;
 
-import org.fabric3.spi.container.builder.BuildException;
+import org.fabric3.spi.container.ContainerException;
 import org.fabric3.tests.implementation.wsdl.provision.PhysicalWsdlWireTargetDefinition;
 import org.oasisopen.sca.annotation.EagerInit;
 import org.oasisopen.sca.annotation.Reference;
@@ -63,11 +63,11 @@ public class TestWsdlTargetWireAttacher implements TargetWireAttacher<PhysicalWs
         this.manager = manager;
     }
 
-    public void attach(PhysicalWireSourceDefinition source, PhysicalWsdlWireTargetDefinition target, Wire wire) throws BuildException {
+    public void attach(PhysicalWireSourceDefinition source, PhysicalWsdlWireTargetDefinition target, Wire wire) throws ContainerException {
         URI uri = target.getUri();
         TestWsdlComponent component = (TestWsdlComponent) manager.getComponent(UriHelper.getDefragmentedName(uri));
         if (component == null) {
-            throw new BuildException("Component not found: " + uri);
+            throw new ContainerException("Component not found: " + uri);
         }
         for (InvocationChain chain : wire.getInvocationChains()) {
             TestWsdlInvoker invoker = new TestWsdlInvoker(component);
@@ -75,11 +75,11 @@ public class TestWsdlTargetWireAttacher implements TargetWireAttacher<PhysicalWs
         }
     }
 
-    public void detach(PhysicalWireSourceDefinition source, PhysicalWsdlWireTargetDefinition target) throws BuildException {
+    public void detach(PhysicalWireSourceDefinition source, PhysicalWsdlWireTargetDefinition target) throws ContainerException {
 
     }
 
-    public ObjectFactory<?> createObjectFactory(PhysicalWsdlWireTargetDefinition target) throws BuildException {
+    public ObjectFactory<?> createObjectFactory(PhysicalWsdlWireTargetDefinition target) throws ContainerException {
         return null;
     }
 }
