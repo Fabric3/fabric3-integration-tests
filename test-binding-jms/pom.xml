@@ -107,6 +107,7 @@
                         <![CDATA[
                                <config xmlns="urn:fabric3.org">
                                  <runtime port.range="5000-11000">
+                                 <jms transaction.timeout="2"/>
                                  <!-- <monitor>
                                      <provider.levels>
                                         <level name="org.apache.activemq" value="DEBUG"/>
