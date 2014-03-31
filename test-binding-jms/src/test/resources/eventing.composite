@@ -11,6 +11,13 @@
            targetNamespace="urn:fabric3.org"
            name="JMSEventingComposite">
 
+    <f3:connection.factory name="DurableConnectionFactory" binding.uri="vm://durable" client.id="TestClient">
+        <factory.properties>
+            <!--<pool.size.min>1</pool.size.min>-->
+            <!--<pool.size.max>1</pool.size.max>-->
+        </factory.properties>
+    </f3:connection.factory>
+
     <component name="TestEventClient">
         <f3:junit class="org.fabric3.binding.jms.test.eventing.TestClient"/>
         <reference name="durableProducer" target="TestDurableProducer"/>
@@ -44,12 +51,14 @@
 
     <channel name="TestDurableChannel" requires="f3:durable">
         <binding.jms>
-            <destination jndiName="TestDurableChannelTopic" type="topic"/>
+            <connectionFactory jndiName="DurableConnectionFactory"/>
+            <destination jndiName="TestDurableChannelTopic"/>
         </binding.jms>
     </channel>
 
     <channel name="TestLoopbackChannel" requires="f3:durable">
         <binding.jms>
+            <connectionFactory jndiName="DurableConnectionFactory"/>
             <destination jndiName="TestLoopbackChannelTopic" type="topic"/>
         </binding.jms>
     </channel>
