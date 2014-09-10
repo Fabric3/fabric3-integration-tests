@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Fabric3
- Copyright (c) 2009-2013 Metaform Systems
+ Copyright (c) 2009-2014 Metaform Systems
 
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 
@@ -9,7 +9,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.codehaus.fabric3.tests</groupId>
+        <groupId>org.fabric3.tests</groupId>
         <artifactId>fabric3-integration-tests</artifactId>
         <version>2.5.0</version>
     </parent>
@@ -25,12 +25,12 @@
             <version>${sca.api.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.fabric3</groupId>
+            <groupId>org.fabric3</groupId>
             <artifactId>fabric3-node-api</artifactId>
             <version>${fabric3.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.fabric3</groupId>
+            <groupId>org.fabric3</groupId>
             <artifactId>fabric3-monitor</artifactId>
             <version>${fabric3.version}</version>
         </dependency>
@@ -59,7 +59,7 @@
               </configuration>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.fabric3</groupId>
+                <groupId>org.fabric3</groupId>
                 <artifactId>fabric3-itest-plugin</artifactId>
                 <!-- generally this should point to the latest plugin and kernel version -->
                 <version>${fabric3.version}</version>
@@ -78,22 +78,22 @@
                     </systemConfig>
                     <extensions>
                         <dependency>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>fabric3-binding-test</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>fabric3-databinding-jaxb</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>fabric3-jaxb</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
                         <!--<dependency>-->
-                            <!--<groupId>org.codehaus.fabric3</groupId>-->
+                            <!--<groupId>org.fabric3</groupId>-->
                             <!--<artifactId>fabric3-bytecode-proxy</artifactId>-->
                             <!--<version>${fabric3.version}</version>-->
                         <!--</dependency>-->

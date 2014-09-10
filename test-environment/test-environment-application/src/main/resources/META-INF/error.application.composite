@@ -7,7 +7,7 @@
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           targetNamespace="org.codehaus.fabric3.tests"
+           targetNamespace="org.fabric3.tests"
            name="ErrorEnvironmentApplicationComposite">
 
     <component name="TestService">

@@ -18,18 +18,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.codehaus.fabric3</groupId>
-        <artifactId>parent</artifactId>
-        <version>11</version>
-    </parent>
-    <groupId>org.codehaus.fabric3.tests</groupId>
+    <groupId>org.fabric3.tests</groupId>
     <artifactId>fabric3-integration-tests</artifactId>
     <version>2.5.0</version>
     <packaging>pom</packaging>
 
     <name>Fabric3 Continuous Integration Tests</name>
-    <description>POM to run the integration tests depending on available resources.</description>
+
+    <organization>
+        <name>Fabric3 Project</name>
+        <url>http://fabric3.org</url>
+    </organization>
+
+    <inceptionYear>2007</inceptionYear>
 
     <properties>
         <sca.api.version>1.1.4</sca.api.version>
@@ -49,6 +50,7 @@
         <h2.version>1.3.170</h2.version>
         <easy.mock.version>3.1</easy.mock.version>
         <junit.version>4.11</junit.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencyManagement>
@@ -71,6 +73,36 @@
 
     <build>
         <defaultGoal>verify</defaultGoal>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.0</version>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.14</version>
+                    <configuration>
+                        <includes>
+                            <include>**/*TestCase.java</include>
+                        </includes>
+                        <reportFormat>brief</reportFormat>
+                        <useFile>false</useFile>
+                        <forkMode>once</forkMode>
+                        <argLine>-ea</argLine>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
 
@@ -156,111 +188,8 @@
                 <module>test-fabric-node</module>
             </modules>
         </profile>
-        <profile>
-            <id>bamboo</id>
-            <modules>
-                <module>test-binding-harness</module>
-                <module>test-implementation-wsdl</module>
-                <module>test-implementation-junit</module>
-                <module>test-function</module>
-                <module>test-eventing</module>
-                <module>test-user-resource</module>
-                <module>test-resource</module>
-                <module>test-datasource</module>
-                <module>test-policy</module>
-                <module>test-jpa-hibernate</module>
-                <module>test-spring</module>
-                <module>test-binding-rs-extension</module>
-                <module>test-binding-rs</module>
-                <module>test-timer-implementation</module>
-                <module>test-mock</module>
-                <module>test-binding-metro</module>
-                <module>test-binding-ftp</module>
-                <module>test-binding-jms</module>
-                <module>test-binding-file</module>
-                <module>test-wsdl</module>
-                <module>test-management-rest</module>
-                <module>test-capabilities-extension</module>
-                <module>test-capabilities</module>
-                <module>test-environment</module>
-                <module>test-multiple-modules</module>
-                <module>tests-apps</module>
-                <module>tests-import-resolution</module>
-                <module>tests-cluster-apps</module>
-                <module>test-fabric-node</module>
-                <!--<module>test-fabric-node-cluster</module>-->
-            </modules>
-        </profile>
-        <profile>
-            <id>bamboo-function</id>
-            <modules>
-                <module>test-binding-harness</module>
-                <module>test-function</module>
-                <module>test-eventing</module>
-                <module>test-user-resource</module>
-                <module>test-resource</module>
-                <module>test-datasource</module>
-                <module>test-policy</module>
-                <module>test-capabilities-extension</module>
-                <module>test-capabilities</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>bamboo-resolution</id>
-            <modules>
-                <module>test-environment</module>
-                <module>test-multiple-modules</module>
-                <module>tests-import-resolution</module>
-                <module>tests-apps</module>
-                <module>tests-cluster-apps</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>bamboo-components</id>
-            <modules>
-                <module>test-jpa-hibernate</module>
-                <module>test-implementation-wsdl</module>
-                <module>test-implementation-junit</module>
-                <module>test-spring</module>
-                <module>test-timer-implementation</module>
-                <module>test-mock</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>bamboo-binding</id>
-            <modules>
-                <module>test-binding-rs-extension</module>
-                <module>test-binding-rs</module>
-                <module>test-binding-ftp</module>
-                <module>test-binding-file</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>bamboo-ws</id>
-            <modules>
-                <module>test-binding-metro</module>
-                <module>test-wsdl</module>
-                <module>tests-ws</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>bamboo-jms</id>
-            <modules>
-                <module>test-binding-jms</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>bamboo-management</id>
-            <modules>
-                <module>test-management-rest</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>bamboo-node</id>
-            <modules>
-                <module>test-fabric-node</module>
-                <!--<module>test-fabric-node-cluster</module>-->
-            </modules>
-        </profile>
+
     </profiles>
+
+
 </project>

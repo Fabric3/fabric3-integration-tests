@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Fabric3
- Copyright (c) 2009-2013 Metaform Systems
+ Copyright (c) 2009-2014 Metaform Systems
 
  Fabric3 integration tests are licensed under the Apache 2.0 license.
 
@@ -10,7 +10,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.codehaus.fabric3.tests</groupId>
+        <groupId>org.fabric3.tests</groupId>
         <artifactId>fabric3-integration-tests</artifactId>
         <version>2.5.0</version>
     </parent>
@@ -23,20 +23,20 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.codehaus.fabric3</groupId>
+            <groupId>org.fabric3</groupId>
             <artifactId>fabric3-api</artifactId>
             <version>${fabric3.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.codehaus.fabric3.tests</groupId>
+            <groupId>org.fabric3.tests</groupId>
             <artifactId>test-binding-harness</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.codehaus.fabric3</groupId>
+            <groupId>org.fabric3</groupId>
             <artifactId>fabric3-spring-library</artifactId>
             <scope>compile</scope>
             <version>${fabric3.version}</version>
@@ -52,7 +52,7 @@
         <defaultGoal>verify</defaultGoal>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.fabric3</groupId>
+                <groupId>org.fabric3</groupId>
                 <artifactId>fabric3-itest-plugin</artifactId>
                 <version>${fabric3.version}</version>
                 <configuration>
@@ -100,29 +100,29 @@
                     </shared>
                     <extensions>
                         <dependency>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>fabric3-jetty</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>fabric3-security</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
                     </extensions>
                     <profiles>
                         <profile>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>profile-ws</artifactId>
                             <version>${fabric3.version}</version>
                         </profile>
                         <profile>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>profile-spring</artifactId>
                             <version>${fabric3.version}</version>
                         </profile>
                         <profile>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>profile-jms</artifactId>
                             <version>${fabric3.version}</version>
                         </profile>

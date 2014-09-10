@@ -1,6 +1,6 @@
 /*
  * Fabric3
- * Copyright (c) 2009-2013 Metaform Systems
+ * Copyright (c) 2009-2014 Metaform Systems
  *
  * Fabric3 is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -43,7 +43,7 @@ import org.fabric3.api.annotation.model.Component;
 /**
  *
  */
-@Component(composite ="{org.codehaus.fabric3.tests}EnvironmentGoodApplicationComposite")
+@Component(composite ="{org.fabric3.tests}EnvironmentGoodApplicationComposite")
 @BindingTemplate("ScannedTestServiceBinding")
 public class TestScannedServiceImpl implements TestScannedService {
     public String invoke(String msg) {

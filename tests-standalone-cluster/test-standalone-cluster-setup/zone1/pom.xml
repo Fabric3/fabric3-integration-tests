@@ -18,7 +18,7 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
     <parent>
-       <groupId>org.codehaus.fabric3.tests</groupId>
+       <groupId>org.fabric3.tests</groupId>
        <artifactId>tests-standalone-cluster-setup-parent-pom</artifactId>
        <version>2.5.0</version>
     </parent>
@@ -30,7 +30,7 @@
       <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.fabric3</groupId>
+                <groupId>org.fabric3</groupId>
                 <artifactId>fabric3-assembly-plugin</artifactId>
                 <version>${fabric3.version}</version>
                 <executions>
@@ -45,12 +45,12 @@
                     <runtimeVersion>${fabric3.version}</runtimeVersion>
                     <extensions>
                         <extension>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>fabric3-binding-zeromq-library</artifactId>
                             <version>${fabric3.version}</version>
                         </extension>
                         <extension>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>fabric3-binding-zeromq</artifactId>
                             <version>${fabric3.version}</version>
                         </extension>
@@ -58,31 +58,31 @@
                     <profiles>
                         <!-- JPA support -->
                         <profile>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>profile-jpa</artifactId>
                             <version>${fabric3.version}</version>
                         </profile>
                         <!-- Web Services support -->
                         <profile>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>profile-ws</artifactId>
                             <version>${fabric3.version}</version>
                         </profile>
                         <!-- Web App support -->
                         <profile>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>profile-web</artifactId>
                             <version>${fabric3.version}</version>
                         </profile>
                         <!-- JMS support -->
                         <!--<profile>-->
-                            <!--<groupId>org.codehaus.fabric3</groupId>-->
+                            <!--<groupId>org.fabric3</groupId>-->
                             <!--<artifactId>profile-jms</artifactId>-->
                             <!--<version>${fabric3.version}</version>-->
                         <!--</profile>-->
                         <!-- JAX-RS support -->
                         <profile>
-                            <groupId>org.codehaus.fabric3</groupId>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>profile-rs</artifactId>
                             <version>${fabric3.version}</version>
                         </profile>
