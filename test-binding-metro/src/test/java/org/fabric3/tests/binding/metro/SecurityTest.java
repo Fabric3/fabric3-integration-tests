@@ -42,6 +42,7 @@ import org.fabric3.tests.binding.metro.security.SecureService;
 import org.oasisopen.sca.annotation.Reference;
 
 public class SecurityTest extends TestCase {
+    public static final String COM_SUN_NET_SSL_CHECK_REVOCATION = "com.sun.net.ssl.checkRevocation";
     private String keyStoreLocationProperty = "javax.net.ssl.keyStore";
     private String keyStorePasswordProperty = "javax.net.ssl.keyStorePassword";
     private String trustStoreLocationProperty = "javax.net.ssl.trustStore";
@@ -51,12 +52,14 @@ public class SecurityTest extends TestCase {
     protected SecureService service;
 
     public void testAuthenticatedInvocation() throws Exception {
+        System.setProperty(COM_SUN_NET_SSL_CHECK_REVOCATION, "false");
         assertEquals("Hello, Foo", service.sayHello("Foo"));
 
         System.clearProperty(keyStorePasswordProperty);
         System.clearProperty(keyStoreLocationProperty);
         System.clearProperty(trustStorePasswordProperty);
         System.clearProperty(trustStoreLocationProperty);
+        System.clearProperty(COM_SUN_NET_SSL_CHECK_REVOCATION);
 
     }
 
