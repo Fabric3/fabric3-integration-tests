@@ -38,17 +38,26 @@
 package org.fabric3.tests.binding.metro;
 
 import junit.framework.TestCase;
+import org.fabric3.tests.binding.metro.security.SecureService;
 import org.oasisopen.sca.annotation.Reference;
 
-import org.fabric3.tests.binding.metro.security.SecureService;
-
 public class SecurityTest extends TestCase {
+    private String keyStoreLocationProperty = "javax.net.ssl.keyStore";
+    private String keyStorePasswordProperty = "javax.net.ssl.keyStorePassword";
+    private String trustStoreLocationProperty = "javax.net.ssl.trustStore";
+    private String trustStorePasswordProperty = "javax.net.ssl.trustStorePassword";
 
     @Reference
     protected SecureService service;
 
     public void testAuthenticatedInvocation() throws Exception {
         assertEquals("Hello, Foo", service.sayHello("Foo"));
+
+        System.clearProperty(keyStorePasswordProperty);
+        System.clearProperty(keyStoreLocationProperty);
+        System.clearProperty(trustStorePasswordProperty);
+        System.clearProperty(trustStoreLocationProperty);
+
     }
 
 }
