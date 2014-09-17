@@ -67,7 +67,7 @@ public class TestClientImpl implements TestClient, CallbackService {
         latch = new CountDownLatch(1);
         oneWayService.message(message);
         try {
-            return latch.await(5000, TimeUnit.MILLISECONDS);
+            return latch.await(10000, TimeUnit.MILLISECONDS);
         } catch (InterruptedException e) {
             throw new AssertionError(e);
         }
