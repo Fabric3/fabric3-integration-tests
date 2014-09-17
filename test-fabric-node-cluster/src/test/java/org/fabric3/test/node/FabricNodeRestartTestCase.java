@@ -103,7 +103,7 @@ public class FabricNodeRestartTestCase extends TestCase {
 
     }
 
-    public void txestClientNodeRestart() throws Exception {
+    public void testClientNodeRestart() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
         fabric1.addProfile(Configuration.BINDING_PROFILE);
         fabric1.start();
