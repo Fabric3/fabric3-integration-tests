@@ -168,7 +168,7 @@ public class FabricNodeRestartTestCase extends TestCase {
         fabric1.stop();
     }
 
-    public void txestCleanupOnClientNodeFailure() throws Exception {
+    public void testCleanupOnClientNodeFailure() throws Exception {
         Fabric fabric1 = Bootstrap.initialize(getClass().getResource("/systemConfigZone1.xml"));
         fabric1.addProfile(Configuration.BINDING_PROFILE);
         fabric1.start();
@@ -182,7 +182,7 @@ public class FabricNodeRestartTestCase extends TestCase {
         domain1.deploy(serviceComposite);
 
         // wait for the runtimes to converge before deploying client composite
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
         Domain domain2 = fabric2.getDomain();
         URL clientComposite = getClass().getClassLoader().getResource("client.composite");
