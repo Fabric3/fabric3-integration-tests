@@ -183,7 +183,7 @@ public class FabricNodeRestartTestCase extends TestCase {
 
         // wait for the runtimes to converge before deploying client composite
         Thread.sleep(5000);
-
+        System.out.println("-----------------------> past 1");
         Domain domain2 = fabric2.getDomain();
         URL clientComposite = getClass().getClassLoader().getResource("client.composite");
         domain2.deploy(clientComposite);
@@ -192,9 +192,11 @@ public class FabricNodeRestartTestCase extends TestCase {
 
         // invoke local client connected to the remote service in runtime 1
         assertEquals("test", client.invoke("test"));
+        System.out.println("-----------------------> past 2");
 
         // Simulate the client runtime failing
         fabric2.stop();
+        System.out.println("-----------------------> past 3");
 
         // wait for the runtime failure to be detected by zone1
 
@@ -203,13 +205,18 @@ public class FabricNodeRestartTestCase extends TestCase {
 
         try {
             domain1.getService(TestClient.class);
+            System.out.println("-----------------------> past 4");
             fail();
         } catch (ServiceRuntimeException e) {
+            System.out.println("-----------------------> past exception");
             // expected
         }
+        System.out.println("-----------------------> past 5");
 
         domain1.undeploy(serviceComposite);
+        System.out.println("-----------------------> past 6");
         fabric1.stop();
+        System.out.println("-----------------------> past 7");
     }
 
 
