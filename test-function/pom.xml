@@ -20,6 +20,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.fabric3.tests</groupId>
+            <artifactId>test-fabric-node-setup</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.codehaus.fabric3.spec</groupId>
             <artifactId>sca-api</artifactId>
             <version>${sca.api.version}</version>

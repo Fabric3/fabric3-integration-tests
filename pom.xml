@@ -146,6 +146,7 @@
                 <module>tests-cluster-apps</module>
                 <module>tests-ws</module>
                 <module>test-binding-ftp</module>
+                <module>test-fabric-node-setup</module>
                 <module>test-fabric-node</module>
                 <module>test-fabric-node-cluster</module>
             </modules>

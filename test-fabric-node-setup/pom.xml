@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Fabric3
+ Copyright (c) 2009-2014 Metaform Systems
+
+ Fabric3 integration tests are licensed under the Apache 2.0 license.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.fabric3.tests</groupId>
+        <artifactId>fabric3-integration-tests</artifactId>
+        <version>2.5.0</version>
+    </parent>
+
+    <artifactId>test-fabric-node-setup</artifactId>
+    <version>2.5.0</version>
+    <name>Fabric3 Fabric Node Integration Tests Setup</name>
+    <packaging>jar</packaging>
+    <description>Fabric3 Fabric Node Integration Tests Setup.</description>
+
+    <!-- Required to download required Node extensions for node tests-->
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.fabric3</groupId>
+            <artifactId>profile-rs</artifactId>
+            <version>${fabric3.version}</version>
+            <type>zip</type>
+            <classifier>bin</classifier>
+            <scope>provided</scope>
+        </dependency>
+
+
+    </dependencies>
+
+</project>
