@@ -18,4 +18,14 @@ Public License. See the accompanying license file for details.
         <implementation.java class="org.fabric3.tests.function.annotation.ConstructorTestService"/>
     </component>
 
+    <component name="RuntimeAnnotationsTest">
+        <f3:junit class="org.fabric3.tests.function.annotation.RuntimeAnnotationsTest"/>
+        <reference name="service" target="RuntimeAnnotationsService"/>
+    </component>
+
+    <component name="RuntimeAnnotationsService">
+        <implementation.java class="org.fabric3.tests.function.annotation.RuntimeAnnotationsServiceImpl"/>
+    </component>
+
+
 </composite>
