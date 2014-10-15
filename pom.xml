@@ -45,7 +45,7 @@
         <servlet.version>3.0.0.v201112011016</servlet.version>
         <jax.rs.version>2.0</jax.rs.version>
         <jersey.version>2.0</jersey.version>
-        <jackson.version>2.2.0</jackson.version>
+        <jackson.version>2.4.3</jackson.version>
         <disruptor.version>3.1.0</disruptor.version>
         <h2.version>1.3.170</h2.version>
         <easy.mock.version>3.1</easy.mock.version>
