@@ -40,6 +40,11 @@
             <artifactId>jackson-jaxrs-json-provider</artifactId>
             <version>${jackson.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -62,6 +67,13 @@
                             <version>${fabric3.version}</version>
                         </profile>
                     </profiles>
+                    <shared>
+                        <dependency>
+                            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                            <artifactId>jackson-jaxrs-json-provider</artifactId>
+                            <version>${jackson.version}</version>
+                        </dependency>
+                    </shared>
                     <extensions>
                         <dependency>
                             <groupId>org.fabric3</groupId>
@@ -83,11 +95,12 @@
                             <artifactId>fabric3-databinding-json</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
-                        <dependency>
-                            <groupId>org.fabric3.tests</groupId>
-                            <artifactId>test-binding-rs-extension</artifactId>
-                            <version>${project.version}</version>
-                        </dependency>
+
+                        <!--<dependency>-->
+                            <!--<groupId>org.fabric3.tests</groupId>-->
+                            <!--<artifactId>test-binding-rs-extension</artifactId>-->
+                            <!--<version>${project.version}</version>-->
+                        <!--</dependency>-->
                     </extensions>
                     <systemConfig>
                         <![CDATA[

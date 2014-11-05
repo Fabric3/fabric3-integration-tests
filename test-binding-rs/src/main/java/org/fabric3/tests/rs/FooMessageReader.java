@@ -35,45 +35,35 @@
  * GNU General Public License along with Fabric3.
  * If not, see <http://www.gnu.org/licenses/>.
 */
-package org.fabric3.test.node;
+package org.fabric3.tests.rs;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
-
-import org.fabric3.api.annotation.scope.Scopes;
-import org.oasisopen.sca.annotation.Reference;
-import org.oasisopen.sca.annotation.Scope;
-import org.oasisopen.sca.annotation.Service;
+import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
+import javax.ws.rs.ext.MessageBodyReader;
+import javax.ws.rs.ext.Provider;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Type;
 
 /**
  *
  */
-@Scope(Scopes.COMPOSITE)
-@Service({TestClient.class, CallbackService.class})
-public class TestClientImpl implements TestClient, CallbackService {
-    private CountDownLatch latch;
-
-    @Reference
-    protected TestService service;
-
-    @Reference
-    protected TestOneWayService oneWayService;
-
-    public String invoke(String message) {
-        return service.message(message);
+@Provider
+@Produces({"application/foo"})
+public class FooMessageReader implements MessageBodyReader<Object>{
+    public boolean isReadable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
+        return mediaType.isCompatible(new MediaType("application","foo"));
     }
 
-    public boolean invokeOneWay(String message) {
-        latch = new CountDownLatch(1);
-        oneWayService.messageOneWay(message);
-        try {
-            return latch.await(10000, TimeUnit.MILLISECONDS);
-        } catch (InterruptedException e) {
-            throw new AssertionError(e);
-        }
-    }
-
-    public void reply(String reply) {
-        latch.countDown();
+    public Object readFrom(Class<Object> type,
+                           Type genericType,
+                           Annotation[] annotations,
+                           MediaType mediaType,
+                           MultivaluedMap<String, String> httpHeaders,
+                           InputStream entityStream) throws IOException, WebApplicationException {
+        return new Object();
     }
 }

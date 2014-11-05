@@ -28,6 +28,7 @@ import java.net.URI;
 
 import junit.framework.TestCase;
 import org.fabric3.tests.rs.Message;
+import org.glassfish.jersey.jackson.JacksonFeature;
 import org.oasisopen.sca.annotation.Property;
 
 /**
@@ -80,6 +81,7 @@ public class TestClient extends TestCase {
         message.setText("this is a test");
 
         Client client = ClientBuilder.newClient();
+        client.register(JacksonFeature.class);
         UriBuilder uri = UriBuilder.fromUri(baseJsonMessageUri);
         WebTarget resource = client.target(uri.path("message").build());
         Response response = resource.request(MediaType.APPLICATION_JSON).put(Entity.entity(message, MediaType.APPLICATION_JSON));

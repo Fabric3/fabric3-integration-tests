@@ -50,7 +50,7 @@ public class TestOneWayServiceImpl implements TestOneWayService {
     @Callback
     protected CallbackService callbackService;
 
-    public void message(String message) {
+    public void messageOneWay(String message) {
         callbackService.reply(message);
     }
 }

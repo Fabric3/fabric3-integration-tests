@@ -55,11 +55,12 @@ public class CustomMediaTypeService {
 
     @POST
     @Path(("message/{id}"))
-    public String retrieve(Object id) {
+    @Produces({"application/foo"})
+    public Object retrieve(Object id) {
         if (id == null) {
             throw new AssertionError("MessageReader was not invoked");
         }
-        return "test";
+        return new Object();
     }
 
 }

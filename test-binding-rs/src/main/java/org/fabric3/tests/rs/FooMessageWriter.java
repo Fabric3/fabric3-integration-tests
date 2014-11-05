@@ -37,29 +37,40 @@
 */
 package org.fabric3.tests.rs;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.ext.MessageBodyReader;
+import javax.ws.rs.ext.MessageBodyWriter;
+import javax.ws.rs.ext.Provider;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 
 /**
  *
  */
-public class FooMessageReader implements MessageBodyReader<Object>{
-    public boolean isReadable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
-        return mediaType.isCompatible(new MediaType("application","foo"));
+@Provider
+@Consumes({"application/foo"})
+public class FooMessageWriter implements MessageBodyWriter<Object> {
+
+    public boolean isWriteable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
+        return mediaType.isCompatible(new MediaType("application", "foo"));
     }
 
-    public Object readFrom(Class<Object> type,
-                           Type genericType,
-                           Annotation[] annotations,
-                           MediaType mediaType,
-                           MultivaluedMap<String, String> httpHeaders,
-                           InputStream entityStream) throws IOException, WebApplicationException {
-        return new Object();
+    public long getSize(Object o, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
+        return "test".length();
+    }
+
+    public void writeTo(Object o,
+                        Class<?> type,
+                        Type genericType,
+                        Annotation[] annotations,
+                        MediaType mediaType,
+                        MultivaluedMap<String, Object> httpHeaders,
+                        OutputStream entityStream) throws IOException, WebApplicationException {
+        entityStream.write("test".getBytes());
+
     }
 }

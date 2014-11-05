@@ -49,5 +49,5 @@ import org.oasisopen.sca.annotation.Remotable;
 public interface TestOneWayService {
 
     @OneWay
-    void message(String message);
+    void messageOneWay(String message);
 }

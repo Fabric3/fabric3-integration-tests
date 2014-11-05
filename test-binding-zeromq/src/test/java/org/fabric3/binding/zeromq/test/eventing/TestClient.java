@@ -19,7 +19,8 @@ public class TestClient extends TestCase {
 
     public void testDurableProduce() throws Exception {
         consumer.setWaitCount(1);
-        for (int i = 0; i < 2; i++) {
+        Thread.sleep(10000);
+        for (int i = 0; i < 1002; i++) {
             producer.produce("message");
         }
         consumer.waitOnEvents();

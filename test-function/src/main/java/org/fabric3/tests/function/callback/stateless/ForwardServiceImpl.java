@@ -37,12 +37,10 @@
 */
 package org.fabric3.tests.function.callback.stateless;
 
-import org.oasisopen.sca.ServiceReference;
+import org.fabric3.tests.function.callback.common.CallbackData;
 import org.oasisopen.sca.annotation.Callback;
 import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Service;
-
-import org.fabric3.tests.function.callback.common.CallbackData;
 
 /**
  *
@@ -55,8 +53,9 @@ public class ForwardServiceImpl implements ForwardService, CallbackService {
     @Callback
     protected CallbackService callbackService;
 
-    @Callback
-    protected ServiceReference<CallbackService> reference;
+//    disabled for JDK bug FABRIC-42
+//    @Callback
+//    protected ServiceReference<CallbackService> reference;
 
     public void invoke(CallbackData data) {
         callbackService.onCallback(data);
@@ -68,7 +67,9 @@ public class ForwardServiceImpl implements ForwardService, CallbackService {
     }
 
     public void invokeServiceReferenceCallback(CallbackData data) {
-        reference.getService().onServiceReferenceCallback(data);
+        callbackService.onCallback(data);
+        // disabled for JDK bug FABRIC-42
+//        reference.getService().onServiceReferenceCallback(data);
     }
 
     public void invokeMultipleHops(CallbackData data) {
