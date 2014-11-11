@@ -220,11 +220,11 @@
                 <module>test-multiple-modules</module>
                 <module>tests-import-resolution</module>
                 <module>test-environment</module>
-                <module>tests-ws</module>
                 <module>test-binding-ftp</module>
                 <module>test-fabric-node-setup</module>
                 <module>test-fabric-node</module>
-                <!--<module>test-binding-metro</module>-->
+                <module>tests-ws</module>
+                <module>test-binding-metro</module>
             </modules>
         </profile>
     </profiles>
