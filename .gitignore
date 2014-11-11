@@ -10,4 +10,5 @@ idea
 .project
 .classpath
 .settings/
+activemq-data/
 
