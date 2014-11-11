@@ -223,6 +223,7 @@
                 <module>test-binding-ftp</module>
                 <module>test-fabric-node-setup</module>
                 <module>test-fabric-node</module>
+                <!-- Run WS tests last as they change the JDK keystore, which cannot be changed back on Windows -->
                 <module>tests-ws</module>
                 <module>test-binding-metro</module>
             </modules>
