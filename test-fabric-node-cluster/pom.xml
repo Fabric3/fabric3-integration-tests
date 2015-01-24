@@ -14,10 +14,10 @@
     <parent>
         <groupId>org.fabric3.tests</groupId>
         <artifactId>fabric3-integration-tests</artifactId>
-        <version>2.5.0</version>
+        <version>3.0.0</version>
     </parent>
     <artifactId>test-fabric-node-cluster</artifactId>
-    <version>2.5.0</version>
+    <version>3.0.0</version>
     <name>Fabric3 Fabric Node Cluster Integration Tests</name>
     <packaging>jar</packaging>
     <description>Fabric3 Fabric Node Cluster Integration Tests.</description>

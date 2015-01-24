@@ -12,11 +12,11 @@
     <parent>
         <groupId>org.fabric3.tests</groupId>
         <artifactId>test-apps-parent-pom</artifactId>
-        <version>2.5.0</version>
+        <version>3.0.0</version>
     </parent>
     <artifactId>test-jpa</artifactId>
     <packaging>jar</packaging>
-    <version>2.5.0</version>
+    <version>3.0.0</version>
     <name>Fabric3 JPA Test Application</name>
     <description>Fabric3 JMS JPA Test Application</description>
     <dependencies>

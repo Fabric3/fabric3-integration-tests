@@ -12,11 +12,11 @@
     <parent>
        <groupId>org.fabric3.tests</groupId>
        <artifactId>tests-standalone-cluster-parent-pom</artifactId>
-       <version>2.5.0</version>
+       <version>3.0.0</version>
     </parent>
     <artifactId>test-standalone-cluster-integration-tests</artifactId>
     <packaging>jar</packaging>
-    <version>2.5.0</version>
+    <version>3.0.0</version>
     <name>Fabric3 Standalone Runtime Cluster Integration Tests</name>
     <description>Fabric3 Standalone Runtime Cluster Integration Tests</description>
     <dependencies>
