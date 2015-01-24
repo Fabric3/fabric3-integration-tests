@@ -20,22 +20,12 @@ import javax.ws.rs.ForbiddenException;
 import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.ClientRequestContext;
-import javax.ws.rs.client.ClientRequestFilter;
-import javax.ws.rs.client.ClientResponseContext;
-import javax.ws.rs.client.ClientResponseFilter;
-import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.UriBuilder;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import junit.framework.TestCase;
-import org.fabric3.tests.rs.security.UsernamePasswordToken;
 import org.glassfish.jersey.client.authentication.HttpAuthenticationFeature;
 import org.oasisopen.sca.annotation.Property;
 
@@ -91,29 +81,6 @@ public class SecureTestClient extends TestCase {
     public void testBasicAuth() {
         HttpAuthenticationFeature feature = HttpAuthenticationFeature.basic("foo", "bar");
         client.register(feature);
-        WebTarget resource = client.target(uri.path("").build());
-        resource.request(MediaType.APPLICATION_JSON).get(String.class);
-    }
-
-    public void testFabricLogin() {
-        final List<NewCookie> cookies = new ArrayList<>();
-        client.register(new ClientResponseFilter() {
-            public void filter(ClientRequestContext requestContext, ClientResponseContext responseContext) throws IOException {
-                cookies.addAll(responseContext.getCookies().values());
-            }
-        });
-        client.register(new ClientRequestFilter() {
-
-            public void filter(ClientRequestContext cr) {
-                for (NewCookie cookie : cookies) {
-                    cr.getHeaders().putSingle("Cookie", cookie.getName() + "=" + cookie.getValue());
-                }
-            }
-        });
-        UriBuilder authBuilder = UriBuilder.fromUri(authentication);
-        WebTarget authResource = client.target(authBuilder.path("").build());
-        Entity<UsernamePasswordToken> entity = Entity.entity(new UsernamePasswordToken("foo", "bar"), MediaType.APPLICATION_JSON);
-        authResource.request(MediaType.APPLICATION_JSON_TYPE).post(entity);
         WebTarget resource = client.target(uri.path("").build());
         resource.request(MediaType.APPLICATION_JSON).get(String.class);
     }
