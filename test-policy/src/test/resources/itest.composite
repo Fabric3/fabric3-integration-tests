@@ -12,31 +12,6 @@
            targetNamespace="urn:fabric3.org"
            name="TestComposite">
 
-    <!-- Attachment tests -->
-    <component name="AttachToImplementationTest">
-        <f3:junit class="org.fabric3.policy.attachment.AttachToImplementationTest"/>
-        <reference name="attachService" target="AttachToImplementationService"/>
-        <reference name="noAttachService" target="NoAttachToImplementationService"/>
-        <reference name="attachBindingService">
-            <f3:binding.test uri="AttachToBindingImplementationService"/>
-        </reference>
-    </component>
-
-    <component name="AttachToImplementationService">
-        <implementation.java class="org.fabric3.policy.attachment.AttachToImplementationServiceImpl"/>
-    </component>
-
-    <component name="NoAttachToImplementationService">
-        <implementation.java class="org.fabric3.policy.attachment.NoAttachToImplementationServiceImpl"/>
-    </component>
-
-    <component name="AttachToBindingImplementationService">
-        <implementation.java class="org.fabric3.policy.attachment.AttachToImplementationServiceImpl"/>
-        <service name="AttachService">
-            <f3:binding.test uri="AttachToBindingImplementationService"/>
-        </service>
-    </component>
-
     <!-- Trx tests -->
     <component name="TransactionalServiceTest">
         <f3:junit class="org.fabric3.policy.tx.TransactionalServiceTest"/>
