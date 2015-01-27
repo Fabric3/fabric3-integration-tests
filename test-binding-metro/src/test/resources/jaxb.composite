@@ -15,14 +15,14 @@
     <component name="JaxbTest">
         <f3:junit class="org.fabric3.tests.binding.metro.JaxbTest"/>
         <reference name="weatherPortType">
-            <binding.ws wsdlElement="urn:weather#wsdl.port(WeatherService/WeatherPort)"/>
+            <binding.ws uri="http://localhost:18900/weather"/>
         </reference>
     </component>
 
     <component name="WeatherService">
         <implementation.java class="org.fabric3.tests.binding.metro.weather.WeatherPortTypeImpl"/>
         <service name="WeatherPortType">
-            <binding.ws wsdlElement="urn:weather#wsdl.port(WeatherService/WeatherPort)"/>
+            <binding.ws uri="weather"/>
         </service>
     </component>
 
