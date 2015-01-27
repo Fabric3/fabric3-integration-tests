@@ -80,11 +80,6 @@
                             <artifactId>fabric3-jetty</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>
-                        <dependency>
-                            <groupId>org.fabric3.tests</groupId>
-                            <artifactId>test-implementation-wsdl</artifactId>
-                            <version>3.0.0</version>
-                        </dependency>
                     </extensions>
                     <systemConfig>
                         <![CDATA[

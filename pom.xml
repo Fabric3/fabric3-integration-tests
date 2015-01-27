@@ -116,7 +116,6 @@
 
             <modules>
                 <module>test-binding-harness</module>
-                <module>test-implementation-wsdl</module>
                 <module>test-implementation-junit</module>
                 <module>test-function</module>
                 <module>test-eventing</module>
@@ -135,7 +134,6 @@
                 <module>test-binding-metro</module>
                 <module>test-binding-jms</module>
                 <module>test-binding-file</module>
-                <module>test-wsdl</module>
                 <module>test-management-rest</module>
                 <module>test-capabilities-extension</module>
                 <module>test-capabilities</module>
@@ -155,7 +153,6 @@
             <id>linux-integration</id>
             <modules>
                 <module>test-binding-harness</module>
-                <module>test-implementation-wsdl</module>
                 <module>test-implementation-junit</module>
                 <module>test-function</module>
                 <module>test-eventing</module>
@@ -174,7 +171,6 @@
                 <module>test-binding-metro</module>
                 <module>test-binding-jms</module>
                 <module>test-binding-file</module>
-                <module>test-wsdl</module>
                 <module>test-management-rest</module>
                 <module>test-capabilities-extension</module>
                 <module>test-capabilities</module>
@@ -196,7 +192,6 @@
             </activation>
             <modules>
                 <module>test-binding-harness</module>
-                <module>test-implementation-wsdl</module>
                 <module>test-implementation-junit</module>
                 <module>test-function</module>
                 <module>test-eventing</module>
@@ -213,7 +208,6 @@
                 <module>test-binding-jeromq</module>
                 <module>test-binding-jms</module>
                 <module>test-binding-file</module>
-                <module>test-wsdl</module>
                 <module>test-management-rest</module>
                 <module>test-capabilities-extension</module>
                 <module>test-capabilities</module>
