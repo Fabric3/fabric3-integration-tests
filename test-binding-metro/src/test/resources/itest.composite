@@ -10,11 +10,9 @@
            targetNamespace="urn:fabric3.org"
            name="TestComposite" >
 
+    <include name="MtomTest" />
     <include name="JaxbTest"/>
     <include name="HandlerTest"/>
     <include name="InteractionTest" />
     <include name="SOAPPolicyTest" />
-    <include name="SecurityPolicyTest" />
-    <include name="MtomTest" />
-    <include name="RestTest" />
 </composite>

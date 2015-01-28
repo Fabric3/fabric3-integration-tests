@@ -15,14 +15,14 @@
     <component name="MtomTest">
         <f3:junit class="org.fabric3.tests.binding.metro.MtomTest"/>
         <reference name="uploadPortType">
-            <binding.ws uri="http://localhost:18900/upload" requires="f3:messageOptimization"/>
+            <binding.ws uri="http://localhost:18900/upload"/>
         </reference>
     </component>
 
     <component name="UploadService">
         <implementation.java class="org.fabric3.tests.binding.metro.upload.UploadPortTypeImpl"/>
         <service name="UploadPortType">
-            <binding.ws uri="/upload" requires="f3:messageOptimization"/>
+            <binding.ws uri="/upload"/>
         </service>
     </component>
 

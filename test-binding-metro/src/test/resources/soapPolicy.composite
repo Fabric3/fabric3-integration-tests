@@ -18,23 +18,14 @@
         <reference name="soap11Service">
             <binding.ws uri="http://localhost:18900/soap11Service" requires="SOAP.1_1"/>
         </reference>
-        <reference name="soap12Service">
-            <binding.ws uri="http://localhost:18900/soap12Service" requires="f3:xsoap12"/>
-        </reference>
     </component>
 
     <component name="SOAP11Service">
         <implementation.java class="org.fabric3.tests.binding.metro.soap.Soap11ServiceImpl"/>
         <service name="Soap11Service">
-            <binding.ws uri="/soap11Service" requires="SOAP.1_1"/>
+            <binding.ws uri="/soap11Service"/>
         </service>
     </component>
 
-    <component name="SOAP12Service">
-        <implementation.java class="org.fabric3.tests.binding.metro.soap.Soap12ServiceImpl"/>
-        <service name="Soap12Service">
-            <binding.ws uri="/soap12Service" requires="f3:xsoap12"/>
-        </service>
-    </component>
 
 </composite>

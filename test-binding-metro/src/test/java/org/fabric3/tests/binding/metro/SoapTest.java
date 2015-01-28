@@ -38,25 +38,17 @@
 package org.fabric3.tests.binding.metro;
 
 import junit.framework.TestCase;
-import org.oasisopen.sca.annotation.Reference;
-
 import org.fabric3.tests.binding.metro.soap.Soap11Service;
-import org.fabric3.tests.binding.metro.soap.Soap12Service;
+import org.oasisopen.sca.annotation.Reference;
 
 public class SoapTest extends TestCase {
 
     @Reference
     protected Soap11Service soap11Service;
 
-    @Reference
-    protected Soap12Service soap12Service;
-
     public void testSoap11() throws Exception {
         assertEquals("Hello, Foo", soap11Service.sayHello("Foo"));
     }
 
-    public void testSoap12() throws Exception {
-        assertEquals("Hello, Foo", soap12Service.sayHello("Foo"));
-    }
 
 }
