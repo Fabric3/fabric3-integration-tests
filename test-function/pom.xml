@@ -76,10 +76,10 @@
                     <systemConfig>
                         <![CDATA[
                         <config xmlns="urn:fabric3.org">
+                            <domain autowire="OFF"/>
                             <web.server>
                                 <http port="18900"/>
                             </web.server>
-                            <sca enableByValue="true"/>
                         </config>
                         ]]>
                     </systemConfig>
