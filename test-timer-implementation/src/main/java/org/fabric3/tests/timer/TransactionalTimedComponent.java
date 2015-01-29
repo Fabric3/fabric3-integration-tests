@@ -41,14 +41,15 @@ import javax.transaction.Status;
 import javax.transaction.SystemException;
 import javax.transaction.TransactionManager;
 
-import org.oasisopen.sca.ServiceRuntimeException;
-import org.oasisopen.sca.annotation.Reference;
-
 import org.fabric3.api.annotation.Resource;
+import org.oasisopen.sca.ServiceRuntimeException;
+import org.oasisopen.sca.annotation.ManagedTransaction;
+import org.oasisopen.sca.annotation.Reference;
 
 /**
  *
  */
+@ManagedTransaction
 public class TransactionalTimedComponent implements Runnable {
     @Reference
     protected LatchService latchService;

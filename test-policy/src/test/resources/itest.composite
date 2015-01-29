@@ -20,22 +20,17 @@
     </component>
 
     <component name="TransactionalService1">
-        <implementation.java class="org.fabric3.policy.tx.TransactionalServiceImpl" requires="sca:managedTransaction"/>
-        <reference name="childService" target="TransactionalService2" requires="sca:suspendsTransaction"/>
+        <implementation.java class="org.fabric3.policy.tx.TransactionalServiceImpl"/>
+        <reference name="childService" target="TransactionalService2"/>
     </component>
 
     <component name="TransactionalService2">
-        <implementation.java class="org.fabric3.policy.tx.TransactionalServiceImpl" requires="sca:managedTransaction"/>
+        <implementation.java class="org.fabric3.policy.tx.TransactionalServiceImpl"/>
     </component>
 
     <component name="AnnotatedManagedTransactionService">
         <implementation.java class="org.fabric3.policy.tx.AnnotatedManagedTransactionService"/>
-        <reference name="suspendedTransactionService" target="SuspendedTransactionService"/>
         <reference name="propagatesTransactionService" target="PropagatesTransactionService"/>
-    </component>
-
-    <component name="SuspendedTransactionService">
-        <implementation.java class="org.fabric3.policy.tx.SuspendedTransactionService"/>
     </component>
 
     <component name="PropagatesTransactionService">
@@ -44,15 +39,7 @@
 
 
     <!--Security tests -->
-    <component name="SecureServiceTest">
-        <f3:junit class="org.fabric3.policy.security.SecureServiceTest">
-            <configuration>
-                <username>foo</username>
-                <password>bar</password>
-            </configuration>
-        </f3:junit>
-        <reference name="secureRoleService" target="SecureRolesService"/>
-    </component>
+
 
     <!-- test authorization  -->
     <component name="NotAuthorizedSecureServiceTest">

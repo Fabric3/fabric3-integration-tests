@@ -21,12 +21,6 @@
         <property name="baseInterfaceUri">http://localhost:18900/interface/</property>
     </component>
 
-    <component name="SecureTestClient">
-        <f3:junit class="tests.rs.SecureTestClient"/>
-        <property name="baseUri">http://localhost:18900/secureAuthorization/</property>
-        <property name="authentication">http://localhost:18900/fabric/security/token</property>
-    </component>
-
     <component name="TestRESTRefClient">
         <f3:junit class="tests.rs.TestRESTReference"/>
         <reference name="jsonRef">
@@ -88,12 +82,6 @@
         </service>
     </component>
 
-    <component name="SecureService">
-        <implementation.java class="org.fabric3.tests.rs.security.SecureService"/>
-        <service name="SecureService">
-            <f3:binding.rs uri="/secureAuthorization"/>
-        </service>
-    </component>
 
     <component name="CustomMediaTypeService">
         <implementation.java class="org.fabric3.tests.rs.CustomMediaTypeService"/>

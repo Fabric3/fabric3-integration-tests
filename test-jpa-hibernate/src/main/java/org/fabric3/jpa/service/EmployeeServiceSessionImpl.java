@@ -37,19 +37,20 @@
 */
 package org.fabric3.jpa.service;
 
-import java.util.List;
 import javax.persistence.PersistenceContext;
-
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
+import java.util.List;
 
 import org.fabric3.jpa.model.Employee;
 import org.fabric3.jpa.model.ExEmployee;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+import org.oasisopen.sca.annotation.ManagedTransaction;
 
 /**
  *
  */
+@ManagedTransaction
 public class EmployeeServiceSessionImpl implements EmployeeService {
     private Session employeeSession;
     private Session exEmployeeSession;

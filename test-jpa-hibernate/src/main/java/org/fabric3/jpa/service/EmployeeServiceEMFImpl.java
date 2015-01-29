@@ -37,17 +37,19 @@
 */
 package org.fabric3.jpa.service;
 
-import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
+import java.util.List;
 
 import org.fabric3.jpa.model.Employee;
 import org.fabric3.jpa.model.ExEmployee;
+import org.oasisopen.sca.annotation.ManagedTransaction;
 
 /**
  * Exercises injecting an EntityManagerFactory.
  */
+@ManagedTransaction
 public class EmployeeServiceEMFImpl implements EmployeeService {
     private EntityManagerFactory emf;
 

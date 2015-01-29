@@ -40,12 +40,10 @@ package org.fabric3.policy.tx;
 import javax.transaction.Status;
 import javax.transaction.TransactionManager;
 
-import org.oasisopen.sca.annotation.ManagedTransaction;
-import org.oasisopen.sca.annotation.Reference;
-
 import org.fabric3.api.annotation.Resource;
 import org.fabric3.api.annotation.transaction.PropagatesTransaction;
-import org.fabric3.api.annotation.transaction.SuspendsTransaction;
+import org.oasisopen.sca.annotation.ManagedTransaction;
+import org.oasisopen.sca.annotation.Reference;
 
 /**
  *
@@ -56,10 +54,6 @@ public class AnnotatedManagedTransactionService implements TransactionalService 
     protected TransactionManager tm;
 
     @Reference
-    @SuspendsTransaction
-    protected TransactionalService suspendedTransactionService;
-
-    @Reference
     @PropagatesTransaction
     protected TransactionalService propagatesTransactionService;
 
@@ -67,7 +61,6 @@ public class AnnotatedManagedTransactionService implements TransactionalService 
         if (tm.getTransaction() == null || Status.STATUS_ACTIVE != tm.getTransaction().getStatus()) {
             throw new AssertionError("Transaction not active");
         }
-        suspendedTransactionService.call();
         propagatesTransactionService.call();
     }
 }

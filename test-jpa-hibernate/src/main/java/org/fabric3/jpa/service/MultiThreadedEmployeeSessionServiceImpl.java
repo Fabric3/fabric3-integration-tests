@@ -37,19 +37,20 @@
 */
 package org.fabric3.jpa.service;
 
-import java.util.List;
 import javax.persistence.PersistenceContext;
-
-import org.hibernate.Session;
-import org.oasisopen.sca.annotation.Scope;
+import java.util.List;
 
 import org.fabric3.jpa.model.Employee;
 import org.fabric3.jpa.model.ExEmployee;
+import org.hibernate.Session;
+import org.oasisopen.sca.annotation.ManagedTransaction;
+import org.oasisopen.sca.annotation.Scope;
 
 /**
  * Exercises multi-threaded EntityManager operation
  */
 @Scope("COMPOSITE")
+@ManagedTransaction
 public class MultiThreadedEmployeeSessionServiceImpl implements EmployeeService {
 
     private Session employeeSession;

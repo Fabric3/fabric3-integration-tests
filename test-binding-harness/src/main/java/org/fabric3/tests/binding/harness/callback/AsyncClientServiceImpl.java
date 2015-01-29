@@ -42,6 +42,7 @@ import java.util.concurrent.CountDownLatch;
 
 import org.oasisopen.sca.ComponentContext;
 import org.oasisopen.sca.annotation.Context;
+import org.oasisopen.sca.annotation.ManagedTransaction;
 import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Scope;
 import org.oasisopen.sca.annotation.Service;
@@ -51,6 +52,7 @@ import org.oasisopen.sca.annotation.Service;
  */
 @Scope("COMPOSITE")
 @Service({AsyncClientService.class, AsyncCallback.class})
+@ManagedTransaction
 public class AsyncClientServiceImpl implements AsyncClientService, AsyncCallback {
     @Context
     protected ComponentContext context;

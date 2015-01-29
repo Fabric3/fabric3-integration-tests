@@ -37,6 +37,7 @@
 */
 package org.fabric3.policy.tx;
 
+import org.oasisopen.sca.annotation.ManagedTransaction;
 import org.oasisopen.sca.annotation.Reference;
 import org.oasisopen.sca.annotation.Scope;
 
@@ -44,6 +45,7 @@ import org.oasisopen.sca.annotation.Scope;
  *
  */
 @Scope("COMPOSITE")
+@ManagedTransaction
 public class TransactionalServiceImpl implements TransactionalService {
 
     private TransactionalService transactionalService;

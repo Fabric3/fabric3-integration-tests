@@ -143,7 +143,6 @@
                 <module>tests-apps</module>
                 <module>tests-cluster-apps</module>
                 <module>tests-ws</module>
-                <module>test-binding-ftp</module>
                 <module>test-fabric-node-setup</module>
                 <module>test-fabric-node</module>
                 <module>test-fabric-node-cluster</module>
@@ -180,7 +179,6 @@
                 <module>tests-apps</module>
                 <module>tests-cluster-apps</module>
                 <module>tests-ws</module>
-                <module>test-binding-ftp</module>
                 <module>test-fabric-node-setup</module>
                 <module>test-fabric-node</module>
             </modules>
@@ -214,7 +212,6 @@
                 <module>test-multiple-modules</module>
                 <module>tests-import-resolution</module>
                 <module>test-environment</module>
-                <module>test-binding-ftp</module>
                 <module>test-fabric-node-setup</module>
                 <module>test-fabric-node</module>
                 <!-- Run WS tests last as they change the JDK keystore, which cannot be changed back on Windows -->

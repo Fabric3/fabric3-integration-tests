@@ -16,7 +16,7 @@
     <component name="SOAPTest">
         <f3:junit class="org.fabric3.tests.binding.metro.SoapTest"/>
         <reference name="soap11Service">
-            <binding.ws uri="http://localhost:18900/soap11Service" requires="SOAP.1_1"/>
+            <binding.ws uri="http://localhost:18900/soap11Service"/>
         </reference>
     </component>
 

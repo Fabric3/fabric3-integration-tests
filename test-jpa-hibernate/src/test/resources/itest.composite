@@ -21,23 +21,23 @@
         <reference name="employeeMultiThreadedSessionService" target="MultiThreadedEmployeeSessionService"/>
     </component>
 
-    <component name="EmployeeService" requires="sca:managedTransaction">
+    <component name="EmployeeService">
         <implementation.java class="org.fabric3.jpa.service.EmployeeServiceImpl"/>
     </component>
 
-    <component name="EmployeeEMFService" requires="sca:managedTransaction">
+    <component name="EmployeeEMFService">
         <implementation.java class="org.fabric3.jpa.service.EmployeeServiceEMFImpl"/>
     </component>
 
-    <component name="EmployeeMultiThreadedService" requires="sca:managedTransaction">
+    <component name="EmployeeMultiThreadedService">
         <implementation.java class="org.fabric3.jpa.service.MultiThreadedEmployeeServiceImpl"/>
     </component>
 
-    <component name="EmployeeServiceSession" requires="sca:managedTransaction">
+    <component name="EmployeeServiceSession">
         <implementation.java class="org.fabric3.jpa.service.EmployeeServiceSessionImpl"/>
     </component>
 
-    <component name="MultiThreadedEmployeeSessionService" requires="sca:managedTransaction">
+    <component name="MultiThreadedEmployeeSessionService">
         <implementation.java class="org.fabric3.jpa.service.MultiThreadedEmployeeSessionServiceImpl"/>
     </component>
 
