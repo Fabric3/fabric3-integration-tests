@@ -34,5 +34,5 @@ Public License. See the accompanying license file for details.
         <reference name="field" target="test.test"/>
     </component>
 
-    <include name="MapComposite" scdlResource="org/fabric3/tests/function/references/map.composite"/>
+    <include name="MapComposite"/>
 </composite>
