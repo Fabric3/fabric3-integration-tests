@@ -40,8 +40,8 @@ package org.fabric3.test.node;
 import java.net.URL;
 
 import junit.framework.TestCase;
-import org.fabric3.api.model.type.builder.JavaComponentDefinitionBuilder;
-import org.fabric3.api.model.type.component.ComponentDefinition;
+import org.fabric3.api.model.type.builder.JavaComponentBuilder;
+import org.fabric3.api.model.type.component.Component;
 import org.fabric3.api.node.Bootstrap;
 import org.fabric3.api.node.Domain;
 import org.fabric3.api.node.Fabric;
@@ -80,7 +80,7 @@ public class FabricLocalServiceTestCase extends TestCase {
         fabric.stop();
     }
 
-    public void testDeployAndGetComponentDefinition() throws Exception {
+    public void testDeployAndGetComponent() throws Exception {
 
         Fabric fabric = Bootstrap.initialize();
         fabric.start();
@@ -88,7 +88,7 @@ public class FabricLocalServiceTestCase extends TestCase {
         Domain domain = fabric.getDomain();
 
         TestServiceImpl instance = new TestServiceImpl();
-        ComponentDefinition definition = JavaComponentDefinitionBuilder.newBuilder("TestService", instance).build();
+        Component definition = JavaComponentBuilder.newBuilder("TestService", instance).build();
         domain.deploy(definition);
 
         TestService service = domain.getService(TestService.class);

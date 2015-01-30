@@ -41,7 +41,7 @@ import javax.xml.namespace.QName;
 
 import org.fabric3.api.Namespaces;
 import org.fabric3.api.annotation.model.Provides;
-import org.fabric3.api.model.type.builder.ChannelDefinitionBuilder;
+import org.fabric3.api.model.type.builder.ChannelBuilder;
 import org.fabric3.api.model.type.builder.CompositeBuilder;
 import org.fabric3.api.model.type.component.Composite;
 
@@ -53,7 +53,7 @@ public class FunctionTestProvider {
     @Provides
     public static Composite testComposite() {
         QName name = new QName(Namespaces.F3, "DSLComposite");
-        ChannelDefinitionBuilder channelBuilder = ChannelDefinitionBuilder.newBuilder("DSLChannel");
+        ChannelBuilder channelBuilder = ChannelBuilder.newBuilder("DSLChannel");
         return CompositeBuilder.newBuilder(name).channel(channelBuilder.build()).build();
     }
 

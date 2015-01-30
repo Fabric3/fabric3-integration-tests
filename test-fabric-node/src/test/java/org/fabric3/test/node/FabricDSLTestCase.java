@@ -41,7 +41,7 @@ import javax.xml.namespace.QName;
 
 import junit.framework.TestCase;
 import org.fabric3.api.model.type.builder.CompositeBuilder;
-import org.fabric3.api.model.type.builder.JavaComponentDefinitionBuilder;
+import org.fabric3.api.model.type.builder.JavaComponentBuilder;
 import org.fabric3.api.model.type.component.Composite;
 import org.fabric3.api.node.Bootstrap;
 import org.fabric3.api.node.Domain;
@@ -64,7 +64,7 @@ public class FabricDSLTestCase extends TestCase {
         Domain domain = fabric.getDomain();
         CompositeBuilder compositeBuilder = CompositeBuilder.newBuilder(TEST_COMPOSITE);
 
-        JavaComponentDefinitionBuilder componentBuilder = JavaComponentDefinitionBuilder.newBuilder(TestPropertyServiceImpl.class);
+        JavaComponentBuilder componentBuilder = JavaComponentBuilder.newBuilder(TestPropertyServiceImpl.class);
         componentBuilder.property("property", 1);
         componentBuilder.propertyExpression("xpathProperty", "$foo//test/@test");
         compositeBuilder.component(componentBuilder.build());
