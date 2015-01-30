@@ -14,7 +14,6 @@ Public License. See the accompanying license file for details.
            name="BindingComposite">
 
     <include name="ExplicitBindingComposite"/>
-    <include name="PromotionComposite"/>
 
 
 </composite>

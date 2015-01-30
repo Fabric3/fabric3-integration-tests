@@ -18,12 +18,10 @@ Public License. See the accompanying license file for details.
     <include name="SmokeTestComposite"/>
     <include name="AnnotationComposite"/>
     <include name="MonitorTestComposite"/>
-    <include name="OuterComposite"/>
     <include name="PropertiesComposite"/>
     <include name="ReferencesComposite"/>
     <include name="BindingComposite"/>
     <include name="WiringComposite"/>
-    <include name="AutoWireComposite"/>
     <include name="LifecycleComposite"/>
     <include name="AsyncComposite"/>
     <include name="ExecutionComposite"/>
