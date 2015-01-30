@@ -24,17 +24,6 @@ Public License. See the accompanying license file for details.
         <reference name="testService" target="HelloService/HelloService/binding2"/>
     </component>
 
-    <component name="SCABindingReferenceTest">
-        <f3:junit class="org.fabric3.tests.function.wiring.BindingSCATest"/>
-        <reference name="testService">
-            <binding.sca uri="HelloService2"/>
-        </reference>
-        <reference name="multiplicityService">
-            <binding.sca name="binding1" uri="HelloService2"/>
-            <binding.sca name="binding2" uri="HelloService2"/>
-        </reference>
-    </component>
-
     <component name="TestComponent">
         <implementation.java class="org.fabric3.tests.function.wiring.TestComponent"/>
         <reference name="targetConstructor" target="HelloService"/>

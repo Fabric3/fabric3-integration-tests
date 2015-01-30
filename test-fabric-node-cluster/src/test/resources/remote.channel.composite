@@ -12,8 +12,6 @@
            autowire="true">
 
 
-    <channel name="TestChannel">
-        <binding.sca/>
-    </channel>
+    <channel name="TestChannel"/>
 
 </composite>
