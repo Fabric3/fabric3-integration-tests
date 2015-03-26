@@ -1,12 +1,11 @@
 package org.fabric3.tests.eventing;
 
 import junit.framework.TestCase;
-import org.oasisopen.sca.annotation.Reference;
-
 import org.fabric3.api.annotation.monitor.Monitor;
 import org.fabric3.tests.binding.harness.eventing.TestConsumer;
 import org.fabric3.tests.binding.harness.eventing.TestProducer;
 import org.fabric3.tests.binding.harness.eventing.TestUnTypedProducer;
+import org.oasisopen.sca.annotation.Reference;
 
 /**
  *
@@ -22,6 +21,9 @@ public class TestClient extends TestCase {
     @Reference
     protected TestConsumer consumer;
 
+    @Reference
+    protected TestProducer directProducer;
+
     @Monitor
     protected TestMonitor monitor;
 
@@ -33,6 +35,7 @@ public class TestClient extends TestCase {
         consumer.setWaitCount(2);
         producer.produce("message");
         producer.produce("message");
+        directProducer.produce("message");
         consumer.waitOnEvents();
     }
 

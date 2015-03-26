@@ -16,6 +16,7 @@
         <f3:junit class="org.fabric3.tests.eventing.TestClient"/>
         <reference name="producer" target="TestProducer"/>
         <reference name="unTypedProducer" target="TestUnTypedProducer"/>
+        <reference name="directProducer" target="TestDirectProducer"/>
         <reference name="consumer" target="TestConsumer"/>
     </component>
 
@@ -32,6 +33,11 @@
     <component name="TestProducer">
         <implementation.java class="org.fabric3.tests.binding.harness.eventing.TestProducerImpl"/>
         <producer name="channel" target="TestChannel"/>
+    </component>
+
+    <component name="TestDirectProducer">
+        <implementation.java class="org.fabric3.tests.eventing.TestDirectProducer"/>
+        <producer name="ringBuffer" target="DirectRingBufferChannel"/>
     </component>
 
     <component name="TestUnTypedProducer">
@@ -79,6 +85,8 @@
     <channel name="TestUnTypedChannel"/>
 
     <channel name="RingBufferChannel" type="ring.buffer"/>
+
+    <channel name="DirectRingBufferChannel" type="ring.buffer"/>
 
     <channel name="ChannelEventChannel" type="ring.buffer"/>
 
