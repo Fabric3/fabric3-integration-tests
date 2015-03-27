@@ -15,6 +15,7 @@
     <component name="TestClient">
         <f3:junit class="org.fabric3.tests.eventing.TestClient"/>
         <reference name="producer" target="TestProducer"/>
+        <reference name="contextService" target="ContextService"/>
         <reference name="unTypedProducer" target="TestUnTypedProducer"/>
         <reference name="directProducer" target="TestDirectProducer"/>
         <reference name="consumer" target="TestConsumer"/>
@@ -79,6 +80,24 @@
         <implementation.java class="org.fabric3.tests.eventing.ChannelEventConsumer2"/>
         <consumer name="onEvent" source="ChannelEventChannel"/>
     </component>
+
+    <component name="ContextService">
+         <implementation.java class="org.fabric3.tests.eventing.ContextServiceImpl"/>
+     </component>
+
+    <component name="ContextConsumer">
+         <implementation.java class="org.fabric3.tests.eventing.ContextConsumer"/>
+        <consumer name="process" source="ContextChannel"/>
+     </component>
+
+    <component name="RingBufferContextConsumer">
+         <implementation.java class="org.fabric3.tests.eventing.RingBufferContextConsumer"/>
+        <consumer name="process" source="ContextRingBufferChannel"/>
+     </component>
+
+    <channel name="ContextChannel"/>
+
+    <channel name="ContextRingBufferChannel" type="ring.buffer"/>
 
     <channel name="TestChannel"/>
 

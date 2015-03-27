@@ -16,6 +16,9 @@ public class TestClient extends TestCase {
     protected TestProducer producer;
 
     @Reference
+    protected ContextService contextService;
+
+    @Reference
     protected TestUnTypedProducer unTypedProducer;
 
     @Reference
@@ -41,5 +44,10 @@ public class TestClient extends TestCase {
 
     public void testTypeFilteringOnConsumer() throws Exception {
         unTypedProducer.produce();
+    }
+
+    public void testContext() throws Exception {
+        contextService.invoke();
+
     }
 }
