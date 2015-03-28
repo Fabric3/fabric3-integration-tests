@@ -7,7 +7,6 @@
 
 -->
 <composite xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-           xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
            xmlns:f3="urn:fabric3.org"
            targetNamespace="urn:fabric3.org"
            name="TestComposite">
@@ -82,18 +81,25 @@
     </component>
 
     <component name="ContextService">
-         <implementation.java class="org.fabric3.tests.eventing.ContextServiceImpl"/>
-     </component>
+        <implementation.java class="org.fabric3.tests.eventing.ContextServiceImpl"/>
+    </component>
 
     <component name="ContextConsumer">
-         <implementation.java class="org.fabric3.tests.eventing.ContextConsumer"/>
+        <implementation.java class="org.fabric3.tests.eventing.ContextConsumer"/>
         <consumer name="process" source="ContextChannel"/>
-     </component>
+    </component>
 
     <component name="RingBufferContextConsumer">
-         <implementation.java class="org.fabric3.tests.eventing.RingBufferContextConsumer"/>
+        <implementation.java class="org.fabric3.tests.eventing.RingBufferContextConsumer"/>
         <consumer name="process" source="ContextRingBufferChannel"/>
-     </component>
+    </component>
+
+    <component name="RingBufferInjectionConsumer">
+        <implementation.java class="org.fabric3.tests.eventing.RingBufferInjectionConsumer"/>
+        <consumer name="ctorBuffer" source="RingBufferChannel"/>
+        <consumer name="ringBuffer" source="RingBufferChannel"/>
+        <consumer name="methodBuffer" source="RingBufferChannel"/>
+    </component>
 
     <channel name="ContextChannel"/>
 

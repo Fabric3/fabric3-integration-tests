@@ -21,6 +21,7 @@ public class RingBufferContextConsumer {
 
     @Channel("ContextRingBufferChannel")
     protected ChannelContext context;
+
     private RingBuffer<ChannelEvent> ringBuffer;
 
     @Init
