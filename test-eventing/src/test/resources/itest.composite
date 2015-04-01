@@ -103,6 +103,8 @@
 
     <channel name="ContextChannel"/>
 
+    <channel name="ContextChannel2"/>
+
     <channel name="ContextRingBufferChannel" type="ring.buffer"/>
 
     <channel name="TestChannel"/>

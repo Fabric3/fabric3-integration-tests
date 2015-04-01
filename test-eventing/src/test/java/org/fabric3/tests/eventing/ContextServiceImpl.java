@@ -24,6 +24,9 @@ public class ContextServiceImpl implements ContextService {
     @Channel("ContextChannel")
     protected ChannelContext context;
 
+    @Channel("ContextChannel2")
+    protected ChannelContext context2;
+
     @Channel("ContextRingBufferChannel")
     protected ChannelContext ringBufferContext;
 
@@ -44,6 +47,18 @@ public class ContextServiceImpl implements ContextService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        latch = new CountDownLatch(1);
+        Object handle = context2.subscribe(CountDownLatch.class, CountDownLatch::countDown);
+        Assert.assertNotNull(handle);
+        context2.getProducer(LatchChannel.class).process(latch);
+
+        try {
+            Assert.assertTrue(latch.await(2000, TimeUnit.MILLISECONDS));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
