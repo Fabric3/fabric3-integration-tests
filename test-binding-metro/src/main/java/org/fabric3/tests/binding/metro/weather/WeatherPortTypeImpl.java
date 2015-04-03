@@ -45,7 +45,7 @@ public class WeatherPortTypeImpl implements WeatherPortType {
             WeatherFault weatherFault = new WeatherFault();
             weatherFault.code = "1234";
             weatherFault.detail = "London is always wet";
-            throw new WeatherFaultException("Application excption", weatherFault);
+            throw new WeatherFaultException("Application exception", weatherFault);
         }
 
         WeatherResponse weatherResponse = new WeatherResponse();

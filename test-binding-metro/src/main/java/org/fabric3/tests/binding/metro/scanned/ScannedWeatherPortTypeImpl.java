@@ -41,6 +41,7 @@ import org.fabric3.api.Namespaces;
 import org.fabric3.api.annotation.model.Component;
 import org.fabric3.api.binding.ws.annotation.BindingConfiguration;
 import org.fabric3.api.binding.ws.annotation.WebServiceBinding;
+import org.fabric3.tests.binding.metro.weather.WeatherFault;
 import org.fabric3.tests.binding.metro.weather.WeatherFaultException;
 import org.fabric3.tests.binding.metro.weather.WeatherPortType;
 import org.fabric3.tests.binding.metro.weather.WeatherRequest;
@@ -53,6 +54,13 @@ import org.fabric3.tests.binding.metro.weather.WeatherResponse;
 public class ScannedWeatherPortTypeImpl implements WeatherPortType {
 
     public WeatherResponse getWeather(WeatherRequest weatherRequest) throws WeatherFaultException {
+        if (weatherRequest.getCity().equals("London")) {
+            WeatherFault weatherFault = new WeatherFault();
+            weatherFault.setCode("1234");
+            weatherFault.setDetail("London is always wet");
+            throw new WeatherFaultException("Application exception", weatherFault);
+        }
+
         WeatherResponse weatherResponse = new WeatherResponse();
         weatherResponse.setForecast("SUNNY");
         weatherResponse.setTemperature(12.0);
