@@ -40,6 +40,7 @@ package f3;
 import javax.xml.namespace.QName;
 
 import org.fabric3.api.Namespaces;
+import org.fabric3.api.annotation.model.ConfigurationContext;
 import org.fabric3.api.annotation.model.Provides;
 import org.fabric3.api.model.type.builder.ChannelBuilder;
 import org.fabric3.api.model.type.builder.CompositeBuilder;
@@ -51,12 +52,13 @@ import org.fabric3.api.model.type.component.Composite;
 public class FunctionTestProvider {
 
     @Provides
-    public static Composite testComposite() {
+    public static Composite testComposite(ConfigurationContext context) {
+        if (context == null) {
+            throw new AssertionError("ConfigurationContext was null");
+        }
         QName name = new QName(Namespaces.F3, "DSLComposite");
         ChannelBuilder channelBuilder = ChannelBuilder.newBuilder("DSLChannel");
         return CompositeBuilder.newBuilder(name).channel(channelBuilder.build()).build();
     }
-
-
 
 }
