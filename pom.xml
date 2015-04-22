@@ -145,7 +145,6 @@
                 <module>tests-ws</module>
                 <module>test-fabric-node-setup</module>
                 <module>test-fabric-node</module>
-                <module>test-fabric-node-cluster</module>
             </modules>
         </profile>
         <profile>

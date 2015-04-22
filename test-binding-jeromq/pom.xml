@@ -146,6 +146,11 @@
                         </dependency>
                         <dependency>
                             <groupId>org.fabric3</groupId>
+                            <artifactId>fabric3-discovery-local</artifactId>
+                            <version>${fabric3.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.fabric3</groupId>
                             <artifactId>fabric3-bytecode-proxy</artifactId>
                             <version>${fabric3.version}</version>
                         </dependency>

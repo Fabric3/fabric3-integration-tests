@@ -13,6 +13,32 @@
            name="TestComposite"
            autowire="true">
 
+    <channel name="TestChannel" type="ring.buffer">
+        <f3:binding.zeromq/>
+    </channel>
+
+
+    <component name="TestService">
+        <implementation.java class="org.fabric3.binding.zeromq.test.service.TestServiceImpl"/>
+        <service name="TestService">
+            <f3:binding.zeromq/>
+        </service>
+    </component>
+
+    <component name="TestBytesService">
+        <implementation.java class="org.fabric3.binding.zeromq.test.service.TestBytesServiceImpl"/>
+        <service name="TestBytesService">
+            <f3:binding.zeromq/>
+        </service>
+    </component>
+
+    <component name="TestOneWayService">
+        <implementation.java class="org.fabric3.binding.zeromq.test.service.TestOneWayServiceImpl"/>
+        <service name="TestOneWayService">
+            <f3:binding.zeromq/>
+        </service>
+    </component>
+
     <component name="TestEventClient">
         <f3:junit class="org.fabric3.binding.zeromq.test.eventing.TestClient"/>
         <reference name="producer" target="TestProducerConsumer/TestProducer"/>
@@ -43,31 +69,7 @@
         <consumer name="channel" source="TestChannel"/>
     </component>
 
-    <channel name="TestChannel" type="ring.buffer">
-        <f3:binding.zeromq/>
-    </channel>
 
-
-    <component name="TestService">
-        <implementation.java class="org.fabric3.binding.zeromq.test.service.TestServiceImpl"/>
-        <service name="TestService">
-            <f3:binding.zeromq/>
-        </service>
-    </component>
-
-    <component name="TestBytesService">
-        <implementation.java class="org.fabric3.binding.zeromq.test.service.TestBytesServiceImpl"/>
-        <service name="TestBytesService">
-            <f3:binding.zeromq/>
-        </service>
-    </component>
-
-    <component name="TestOneWayService">
-        <implementation.java class="org.fabric3.binding.zeromq.test.service.TestOneWayServiceImpl"/>
-        <service name="TestOneWayService">
-            <f3:binding.zeromq/>
-        </service>
-    </component>
 
     <component name="ServiceLatch">
         <implementation.java class="org.fabric3.binding.zeromq.test.service.ServiceLatchImpl"/>
