@@ -3,15 +3,14 @@ package org.fabric3.tests.binding.handler;
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPMessage;
 
+import org.fabric3.spi.container.binding.BindingHandler;
+import org.fabric3.spi.container.binding.BindingHandlerRegistry;
+import org.fabric3.spi.container.invocation.Message;
 import org.oasisopen.sca.Constants;
 import org.oasisopen.sca.annotation.Destroy;
 import org.oasisopen.sca.annotation.EagerInit;
 import org.oasisopen.sca.annotation.Init;
 import org.oasisopen.sca.annotation.Reference;
-
-import org.fabric3.spi.container.binding.handler.BindingHandler;
-import org.fabric3.spi.container.binding.handler.BindingHandlerRegistry;
-import org.fabric3.spi.container.invocation.Message;
 
 /**
  *

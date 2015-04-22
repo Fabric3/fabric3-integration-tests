@@ -2,16 +2,15 @@ package org.fabric3.binding.jms.test.handler;
 
 import javax.xml.namespace.QName;
 
-import org.oasisopen.sca.annotation.Scope;
-
-import org.fabric3.spi.container.binding.handler.BindingHandler;
+import org.fabric3.spi.container.binding.BindingHandler;
 import org.fabric3.spi.container.invocation.Message;
+import org.oasisopen.sca.annotation.Scope;
 
 /**
  *
  */
 @Scope("COMPOSITE")
-public class TestHandler implements BindingHandler<javax.jms.Message>{
+public class TestHandler implements BindingHandler<javax.jms.Message> {
     public static boolean OUTBOUND_INVOKED = false;
     public static boolean INBOUND_INVOKED = false;
 
