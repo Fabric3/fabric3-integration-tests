@@ -17,6 +17,7 @@ Public License. See the accompanying license file for details.
     <component name="WiringTest">
         <f3:junit class="org.fabric3.tests.function.wiring.WiringTest"/>
         <reference name="testService" target="TestComponent"/>
+        <reference name="multipleService" target="MultipleService"/>
     </component>
 
     <component name="BindingSelectionTest">
@@ -37,6 +38,10 @@ Public License. See the accompanying license file for details.
             <f3:binding.test name="binding1" uri="HelloService"/>
             <f3:binding.test name="binding2" uri="HelloService2"/>
         </service>
+    </component>
+
+    <component name="MultipleService">
+        <implementation.java class="org.fabric3.tests.function.wiring.MultipleServiceComponent"/>
     </component>
 
 

@@ -47,6 +47,9 @@ public class WiringTest extends TestCase {
     private TestService service;
 
     @Reference
+    private MultipleService1 multipleService;
+
+    @Reference
     public void setTestService(TestService service) {
         this.service = service;
     }
@@ -76,9 +79,9 @@ public class WiringTest extends TestCase {
      *      <reference name="promotedReference" promote="TestComponent/promotedReference">...
      * <pre>
      */
-//    public void testPromotedReferences() {
-//        assertNotNull(service.getPromotedReference());
-//    }
+    //    public void testPromotedReferences() {
+    //        assertNotNull(service.getPromotedReference());
+    //    }
 
     /**
      * Tests a reference configured solely via promotion:
@@ -91,9 +94,9 @@ public class WiringTest extends TestCase {
      *      <reference name="promotedReference" promote="TestComponent/promotedReference">...
      * <pre>
      */
-//    public void testNonConfiguredPromotedReferences() {
-//        assertNotNull(service.getNonConfiguredPromotedReference());
-//    }
+    //    public void testNonConfiguredPromotedReferences() {
+    //        assertNotNull(service.getNonConfiguredPromotedReference());
+    //    }
 
     /**
      * Verifies a reference of multiplicity 0..n does not need to be configured
@@ -107,6 +110,13 @@ public class WiringTest extends TestCase {
      */
     public void testArrayMultiplicity() {
         assertEquals(1, service.getArrayServices().length);
+    }
+
+    /**
+     * Verifies wiring to a target implementing multiple services does not have to specify the service name if it can be inferred from the reference type
+     */
+    public void testMultipleService() {
+        assertNotNull(multipleService);
     }
 
 }
