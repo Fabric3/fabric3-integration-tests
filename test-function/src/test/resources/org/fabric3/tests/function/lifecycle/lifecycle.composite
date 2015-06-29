@@ -34,6 +34,10 @@ Public License. See the accompanying license file for details.
     </component>
 
 
+    <component name="DefaultConstructor">
+        <implementation.java class="org.fabric3.tests.function.lifecycle.DefaultConstructor"/>
+    </component>
+
     <component name="CalloutComponent">
         <implementation.java class="org.fabric3.tests.function.lifecycle.CalloutComponent"/>
         <reference name="target" target="CalloutTarget"/>
