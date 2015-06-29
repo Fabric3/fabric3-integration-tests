@@ -37,12 +37,10 @@
 */
 package org.fabric3.tests.rs;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.ext.MessageBodyWriter;
-import javax.ws.rs.ext.Provider;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.lang.annotation.Annotation;
@@ -51,8 +49,7 @@ import java.lang.reflect.Type;
 /**
  *
  */
-@Provider
-@Consumes({"application/foo"})
+@MetaProviderAnnotation
 public class FooMessageWriter implements MessageBodyWriter<Object> {
 
     public boolean isWriteable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {

@@ -17,6 +17,7 @@
         <property name="baseFilterNameUri">http://localhost:18900/filtername/</property>
         <property name="baseFilterNameMethodUri">http://localhost:18900/filternamemethod/</property>
         <property name="baseJsonMessageUri">http://localhost:18900/jsonmessages/</property>
+        <property name="baseMetaMessageUri">http://localhost:18900/meta/</property>
         <property name="baseStatelessUri">http://localhost:18900/stateless/</property>
         <property name="baseInterfaceUri">http://localhost:18900/interface/</property>
     </component>

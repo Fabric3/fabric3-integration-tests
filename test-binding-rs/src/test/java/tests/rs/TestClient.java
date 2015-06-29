@@ -52,6 +52,9 @@ public class TestClient extends TestCase {
     protected String baseJsonMessageUri;
 
     @Property
+    protected String baseMetaMessageUri;
+
+    @Property
     protected String baseStatelessUri;
 
     @Property
@@ -88,6 +91,22 @@ public class TestClient extends TestCase {
         assertEquals(201, response.getStatus());
 
         resource = client.target(UriBuilder.fromUri(baseJsonMessageUri).path("message").path("1").build());
+        Message result = resource.request(MediaType.APPLICATION_JSON).get(Message.class);
+        assertEquals("this is a test", result.getText());
+    }
+
+    public void testMetaAnnotationCreate() {
+        Message message = new Message(1L, "this is a test");
+        message.setText("this is a test");
+
+        Client client = ClientBuilder.newClient();
+        client.register(JacksonFeature.class);
+        UriBuilder uri = UriBuilder.fromUri(baseMetaMessageUri);
+        WebTarget resource = client.target(uri.path("message").build());
+        Response response = resource.request(MediaType.APPLICATION_JSON).put(Entity.entity(message, MediaType.APPLICATION_JSON));
+        assertEquals(201, response.getStatus());
+
+        resource = client.target(UriBuilder.fromUri(baseMetaMessageUri).path("message").path("1").build());
         Message result = resource.request(MediaType.APPLICATION_JSON).get(Message.class);
         assertEquals("this is a test", result.getText());
     }
