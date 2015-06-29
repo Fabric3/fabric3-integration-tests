@@ -53,4 +53,9 @@ public class SecureRolesServiceImpl implements SecureService {
     }
 
 
+    @RolesAllowed({"supersecret"})
+    public void noCall() {
+        // just test that the method is called
+    }
+
 }

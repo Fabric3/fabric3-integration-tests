@@ -45,4 +45,6 @@ public interface SecureService {
 
     void call();
 
+    void noCall();
+
 }

@@ -50,8 +50,9 @@ public class NotAuthorizedSecureServiceTest extends TestCase {
     protected SecureService secureRoleService;
 
     public void testRoleBasedAuthorization() throws Exception {
+        secureRoleService.call();
         try {
-            secureRoleService.call();
+            secureRoleService.noCall();
             fail();
         } catch (ServiceRuntimeException e) {
             // expected
