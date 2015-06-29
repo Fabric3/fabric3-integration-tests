@@ -25,6 +25,11 @@ Public License. See the accompanying license file for details.
         <reference name="domainService" target=".DomainScopedService"/>
     </component>
 
+    <component name="MetaAnnotationTest">
+        <f3:junit class="org.fabric3.tests.function.annotation.MetaAnnotationTest"/>
+        <reference name="service" target="MetaAnnotationComponent"/>
+    </component>
+
     <component name="AnnotatedStatelessService">
         <implementation.java class="org.fabric3.tests.function.annotation.scope.AnnotatedStatelessService"/>
     </component>
