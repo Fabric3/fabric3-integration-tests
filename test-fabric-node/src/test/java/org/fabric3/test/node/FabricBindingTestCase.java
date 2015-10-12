@@ -51,7 +51,7 @@ public class FabricBindingTestCase extends TestCase {
     public void testDeployServiceEndpoint() throws Exception {
 
         Fabric fabric = Bootstrap.initialize(getClass().getResource("/testConfig.xml"));
-        fabric.addProfile("rs").addExtension("fabric3-databinding-json").addExtension("fabric3-jetty");
+        fabric.addProfile("rs").addExtension("fabric3-jetty");
         fabric.start();
 
         Domain domain = fabric.getDomain();
