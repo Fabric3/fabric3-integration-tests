@@ -38,6 +38,11 @@
 package org.fabric3.resource.itest;
 
 import junit.framework.TestCase;
+import org.fabric3.api.Namespaces;
+import org.fabric3.api.annotation.Target;
+import org.fabric3.api.annotation.model.Component;
+import org.fabric3.api.implementation.junit.Fabric3Runner;
+import org.junit.runner.RunWith;
 import org.oasisopen.sca.annotation.Reference;
 
 import org.fabric3.api.annotation.Resource;
@@ -45,9 +50,12 @@ import org.fabric3.api.annotation.Resource;
 /**
  *
  */
+@RunWith(Fabric3Runner.class)
+@Component(composite = Namespaces.F3_PREFIX + "ResourceComposite")
 public class ResourceTest extends TestCase {
 
     @Reference
+    @Target("CtorResourceComponent")
     protected TestService service;
 
     @Resource

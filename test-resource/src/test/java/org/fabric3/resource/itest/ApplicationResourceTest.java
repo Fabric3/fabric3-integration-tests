@@ -37,10 +37,7 @@
 */
 package org.fabric3.resource.itest;
 
-import javax.sql.DataSource;
-
 import junit.framework.TestCase;
-
 import org.fabric3.api.Namespaces;
 import org.fabric3.api.annotation.Resource;
 import org.fabric3.api.annotation.model.Component;
@@ -52,12 +49,13 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Fabric3Runner.class)
 @Component(composite = Namespaces.F3_PREFIX + "ResourceComposite")
-public class DataSourceTest extends TestCase {
+public class ApplicationResourceTest extends TestCase {
 
-    @Resource (name = "EmployeeDS")
-    protected DataSource dataSource;
+    @Resource(name = "AppResource")
+    protected Object resource;
 
-    public void testDataSource() {
-        assertNotNull(dataSource);
+    public void testResource() {
+        assertNotNull(resource);
     }
+
 }

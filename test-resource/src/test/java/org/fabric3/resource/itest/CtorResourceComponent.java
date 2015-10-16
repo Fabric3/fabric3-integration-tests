@@ -37,11 +37,16 @@
 */
 package org.fabric3.resource.itest;
 
+import org.fabric3.api.Namespaces;
 import org.fabric3.api.annotation.Resource;
+import org.fabric3.api.annotation.model.Component;
+import org.fabric3.api.annotation.scope.Composite;
 
 /**
  *
  */
+@Composite
+@Component(composite = Namespaces.F3_PREFIX + "ResourceComposite")
 public class CtorResourceComponent implements TestService {
     private TestResource resource;
 
