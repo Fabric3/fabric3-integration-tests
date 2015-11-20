@@ -41,6 +41,12 @@ import javax.annotation.Priority;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
+import javax.ws.rs.core.Application;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.Request;
+import javax.ws.rs.core.SecurityContext;
+import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.ext.Provider;
 import java.io.IOException;
 
@@ -56,7 +62,44 @@ import org.fabric3.api.annotation.model.Component;
 public class TestRequestFilter implements ContainerRequestFilter {
     public static boolean SET = false;
 
+    @Context
+    protected UriInfo uriInfo;
+
+    @Context
+    protected Application application;
+
+    @Context
+    protected Request request;
+
+    @Context
+    protected HttpHeaders headers;
+
+    @Context
+    protected SecurityContext securityContext;
+
     public void filter(ContainerRequestContext requestContext) throws IOException {
+        if (uriInfo.getPath() == null) {
+            throw new AssertionError("UriInfo not valid");
+        }
+
+        if (application == null) {
+            throw new AssertionError("Application is null");
+        }
+
+        if (request == null) {
+            throw new AssertionError("Request is null");
+        }
+
+        if (headers == null) {
+            throw new AssertionError("HttpHeaders are null");
+        }
+
+        if (securityContext == null) {
+            throw new AssertionError("SecurityContext is null");
+        }
+
         SET = true;
     }
 }
+
+
